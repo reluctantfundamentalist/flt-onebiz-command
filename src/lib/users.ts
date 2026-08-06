@@ -104,7 +104,6 @@ export const ACCOUNTS: Account[] = [
   { iata: "AI", name: "Air India",                 hqCountry: "India",                region: "IND",      lat: 19.089, lng: 72.868, ownerId: "dinit" },
   { iata: "IX", name: "Air India Express",         hqCountry: "India",                region: "IND",      lat: 12.950, lng: 74.837, ownerId: "dinit" },
   { iata: "6E", name: "IndiGo",                    hqCountry: "India",                region: "IND",      lat: 28.556, lng: 77.100, ownerId: "dinit" },
-  { iata: "UK", name: "Vistara",                   hqCountry: "India",                region: "IND",      lat: 28.556, lng: 77.100, ownerId: "dinit" },
   { iata: "SG", name: "SpiceJet",                  hqCountry: "India",                region: "IND",      lat: 28.556, lng: 77.100, ownerId: "dinit" },
 
   // ── Africa (owner: snehal) ──

@@ -115,45 +115,49 @@ export default async function AccountDetailPage({
             <div className="mb-3 text-sm font-semibold text-[var(--ink)]">Updates</div>
             <UpdatesPanel updates={updates} accountName={account.name} metrics={metricsByIata} />
           </div>
-          <div className="space-y-4">
-            <div>
-              <div className="mb-3 text-sm font-semibold text-[var(--ink)]">Hierarchy</div>
-              {org ? (
-                <OrgChart seed={org} />
-              ) : (
-                <div className="rounded-xl border border-dashed border-[var(--line)] bg-white p-4 text-[12px] text-[var(--ink-faint)]">
-                  Hierarchy for {account.iata} not yet seeded — will populate from update participants.
-                </div>
+          <div>
+            <div className="mb-3 text-sm font-semibold text-[var(--ink)]">Meeting pipeline</div>
+            <div className="rounded-xl border border-[var(--line)] bg-white p-4">
+              {meetings.length === 0 && (
+                <p className="text-xs text-[var(--ink-faint)]">No meetings on record.</p>
               )}
-            </div>
-            <div>
-              <div className="mb-3 text-sm font-semibold text-[var(--ink)]">Meeting pipeline</div>
-              <div className="rounded-xl border border-[var(--line)] bg-white p-4">
-                {meetings.length === 0 && (
-                  <p className="text-xs text-[var(--ink-faint)]">No meetings on record.</p>
-                )}
-                <ul className="space-y-3">
-                  {meetings.map((m) => (
-                    <li key={m.id} className="border-b border-[var(--line)] pb-3 last:border-0 last:pb-0">
-                      <div className="flex items-center gap-2 text-[10px] text-[var(--ink-faint)]">
-                        <span className="rounded bg-[var(--bg)] px-1.5 py-0.5 font-medium">
-                          {new Date(m.when).toLocaleDateString()}
-                        </span>
-                        <span>{findUser(m.bd)?.name ?? m.bd}</span>
-                      </div>
-                      <div className="mt-1 text-sm font-medium text-[var(--ink)]">{m.agenda}</div>
-                      <div className="mt-1 text-[11px] text-[var(--ink-soft)]">
-                        {m.attendees.join(" · ")}
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-3 text-[11px] italic text-[var(--ink-faint)]">
-                  Outlook calendar pull wires in v1.
-                </p>
-              </div>
+              <ul className="space-y-3">
+                {meetings.map((m) => (
+                  <li key={m.id} className="border-b border-[var(--line)] pb-3 last:border-0 last:pb-0">
+                    <div className="flex items-center gap-2 text-[10px] text-[var(--ink-faint)]">
+                      <span className="rounded bg-[var(--bg)] px-1.5 py-0.5 font-medium">
+                        {new Date(m.when).toLocaleDateString()}
+                      </span>
+                      <span>{findUser(m.bd)?.name ?? m.bd}</span>
+                    </div>
+                    <div className="mt-1 text-sm font-medium text-[var(--ink)]">{m.agenda}</div>
+                    <div className="mt-1 text-[11px] text-[var(--ink-soft)]">
+                      {m.attendees.join(" · ")}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-3 text-[11px] italic text-[var(--ink-faint)]">
+                Outlook calendar pull wires in v1.
+              </p>
             </div>
           </div>
+        </section>
+
+        <section>
+          <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-[var(--ink)]">
+            <span>Hierarchy</span>
+            <span className="rounded bg-[var(--bg)] px-1.5 py-0.5 text-[10px] font-normal text-[var(--ink-faint)]">
+              airline reporting chain × Trip.com counterparts
+            </span>
+          </div>
+          {org ? (
+            <OrgChart seed={org} />
+          ) : (
+            <div className="rounded-xl border border-dashed border-[var(--line)] bg-white p-6 text-center text-sm text-[var(--ink-faint)]">
+              Hierarchy for {account.iata} not yet seeded — will populate from update participants in v1.
+            </div>
+          )}
         </section>
 
         <section>

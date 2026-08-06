@@ -518,20 +518,6 @@
     "source": "aggregate.py"
   },
   {
-    "iata": "UK",
-    "ytdFlownRevUsd": 0,
-    "ytdFlownRevLyUsd": 42714.0,
-    "ytdFlownRevVlyPct": -100.0,
-    "euApacRevUsd": 0,
-    "euApacRevLyUsd": 37432.0,
-    "euApacRevVlyPct": -100.0,
-    "npbrUsd": 0,
-    "ondPax": 0,
-    "atvUsd": 0,
-    "lastUpdated": "2026-08-06",
-    "source": "aggregate.py"
-  },
-  {
     "iata": "WY",
     "ytdFlownRevUsd": 7852539.0,
     "ytdFlownRevLyUsd": 2125883.0,

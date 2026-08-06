@@ -15,13 +15,18 @@ function currentMonthStr(): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
 }
 
-/** Latest month in `months` that is on or before today; falls back to the last
- *  month if every month is in the future (e.g. a brand-new year's data). */
+/** Latest COMPLETE month in `months` — skips the current month unless we're
+ *  at least 25 days into it, because our CSV is a mid-month snapshot and
+ *  showing a 5-day slice of "August" would look like the airline collapsed. */
 function defaultMonth(months: string[]): string {
   if (months.length === 0) return "";
-  const today = currentMonthStr();
-  const pastOrCurrent = months.filter((m) => m <= today);
-  if (pastOrCurrent.length > 0) return pastOrCurrent[pastOrCurrent.length - 1];
+  const today = new Date();
+  const cur = currentMonthStr();
+  const skipCurrent = today.getDate() < 25;
+  const cutoff = skipCurrent
+    ? months.filter((m) => m < cur)
+    : months.filter((m) => m <= cur);
+  if (cutoff.length > 0) return cutoff[cutoff.length - 1];
   return months[months.length - 1];
 }
 

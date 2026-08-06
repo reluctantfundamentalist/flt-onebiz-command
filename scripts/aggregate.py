@@ -94,8 +94,9 @@ AIRLINE_NAMES = {
     "WY": "Oman Air",
     "XY": "flynas",
 }
-# User excluded 5W (Wizz Air Abu Dhabi) explicitly on 2026-08-06.
-EXCLUDED_CARRIERS = {"5W"}
+# User excluded 5W (Wizz Air Abu Dhabi) on 2026-08-06.
+# Vistara (UK) shut down (merged into AI); excluded 2026-08-06.
+EXCLUDED_CARRIERS = {"5W", "UK"}
 
 
 def load_rows(csv_path):

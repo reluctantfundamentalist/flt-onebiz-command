@@ -24,15 +24,24 @@ export interface OrgSeed {
 const EK_SEED: OrgSeed = {
   iata: "EK",
   nodes: [
-    { id: "ek-cco", name: "Adnan Kazim", title: "Chief Commercial Officer", side: "airline", level: "global" },
-    { id: "ek-vp",  name: "Dina Al Herais", title: "VP Commercial Products B2B", side: "airline", level: "global", parentId: "ek-cco" },
-    { id: "ek-ndc", name: "Ahmed Al Ali", title: "Head of NDC & Distribution", side: "airline", level: "global", parentId: "ek-vp" },
-    { id: "ek-me",  name: "Mohammed Al Hashemi", title: "Regional Manager, ME", side: "airline", level: "regional", parentId: "ek-vp", market: "GMEI" },
-    { id: "ek-uae", name: "Fatima Al Marri", title: "UAE Country Manager", side: "airline", level: "local", parentId: "ek-me", market: "UAE" },
-    { id: "trip-pj", name: "PJ Zhou", title: "Global Head, Airline Partnerships", side: "trip", level: "global", counterpartOf: "ek-cco" },
-    { id: "trip-kirk", name: "Kirk Wong", title: "Regional Director", side: "trip", level: "regional", parentId: "trip-pj", counterpartOf: "ek-vp" },
-    { id: "trip-praveen", name: "Praveen Das Kulangara", title: "Regional Manager, GCC", side: "trip", level: "local", parentId: "trip-kirk", counterpartOf: "ek-me" },
-    { id: "trip-shrey", name: "Shrey Nayar", title: "Global Head, Airline Marketing", side: "trip", level: "global", counterpartOf: "ek-ndc" },
+    // Airline reporting chain
+    { id: "ek-cco",      name: "Adnan Kazim",           title: "Chief Commercial Officer",                       side: "airline", level: "global" },
+    { id: "ek-vp-b2b",   name: "Dina Al Herais",        title: "VP Commercial Products B2B (Corporate & Leisure)",side: "airline", level: "global",   parentId: "ek-cco" },
+    { id: "ek-contract", name: "Rehab Mansoor",         title: "Contract Owner & Commercial Manager",            side: "airline", level: "global",   parentId: "ek-vp-b2b" },
+    { id: "ek-ndc",      name: "Ahmed Al Ali",          title: "Head of NDC & Distribution",                     side: "airline", level: "global",   parentId: "ek-vp-b2b" },
+    { id: "ek-me",       name: "Mohammed Al Hashemi",   title: "Regional Manager, Middle East",                  side: "airline", level: "regional", parentId: "ek-vp-b2b", market: "GMEI" },
+    { id: "ek-asia",     name: "Sarah Ng",              title: "Regional Manager, Far East & Asia",              side: "airline", level: "regional", parentId: "ek-vp-b2b", market: "Far East" },
+    { id: "ek-eu",       name: "Thomas Berg",           title: "Regional Manager, Europe",                       side: "airline", level: "regional", parentId: "ek-vp-b2b", market: "Europe" },
+    { id: "ek-uae",      name: "Fatima Al Marri",       title: "UAE Country Manager",                            side: "airline", level: "local",    parentId: "ek-me",     market: "UAE" },
+    { id: "ek-sg",       name: "David Lim",             title: "Singapore Country Manager",                      side: "airline", level: "local",    parentId: "ek-asia",   market: "Singapore" },
+    { id: "ek-uk",       name: "James Wright",          title: "UK Country Manager",                             side: "airline", level: "local",    parentId: "ek-eu",     market: "United Kingdom" },
+
+    // Trip.com counterparts
+    { id: "trip-pj",      name: "PJ Zhou",             title: "Global Head, Airline Partnerships",  side: "trip", level: "global",                        counterpartOf: "ek-cco" },
+    { id: "trip-shrey",   name: "Shrey Nayar",         title: "Global Head, Airline Marketing",     side: "trip", level: "global",   parentId: "trip-pj", counterpartOf: "ek-ndc" },
+    { id: "trip-kirk",    name: "Kirk Wong",           title: "Regional Director",                  side: "trip", level: "regional", parentId: "trip-pj", counterpartOf: "ek-vp-b2b" },
+    { id: "trip-anuj",    name: "Anuj Bansal",         title: "Director, Middle East and Africa",   side: "trip", level: "regional", parentId: "trip-kirk", counterpartOf: "ek-me" },
+    { id: "trip-praveen", name: "Praveen Das Kulangara",title: "Regional Manager, GCC",             side: "trip", level: "local",    parentId: "trip-anuj", counterpartOf: "ek-uae" },
   ],
 };
 
