@@ -12,6 +12,8 @@ import AppHeader from "@/components/AppHeader";
 import UpdatesPanel from "@/components/leader/UpdatesPanel";
 import OrgChart from "@/components/leader/OrgChart";
 import GanttChart from "@/components/gantt/GanttChart";
+import RecentEvents from "@/components/RecentEvents";
+import LogUpdateForm from "@/components/LogUpdateForm";
 import { DashboardShell } from "@/components/dashboard/DashboardShell";
 
 function fmtUsd(n: number) {
@@ -158,6 +160,15 @@ export default async function AccountDetailPage({
               Hierarchy for {account.iata} not yet seeded — will populate from update participants in v1.
             </div>
           )}
+        </section>
+
+        <section>
+          <div className="mb-3 text-sm font-semibold text-[var(--ink)]">Recent events</div>
+          <RecentEvents updates={updates} meetings={meetings} contracts={contracts} />
+        </section>
+
+        <section>
+          <LogUpdateForm accounts={ACCOUNTS} defaultAccountIata={account.iata} />
         </section>
 
         <section>

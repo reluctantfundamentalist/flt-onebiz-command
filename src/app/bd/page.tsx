@@ -7,6 +7,7 @@ import { buildTimeline, timelineForBd } from "@/lib/timeline";
 import AppHeader from "@/components/AppHeader";
 import UpdatesPanel from "@/components/leader/UpdatesPanel";
 import GanttChart from "@/components/gantt/GanttChart";
+import LogUpdateForm from "@/components/LogUpdateForm";
 
 export default async function BdPage() {
   const session = await getSession();
@@ -42,6 +43,8 @@ export default async function BdPage() {
       <AppHeader session={session} subtitle={`BD workspace · ${user.title}`} />
 
       <main className="mx-auto max-w-7xl px-4 pb-20 pt-6 space-y-6">
+        <LogUpdateForm accounts={scopedAccounts} />
+
         <section>
           <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-[var(--ink)]">
             <span>Your pipeline</span>
