@@ -1,9 +1,0 @@
-lever_name,fltonebiz_sheet_type,value_type,trigger_keywords,distinguish_from,scope_dimensions,owning_team,approver_chain,fund_hub_key_pattern,release_treatment,notes
-BSP Commission,,%,bsp commission;iata commission,"""incentive"" alone is ambiguous; backend is a different instrument",market;origin?,Ops,Finance Ops,,Fare discount (BSP pass-through),
-Backend Incentive,,%,backend;backend incentive,"distinct from NDC incentive and marketing incentive",market,Ops,Finance Ops,,Fare discount (retro backend),
-Virtual Card Incentive,,%,virtual card;vcf;virtual card incentive,"distinct from backend",market,Ops,,,Fare discount (VCF settlement),
-NDC Subsidy,,USD,ndc;ndc incentive;ndc money;to drive ndc,"""incentive"" alone is ambiguous",channel;market,NDC,NDC lead,,Channel development fund,
-Marketing Incentive,,%,marketing incentive,"distinct from marketing cash",market,Marketing,,,Fare discount (marketing-linked),
-Marketing Cash,,USD,marketing cash;marketing fund;mdf,"distinct from marketing incentive",market,Marketing,Marketing,team_market_External Marketing Fund_amount_id,Marketing fund (co-op),
-Private Fare,,%,private fare;net fare;5% off private fare,,origin;POS,Ops,Fare filing,,Fare discount (private fare),
-,,,, ! ,,,,,fill: exact sheet-type dropdown string (e.g. Promo Fund / BOGO_Internal / Internal Marketing Fund / External Marketing Fund ...)
