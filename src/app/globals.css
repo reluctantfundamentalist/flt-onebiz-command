@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f5f7fb;
+  --panel: #ffffff;
+  --ink: #0f1f3d;
+  --ink-soft: #475569;
+  --ink-faint: #94a3b8;
+  --line: #e2e8f0;
+  --brand: #0b66c2;
+  --brand-dark: #0a4f96;
+  --brand-soft: #e8f1fb;
+  --accent: #ff6a3d;
+  --good: #1f9d55;
+  --warn: #d97706;
+  --bad: #dc2626;
+  --ndc: #6d4aff;
+  --lcc: #0ea5a4;
+  --ops: #b45309;
+  --mkt: #be185d;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-soft: var(--brand-soft);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-inter-sans);
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--brand-soft);
+}
+
+/* thin scrollbars in the app chrome */
+.scroll-slim::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scroll-slim::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 8px;
+}
