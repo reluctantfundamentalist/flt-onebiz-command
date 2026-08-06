@@ -1,0 +1,31 @@
+src/app/leader/account/[iata]/page.tsx
+  s_9442cae20eaecb::t_b3ad5783bf50d6 15-16
+  s_9442cae20eaecb::t_b360534ed4bfad 166-173
+src/components/LogUpdateForm.tsx
+  s_9442cae20eaecb::t_c021e8d1f2dd24 1-183
+src/app/api/updates/route.ts
+  s_9442cae20eaecb::t_836bf5a42769e3 1-57
+src/components/RecentEvents.tsx
+  s_9442cae20eaecb::t_a9a84e516ec3c9 1-105
+src/components/gantt/GanttChart.tsx
+  s_9442cae20eaecb::t_59a33e90fb2621 11-12,21,25-29,53,67,69-70,74-87,90,92-111,115,117-123,125-130,136-145,151-155,157-160,162-166,168-198,205,214
+src/app/bd/page.tsx
+  s_9442cae20eaecb::t_98ffcc8640d347 10
+  s_9442cae20eaecb::t_acf4f3b7acbf1e 46-47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.39-trip",
+  "base_commit_sha": "44112acea9271fb4f3aa15b4763e150613908939",
+  "prompts": {},
+  "sessions": {
+    "s_9442cae20eaecb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "327e884e-5cca-46db-9fc0-a3ac34b486a2",
+        "model": "arn:aws:bedrock:us-west-2:133197901387:application-inference-profile/ypvzpmevzxdl"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
