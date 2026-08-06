@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "refresh": "python3 scripts/aggregate.py"
+    "refresh": "python3 scripts/ingest.py --backfill"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",

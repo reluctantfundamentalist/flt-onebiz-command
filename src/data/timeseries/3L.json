@@ -1,117 +1,122 @@
 [
   {
     "month": "2025-01",
-    "revenue": 8558.0,
-    "pax": 245
+    "revenue": 25618.0,
+    "pax": 744
   },
   {
     "month": "2025-02",
-    "revenue": 7119.0,
-    "pax": 162
+    "revenue": 19089.0,
+    "pax": 480
   },
   {
     "month": "2025-03",
-    "revenue": 10038.0,
-    "pax": 168
+    "revenue": 27422.0,
+    "pax": 491
   },
   {
     "month": "2025-04",
-    "revenue": 9784.0,
-    "pax": 218
+    "revenue": 28504.0,
+    "pax": 620
   },
   {
     "month": "2025-05",
-    "revenue": 23466.0,
-    "pax": 216
+    "revenue": 61851.0,
+    "pax": 630
   },
   {
     "month": "2025-06",
-    "revenue": 28740.0,
-    "pax": 284
+    "revenue": 110312.0,
+    "pax": 1033
   },
   {
     "month": "2025-07",
-    "revenue": 44138.0,
-    "pax": 328
+    "revenue": 125999.0,
+    "pax": 911
   },
   {
     "month": "2025-08",
-    "revenue": 42812.0,
-    "pax": 257
+    "revenue": 114122.0,
+    "pax": 701
   },
   {
     "month": "2025-09",
-    "revenue": 31712.0,
-    "pax": 241
+    "revenue": 96797.0,
+    "pax": 665
   },
   {
     "month": "2025-10",
-    "revenue": 26303.0,
-    "pax": 228
+    "revenue": 94177.0,
+    "pax": 718
   },
   {
     "month": "2025-11",
-    "revenue": 40300.0,
-    "pax": 371
+    "revenue": 120933.0,
+    "pax": 1046
   },
   {
     "month": "2025-12",
-    "revenue": 46353.0,
-    "pax": 275
+    "revenue": 158161.0,
+    "pax": 866
   },
   {
     "month": "2026-01",
-    "revenue": 53438.0,
-    "pax": 391
+    "revenue": 164901.0,
+    "pax": 1198
   },
   {
     "month": "2026-02",
-    "revenue": 32634.0,
-    "pax": 304
+    "revenue": 102540.0,
+    "pax": 962
   },
   {
     "month": "2026-03",
-    "revenue": 29049.0,
-    "pax": 148
+    "revenue": 89818.0,
+    "pax": 428
   },
   {
     "month": "2026-04",
-    "revenue": 21677.0,
-    "pax": 142
+    "revenue": 79164.0,
+    "pax": 499
   },
   {
     "month": "2026-05",
-    "revenue": 31681.0,
-    "pax": 192
+    "revenue": 87613.0,
+    "pax": 523
   },
   {
     "month": "2026-06",
-    "revenue": 31259.0,
-    "pax": 195
+    "revenue": 89946.0,
+    "pax": 590
   },
   {
     "month": "2026-07",
-    "revenue": 46201.0,
-    "pax": 275
+    "revenue": 136050.0,
+    "pax": 827
   },
   {
     "month": "2026-08",
-    "revenue": 20953.0,
-    "pax": 129
+    "revenue": 60321.0,
+    "pax": 348
   },
   {
     "month": "2026-09",
-    "revenue": 4022.0,
-    "pax": 24
+    "revenue": 13485.0,
+    "pax": 84
   },
   {
     "month": "2026-10",
-    "revenue": 563.0,
-    "pax": 5
+    "revenue": 5073.0,
+    "pax": 27
   },
   {
     "month": "2026-11",
-    "revenue": 90.0,
-    "pax": 1
+    "revenue": 472.0,
+    "pax": 5
+  },
+  {
+    "month": "2026-12",
+    "revenue": 1721.0,
+    "pax": 4
   }
 ]
