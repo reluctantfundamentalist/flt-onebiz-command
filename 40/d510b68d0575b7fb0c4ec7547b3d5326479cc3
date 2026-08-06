@@ -1,0 +1,76 @@
+src/app/leader/account/[iata]/page.tsx
+  s_9442cae20eaecb::t_258d0bc697b97b 10
+  s_9442cae20eaecb::t_530f2f2a825bbe 118-120,122-126,128-143
+  s_9442cae20eaecb::t_a29686b4ac12dc 7
+  s_9442cae20eaecb::t_94d3884ee6fd10 30,34
+src/data-vendor/FZ/latest.json
+  ai_agent 1-12670
+src/components/dashboard/ui/SectionHeader.tsx
+  ai_agent 1-9
+src/data-vendor/KU/latest.json
+  ai_agent 1-13833
+src/lib/chartSetup.ts
+  ai_agent 1-15
+src/components/dashboard/charts/TrendlineChart.tsx
+  ai_agent 1-71
+src/components/dashboard/ui/Badge.tsx
+  ai_agent 1-16
+src/data-vendor/AI/latest.json
+  ai_agent 1-12591
+src/data-vendor/EK/latest.json
+  ai_agent 1-23512
+src/components/dashboard/charts/DoughnutChart.tsx
+  ai_agent 1-51
+src/data-vendor/MS/latest.json
+  ai_agent 1-13558
+src/lib/dashboard-loader.ts
+  s_9442cae20eaecb::t_fbda03e8e6e773 1-19
+src/data-vendor/QR/latest.json
+  ai_agent 1-14651
+src/components/dashboard/sections/KPISection.tsx
+  ai_agent 1-153
+src/components/dashboard/ui/MonthFilter.tsx
+  ai_agent 1-62
+src/components/dashboard/sections/POSSection.tsx
+  ai_agent 1-36
+src/data-vendor/SV/latest.json
+  ai_agent 1-16692
+src/data-vendor/WY/latest.json
+  ai_agent 1-17285
+src/components/dashboard/sections/InsightsSection.tsx
+  ai_agent 1-163
+src/data-vendor/GF/latest.json
+  ai_agent 1-18510
+src/data-vendor/EY/latest.json
+  ai_agent 1-14596
+src/components/dashboard/charts/HorizontalBarChart.tsx
+  ai_agent 1-58
+src/data-vendor/RJ/latest.json
+  ai_agent 1-18088
+src/lib/dashboard-types.ts
+  ai_agent 1-153
+src/components/dashboard/sections/RankingsSection.tsx
+  ai_agent 1-83
+src/data-vendor/KQ/latest.json
+  ai_agent 1-12853
+src/components/dashboard/DashboardShell.tsx
+  ai_agent 1-177
+src/lib/format.ts
+  ai_agent 1-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.38-trip",
+  "base_commit_sha": "40d510b68d0575b7fb0c4ec7547b3d5326479cc3",
+  "prompts": {},
+  "sessions": {
+    "s_9442cae20eaecb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "327e884e-5cca-46db-9fc0-a3ac34b486a2",
+        "model": "arn:aws:bedrock:us-west-2:133197901387:application-inference-profile/ypvzpmevzxdl"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
