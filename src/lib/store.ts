@@ -26,17 +26,24 @@ async function writeJson<T>(file: string, value: T): Promise<void> {
 export interface UpdateRecord {
   id: string;
   accountIata: string;
-  createdBy: string;      // user id
+  createdBy: string;      // user id or "graph_pull_llm"
   createdAt: string;      // ISO
   scope: "global" | "local";
-  market?: string;        // POS code for local
-  meetingDate?: string;   // ISO date if from a meeting
-  bd: string;             // user id of the BD attributed
+  market?: string;
+  meetingDate?: string;
+  bd: string;
   headline: string;
   detail: string;
-  nextStep?: string;
-  isChild?: boolean;      // true when BD posting != parent-account owner
-  parentOwner?: string;   // user id of parent owner if child
+  nextStep?: string | null;
+  isChild?: boolean;
+  parentOwner?: string;
+  // LLM-clustered topic extensions
+  status?: "active" | "in_progress" | "dormant" | "closed";
+  priority?: "high" | "medium" | "low";
+  airlineOwners?: string[];
+  tripOwners?: string[];
+  threadCount?: number;
+  source?: string;
 }
 
 export async function listUpdates(): Promise<UpdateRecord[]> {

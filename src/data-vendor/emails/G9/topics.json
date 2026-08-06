@@ -1,0 +1,146 @@
+[
+  {
+    "name": "New Route Launches & Schedule Updates",
+    "summary": "Air Arabia communicating new route launches (Karachi-Dammam for Fly Jinnah, Amman City Airport for Air Arabia Abu Dhabi) and requesting verification of all routes live on Trip.com platform. Operational coordination on schedule activation.",
+    "status": "closed",
+    "nextStep": null,
+    "airlineOwners": [
+      "Tarun Chanana"
+    ],
+    "tripOwners": [],
+    "threadIds": [
+      "id=AAMkADYwZGVlZGQ0LWYx"
+    ],
+    "lastTouched": "2026-06-17",
+    "priority": "medium",
+    "accountIata": "G9"
+  },
+  {
+    "name": "Tactical Sales Campaigns & Fare Promotions",
+    "summary": "Joint marketing campaigns for Europe routes (SHJ-EU extension through Aug 15), Vienna special fares, and Munich flight operations activation. Ongoing coordination to drive incremental sales through promotional campaigns.",
+    "status": "in_progress",
+    "nextStep": "Extend campaign period and push ATH route activation",
+    "airlineOwners": [
+      "Tarun Chanana"
+    ],
+    "tripOwners": [
+      "Anuj Bansal"
+    ],
+    "threadIds": [
+      "id=AAMkADYwZGVlZGQ0LWYx"
+    ],
+    "lastTouched": "2026-07-15",
+    "priority": "high",
+    "accountIata": "G9"
+  },
+  {
+    "name": "Portal Setup & User Management Automation",
+    "summary": "G9 portal user creation and automation for Air Arabia team members. Request for involuntary reissue policy guidance and user sheet bulk onboarding.",
+    "status": "in_progress",
+    "nextStep": "Automate user creation for remaining users on sheet; provide involuntary reissue policy feedback",
+    "airlineOwners": [
+      "Mohammad Nabil Dodin",
+      "Tarun Chanana"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin"
+    ],
+    "threadIds": [
+      "id=AAMkADYwZGVlZGQ0LWYx"
+    ],
+    "lastTouched": "2026-07-21",
+    "priority": "medium",
+    "accountIata": "G9"
+  },
+  {
+    "name": "Sales Processing & Flight Operations Setup",
+    "summary": "Trip.com gathering operational policies from Air Arabia (void policy, reissue procedures, ticket processing rules) to configure sales and ticketing systems. Standard activation questionnaire for flight operations.",
+    "status": "in_progress",
+    "nextStep": "Air Arabia to provide void policy, reissue policy, and ticket processing guidelines",
+    "airlineOwners": [
+      "Tarun Chanana"
+    ],
+    "tripOwners": [
+      "Trip ME ISC Flight Ops"
+    ],
+    "threadIds": [
+      "id=AAMkADYwZGVlZGQ0LWYx"
+    ],
+    "lastTouched": "2026-06-01",
+    "priority": "high",
+    "accountIata": "G9"
+  },
+  {
+    "name": "Refunds & PNR Processing Coordination",
+    "summary": "Bulk refund processing for 1,052 PNRs between Air Arabia and Trip.com operations teams. Internal coordination on financial settlement.",
+    "status": "closed",
+    "nextStep": null,
+    "airlineOwners": [
+      "Tarun Chanana"
+    ],
+    "tripOwners": [
+      "Trip ME ISC Flight Ops"
+    ],
+    "threadIds": [
+      "id=AAMkADYwZGVlZGQ0LWYx"
+    ],
+    "lastTouched": "2026-08-03",
+    "priority": "medium",
+    "accountIata": "G9"
+  },
+  {
+    "name": "Promotional Campaigns & Ticket Disbursement",
+    "summary": "ENBD Noon Campaign winners ticket disbursement and follow-up. Promotional co-marketing efforts with banking partners.",
+    "status": "in_progress",
+    "nextStep": "Complete ticket disbursement for ENBD Noon Campaign winners",
+    "airlineOwners": [
+      "Tarun Chanana",
+      "Rajiv Bhattacharjee"
+    ],
+    "tripOwners": [
+      "Anuj Bansal"
+    ],
+    "threadIds": [
+      "id=AAMkADYwZGVlZGQ0LWYx"
+    ],
+    "lastTouched": "2026-05-22",
+    "priority": "medium",
+    "accountIata": "G9"
+  },
+  {
+    "name": "Stakeholder Alignment & Partnership Updates",
+    "summary": "Leadership introductions (Mohammad Nabil Dodin as Head of KSA) and strategic partnership recap post-AGC 2026 conference. Internal org updates and relationship establishment.",
+    "status": "closed",
+    "nextStep": null,
+    "airlineOwners": [
+      "Tarun Chanana"
+    ],
+    "tripOwners": [
+      "Anuj Bansal"
+    ],
+    "threadIds": [
+      "id=AAMkADYwZGVlZGQ0LWYx"
+    ],
+    "lastTouched": "2026-06-18",
+    "priority": "low",
+    "accountIata": "G9"
+  },
+  {
+    "name": "Technical Issues & Platform Support",
+    "summary": "Miscellaneous technical issues including Lark service disruption, website errors, and ticketing system void policy validation during UKDC testing.",
+    "status": "dormant",
+    "nextStep": null,
+    "airlineOwners": [
+      "Zhixuan Zhou"
+    ],
+    "tripOwners": [
+      "Leo Liu"
+    ],
+    "threadIds": [
+      "id=AAMkADYwZGVlZGQ0LWYx"
+    ],
+    "lastTouched": "2026-06-15",
+    "priority": "low",
+    "accountIata": "G9"
+  }
+]

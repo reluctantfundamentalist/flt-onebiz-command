@@ -5,9 +5,9 @@ import { SEED_UPDATES, SEED_MEETINGS, SEED_CONTRACTS } from "@/lib/seed";
 import { listUpdates, listMeetings, listContracts } from "@/lib/store";
 import { buildTimeline, timelineForBd } from "@/lib/timeline";
 import AppHeader from "@/components/AppHeader";
-import UpdatesPanel from "@/components/leader/UpdatesPanel";
 import GanttChart from "@/components/gantt/GanttChart";
 import LogUpdateForm from "@/components/LogUpdateForm";
+import TopicBoard from "@/components/TopicBoard";
 
 export default async function BdPage() {
   const session = await getSession();
@@ -92,8 +92,13 @@ export default async function BdPage() {
         </section>
 
         <section>
-          <div className="mb-3 text-sm font-semibold text-[var(--ink)]">Airline updates</div>
-          <UpdatesPanel updates={updates} />
+          <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-[var(--ink)]">
+            <span>Topics from inbox</span>
+            <span className="rounded bg-[var(--bg)] px-1.5 py-0.5 text-[10px] font-normal text-[var(--ink-faint)]">
+              LLM-clustered from Outlook · last 90 days
+            </span>
+          </div>
+          <TopicBoard updates={updates} />
         </section>
       </main>
     </div>
