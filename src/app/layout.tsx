@@ -8,9 +8,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Flt OneBiz — BD Intelligence Capture",
-  description:
-    "Prototype: free-text intake → structured instruments → parent-child account health. Egypt Air case study.",
+  title: "Flt OneBiz Command",
+  description: "Leadership + BD workspace — airline account intelligence.",
 };
 
 export default function RootLayout({

@@ -1,0 +1,147 @@
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import { getSession } from "@/lib/auth";
+import { findAccount, findUser } from "@/lib/users";
+import { SEED_UPDATES, SEED_MEETINGS, SEED_CONTRACTS } from "@/lib/seed";
+import { listUpdates, listMeetings, listContracts } from "@/lib/store";
+import AppHeader from "@/components/AppHeader";
+import UpdatesPanel from "@/components/leader/UpdatesPanel";
+
+function fmtUsd(n: number) {
+  if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)}M`;
+  if (n >= 1_000) return `$${(n / 1_000).toFixed(0)}K`;
+  return `$${n}`;
+}
+
+export default async function AccountDetailPage({
+  params,
+}: {
+  params: Promise<{ iata: string }>;
+}) {
+  const { iata } = await params;
+  const account = findAccount(iata);
+  if (!account) notFound();
+
+  const session = await getSession();
+  if (!session) return null;
+
+  const [storedUpdates, storedMeetings, storedContracts] = await Promise.all([
+    listUpdates(),
+    listMeetings(),
+    listContracts(),
+  ]);
+  const updates = (storedUpdates.length ? storedUpdates : SEED_UPDATES).filter(
+    (u) => u.accountIata === account.iata,
+  );
+  const meetings = (storedMeetings.length ? storedMeetings : SEED_MEETINGS).filter(
+    (m) => m.accountIata === account.iata,
+  );
+  const contract = (storedContracts.length ? storedContracts : SEED_CONTRACTS).find(
+    (c) => c.accountIata === account.iata,
+  );
+  const owner = findUser(account.ownerId);
+
+  return (
+    <div className="min-h-screen bg-[var(--bg)]">
+      <AppHeader session={session} subtitle={`${account.iata} · ${account.name}`} />
+
+      <main className="mx-auto max-w-7xl px-4 pb-20 pt-6 space-y-6">
+        <div className="flex items-center gap-3 text-sm">
+          <Link
+            href={session.role === "leader" ? "/leader" : "/bd"}
+            className="rounded-lg border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-medium text-[var(--ink-soft)] hover:bg-[var(--bg)]"
+          >
+            ← Back
+          </Link>
+          <div>
+            <div className="text-xl font-semibold text-[var(--ink)]">
+              {account.name} <span className="text-[var(--ink-faint)]">({account.iata})</span>
+            </div>
+            <div className="text-[11px] text-[var(--ink-faint)]">
+              {account.hqCountry} · {account.region} · Owner: {owner?.name ?? "—"}
+            </div>
+          </div>
+        </div>
+
+        {contract && (
+          <div className="grid gap-3 sm:grid-cols-4">
+            <StatTile label="Contract target" value={fmtUsd(contract.targetUsd)} />
+            <StatTile label="YTD Flown" value={fmtUsd(contract.ytdFlownUsd)} />
+            <StatTile
+              label="Completion"
+              value={`${((contract.ytdFlownUsd / contract.targetUsd) * 100).toFixed(0)}%`}
+            />
+            <StatTile label="Period ends" value={new Date(contract.periodEnd).toLocaleDateString()} />
+          </div>
+        )}
+
+        <section className="grid gap-6 lg:grid-cols-3">
+          <div className="lg:col-span-2">
+            <div className="mb-3 text-sm font-semibold text-[var(--ink)]">Updates</div>
+            <UpdatesPanel updates={updates} accountName={account.name} />
+          </div>
+          <div>
+            <div className="mb-3 text-sm font-semibold text-[var(--ink)]">Meeting pipeline</div>
+            <div className="rounded-xl border border-[var(--line)] bg-white p-4">
+              {meetings.length === 0 && (
+                <p className="text-xs text-[var(--ink-faint)]">No meetings on record.</p>
+              )}
+              <ul className="space-y-3">
+                {meetings.map((m) => (
+                  <li key={m.id} className="border-b border-[var(--line)] pb-3 last:border-0 last:pb-0">
+                    <div className="flex items-center gap-2 text-[10px] text-[var(--ink-faint)]">
+                      <span className="rounded bg-[var(--bg)] px-1.5 py-0.5 font-medium">
+                        {new Date(m.when).toLocaleDateString()}
+                      </span>
+                      <span>{findUser(m.bd)?.name ?? m.bd}</span>
+                    </div>
+                    <div className="mt-1 text-sm font-medium text-[var(--ink)]">{m.agenda}</div>
+                    <div className="mt-1 text-[11px] text-[var(--ink-soft)]">
+                      {m.attendees.join(" · ")}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-3 text-[11px] italic text-[var(--ink-faint)]">
+                Outlook calendar pull wires in v1.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-[var(--ink)]">
+            <span>Performance dashboard</span>
+            <span className="rounded bg-[var(--bg)] px-1.5 py-0.5 text-[10px] font-normal text-[var(--ink-faint)]">
+              trippy-analytics embed — landing in v0.5
+            </span>
+          </div>
+          <div className="rounded-xl border border-dashed border-[var(--line)] bg-white p-8 text-center">
+            <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--bg)] text-2xl">
+              📊
+            </div>
+            <h3 className="text-lg font-semibold text-[var(--ink)]">DashboardShell mount</h3>
+            <p className="mt-2 text-sm text-[var(--ink-soft)]">
+              KPIs, insights, POS, rankings — copy-vendored from trippy-analytics on next commit.
+              <br />
+              <span className="text-[11px] text-[var(--ink-faint)]">
+                Data source: {account.iata}/latest.json
+              </span>
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+}
+
+function StatTile({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-xl border border-[var(--line)] bg-white p-3">
+      <div className="text-[10px] font-semibold uppercase tracking-wide text-[var(--ink-faint)]">
+        {label}
+      </div>
+      <div className="text-lg font-semibold text-[var(--ink)]">{value}</div>
+    </div>
+  );
+}
