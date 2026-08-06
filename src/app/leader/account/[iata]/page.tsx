@@ -4,8 +4,10 @@ import { getSession } from "@/lib/auth";
 import { findAccount, findUser } from "@/lib/users";
 import { SEED_UPDATES, SEED_MEETINGS, SEED_CONTRACTS } from "@/lib/seed";
 import { listUpdates, listMeetings, listContracts } from "@/lib/store";
+import { loadAirlineDataset } from "@/lib/dashboard-loader";
 import AppHeader from "@/components/AppHeader";
 import UpdatesPanel from "@/components/leader/UpdatesPanel";
+import { DashboardShell } from "@/components/dashboard/DashboardShell";
 
 function fmtUsd(n: number) {
   if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)}M`;
@@ -25,10 +27,11 @@ export default async function AccountDetailPage({
   const session = await getSession();
   if (!session) return null;
 
-  const [storedUpdates, storedMeetings, storedContracts] = await Promise.all([
+  const [storedUpdates, storedMeetings, storedContracts, dataset] = await Promise.all([
     listUpdates(),
     listMeetings(),
     listContracts(),
+    loadAirlineDataset(account.iata),
   ]);
   const updates = (storedUpdates.length ? storedUpdates : SEED_UPDATES).filter(
     (u) => u.accountIata === account.iata,
@@ -112,23 +115,32 @@ export default async function AccountDetailPage({
         <section>
           <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-[var(--ink)]">
             <span>Performance dashboard</span>
-            <span className="rounded bg-[var(--bg)] px-1.5 py-0.5 text-[10px] font-normal text-[var(--ink-faint)]">
-              trippy-analytics embed — landing in v0.5
-            </span>
-          </div>
-          <div className="rounded-xl border border-dashed border-[var(--line)] bg-white p-8 text-center">
-            <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--bg)] text-2xl">
-              📊
-            </div>
-            <h3 className="text-lg font-semibold text-[var(--ink)]">DashboardShell mount</h3>
-            <p className="mt-2 text-sm text-[var(--ink-soft)]">
-              KPIs, insights, POS, rankings — copy-vendored from trippy-analytics on next commit.
-              <br />
-              <span className="text-[11px] text-[var(--ink-faint)]">
-                Data source: {account.iata}/latest.json
+            {dataset ? (
+              <span className="rounded bg-[var(--brand-soft)] px-1.5 py-0.5 text-[10px] font-normal text-[var(--brand-dark)]">
+                trippy-analytics · {dataset.meta.airlineName}
               </span>
-            </p>
+            ) : (
+              <span className="rounded bg-[var(--bg)] px-1.5 py-0.5 text-[10px] font-normal text-[var(--ink-faint)]">
+                dataset pending
+              </span>
+            )}
           </div>
+          {dataset ? (
+            <div className="rounded-xl border border-[var(--line)] bg-white p-4">
+              <DashboardShell data={dataset} />
+            </div>
+          ) : (
+            <div className="rounded-xl border border-dashed border-[var(--line)] bg-white p-8 text-center">
+              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--bg)] text-2xl">
+                📊
+              </div>
+              <h3 className="text-lg font-semibold text-[var(--ink)]">Dataset not yet vendored</h3>
+              <p className="mt-2 text-sm text-[var(--ink-soft)]">
+                Add <code>src/data-vendor/{account.iata}/latest.json</code> to enable the embedded
+                performance dashboard for this account.
+              </p>
+            </div>
+          )}
         </section>
       </main>
     </div>
