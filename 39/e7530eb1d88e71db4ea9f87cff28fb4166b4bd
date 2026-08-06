@@ -1,0 +1,37 @@
+src/data-vendor/emails/EY/emails.json
+  s_9442cae20eaecb::t_24f3f479134116 86-380
+  s_9442cae20eaecb::t_2964fda18e4d80 1-85,381-382
+src/lib/org-seed.ts
+  s_9442cae20eaecb::t_a8f52b6656a14c 49-52,54-58
+  s_9442cae20eaecb::t_1ac79791a1c419 27-35,38-42
+  s_9442cae20eaecb::t_8bfd20da478878 62
+.gitignore
+  s_9442cae20eaecb::t_c85338a580bcf1 50-53
+src/data-vendor/emails/EK/emails.json
+  s_9442cae20eaecb::t_2964fda18e4d80 1-165,1100-1101
+  s_9442cae20eaecb::t_24f3f479134116 166-1099
+scripts/graph_pull.py
+  s_9442cae20eaecb::t_9d1f09c6c03bce 1-32,34-75,81-87,90-92,102-103,107,109-242
+  s_9442cae20eaecb::t_853d0e1e034994 33
+  s_9442cae20eaecb::t_226a282cba32f0 88,93-99,101,108
+  s_9442cae20eaecb::t_1cc383df4cf289 76-80,89,100,104-106
+src/data/updates.json
+  s_9442cae20eaecb::t_24f3f479134116 183-1022
+  s_9442cae20eaecb::t_2964fda18e4d80 1-182,1023-1024
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.39-trip",
+  "base_commit_sha": "39e7530eb1d88e71db4ea9f87cff28fb4166b4bd",
+  "prompts": {},
+  "sessions": {
+    "s_9442cae20eaecb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "327e884e-5cca-46db-9fc0-a3ac34b486a2",
+        "model": "arn:aws:bedrock:us-west-2:133197901387:application-inference-profile/ypvzpmevzxdl"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
