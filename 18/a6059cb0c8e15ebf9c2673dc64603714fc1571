@@ -1,0 +1,105 @@
+src/data-vendor/IX/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/components/dashboard/DashboardShell.tsx
+  s_9442cae20eaecb::t_6318906b345fe3 18-20,23-29
+scripts/aggregate.py
+  s_9442cae20eaecb::t_943670b6658756 97-99
+src/data-vendor/EY/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/GE/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/LY/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/app/leader/account/[iata]/page.tsx
+  s_9442cae20eaecb::t_ac6a63dcb769d5 118-122,124-142,147-160
+src/data-vendor/NP/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/SA/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/WY/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/LV/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/3L/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/4Z/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/6E/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/EK/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/NE/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/F3/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/FA/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/SM/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/G9/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/E5/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/IZ/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/MS/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/OV/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/PK/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/KU/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/5Z/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/MA/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/AI/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/SG/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/SV/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/QR/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/lib/org-seed.ts
+  s_9442cae20eaecb::t_e3d7d43fb9ce18 27-44
+src/data-vendor/FZ/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/components/leader/OrgChart.tsx
+  s_9442cae20eaecb::t_c96062695c6764 8-21,23-30,32-34,40,53-63,69,75,82,84-88,91-104,106,109-112,116-139,142-152
+src/data-vendor/6H/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/J2/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/RJ/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/9P/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/A9/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/XY/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/GF/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/J9/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+src/data-vendor/KQ/latest.json
+  s_9442cae20eaecb::t_af6a74df068a9b 8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.38-trip",
+  "base_commit_sha": "18a6059cb0c8e15ebf9c2673dc64603714fc1571",
+  "prompts": {},
+  "sessions": {
+    "s_9442cae20eaecb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "327e884e-5cca-46db-9fc0-a3ac34b486a2",
+        "model": "arn:aws:bedrock:us-west-2:133197901387:application-inference-profile/ypvzpmevzxdl"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
