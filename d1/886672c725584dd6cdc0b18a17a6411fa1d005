@@ -1,0 +1,25 @@
+package.json
+  s_9442cae20eaecb::t_8545100d19fcfd 2,16
+package-lock.json
+  ai_agent 2,8,15,98-100,104-105,218-220,224,249-251,256,258,260,268-270,1046-1050,1053-1054,1057,1063-1065,1590-1592,1600-1602,1610-1612,1617-1620,1633,1649-1651,1655-1658,1674-1676,1680-1681,1696-1698,1702-1703,1714-1716,1731-1733,1737-1739,1756-1758,1770-1772,1776-1779,1808-1810,1850-1852,1857-1859,1874-1876,1880,2495-2497,2522-2524,2534-2536,2923-2925,2937-2939,3697-3699,3841-3843,4560-4562,5071-5073,5212-5214,5483-5485,5503,6451-6453,6457-6460
+.gitignore
+  s_9442cae20eaecb::t_71391b0353f497 8
+src/app/page.tsx
+  s_9442cae20eaecb::t_ab08548b3788a8 8,12,28,39,41,77,80
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.38-trip",
+  "base_commit_sha": "d1886672c725584dd6cdc0b18a17a6411fa1d005",
+  "prompts": {},
+  "sessions": {
+    "s_9442cae20eaecb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "327e884e-5cca-46db-9fc0-a3ac34b486a2",
+        "model": "arn:aws:bedrock:us-west-2:133197901387:application-inference-profile/ypvzpmevzxdl"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
