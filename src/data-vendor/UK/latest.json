@@ -1,0 +1,2216 @@
+{
+  "meta": {
+    "airlineCode": "UK",
+    "airlineName": "Vistara",
+    "reportMonth": "2024-09",
+    "startDate": "2024-09-01",
+    "endDate": "2024-09-28",
+    "generatedAt": "2026-08-06T11:33:03Z",
+    "currency": "USD",
+    "orderDateMin": "2024-06-05",
+    "orderDateMax": "2024-09-03"
+  },
+  "outbound": {
+    "months": [
+      "2025-01",
+      "2025-02",
+      "2025-03",
+      "2025-04"
+    ],
+    "byMonth": {
+      "2025-01": {
+        "kpis": {
+          "revenue": {
+            "value": 23595.0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "ondPax": {
+            "value": 66,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "atv": {
+            "value": 358.0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 358.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 31,
+              "attachRate": 30.2
+            },
+            {
+              "type": "Baggage",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 10.6
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 89.4
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 51.5
+            },
+            {
+              "label": "One way",
+              "paxShare": 40.9
+            }
+          ],
+          "productType": [
+            {
+              "product": "ECO VALUE",
+              "revenue": 19378.0
+            },
+            {
+              "product": "ECO FLEXI",
+              "revenue": 783.0
+            },
+            {
+              "product": "ECO STANDARD",
+              "revenue": 637.0
+            },
+            {
+              "product": "Economy Standard Economy",
+              "revenue": 436.0
+            },
+            {
+              "product": "ECO STANDARD,ECO LITE",
+              "revenue": 90.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "GB",
+              "country": null,
+              "revenue": 10788.0,
+              "revVly": 0.0,
+              "pax": 22,
+              "paxVly": 0.0,
+              "atv": 490.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "DE",
+              "country": null,
+              "revenue": 5485.0,
+              "revVly": 0.0,
+              "pax": 9,
+              "paxVly": 0.0,
+              "atv": 609.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "FR",
+              "country": null,
+              "revenue": 2803.0,
+              "revVly": 0.0,
+              "pax": 6,
+              "paxVly": 0.0,
+              "atv": 467.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "IN",
+              "country": null,
+              "revenue": 1946.0,
+              "revVly": 0.0,
+              "pax": 15,
+              "paxVly": 0.0,
+              "atv": 130.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "HK",
+              "country": null,
+              "revenue": 1454.0,
+              "revVly": 0.0,
+              "pax": 5,
+              "paxVly": 0.0,
+              "atv": 291.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "SG",
+              "country": null,
+              "revenue": 603.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0,
+              "atv": 201.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "MV",
+              "country": null,
+              "revenue": 207.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0,
+              "atv": 104.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "AE",
+              "country": null,
+              "revenue": 159.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0,
+              "atv": 53.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "QA",
+              "country": null,
+              "revenue": 150.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0,
+              "atv": 150.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 23595.0,
+            "revVly": 0.0,
+            "pax": 66,
+            "paxVly": 0.0,
+            "atv": 358.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "GB",
+              "revenue": 10788.0
+            },
+            {
+              "rank": 2,
+              "country": "DE",
+              "revenue": 5485.0
+            },
+            {
+              "rank": 3,
+              "country": "FR",
+              "revenue": 2803.0
+            },
+            {
+              "rank": 4,
+              "country": "IN",
+              "revenue": 1946.0
+            },
+            {
+              "rank": 5,
+              "country": "HK",
+              "revenue": 1454.0
+            },
+            {
+              "rank": 6,
+              "country": "SG",
+              "revenue": 603.0
+            },
+            {
+              "rank": 7,
+              "country": "MV",
+              "revenue": 207.0
+            },
+            {
+              "rank": 8,
+              "country": "AE",
+              "revenue": 159.0
+            },
+            {
+              "rank": 9,
+              "country": "QA",
+              "revenue": 150.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "IN",
+              "revenue": 23159.0
+            },
+            {
+              "rank": 2,
+              "country": "GB",
+              "revenue": 436.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 23595.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "IN",
+              "revenue": 23159.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "GB",
+              "revenue": 436.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "LHR-DEL",
+              "revenue": 10073.0,
+              "revVly": 0.0,
+              "pax": 21,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "FRA-BOM",
+              "revenue": 2179.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "CDG-BOM",
+              "revenue": 1610.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "FRA-UDR",
+              "revenue": 1431.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 5,
+              "ond": "FRA-DEL",
+              "revenue": 1206.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 6,
+              "ond": "HKG-DEL",
+              "revenue": 1176.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 7,
+              "ond": "DEL-COK",
+              "revenue": 783.0,
+              "revVly": 0.0,
+              "pax": 6,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 8,
+              "ond": "LHR-AMD",
+              "revenue": 715.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 9,
+              "ond": "CDG-DEL",
+              "revenue": 677.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 10,
+              "ond": "FRA-AMD",
+              "revenue": 669.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2025-02": {
+        "kpis": {
+          "revenue": {
+            "value": 16775.0,
+            "vly": 0.0,
+            "mom": -28.9
+          },
+          "ondPax": {
+            "value": 35,
+            "vly": 0.0,
+            "mom": -47.0
+          },
+          "atv": {
+            "value": 479.0,
+            "vly": 0.0,
+            "mom": 33.8
+          },
+          "premium": {
+            "value": 476.0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 494.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 238.0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 27,
+              "attachRate": 42.9
+            },
+            {
+              "type": "Baggage",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 2.9
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 97.1
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 94.3
+            },
+            {
+              "label": "Premium",
+              "paxShare": 5.7
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 74.3
+            },
+            {
+              "label": "One way",
+              "paxShare": 8.6
+            }
+          ],
+          "productType": [
+            {
+              "product": "ECO VALUE",
+              "revenue": 12648.0
+            },
+            {
+              "product": "PEY VALUE",
+              "revenue": 476.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "GB",
+              "country": null,
+              "revenue": 9432.0,
+              "revVly": 0.0,
+              "pax": 18,
+              "paxVly": 0.0,
+              "atv": 524.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "FR",
+              "country": null,
+              "revenue": 4268.0,
+              "revVly": 0.0,
+              "pax": 8,
+              "paxVly": 0.0,
+              "atv": 534.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "DE",
+              "country": null,
+              "revenue": 2184.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0,
+              "atv": 546.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "AE",
+              "country": null,
+              "revenue": 737.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0,
+              "atv": 184.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "TH",
+              "country": null,
+              "revenue": 154.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0,
+              "atv": 154.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 16775.0,
+            "revVly": 0.0,
+            "pax": 35,
+            "paxVly": 0.0,
+            "atv": 479.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "GB",
+              "revenue": 9432.0
+            },
+            {
+              "rank": 2,
+              "country": "FR",
+              "revenue": 4268.0
+            },
+            {
+              "rank": 3,
+              "country": "DE",
+              "revenue": 2184.0
+            },
+            {
+              "rank": 4,
+              "country": "AE",
+              "revenue": 737.0
+            },
+            {
+              "rank": 5,
+              "country": "TH",
+              "revenue": 154.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "IN",
+              "revenue": 16775.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 16299.0,
+              "revVly": 0.0
+            },
+            {
+              "rank": 2,
+              "rbd": "S",
+              "revenue": 476.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "IN",
+              "revenue": 16775.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "LHR-DEL",
+              "revenue": 8102.0,
+              "revVly": 0.0,
+              "pax": 16,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "CDG-DEL",
+              "revenue": 3788.0,
+              "revVly": 0.0,
+              "pax": 7,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "LHR-CCU",
+              "revenue": 1330.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "FRA-BOM",
+              "revenue": 1037.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 5,
+              "ond": "AUH-BOM",
+              "revenue": 737.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 6,
+              "ond": "FRA-DEL",
+              "revenue": 593.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 7,
+              "ond": "FRA-IXC",
+              "revenue": 554.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 8,
+              "ond": "CDG-AMD",
+              "revenue": 480.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 9,
+              "ond": "BKK-DEL",
+              "revenue": 154.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2025-03": {
+        "kpis": {
+          "revenue": {
+            "value": 533.0,
+            "vly": 0.0,
+            "mom": -96.8
+          },
+          "ondPax": {
+            "value": 1,
+            "vly": 0.0,
+            "mom": -97.1
+          },
+          "atv": {
+            "value": 533.0,
+            "vly": 0.0,
+            "mom": 11.3
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": -100.0
+          },
+          "yield": {
+            "economy": {
+              "value": 533.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 2,
+              "attachRate": 100.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 0.0
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 100.0
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 100.0
+            },
+            {
+              "label": "One way",
+              "paxShare": 0.0
+            }
+          ],
+          "productType": [
+            {
+              "product": "ECO VALUE",
+              "revenue": 533.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "DE",
+              "country": null,
+              "revenue": 533.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0,
+              "atv": 533.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 533.0,
+            "revVly": 0.0,
+            "pax": 1,
+            "paxVly": 0.0,
+            "atv": 533.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "DE",
+              "revenue": 533.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "IN",
+              "revenue": 533.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 533.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "IN",
+              "revenue": 533.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "FRA-DEL",
+              "revenue": 533.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2025-04": {
+        "kpis": {
+          "revenue": {
+            "value": 1811.0,
+            "vly": 0.0,
+            "mom": 239.8
+          },
+          "ondPax": {
+            "value": 7,
+            "vly": 0.0,
+            "mom": 600.0
+          },
+          "atv": {
+            "value": 259.0,
+            "vly": 0.0,
+            "mom": -51.4
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 259.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 1,
+              "attachRate": 25.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 14.3
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 85.7
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 28.6
+            },
+            {
+              "label": "One way",
+              "paxShare": 71.4
+            }
+          ],
+          "productType": [
+            {
+              "product": "ECO VALUE",
+              "revenue": 846.0
+            },
+            {
+              "product": "ECO STANDARD",
+              "revenue": 308.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "GB",
+              "country": null,
+              "revenue": 890.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0,
+              "atv": 445.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "DE",
+              "country": null,
+              "revenue": 613.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0,
+              "atv": 613.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "IN",
+              "country": null,
+              "revenue": 308.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0,
+              "atv": 77.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 1811.0,
+            "revVly": 0.0,
+            "pax": 7,
+            "paxVly": 0.0,
+            "atv": 259.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "GB",
+              "revenue": 890.0
+            },
+            {
+              "rank": 2,
+              "country": "DE",
+              "revenue": 613.0
+            },
+            {
+              "rank": 3,
+              "country": "IN",
+              "revenue": 308.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "IN",
+              "revenue": 1811.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 1811.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "IN",
+              "revenue": 1811.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "LHR-DEL",
+              "revenue": 890.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "FRA-CCU",
+              "revenue": 613.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "SXR-DEL",
+              "revenue": 308.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      }
+    },
+    "trendline": [
+      {
+        "month": "2025-01",
+        "revenue": 23595.0,
+        "pax": 66
+      },
+      {
+        "month": "2025-02",
+        "revenue": 16775.0,
+        "pax": 35
+      },
+      {
+        "month": "2025-03",
+        "revenue": 533.0,
+        "pax": 1
+      },
+      {
+        "month": "2025-04",
+        "revenue": 1811.0,
+        "pax": 7
+      }
+    ]
+  },
+  "order": {
+    "months": [
+      "2024-06",
+      "2024-07",
+      "2024-08",
+      "2024-09"
+    ],
+    "byMonth": {
+      "2024-06": {
+        "kpis": {
+          "revenue": {
+            "value": 1474.0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "ondPax": {
+            "value": 6,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "atv": {
+            "value": 246.0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 246.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 5,
+              "attachRate": 50.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 33.3
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 66.7
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 33.3
+            },
+            {
+              "label": "One way",
+              "paxShare": 66.7
+            }
+          ],
+          "productType": [
+            {
+              "product": "ECO VALUE",
+              "revenue": 977.0
+            },
+            {
+              "product": "ECO STANDARD",
+              "revenue": 270.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "GB",
+              "country": null,
+              "revenue": 1204.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0,
+              "atv": 401.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "IN",
+              "country": null,
+              "revenue": 270.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0,
+              "atv": 90.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 1474.0,
+            "revVly": 0.0,
+            "pax": 6,
+            "paxVly": 0.0,
+            "atv": 246.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "GB",
+              "revenue": 1204.0
+            },
+            {
+              "rank": 2,
+              "country": "IN",
+              "revenue": 270.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "IN",
+              "revenue": 1474.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 1474.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "IN",
+              "revenue": 1474.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "LHR-DEL",
+              "revenue": 1204.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "DEL-BBI",
+              "revenue": 178.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "DEL-GOI",
+              "revenue": 92.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2024-07": {
+        "kpis": {
+          "revenue": {
+            "value": 11364.0,
+            "vly": 0.0,
+            "mom": 671.0
+          },
+          "ondPax": {
+            "value": 27,
+            "vly": 0.0,
+            "mom": 350.0
+          },
+          "atv": {
+            "value": 421.0,
+            "vly": 0.0,
+            "mom": 71.1
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 421.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 19,
+              "attachRate": 41.2
+            },
+            {
+              "type": "Baggage",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 7.4
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 92.6
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 40.7
+            },
+            {
+              "label": "One way",
+              "paxShare": 44.4
+            }
+          ],
+          "productType": [
+            {
+              "product": "ECO VALUE",
+              "revenue": 9331.0
+            },
+            {
+              "product": "ECO STANDARD",
+              "revenue": 308.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "DE",
+              "country": null,
+              "revenue": 4412.0,
+              "revVly": 0.0,
+              "pax": 7,
+              "paxVly": 0.0,
+              "atv": 630.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "GB",
+              "country": null,
+              "revenue": 3258.0,
+              "revVly": 0.0,
+              "pax": 7,
+              "paxVly": 0.0,
+              "atv": 465.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "FR",
+              "country": null,
+              "revenue": 3057.0,
+              "revVly": 0.0,
+              "pax": 6,
+              "paxVly": 0.0,
+              "atv": 510.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "IN",
+              "country": null,
+              "revenue": 308.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0,
+              "atv": 77.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "SG",
+              "country": null,
+              "revenue": 276.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0,
+              "atv": 138.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "AE",
+              "country": null,
+              "revenue": 53.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0,
+              "atv": 53.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 11364.0,
+            "revVly": 0.0,
+            "pax": 27,
+            "paxVly": 0.0,
+            "atv": 421.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "DE",
+              "revenue": 4412.0
+            },
+            {
+              "rank": 2,
+              "country": "GB",
+              "revenue": 3258.0
+            },
+            {
+              "rank": 3,
+              "country": "FR",
+              "revenue": 3057.0
+            },
+            {
+              "rank": 4,
+              "country": "IN",
+              "revenue": 308.0
+            },
+            {
+              "rank": 5,
+              "country": "SG",
+              "revenue": 276.0
+            },
+            {
+              "rank": 6,
+              "country": "AE",
+              "revenue": 53.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "IN",
+              "revenue": 11364.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 11364.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "IN",
+              "revenue": 11364.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "LHR-DEL",
+              "revenue": 2543.0,
+              "revVly": 0.0,
+              "pax": 6,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "CDG-DEL",
+              "revenue": 2527.0,
+              "revVly": 0.0,
+              "pax": 5,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "FRA-UDR",
+              "revenue": 1431.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "FRA-DEL",
+              "revenue": 1180.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 5,
+              "ond": "FRA-BOM",
+              "revenue": 1132.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 6,
+              "ond": "LHR-AMD",
+              "revenue": 715.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 7,
+              "ond": "FRA-AMD",
+              "revenue": 669.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 8,
+              "ond": "CDG-BOM",
+              "revenue": 530.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 9,
+              "ond": "SXR-DEL",
+              "revenue": 308.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 10,
+              "ond": "SIN-PNQ",
+              "revenue": 276.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2024-08": {
+        "kpis": {
+          "revenue": {
+            "value": 26448.0,
+            "vly": 0.0,
+            "mom": 132.7
+          },
+          "ondPax": {
+            "value": 66,
+            "vly": 0.0,
+            "mom": 144.4
+          },
+          "atv": {
+            "value": 401.0,
+            "vly": 0.0,
+            "mom": -4.8
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 401.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 33,
+              "attachRate": 28.6
+            },
+            {
+              "type": "Baggage",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 6.1
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 93.9
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 65.2
+            },
+            {
+              "label": "One way",
+              "paxShare": 24.2
+            }
+          ],
+          "productType": [
+            {
+              "product": "ECO VALUE",
+              "revenue": 20698.0
+            },
+            {
+              "product": "ECO FLEXI",
+              "revenue": 783.0
+            },
+            {
+              "product": "Economy Standard Economy",
+              "revenue": 436.0
+            },
+            {
+              "product": "ECO STANDARD",
+              "revenue": 367.0
+            },
+            {
+              "product": "ECO STANDARD,ECO LITE",
+              "revenue": 90.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "GB",
+              "country": null,
+              "revenue": 14849.0,
+              "revVly": 0.0,
+              "pax": 28,
+              "paxVly": 0.0,
+              "atv": 530.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "FR",
+              "country": null,
+              "revenue": 4014.0,
+              "revVly": 0.0,
+              "pax": 8,
+              "paxVly": 0.0,
+              "atv": 502.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "DE",
+              "country": null,
+              "revenue": 3356.0,
+              "revVly": 0.0,
+              "pax": 6,
+              "paxVly": 0.0,
+              "atv": 559.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "IN",
+              "country": null,
+              "revenue": 1676.0,
+              "revVly": 0.0,
+              "pax": 12,
+              "paxVly": 0.0,
+              "atv": 140.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "HK",
+              "country": null,
+              "revenue": 1454.0,
+              "revVly": 0.0,
+              "pax": 5,
+              "paxVly": 0.0,
+              "atv": 291.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "SG",
+              "country": null,
+              "revenue": 327.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0,
+              "atv": 327.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "AE",
+              "country": null,
+              "revenue": 261.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0,
+              "atv": 130.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "MV",
+              "country": null,
+              "revenue": 207.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0,
+              "atv": 104.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "TH",
+              "country": null,
+              "revenue": 154.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0,
+              "atv": 154.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "QA",
+              "country": null,
+              "revenue": 150.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0,
+              "atv": 150.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 26448.0,
+            "revVly": 0.0,
+            "pax": 66,
+            "paxVly": 0.0,
+            "atv": 401.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "GB",
+              "revenue": 14849.0
+            },
+            {
+              "rank": 2,
+              "country": "FR",
+              "revenue": 4014.0
+            },
+            {
+              "rank": 3,
+              "country": "DE",
+              "revenue": 3356.0
+            },
+            {
+              "rank": 4,
+              "country": "IN",
+              "revenue": 1676.0
+            },
+            {
+              "rank": 5,
+              "country": "HK",
+              "revenue": 1454.0
+            },
+            {
+              "rank": 6,
+              "country": "SG",
+              "revenue": 327.0
+            },
+            {
+              "rank": 7,
+              "country": "AE",
+              "revenue": 261.0
+            },
+            {
+              "rank": 8,
+              "country": "MV",
+              "revenue": 207.0
+            },
+            {
+              "rank": 9,
+              "country": "TH",
+              "revenue": 154.0
+            },
+            {
+              "rank": 10,
+              "country": "QA",
+              "revenue": 150.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "IN",
+              "revenue": 26012.0
+            },
+            {
+              "rank": 2,
+              "country": "GB",
+              "revenue": 436.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 26448.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "IN",
+              "revenue": 26012.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "GB",
+              "revenue": 436.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "LHR-DEL",
+              "revenue": 13519.0,
+              "revVly": 0.0,
+              "pax": 26,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "CDG-DEL",
+              "revenue": 1938.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "LHR-CCU",
+              "revenue": 1330.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "HKG-DEL",
+              "revenue": 1176.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 5,
+              "ond": "FRA-DEL",
+              "revenue": 1152.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 6,
+              "ond": "CDG-BOM",
+              "revenue": 1080.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 7,
+              "ond": "FRA-BOM",
+              "revenue": 1037.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 8,
+              "ond": "CDG-AMD",
+              "revenue": 996.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 9,
+              "ond": "DEL-COK",
+              "revenue": 783.0,
+              "revVly": 0.0,
+              "pax": 6,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 10,
+              "ond": "FRA-CCU",
+              "revenue": 613.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2024-09": {
+        "kpis": {
+          "revenue": {
+            "value": 3428.0,
+            "vly": 0.0,
+            "mom": -87.0
+          },
+          "ondPax": {
+            "value": 10,
+            "vly": 0.0,
+            "mom": -84.8
+          },
+          "atv": {
+            "value": 343.0,
+            "vly": 0.0,
+            "mom": -14.5
+          },
+          "premium": {
+            "value": 476.0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 369.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 238.0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 4,
+              "attachRate": 50.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 10.0
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 90.0
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 80.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 20.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 70.0
+            },
+            {
+              "label": "One way",
+              "paxShare": 30.0
+            }
+          ],
+          "productType": [
+            {
+              "product": "ECO VALUE",
+              "revenue": 2399.0
+            },
+            {
+              "product": "PEY VALUE",
+              "revenue": 476.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "GB",
+              "country": null,
+              "revenue": 1799.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0,
+              "atv": 450.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "DE",
+              "country": null,
+              "revenue": 1047.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0,
+              "atv": 524.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "AE",
+              "country": null,
+              "revenue": 582.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0,
+              "atv": 146.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 3428.0,
+            "revVly": 0.0,
+            "pax": 10,
+            "paxVly": 0.0,
+            "atv": 343.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "GB",
+              "revenue": 1799.0
+            },
+            {
+              "rank": 2,
+              "country": "DE",
+              "revenue": 1047.0
+            },
+            {
+              "rank": 3,
+              "country": "AE",
+              "revenue": 582.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "IN",
+              "revenue": 3428.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 2952.0,
+              "revVly": 0.0
+            },
+            {
+              "rank": 2,
+              "rbd": "S",
+              "revenue": 476.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "IN",
+              "revenue": 3428.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "LHR-DEL",
+              "revenue": 1799.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "FRA-BOM",
+              "revenue": 1047.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "AUH-BOM",
+              "revenue": 582.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      }
+    },
+    "trendline": [
+      {
+        "month": "2024-06",
+        "revenue": 1474.0,
+        "pax": 6
+      },
+      {
+        "month": "2024-07",
+        "revenue": 11364.0,
+        "pax": 27
+      },
+      {
+        "month": "2024-08",
+        "revenue": 26448.0,
+        "pax": 66
+      },
+      {
+        "month": "2024-09",
+        "revenue": 3428.0,
+        "pax": 10
+      }
+    ]
+  }
+}

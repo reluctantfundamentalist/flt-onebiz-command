@@ -1,0 +1,5354 @@
+{
+  "meta": {
+    "airlineCode": "GE",
+    "airlineName": "Grand International",
+    "reportMonth": "2026-08",
+    "startDate": "2026-08-01",
+    "endDate": "2026-08-28",
+    "generatedAt": "2026-08-06T11:32:40Z",
+    "currency": "USD",
+    "orderDateMin": "2025-08-13",
+    "orderDateMax": "2026-08-05"
+  },
+  "outbound": {
+    "months": [
+      "2025-08",
+      "2025-09",
+      "2025-10",
+      "2025-11",
+      "2025-12",
+      "2026-01",
+      "2026-02",
+      "2026-03",
+      "2026-04",
+      "2026-05",
+      "2026-06",
+      "2026-07",
+      "2026-08",
+      "2026-09"
+    ],
+    "byMonth": {
+      "2025-08": {
+        "kpis": {
+          "revenue": {
+            "value": 2681.0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "ondPax": {
+            "value": 28,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "atv": {
+            "value": 96.0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 96.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 2,
+              "attachRate": 7.7
+            },
+            {
+              "type": "Baggage",
+              "segments": 1,
+              "attachRate": 7.7
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 25.0
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 75.0
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 0.0
+            },
+            {
+              "label": "One way",
+              "paxShare": 100.0
+            }
+          ],
+          "productType": [
+            {
+              "product": "Economy - Bag",
+              "revenue": 1782.0
+            },
+            {
+              "product": "Economy - No Bag",
+              "revenue": 899.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 2681.0,
+              "revVly": 0.0,
+              "pax": 28,
+              "paxVly": 0.0,
+              "atv": 96.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 2681.0,
+            "revVly": 0.0,
+            "pax": 28,
+            "paxVly": 0.0,
+            "atv": 96.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 2681.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 2681.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 2681.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 2681.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "CPT-JNB",
+              "revenue": 1807.0,
+              "revVly": 0.0,
+              "pax": 13,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "JNB-CPT",
+              "revenue": 645.0,
+              "revVly": 0.0,
+              "pax": 11,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "DUR-JNB",
+              "revenue": 125.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "DUR-CPT",
+              "revenue": 104.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2025-09": {
+        "kpis": {
+          "revenue": {
+            "value": 3988.0,
+            "vly": 0.0,
+            "mom": 48.8
+          },
+          "ondPax": {
+            "value": 58,
+            "vly": 0.0,
+            "mom": 107.1
+          },
+          "atv": {
+            "value": 69.0,
+            "vly": 0.0,
+            "mom": -28.1
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 69.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 1,
+              "attachRate": 3.2
+            },
+            {
+              "type": "Baggage",
+              "segments": 9,
+              "attachRate": 22.6
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 29.3
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 70.7
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 3.4
+            },
+            {
+              "label": "One way",
+              "paxShare": 96.6
+            }
+          ],
+          "productType": [
+            {
+              "product": "Economy - No Bag",
+              "revenue": 2906.0
+            },
+            {
+              "product": "Economy - Bag",
+              "revenue": 1082.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 3988.0,
+              "revVly": 0.0,
+              "pax": 58,
+              "paxVly": 0.0,
+              "atv": 69.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 3988.0,
+            "revVly": 0.0,
+            "pax": 58,
+            "paxVly": 0.0,
+            "atv": 69.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 3988.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 3988.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 3988.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 3988.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "JNB-CPT",
+              "revenue": 2595.0,
+              "revVly": 0.0,
+              "pax": 41,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "CPT-JNB",
+              "revenue": 1121.0,
+              "revVly": 0.0,
+              "pax": 13,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "DUR-CPT",
+              "revenue": 202.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "DUR-JNB",
+              "revenue": 44.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 5,
+              "ond": "JNB-DUR",
+              "revenue": 26.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2025-10": {
+        "kpis": {
+          "revenue": {
+            "value": 5529.0,
+            "vly": 0.0,
+            "mom": 38.6
+          },
+          "ondPax": {
+            "value": 44,
+            "vly": 0.0,
+            "mom": -24.1
+          },
+          "atv": {
+            "value": 126.0,
+            "vly": 0.0,
+            "mom": 82.6
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 126.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 10,
+              "attachRate": 17.9
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 43.2
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 56.8
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 9.1
+            },
+            {
+              "label": "One way",
+              "paxShare": 90.9
+            }
+          ],
+          "productType": [
+            {
+              "product": "Economy - No Bag",
+              "revenue": 3300.0
+            },
+            {
+              "product": "Economy - Bag",
+              "revenue": 1674.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 5529.0,
+              "revVly": 0.0,
+              "pax": 44,
+              "paxVly": 0.0,
+              "atv": 126.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 5529.0,
+            "revVly": 0.0,
+            "pax": 44,
+            "paxVly": 0.0,
+            "atv": 126.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 5529.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 5529.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 5529.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 5529.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "CPT-JNB",
+              "revenue": 2476.0,
+              "revVly": 0.0,
+              "pax": 18,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "JNB-CPT",
+              "revenue": 2279.0,
+              "revVly": 0.0,
+              "pax": 13,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "CPT-DUR",
+              "revenue": 470.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "DUR-JNB",
+              "revenue": 136.0,
+              "revVly": 0.0,
+              "pax": 6,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 5,
+              "ond": "JNB-DUR",
+              "revenue": 91.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 6,
+              "ond": "DUR-CPT",
+              "revenue": 77.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2025-11": {
+        "kpis": {
+          "revenue": {
+            "value": 4830.0,
+            "vly": 0.0,
+            "mom": -12.6
+          },
+          "ondPax": {
+            "value": 36,
+            "vly": 0.0,
+            "mom": -18.2
+          },
+          "atv": {
+            "value": 134.0,
+            "vly": 0.0,
+            "mom": 6.3
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 134.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 8,
+              "attachRate": 10.5
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 36.1
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 63.9
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 8.3
+            },
+            {
+              "label": "One way",
+              "paxShare": 91.7
+            }
+          ],
+          "productType": [
+            {
+              "product": "Economy - No Bag",
+              "revenue": 3650.0
+            },
+            {
+              "product": "Economy - Bag",
+              "revenue": 1180.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 4830.0,
+              "revVly": 0.0,
+              "pax": 36,
+              "paxVly": 0.0,
+              "atv": 134.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 4830.0,
+            "revVly": 0.0,
+            "pax": 36,
+            "paxVly": 0.0,
+            "atv": 134.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 4830.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 4830.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 4830.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 4830.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "JNB-CPT",
+              "revenue": 1700.0,
+              "revVly": 0.0,
+              "pax": 14,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "DUR-JNB",
+              "revenue": 1159.0,
+              "revVly": 0.0,
+              "pax": 6,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "CPT-JNB",
+              "revenue": 747.0,
+              "revVly": 0.0,
+              "pax": 6,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "CPT-DUR",
+              "revenue": 711.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 5,
+              "ond": "DUR-CPT",
+              "revenue": 334.0,
+              "revVly": 0.0,
+              "pax": 5,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 6,
+              "ond": "JNB-DUR",
+              "revenue": 179.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2025-12": {
+        "kpis": {
+          "revenue": {
+            "value": 3666.0,
+            "vly": 0.0,
+            "mom": -24.1
+          },
+          "ondPax": {
+            "value": 27,
+            "vly": 0.0,
+            "mom": -25.0
+          },
+          "atv": {
+            "value": 136.0,
+            "vly": 0.0,
+            "mom": 1.5
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 136.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 1,
+              "attachRate": 7.7
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 14.8
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 85.2
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 11.1
+            },
+            {
+              "label": "One way",
+              "paxShare": 88.9
+            }
+          ],
+          "productType": [
+            {
+              "product": "Economy - No Bag",
+              "revenue": 3326.0
+            },
+            {
+              "product": "Economy - Bag",
+              "revenue": 340.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 3666.0,
+              "revVly": 0.0,
+              "pax": 27,
+              "paxVly": 0.0,
+              "atv": 136.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 3666.0,
+            "revVly": 0.0,
+            "pax": 27,
+            "paxVly": 0.0,
+            "atv": 136.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 3666.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 3666.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 3666.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 3666.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "JNB-CPT",
+              "revenue": 2648.0,
+              "revVly": 0.0,
+              "pax": 14,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "CPT-JNB",
+              "revenue": 693.0,
+              "revVly": 0.0,
+              "pax": 10,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "DUR-CPT",
+              "revenue": 261.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "JNB-DUR",
+              "revenue": 64.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2026-01": {
+        "kpis": {
+          "revenue": {
+            "value": 3444.0,
+            "vly": 0.0,
+            "mom": -6.1
+          },
+          "ondPax": {
+            "value": 33,
+            "vly": 0.0,
+            "mom": 22.2
+          },
+          "atv": {
+            "value": 104.0,
+            "vly": 0.0,
+            "mom": -23.5
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 104.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 11,
+              "attachRate": 33.3
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 18.2
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 81.8
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 0.0
+            },
+            {
+              "label": "One way",
+              "paxShare": 100.0
+            }
+          ],
+          "productType": [
+            {
+              "product": "Economy - No Bag",
+              "revenue": 2106.0
+            },
+            {
+              "product": "Economy - Bag",
+              "revenue": 853.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 3444.0,
+              "revVly": 0.0,
+              "pax": 33,
+              "paxVly": 0.0,
+              "atv": 104.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 3444.0,
+            "revVly": 0.0,
+            "pax": 33,
+            "paxVly": 0.0,
+            "atv": 104.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 3444.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 3444.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 3444.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 3444.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "CPT-JNB",
+              "revenue": 2708.0,
+              "revVly": 0.0,
+              "pax": 19,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "JNB-CPT",
+              "revenue": 492.0,
+              "revVly": 0.0,
+              "pax": 7,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "DUR-JNB",
+              "revenue": 133.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "JNB-DUR",
+              "revenue": 111.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2026-02": {
+        "kpis": {
+          "revenue": {
+            "value": 946.0,
+            "vly": 0.0,
+            "mom": -72.5
+          },
+          "ondPax": {
+            "value": 15,
+            "vly": 0.0,
+            "mom": -54.5
+          },
+          "atv": {
+            "value": 63.0,
+            "vly": 0.0,
+            "mom": -39.4
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 63.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 3,
+              "attachRate": 27.3
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 46.7
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 53.3
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 6.7
+            },
+            {
+              "label": "One way",
+              "paxShare": 93.3
+            }
+          ],
+          "productType": [
+            {
+              "product": "Economy - No Bag",
+              "revenue": 946.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 946.0,
+              "revVly": 0.0,
+              "pax": 15,
+              "paxVly": 0.0,
+              "atv": 63.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 946.0,
+            "revVly": 0.0,
+            "pax": 15,
+            "paxVly": 0.0,
+            "atv": 63.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 946.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 946.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 946.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 946.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "JNB-CPT",
+              "revenue": 293.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "CPT-DUR",
+              "revenue": 272.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "CPT-JNB",
+              "revenue": 205.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "DUR-CPT",
+              "revenue": 115.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 5,
+              "ond": "JNB-DUR",
+              "revenue": 61.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2026-03": {
+        "kpis": {
+          "revenue": {
+            "value": 5109.0,
+            "vly": 0.0,
+            "mom": 440.1
+          },
+          "ondPax": {
+            "value": 43,
+            "vly": 0.0,
+            "mom": 186.7
+          },
+          "atv": {
+            "value": 119.0,
+            "vly": 0.0,
+            "mom": 88.9
+          },
+          "premium": {
+            "value": 578.0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 108.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 578.0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 3,
+              "attachRate": 13.6
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 20.9
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 79.1
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 97.7
+            },
+            {
+              "label": "Premium",
+              "paxShare": 2.3
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 25.6
+            },
+            {
+              "label": "One way",
+              "paxShare": 74.4
+            }
+          ],
+          "productType": [
+            {
+              "product": "Economy - No Bag",
+              "revenue": 4531.0
+            },
+            {
+              "product": "Premium",
+              "revenue": 578.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 5109.0,
+              "revVly": 0.0,
+              "pax": 43,
+              "paxVly": 0.0,
+              "atv": 119.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 5109.0,
+            "revVly": 0.0,
+            "pax": 43,
+            "paxVly": 0.0,
+            "atv": 119.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 5109.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 5109.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 4531.0,
+              "revVly": 0.0
+            },
+            {
+              "rank": 2,
+              "rbd": "C",
+              "revenue": 578.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 5109.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "CPT-JNB",
+              "revenue": 3049.0,
+              "revVly": 0.0,
+              "pax": 21,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "JNB-CPT",
+              "revenue": 1420.0,
+              "revVly": 0.0,
+              "pax": 9,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "CPT-DUR",
+              "revenue": 289.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "JNB-DUR",
+              "revenue": 146.0,
+              "revVly": 0.0,
+              "pax": 6,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 5,
+              "ond": "DUR-JNB",
+              "revenue": 107.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 6,
+              "ond": "DUR-CPT",
+              "revenue": 98.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2026-04": {
+        "kpis": {
+          "revenue": {
+            "value": 1939.0,
+            "vly": 0.0,
+            "mom": -62.0
+          },
+          "ondPax": {
+            "value": 12,
+            "vly": 0.0,
+            "mom": -72.1
+          },
+          "atv": {
+            "value": 162.0,
+            "vly": 0.0,
+            "mom": 36.1
+          },
+          "premium": {
+            "value": 635.0,
+            "vly": 0.0,
+            "mom": 9.9
+          },
+          "yield": {
+            "economy": {
+              "value": 119.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 635.0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 2,
+              "attachRate": 22.2
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 50.0
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 50.0
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 91.7
+            },
+            {
+              "label": "Premium",
+              "paxShare": 8.3
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 8.3
+            },
+            {
+              "label": "One way",
+              "paxShare": 91.7
+            }
+          ],
+          "productType": [
+            {
+              "product": "Economy - No Bag",
+              "revenue": 1304.0
+            },
+            {
+              "product": "Premium",
+              "revenue": 635.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 1939.0,
+              "revVly": 0.0,
+              "pax": 12,
+              "paxVly": 0.0,
+              "atv": 162.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 1939.0,
+            "revVly": 0.0,
+            "pax": 12,
+            "paxVly": 0.0,
+            "atv": 162.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 1939.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 1939.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 1304.0,
+              "revVly": 0.0
+            },
+            {
+              "rank": 2,
+              "rbd": "C",
+              "revenue": 635.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 1939.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "JNB-CPT",
+              "revenue": 974.0,
+              "revVly": 0.0,
+              "pax": 7,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "CPT-JNB",
+              "revenue": 801.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "DUR-JNB",
+              "revenue": 83.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "CPT-DUR",
+              "revenue": 81.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2026-05": {
+        "kpis": {
+          "revenue": {
+            "value": 5464.0,
+            "vly": 0.0,
+            "mom": 181.8
+          },
+          "ondPax": {
+            "value": 28,
+            "vly": 0.0,
+            "mom": 133.3
+          },
+          "atv": {
+            "value": 195.0,
+            "vly": 0.0,
+            "mom": 20.4
+          },
+          "premium": {
+            "value": 3687.0,
+            "vly": 0.0,
+            "mom": 480.6
+          },
+          "yield": {
+            "economy": {
+              "value": 99.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 369.0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 8,
+              "attachRate": 20.0
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 17.9
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 82.1
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 64.3
+            },
+            {
+              "label": "Premium",
+              "paxShare": 35.7
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 14.3
+            },
+            {
+              "label": "One way",
+              "paxShare": 85.7
+            }
+          ],
+          "productType": [
+            {
+              "product": "Premium",
+              "revenue": 3687.0
+            },
+            {
+              "product": "Economy - No Bag",
+              "revenue": 1200.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 5464.0,
+              "revVly": 0.0,
+              "pax": 28,
+              "paxVly": 0.0,
+              "atv": 195.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 5464.0,
+            "revVly": 0.0,
+            "pax": 28,
+            "paxVly": 0.0,
+            "atv": 195.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 5464.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 5464.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "C",
+              "revenue": 3687.0,
+              "revVly": 0.0
+            },
+            {
+              "rank": 2,
+              "rbd": "Y",
+              "revenue": 1777.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 5464.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "CPT-JNB",
+              "revenue": 2483.0,
+              "revVly": 0.0,
+              "pax": 8,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "JNB-CPT",
+              "revenue": 1646.0,
+              "revVly": 0.0,
+              "pax": 6,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "JNB-DUR",
+              "revenue": 542.0,
+              "revVly": 0.0,
+              "pax": 7,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "DUR-CPT",
+              "revenue": 486.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 5,
+              "ond": "CPT-DUR",
+              "revenue": 217.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 6,
+              "ond": "DUR-JNB",
+              "revenue": 90.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2026-06": {
+        "kpis": {
+          "revenue": {
+            "value": 2089.0,
+            "vly": 0.0,
+            "mom": -61.8
+          },
+          "ondPax": {
+            "value": 25,
+            "vly": 0.0,
+            "mom": -10.7
+          },
+          "atv": {
+            "value": 84.0,
+            "vly": 0.0,
+            "mom": -56.9
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": -100.0
+          },
+          "yield": {
+            "economy": {
+              "value": 84.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 3,
+              "attachRate": 10.5
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 48.0
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 52.0
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 8.0
+            },
+            {
+              "label": "One way",
+              "paxShare": 92.0
+            }
+          ],
+          "productType": [
+            {
+              "product": "Economy - No Bag",
+              "revenue": 1964.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 2089.0,
+              "revVly": 0.0,
+              "pax": 25,
+              "paxVly": 0.0,
+              "atv": 84.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 2089.0,
+            "revVly": 0.0,
+            "pax": 25,
+            "paxVly": 0.0,
+            "atv": 84.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 2089.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 2089.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 2089.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 2089.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "CPT-JNB",
+              "revenue": 840.0,
+              "revVly": 0.0,
+              "pax": 8,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "JNB-CPT",
+              "revenue": 591.0,
+              "revVly": 0.0,
+              "pax": 6,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "DUR-JNB",
+              "revenue": 249.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "JNB-DUR",
+              "revenue": 227.0,
+              "revVly": 0.0,
+              "pax": 5,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 5,
+              "ond": "DUR-CPT",
+              "revenue": 182.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2026-07": {
+        "kpis": {
+          "revenue": {
+            "value": 2323.0,
+            "vly": 0.0,
+            "mom": 11.2
+          },
+          "ondPax": {
+            "value": 23,
+            "vly": 0.0,
+            "mom": -8.0
+          },
+          "atv": {
+            "value": 101.0,
+            "vly": 0.0,
+            "mom": 20.2
+          },
+          "premium": {
+            "value": 314.0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 91.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 314.0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 2,
+              "attachRate": 10.5
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 56.5
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 43.5
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 95.7
+            },
+            {
+              "label": "Premium",
+              "paxShare": 4.3
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 17.4
+            },
+            {
+              "label": "One way",
+              "paxShare": 82.6
+            }
+          ],
+          "productType": [
+            {
+              "product": "Economy - No Bag",
+              "revenue": 2009.0
+            },
+            {
+              "product": "Premium",
+              "revenue": 314.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 2323.0,
+              "revVly": 0.0,
+              "pax": 23,
+              "paxVly": 0.0,
+              "atv": 101.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 2323.0,
+            "revVly": 0.0,
+            "pax": 23,
+            "paxVly": 0.0,
+            "atv": 101.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 2323.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 2323.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 2009.0,
+              "revVly": 0.0
+            },
+            {
+              "rank": 2,
+              "rbd": "C",
+              "revenue": 314.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 2323.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "JNB-CPT",
+              "revenue": 800.0,
+              "revVly": 0.0,
+              "pax": 7,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "DUR-CPT",
+              "revenue": 716.0,
+              "revVly": 0.0,
+              "pax": 5,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "CPT-JNB",
+              "revenue": 479.0,
+              "revVly": 0.0,
+              "pax": 6,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "DUR-JNB",
+              "revenue": 211.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 5,
+              "ond": "JNB-DUR",
+              "revenue": 117.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2026-08": {
+        "kpis": {
+          "revenue": {
+            "value": 140.0,
+            "vly": -94.8,
+            "mom": -94.0
+          },
+          "ondPax": {
+            "value": 3,
+            "vly": -89.3,
+            "mom": -87.0
+          },
+          "atv": {
+            "value": 47.0,
+            "vly": -51.0,
+            "mom": -53.5
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": -100.0
+          },
+          "yield": {
+            "economy": {
+              "value": 47.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 0.0
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 0.0
+            },
+            {
+              "label": "One way",
+              "paxShare": 100.0
+            }
+          ],
+          "productType": [
+            {
+              "product": "Economy - No Bag",
+              "revenue": 140.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 140.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0,
+              "atv": 47.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 140.0,
+            "revVly": 0.0,
+            "pax": 3,
+            "paxVly": 0.0,
+            "atv": 47.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 140.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 140.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 140.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 140.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "CPT-DUR",
+              "revenue": 68.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "CPT-JNB",
+              "revenue": 46.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "JNB-DUR",
+              "revenue": 26.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2026-09": {
+        "kpis": {
+          "revenue": {
+            "value": 300.0,
+            "vly": -92.5,
+            "mom": 114.3
+          },
+          "ondPax": {
+            "value": 1,
+            "vly": -98.3,
+            "mom": -66.7
+          },
+          "atv": {
+            "value": 300.0,
+            "vly": 334.8,
+            "mom": 538.3
+          },
+          "premium": {
+            "value": 300.0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 300.0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 1,
+              "attachRate": 100.0
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 0.0
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 0.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 100.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 0.0
+            },
+            {
+              "label": "One way",
+              "paxShare": 100.0
+            }
+          ],
+          "productType": [
+            {
+              "product": "Premium",
+              "revenue": 300.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 300.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0,
+              "atv": 300.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 300.0,
+            "revVly": 0.0,
+            "pax": 1,
+            "paxVly": 0.0,
+            "atv": 300.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 300.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 300.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "C",
+              "revenue": 300.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 300.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "CPT-JNB",
+              "revenue": 300.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      }
+    },
+    "trendline": [
+      {
+        "month": "2025-08",
+        "revenue": 2681.0,
+        "pax": 28
+      },
+      {
+        "month": "2025-09",
+        "revenue": 3988.0,
+        "pax": 58
+      },
+      {
+        "month": "2025-10",
+        "revenue": 5529.0,
+        "pax": 44
+      },
+      {
+        "month": "2025-11",
+        "revenue": 4830.0,
+        "pax": 36
+      },
+      {
+        "month": "2025-12",
+        "revenue": 3666.0,
+        "pax": 27
+      },
+      {
+        "month": "2026-01",
+        "revenue": 3444.0,
+        "pax": 33
+      },
+      {
+        "month": "2026-02",
+        "revenue": 946.0,
+        "pax": 15
+      },
+      {
+        "month": "2026-03",
+        "revenue": 5109.0,
+        "pax": 43
+      },
+      {
+        "month": "2026-04",
+        "revenue": 1939.0,
+        "pax": 12
+      },
+      {
+        "month": "2026-05",
+        "revenue": 5464.0,
+        "pax": 28
+      },
+      {
+        "month": "2026-06",
+        "revenue": 2089.0,
+        "pax": 25
+      },
+      {
+        "month": "2026-07",
+        "revenue": 2323.0,
+        "pax": 23
+      },
+      {
+        "month": "2026-08",
+        "revenue": 140.0,
+        "pax": 3
+      },
+      {
+        "month": "2026-09",
+        "revenue": 300.0,
+        "pax": 1
+      }
+    ]
+  },
+  "order": {
+    "months": [
+      "2025-08",
+      "2025-09",
+      "2025-10",
+      "2025-11",
+      "2025-12",
+      "2026-01",
+      "2026-02",
+      "2026-03",
+      "2026-04",
+      "2026-05",
+      "2026-06",
+      "2026-07",
+      "2026-08"
+    ],
+    "byMonth": {
+      "2025-08": {
+        "kpis": {
+          "revenue": {
+            "value": 2935.0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "ondPax": {
+            "value": 31,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "atv": {
+            "value": 95.0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 95.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 2,
+              "attachRate": 6.7
+            },
+            {
+              "type": "Baggage",
+              "segments": 1,
+              "attachRate": 6.7
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 25.8
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 74.2
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 6.5
+            },
+            {
+              "label": "One way",
+              "paxShare": 93.5
+            }
+          ],
+          "productType": [
+            {
+              "product": "Economy - Bag",
+              "revenue": 1961.0
+            },
+            {
+              "product": "Economy - No Bag",
+              "revenue": 974.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 2935.0,
+              "revVly": 0.0,
+              "pax": 31,
+              "paxVly": 0.0,
+              "atv": 95.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 2935.0,
+            "revVly": 0.0,
+            "pax": 31,
+            "paxVly": 0.0,
+            "atv": 95.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 2935.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 2935.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 2935.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 2935.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "CPT-JNB",
+              "revenue": 1807.0,
+              "revVly": 0.0,
+              "pax": 13,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "JNB-CPT",
+              "revenue": 720.0,
+              "revVly": 0.0,
+              "pax": 12,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "JNB-DUR",
+              "revenue": 179.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "DUR-JNB",
+              "revenue": 125.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 5,
+              "ond": "DUR-CPT",
+              "revenue": 104.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2025-09": {
+        "kpis": {
+          "revenue": {
+            "value": 4632.0,
+            "vly": 0.0,
+            "mom": 57.8
+          },
+          "ondPax": {
+            "value": 61,
+            "vly": 0.0,
+            "mom": 96.8
+          },
+          "atv": {
+            "value": 76.0,
+            "vly": 0.0,
+            "mom": -20.0
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 76.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 1,
+              "attachRate": 3.2
+            },
+            {
+              "type": "Baggage",
+              "segments": 9,
+              "attachRate": 22.6
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 26.2
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 73.8
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 9.8
+            },
+            {
+              "label": "One way",
+              "paxShare": 90.2
+            }
+          ],
+          "productType": [
+            {
+              "product": "Economy - No Bag",
+              "revenue": 3550.0
+            },
+            {
+              "product": "Economy - Bag",
+              "revenue": 1082.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 4632.0,
+              "revVly": 0.0,
+              "pax": 61,
+              "paxVly": 0.0,
+              "atv": 76.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 4632.0,
+            "revVly": 0.0,
+            "pax": 61,
+            "paxVly": 0.0,
+            "atv": 76.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 4632.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 4632.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 4632.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 4632.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "JNB-CPT",
+              "revenue": 3239.0,
+              "revVly": 0.0,
+              "pax": 44,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "CPT-JNB",
+              "revenue": 1121.0,
+              "revVly": 0.0,
+              "pax": 13,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "DUR-CPT",
+              "revenue": 202.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "DUR-JNB",
+              "revenue": 44.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 5,
+              "ond": "JNB-DUR",
+              "revenue": 26.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2025-10": {
+        "kpis": {
+          "revenue": {
+            "value": 5308.0,
+            "vly": 0.0,
+            "mom": 14.6
+          },
+          "ondPax": {
+            "value": 42,
+            "vly": 0.0,
+            "mom": -31.1
+          },
+          "atv": {
+            "value": 126.0,
+            "vly": 0.0,
+            "mom": 65.8
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 126.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 10,
+              "attachRate": 17.2
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 47.6
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 52.4
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 2.4
+            },
+            {
+              "label": "One way",
+              "paxShare": 97.6
+            }
+          ],
+          "productType": [
+            {
+              "product": "Economy - No Bag",
+              "revenue": 3079.0
+            },
+            {
+              "product": "Economy - Bag",
+              "revenue": 1674.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 5308.0,
+              "revVly": 0.0,
+              "pax": 42,
+              "paxVly": 0.0,
+              "atv": 126.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 5308.0,
+            "revVly": 0.0,
+            "pax": 42,
+            "paxVly": 0.0,
+            "atv": 126.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 5308.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 5308.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 5308.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 5308.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "CPT-JNB",
+              "revenue": 2476.0,
+              "revVly": 0.0,
+              "pax": 18,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "JNB-CPT",
+              "revenue": 1560.0,
+              "revVly": 0.0,
+              "pax": 9,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "CPT-DUR",
+              "revenue": 968.0,
+              "revVly": 0.0,
+              "pax": 5,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "DUR-JNB",
+              "revenue": 136.0,
+              "revVly": 0.0,
+              "pax": 6,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 5,
+              "ond": "JNB-DUR",
+              "revenue": 91.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 6,
+              "ond": "DUR-CPT",
+              "revenue": 77.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2025-11": {
+        "kpis": {
+          "revenue": {
+            "value": 5428.0,
+            "vly": 0.0,
+            "mom": 2.3
+          },
+          "ondPax": {
+            "value": 39,
+            "vly": 0.0,
+            "mom": -7.1
+          },
+          "atv": {
+            "value": 139.0,
+            "vly": 0.0,
+            "mom": 10.3
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 139.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 10,
+              "attachRate": 15.0
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 35.9
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 64.1
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 2.6
+            },
+            {
+              "label": "One way",
+              "paxShare": 97.4
+            }
+          ],
+          "productType": [
+            {
+              "product": "Economy - No Bag",
+              "revenue": 3363.0
+            },
+            {
+              "product": "Economy - Bag",
+              "revenue": 2065.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 5428.0,
+              "revVly": 0.0,
+              "pax": 39,
+              "paxVly": 0.0,
+              "atv": 139.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 5428.0,
+            "revVly": 0.0,
+            "pax": 39,
+            "paxVly": 0.0,
+            "atv": 139.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 5428.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 5428.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 5428.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 5428.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "JNB-CPT",
+              "revenue": 2122.0,
+              "revVly": 0.0,
+              "pax": 17,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "CPT-JNB",
+              "revenue": 1600.0,
+              "revVly": 0.0,
+              "pax": 10,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "DUR-JNB",
+              "revenue": 1159.0,
+              "revVly": 0.0,
+              "pax": 6,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "DUR-CPT",
+              "revenue": 334.0,
+              "revVly": 0.0,
+              "pax": 5,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 5,
+              "ond": "CPT-DUR",
+              "revenue": 213.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2025-12": {
+        "kpis": {
+          "revenue": {
+            "value": 4508.0,
+            "vly": 0.0,
+            "mom": -16.9
+          },
+          "ondPax": {
+            "value": 33,
+            "vly": 0.0,
+            "mom": -15.4
+          },
+          "atv": {
+            "value": 137.0,
+            "vly": 0.0,
+            "mom": -1.4
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 137.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 8,
+              "attachRate": 23.1
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 9.1
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 90.9
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 6.1
+            },
+            {
+              "label": "One way",
+              "paxShare": 93.9
+            }
+          ],
+          "productType": [
+            {
+              "product": "Economy - No Bag",
+              "revenue": 4379.0
+            },
+            {
+              "product": "Economy - Bag",
+              "revenue": 129.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 4508.0,
+              "revVly": 0.0,
+              "pax": 33,
+              "paxVly": 0.0,
+              "atv": 137.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 4508.0,
+            "revVly": 0.0,
+            "pax": 33,
+            "paxVly": 0.0,
+            "atv": 137.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 4508.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 4508.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 4508.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 4508.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "JNB-CPT",
+              "revenue": 2496.0,
+              "revVly": 0.0,
+              "pax": 15,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "CPT-JNB",
+              "revenue": 1687.0,
+              "revVly": 0.0,
+              "pax": 15,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "DUR-CPT",
+              "revenue": 261.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "JNB-DUR",
+              "revenue": 64.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2026-01": {
+        "kpis": {
+          "revenue": {
+            "value": 1567.0,
+            "vly": 0.0,
+            "mom": -65.2
+          },
+          "ondPax": {
+            "value": 24,
+            "vly": 0.0,
+            "mom": -27.3
+          },
+          "atv": {
+            "value": 65.0,
+            "vly": 0.0,
+            "mom": -52.6
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 65.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 2,
+              "attachRate": 14.3
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 29.2
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 70.8
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 0.0
+            },
+            {
+              "label": "One way",
+              "paxShare": 100.0
+            }
+          ],
+          "productType": [
+            {
+              "product": "Economy - No Bag",
+              "revenue": 1082.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 1567.0,
+              "revVly": 0.0,
+              "pax": 24,
+              "paxVly": 0.0,
+              "atv": 65.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 1567.0,
+            "revVly": 0.0,
+            "pax": 24,
+            "paxVly": 0.0,
+            "atv": 65.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 1567.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 1567.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 1567.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 1567.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "CPT-JNB",
+              "revenue": 861.0,
+              "revVly": 0.0,
+              "pax": 10,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "JNB-CPT",
+              "revenue": 288.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "CPT-DUR",
+              "revenue": 174.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "DUR-JNB",
+              "revenue": 133.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 5,
+              "ond": "JNB-DUR",
+              "revenue": 111.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2026-02": {
+        "kpis": {
+          "revenue": {
+            "value": 1132.0,
+            "vly": 0.0,
+            "mom": -27.8
+          },
+          "ondPax": {
+            "value": 14,
+            "vly": 0.0,
+            "mom": -41.7
+          },
+          "atv": {
+            "value": 81.0,
+            "vly": 0.0,
+            "mom": 24.6
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 81.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 4,
+              "attachRate": 40.0
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 42.9
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 57.1
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 21.4
+            },
+            {
+              "label": "One way",
+              "paxShare": 78.6
+            }
+          ],
+          "productType": [
+            {
+              "product": "Economy - No Bag",
+              "revenue": 1132.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 1132.0,
+              "revVly": 0.0,
+              "pax": 14,
+              "paxVly": 0.0,
+              "atv": 81.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 1132.0,
+            "revVly": 0.0,
+            "pax": 14,
+            "paxVly": 0.0,
+            "atv": 81.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 1132.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 1132.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 1132.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 1132.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "CPT-JNB",
+              "revenue": 533.0,
+              "revVly": 0.0,
+              "pax": 5,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "JNB-CPT",
+              "revenue": 227.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "DUR-CPT",
+              "revenue": 213.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "CPT-DUR",
+              "revenue": 98.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 5,
+              "ond": "JNB-DUR",
+              "revenue": 61.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2026-03": {
+        "kpis": {
+          "revenue": {
+            "value": 4983.0,
+            "vly": 0.0,
+            "mom": 340.2
+          },
+          "ondPax": {
+            "value": 42,
+            "vly": 0.0,
+            "mom": 200.0
+          },
+          "atv": {
+            "value": 119.0,
+            "vly": 0.0,
+            "mom": 46.9
+          },
+          "premium": {
+            "value": 578.0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 107.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 578.0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 3,
+              "attachRate": 13.6
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 23.8
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 76.2
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 97.6
+            },
+            {
+              "label": "Premium",
+              "paxShare": 2.4
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 21.4
+            },
+            {
+              "label": "One way",
+              "paxShare": 78.6
+            }
+          ],
+          "productType": [
+            {
+              "product": "Economy - No Bag",
+              "revenue": 4405.0
+            },
+            {
+              "product": "Premium",
+              "revenue": 578.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 4983.0,
+              "revVly": 0.0,
+              "pax": 42,
+              "paxVly": 0.0,
+              "atv": 119.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 4983.0,
+            "revVly": 0.0,
+            "pax": 42,
+            "paxVly": 0.0,
+            "atv": 119.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 4983.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 4983.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 4405.0,
+              "revVly": 0.0
+            },
+            {
+              "rank": 2,
+              "rbd": "C",
+              "revenue": 578.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 4983.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "CPT-JNB",
+              "revenue": 2721.0,
+              "revVly": 0.0,
+              "pax": 19,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "JNB-CPT",
+              "revenue": 1720.0,
+              "revVly": 0.0,
+              "pax": 11,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "CPT-DUR",
+              "revenue": 289.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "JNB-DUR",
+              "revenue": 146.0,
+              "revVly": 0.0,
+              "pax": 6,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 5,
+              "ond": "DUR-JNB",
+              "revenue": 107.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2026-04": {
+        "kpis": {
+          "revenue": {
+            "value": 1953.0,
+            "vly": 0.0,
+            "mom": -60.8
+          },
+          "ondPax": {
+            "value": 11,
+            "vly": 0.0,
+            "mom": -73.8
+          },
+          "atv": {
+            "value": 178.0,
+            "vly": 0.0,
+            "mom": 49.6
+          },
+          "premium": {
+            "value": 949.0,
+            "vly": 0.0,
+            "mom": 64.2
+          },
+          "yield": {
+            "economy": {
+              "value": 112.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 474.0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 2,
+              "attachRate": 25.0
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 45.5
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 54.5
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 81.8
+            },
+            {
+              "label": "Premium",
+              "paxShare": 18.2
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 9.1
+            },
+            {
+              "label": "One way",
+              "paxShare": 90.9
+            }
+          ],
+          "productType": [
+            {
+              "product": "Economy - No Bag",
+              "revenue": 1004.0
+            },
+            {
+              "product": "Premium",
+              "revenue": 949.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 1953.0,
+              "revVly": 0.0,
+              "pax": 11,
+              "paxVly": 0.0,
+              "atv": 178.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 1953.0,
+            "revVly": 0.0,
+            "pax": 11,
+            "paxVly": 0.0,
+            "atv": 178.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 1953.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 1953.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 1004.0,
+              "revVly": 0.0
+            },
+            {
+              "rank": 2,
+              "rbd": "C",
+              "revenue": 949.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 1953.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "CPT-JNB",
+              "revenue": 1115.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "JNB-CPT",
+              "revenue": 674.0,
+              "revVly": 0.0,
+              "pax": 5,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "DUR-JNB",
+              "revenue": 83.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "CPT-DUR",
+              "revenue": 81.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2026-05": {
+        "kpis": {
+          "revenue": {
+            "value": 5356.0,
+            "vly": 0.0,
+            "mom": 174.2
+          },
+          "ondPax": {
+            "value": 29,
+            "vly": 0.0,
+            "mom": 163.6
+          },
+          "atv": {
+            "value": 185.0,
+            "vly": 0.0,
+            "mom": 3.9
+          },
+          "premium": {
+            "value": 3373.0,
+            "vly": 0.0,
+            "mom": 255.4
+          },
+          "yield": {
+            "economy": {
+              "value": 99.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 375.0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 7,
+              "attachRate": 13.3
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 13.8
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 86.2
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 69.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 31.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 13.8
+            },
+            {
+              "label": "One way",
+              "paxShare": 86.2
+            }
+          ],
+          "productType": [
+            {
+              "product": "Premium",
+              "revenue": 3373.0
+            },
+            {
+              "product": "Economy - No Bag",
+              "revenue": 1406.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 5356.0,
+              "revVly": 0.0,
+              "pax": 29,
+              "paxVly": 0.0,
+              "atv": 185.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 5356.0,
+            "revVly": 0.0,
+            "pax": 29,
+            "paxVly": 0.0,
+            "atv": 185.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 5356.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 5356.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "C",
+              "revenue": 3373.0,
+              "revVly": 0.0
+            },
+            {
+              "rank": 2,
+              "rbd": "Y",
+              "revenue": 1983.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 5356.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "CPT-JNB",
+              "revenue": 2375.0,
+              "revVly": 0.0,
+              "pax": 9,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "JNB-CPT",
+              "revenue": 1646.0,
+              "revVly": 0.0,
+              "pax": 6,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "JNB-DUR",
+              "revenue": 542.0,
+              "revVly": 0.0,
+              "pax": 7,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "DUR-CPT",
+              "revenue": 486.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 5,
+              "ond": "CPT-DUR",
+              "revenue": 217.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 6,
+              "ond": "DUR-JNB",
+              "revenue": 90.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2026-06": {
+        "kpis": {
+          "revenue": {
+            "value": 2089.0,
+            "vly": 0.0,
+            "mom": -61.0
+          },
+          "ondPax": {
+            "value": 25,
+            "vly": 0.0,
+            "mom": -13.8
+          },
+          "atv": {
+            "value": 84.0,
+            "vly": 0.0,
+            "mom": -54.6
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": -100.0
+          },
+          "yield": {
+            "economy": {
+              "value": 84.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 3,
+              "attachRate": 10.5
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 48.0
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 52.0
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 8.0
+            },
+            {
+              "label": "One way",
+              "paxShare": 92.0
+            }
+          ],
+          "productType": [
+            {
+              "product": "Economy - No Bag",
+              "revenue": 1964.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 2089.0,
+              "revVly": 0.0,
+              "pax": 25,
+              "paxVly": 0.0,
+              "atv": 84.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 2089.0,
+            "revVly": 0.0,
+            "pax": 25,
+            "paxVly": 0.0,
+            "atv": 84.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 2089.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 2089.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 2089.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 2089.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "CPT-JNB",
+              "revenue": 840.0,
+              "revVly": 0.0,
+              "pax": 8,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "JNB-CPT",
+              "revenue": 591.0,
+              "revVly": 0.0,
+              "pax": 6,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "DUR-JNB",
+              "revenue": 249.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "JNB-DUR",
+              "revenue": 227.0,
+              "revVly": 0.0,
+              "pax": 5,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 5,
+              "ond": "DUR-CPT",
+              "revenue": 182.0,
+              "revVly": 0.0,
+              "pax": 3,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2026-07": {
+        "kpis": {
+          "revenue": {
+            "value": 2485.0,
+            "vly": 0.0,
+            "mom": 19.0
+          },
+          "ondPax": {
+            "value": 23,
+            "vly": 0.0,
+            "mom": -8.0
+          },
+          "atv": {
+            "value": 108.0,
+            "vly": 0.0,
+            "mom": 28.6
+          },
+          "premium": {
+            "value": 614.0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 89.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 307.0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 3,
+              "attachRate": 15.0
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 65.2
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 34.8
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 91.3
+            },
+            {
+              "label": "Premium",
+              "paxShare": 8.7
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 17.4
+            },
+            {
+              "label": "One way",
+              "paxShare": 82.6
+            }
+          ],
+          "productType": [
+            {
+              "product": "Economy - No Bag",
+              "revenue": 1871.0
+            },
+            {
+              "product": "Premium",
+              "revenue": 614.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 2485.0,
+              "revVly": 0.0,
+              "pax": 23,
+              "paxVly": 0.0,
+              "atv": 108.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 2485.0,
+            "revVly": 0.0,
+            "pax": 23,
+            "paxVly": 0.0,
+            "atv": 108.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 2485.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 2485.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 1871.0,
+              "revVly": 0.0
+            },
+            {
+              "rank": 2,
+              "rbd": "C",
+              "revenue": 614.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 2485.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "JNB-CPT",
+              "revenue": 800.0,
+              "revVly": 0.0,
+              "pax": 7,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "DUR-CPT",
+              "revenue": 716.0,
+              "revVly": 0.0,
+              "pax": 5,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 3,
+              "ond": "CPT-JNB",
+              "revenue": 573.0,
+              "revVly": 0.0,
+              "pax": 5,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 4,
+              "ond": "DUR-JNB",
+              "revenue": 211.0,
+              "revVly": 0.0,
+              "pax": 4,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 5,
+              "ond": "JNB-DUR",
+              "revenue": 117.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 6,
+              "ond": "CPT-DUR",
+              "revenue": 68.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2026-08": {
+        "kpis": {
+          "revenue": {
+            "value": 72.0,
+            "vly": -97.5,
+            "mom": -97.1
+          },
+          "ondPax": {
+            "value": 2,
+            "vly": -93.5,
+            "mom": -91.3
+          },
+          "atv": {
+            "value": 36.0,
+            "vly": -62.1,
+            "mom": -66.7
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": -100.0
+          },
+          "yield": {
+            "economy": {
+              "value": 36.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 0.0
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 0.0
+            },
+            {
+              "label": "One way",
+              "paxShare": 100.0
+            }
+          ],
+          "productType": [
+            {
+              "product": "Economy - No Bag",
+              "revenue": 72.0
+            }
+          ],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "ZA",
+              "country": null,
+              "revenue": 72.0,
+              "revVly": 0.0,
+              "pax": 2,
+              "paxVly": 0.0,
+              "atv": 36.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 72.0,
+            "revVly": 0.0,
+            "pax": 2,
+            "paxVly": 0.0,
+            "atv": 36.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 72.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "ZA",
+              "revenue": 72.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 72.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "ZA",
+              "revenue": 72.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "CPT-JNB",
+              "revenue": 46.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "JNB-DUR",
+              "revenue": 26.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      }
+    },
+    "trendline": [
+      {
+        "month": "2025-08",
+        "revenue": 2935.0,
+        "pax": 31
+      },
+      {
+        "month": "2025-09",
+        "revenue": 4632.0,
+        "pax": 61
+      },
+      {
+        "month": "2025-10",
+        "revenue": 5308.0,
+        "pax": 42
+      },
+      {
+        "month": "2025-11",
+        "revenue": 5428.0,
+        "pax": 39
+      },
+      {
+        "month": "2025-12",
+        "revenue": 4508.0,
+        "pax": 33
+      },
+      {
+        "month": "2026-01",
+        "revenue": 1567.0,
+        "pax": 24
+      },
+      {
+        "month": "2026-02",
+        "revenue": 1132.0,
+        "pax": 14
+      },
+      {
+        "month": "2026-03",
+        "revenue": 4983.0,
+        "pax": 42
+      },
+      {
+        "month": "2026-04",
+        "revenue": 1953.0,
+        "pax": 11
+      },
+      {
+        "month": "2026-05",
+        "revenue": 5356.0,
+        "pax": 29
+      },
+      {
+        "month": "2026-06",
+        "revenue": 2089.0,
+        "pax": 25
+      },
+      {
+        "month": "2026-07",
+        "revenue": 2485.0,
+        "pax": 23
+      },
+      {
+        "month": "2026-08",
+        "revenue": 72.0,
+        "pax": 2
+      }
+    ]
+  }
+}

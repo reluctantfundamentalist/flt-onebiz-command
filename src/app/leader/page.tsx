@@ -1,40 +1,59 @@
 import { getSession } from "@/lib/auth";
-import { ACCOUNTS } from "@/lib/users";
-import { SEED_METRICS } from "@/lib/metrics-seed";
-import { SEED_UPDATES, SEED_CONTRACTS } from "@/lib/seed";
-import { listMetrics, listUpdates, listContracts } from "@/lib/store";
+import { ACCOUNTS, USERS, findUser } from "@/lib/users";
+import { SEED_UPDATES, SEED_CONTRACTS, SEED_MEETINGS } from "@/lib/seed";
+import { listMetrics, listUpdates, listContracts, listMeetings } from "@/lib/store";
+import { loadMetricsByIata } from "@/lib/metrics-loader";
+import { buildTimeline, timelineByBdSummary } from "@/lib/timeline";
 import AccountMapClient from "@/components/leader/AccountMapClient";
 import UpdatesPanel from "@/components/leader/UpdatesPanel";
 import ContractTable from "@/components/leader/ContractTable";
+import BdNavStrip from "@/components/leader/BdNavStrip";
 import AppHeader from "@/components/AppHeader";
 
 export default async function LeaderPage() {
   const session = await getSession();
   if (!session) return null;
 
-  const [storedMetrics, storedUpdates, storedContracts] = await Promise.all([
+  const [storedMetrics, storedUpdates, storedContracts, storedMeetings, aggregatedMetrics] = await Promise.all([
     listMetrics(),
     listUpdates(),
     listContracts(),
+    listMeetings(),
+    loadMetricsByIata(),
   ]);
 
-  const metricsList = storedMetrics.length ? storedMetrics : SEED_METRICS;
+  // Prefer aggregator-written metrics; store-based is currently unused
+  const metricsByIata = Object.keys(aggregatedMetrics).length > 0
+    ? aggregatedMetrics
+    : Object.fromEntries((storedMetrics.length ? storedMetrics : []).map((m) => [m.iata, m]));
+
   const updates = storedUpdates.length ? storedUpdates : SEED_UPDATES;
   const contracts = storedContracts.length ? storedContracts : SEED_CONTRACTS;
+  const meetings = storedMeetings.length ? storedMeetings : SEED_MEETINGS;
 
-  const metricsByIata = Object.fromEntries(metricsList.map((m) => [m.iata, m]));
+  const timeline = buildTimeline(updates, meetings, contracts);
+  const bdSummary = timelineByBdSummary(timeline);
 
   return (
     <div className="min-h-screen bg-[var(--bg)]">
       <AppHeader session={session} subtitle="Leadership workspace" />
 
       <main className="mx-auto max-w-7xl px-4 pb-20 pt-6 space-y-6">
+        {/* BD nav strip: cross-BD pipeline pointer */}
+        <section>
+          <div className="mb-3 flex items-center justify-between">
+            <h2 className="text-sm font-semibold text-[var(--ink)]">BD pipeline</h2>
+            <span className="text-[11px] text-[var(--ink-faint)]">click a BD to see their pending tasks</span>
+          </div>
+          <BdNavStrip summary={bdSummary} />
+        </section>
+
         <section className="grid gap-6 lg:grid-cols-2">
           <div className="rounded-xl border border-[var(--line)] bg-white overflow-hidden" style={{ height: 480 }}>
             <AccountMapClient accounts={ACCOUNTS} metrics={metricsByIata} />
           </div>
           <div style={{ maxHeight: 480 }} className="overflow-y-auto scroll-slim pr-1">
-            <UpdatesPanel updates={updates} />
+            <UpdatesPanel updates={updates} metrics={metricsByIata} />
           </div>
         </section>
 
@@ -49,9 +68,9 @@ export default async function LeaderPage() {
         </section>
 
         <p className="text-[11px] text-[var(--ink-faint)]">
-          {storedMetrics.length
-            ? `Metrics from Leadership_Report · updated ${metricsList[0]?.lastUpdated ?? "—"}`
-            : "Metrics are seeded placeholders — will swap to Leadership_Report daily file when available."}
+          {Object.keys(aggregatedMetrics).length
+            ? `Metrics aggregated from noSave_*.csv · ${Object.keys(aggregatedMetrics).length} carriers · last refresh ${(Object.values(aggregatedMetrics)[0] as { lastUpdated: string }).lastUpdated}`
+            : "Metrics are seeded placeholders — run `npm run refresh` to aggregate the latest CSV."}
         </p>
       </main>
     </div>

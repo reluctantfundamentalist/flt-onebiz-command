@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { getSession } from "@/lib/auth";
-import { findUser, accountsForUser } from "@/lib/users";
-import { SEED_UPDATES, SEED_MEETINGS } from "@/lib/seed";
-import { listUpdates, listMeetings } from "@/lib/store";
+import { findUser, accountsForUser, ACCOUNTS } from "@/lib/users";
+import { SEED_UPDATES, SEED_MEETINGS, SEED_CONTRACTS } from "@/lib/seed";
+import { listUpdates, listMeetings, listContracts } from "@/lib/store";
+import { buildTimeline, timelineForBd } from "@/lib/timeline";
 import AppHeader from "@/components/AppHeader";
 import UpdatesPanel from "@/components/leader/UpdatesPanel";
+import GanttChart from "@/components/gantt/GanttChart";
 
 export default async function BdPage() {
   const session = await getSession();
@@ -14,20 +16,47 @@ export default async function BdPage() {
 
   const scopedAccounts = accountsForUser(user);
   const scopeSet = new Set(scopedAccounts.map((a) => a.iata));
+  const accountLabelById = Object.fromEntries(
+    ACCOUNTS.map((a) => [a.iata, `${a.iata} · ${a.name}`]),
+  );
 
-  const [storedUpdates, storedMeetings] = await Promise.all([listUpdates(), listMeetings()]);
+  const [storedUpdates, storedMeetings, storedContracts] = await Promise.all([
+    listUpdates(),
+    listMeetings(),
+    listContracts(),
+  ]);
   const updates = (storedUpdates.length ? storedUpdates : SEED_UPDATES).filter((u) =>
     scopeSet.has(u.accountIata),
   );
   const meetings = (storedMeetings.length ? storedMeetings : SEED_MEETINGS).filter((m) =>
     scopeSet.has(m.accountIata),
   );
+  const contracts = (storedContracts.length ? storedContracts : SEED_CONTRACTS).filter((c) =>
+    scopeSet.has(c.accountIata),
+  );
+
+  const timeline = timelineForBd(buildTimeline(updates, meetings, contracts), user.id);
 
   return (
     <div className="min-h-screen bg-[var(--bg)]">
       <AppHeader session={session} subtitle={`BD workspace · ${user.title}`} />
 
       <main className="mx-auto max-w-7xl px-4 pb-20 pt-6 space-y-6">
+        <section>
+          <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-[var(--ink)]">
+            <span>Your pipeline</span>
+            <span className="rounded bg-[var(--bg)] px-1.5 py-0.5 text-[10px] font-normal text-[var(--ink-faint)]">
+              consolidated tasks
+            </span>
+          </div>
+          <GanttChart
+            items={timeline}
+            groupBy="account"
+            accountLabelById={accountLabelById}
+            emptyLabel="Nothing pending. Add a next-step to an update to populate this."
+          />
+        </section>
+
         <section>
           <div className="mb-3 flex items-center justify-between">
             <h2 className="text-sm font-semibold text-[var(--ink)]">Your accounts</h2>
@@ -59,44 +88,10 @@ export default async function BdPage() {
           </div>
         </section>
 
-        <section className="grid gap-6 lg:grid-cols-2">
-          <div>
-            <div className="mb-3 text-sm font-semibold text-[var(--ink)]">Airline updates</div>
-            <UpdatesPanel updates={updates} />
-          </div>
-          <div>
-            <div className="mb-3 text-sm font-semibold text-[var(--ink)]">Meeting pipeline</div>
-            <div className="rounded-xl border border-[var(--line)] bg-white p-4">
-              {meetings.length === 0 && (
-                <p className="text-xs text-[var(--ink-faint)]">No meetings on record.</p>
-              )}
-              <ul className="space-y-3">
-                {meetings.map((m) => (
-                  <li key={m.id} className="border-b border-[var(--line)] pb-3 last:border-0 last:pb-0">
-                    <div className="flex items-center gap-2 text-[10px] text-[var(--ink-faint)]">
-                      <span className="rounded bg-[var(--bg)] px-1.5 py-0.5 font-medium">
-                        {new Date(m.when).toLocaleDateString()}
-                      </span>
-                      <span>{m.accountIata}</span>
-                    </div>
-                    <div className="mt-1 text-sm font-medium text-[var(--ink)]">{m.agenda}</div>
-                    <div className="mt-1 text-[11px] text-[var(--ink-soft)]">
-                      {m.attendees.join(" · ")}
-                    </div>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-3 text-[11px] italic text-[var(--ink-faint)]">
-                Outlook calendar pull wires in v1.
-              </p>
-            </div>
-          </div>
+        <section>
+          <div className="mb-3 text-sm font-semibold text-[var(--ink)]">Airline updates</div>
+          <UpdatesPanel updates={updates} />
         </section>
-
-        <p className="text-[11px] italic text-[var(--ink-faint)]">
-          Deal-modeling flows removed — this workspace focuses on airline updates, POS performance,
-          and meeting pipeline. Lark-bot ingest wires in v2.
-        </p>
       </main>
     </div>
   );

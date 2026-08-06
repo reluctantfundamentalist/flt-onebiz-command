@@ -1,0 +1,1398 @@
+{
+  "meta": {
+    "airlineCode": "6H",
+    "airlineName": "Israir",
+    "reportMonth": "2026-07",
+    "startDate": "2026-07-01",
+    "endDate": "2026-07-28",
+    "generatedAt": "2026-08-06T11:32:23Z",
+    "currency": "USD",
+    "orderDateMin": "2026-04-26",
+    "orderDateMax": "2026-07-11"
+  },
+  "outbound": {
+    "months": [
+      "2026-04",
+      "2026-05",
+      "2026-06",
+      "2026-07"
+    ],
+    "byMonth": {
+      "2026-04": {
+        "kpis": {
+          "revenue": {
+            "value": 486.0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "ondPax": {
+            "value": 2,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "atv": {
+            "value": 243.0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 243.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 50.0
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 50.0
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 50.0
+            },
+            {
+              "label": "One way",
+              "paxShare": 50.0
+            }
+          ],
+          "productType": [],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "GB",
+              "country": null,
+              "revenue": 306.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0,
+              "atv": 306.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "IT",
+              "country": null,
+              "revenue": 180.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0,
+              "atv": 180.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 486.0,
+            "revVly": 0.0,
+            "pax": 2,
+            "paxVly": 0.0,
+            "atv": 243.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "GB",
+              "revenue": 306.0
+            },
+            {
+              "rank": 2,
+              "country": "IT",
+              "revenue": 180.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "IL",
+              "revenue": 486.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 486.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "IL",
+              "revenue": 486.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "LTN-TLV",
+              "revenue": 306.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "FCO-TLV",
+              "revenue": 180.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2026-05": {
+        "kpis": {
+          "revenue": {
+            "value": 155.0,
+            "vly": 0.0,
+            "mom": -68.1
+          },
+          "ondPax": {
+            "value": 1,
+            "vly": 0.0,
+            "mom": -50.0
+          },
+          "atv": {
+            "value": 155.0,
+            "vly": 0.0,
+            "mom": -36.2
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 155.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 0.0
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 0.0
+            },
+            {
+              "label": "One way",
+              "paxShare": 100.0
+            }
+          ],
+          "productType": [],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "CZ",
+              "country": null,
+              "revenue": 155.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0,
+              "atv": 155.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 155.0,
+            "revVly": 0.0,
+            "pax": 1,
+            "paxVly": 0.0,
+            "atv": 155.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "CZ",
+              "revenue": 155.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "IL",
+              "revenue": 155.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 155.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "IL",
+              "revenue": 155.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "PRG-TLV",
+              "revenue": 155.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2026-06": {
+        "kpis": {
+          "revenue": {
+            "value": 192.0,
+            "vly": 0.0,
+            "mom": 23.9
+          },
+          "ondPax": {
+            "value": 1,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "atv": {
+            "value": 192.0,
+            "vly": 0.0,
+            "mom": 23.9
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 192.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 0.0
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 0.0
+            },
+            {
+              "label": "One way",
+              "paxShare": 100.0
+            }
+          ],
+          "productType": [],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "GB",
+              "country": null,
+              "revenue": 192.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0,
+              "atv": 192.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 192.0,
+            "revVly": 0.0,
+            "pax": 1,
+            "paxVly": 0.0,
+            "atv": 192.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "GB",
+              "revenue": 192.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "IL",
+              "revenue": 192.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 192.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "IL",
+              "revenue": 192.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "LTN-TLV",
+              "revenue": 192.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2026-07": {
+        "kpis": {
+          "revenue": {
+            "value": 550.0,
+            "vly": 0.0,
+            "mom": 186.5
+          },
+          "ondPax": {
+            "value": 2,
+            "vly": 0.0,
+            "mom": 100.0
+          },
+          "atv": {
+            "value": 275.0,
+            "vly": 0.0,
+            "mom": 43.2
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 275.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 50.0
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 50.0
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 50.0
+            },
+            {
+              "label": "One way",
+              "paxShare": 50.0
+            }
+          ],
+          "productType": [],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "GB",
+              "country": null,
+              "revenue": 357.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0,
+              "atv": 357.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "IL",
+              "country": null,
+              "revenue": 193.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0,
+              "atv": 193.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 550.0,
+            "revVly": 0.0,
+            "pax": 2,
+            "paxVly": 0.0,
+            "atv": 275.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "GB",
+              "revenue": 357.0
+            },
+            {
+              "rank": 2,
+              "country": "IL",
+              "revenue": 193.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "IL",
+              "revenue": 357.0
+            },
+            {
+              "rank": 2,
+              "country": "GE",
+              "revenue": 193.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 550.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "IL",
+              "revenue": 357.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "GE",
+              "revenue": 193.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "LTN-TLV",
+              "revenue": 357.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "TLV-TBS",
+              "revenue": 193.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      }
+    },
+    "trendline": [
+      {
+        "month": "2026-04",
+        "revenue": 486.0,
+        "pax": 2
+      },
+      {
+        "month": "2026-05",
+        "revenue": 155.0,
+        "pax": 1
+      },
+      {
+        "month": "2026-06",
+        "revenue": 192.0,
+        "pax": 1
+      },
+      {
+        "month": "2026-07",
+        "revenue": 550.0,
+        "pax": 2
+      }
+    ]
+  },
+  "order": {
+    "months": [
+      "2026-04",
+      "2026-05",
+      "2026-06",
+      "2026-07"
+    ],
+    "byMonth": {
+      "2026-04": {
+        "kpis": {
+          "revenue": {
+            "value": 486.0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "ondPax": {
+            "value": 2,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "atv": {
+            "value": 243.0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 243.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 50.0
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 50.0
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 50.0
+            },
+            {
+              "label": "One way",
+              "paxShare": 50.0
+            }
+          ],
+          "productType": [],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "GB",
+              "country": null,
+              "revenue": 306.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0,
+              "atv": 306.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "IT",
+              "country": null,
+              "revenue": 180.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0,
+              "atv": 180.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 486.0,
+            "revVly": 0.0,
+            "pax": 2,
+            "paxVly": 0.0,
+            "atv": 243.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "GB",
+              "revenue": 306.0
+            },
+            {
+              "rank": 2,
+              "country": "IT",
+              "revenue": 180.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "IL",
+              "revenue": 486.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 486.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "IL",
+              "revenue": 486.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "LTN-TLV",
+              "revenue": 306.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "FCO-TLV",
+              "revenue": 180.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2026-05": {
+        "kpis": {
+          "revenue": {
+            "value": 512.0,
+            "vly": 0.0,
+            "mom": 5.3
+          },
+          "ondPax": {
+            "value": 2,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "atv": {
+            "value": 256.0,
+            "vly": 0.0,
+            "mom": 5.3
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 256.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 50.0
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 50.0
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 50.0
+            },
+            {
+              "label": "One way",
+              "paxShare": 50.0
+            }
+          ],
+          "productType": [],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "GB",
+              "country": null,
+              "revenue": 357.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0,
+              "atv": 357.0,
+              "atvVly": 0.0
+            },
+            {
+              "region": "CZ",
+              "country": null,
+              "revenue": 155.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0,
+              "atv": 155.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 512.0,
+            "revVly": 0.0,
+            "pax": 2,
+            "paxVly": 0.0,
+            "atv": 256.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "GB",
+              "revenue": 357.0
+            },
+            {
+              "rank": 2,
+              "country": "CZ",
+              "revenue": 155.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "IL",
+              "revenue": 512.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 512.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "IL",
+              "revenue": 512.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "LTN-TLV",
+              "revenue": 357.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            },
+            {
+              "rank": 2,
+              "ond": "PRG-TLV",
+              "revenue": 155.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2026-06": {
+        "kpis": {
+          "revenue": {
+            "value": 192.0,
+            "vly": 0.0,
+            "mom": -62.5
+          },
+          "ondPax": {
+            "value": 1,
+            "vly": 0.0,
+            "mom": -50.0
+          },
+          "atv": {
+            "value": 192.0,
+            "vly": 0.0,
+            "mom": -25.0
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 192.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 0.0
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 0.0
+            },
+            {
+              "label": "One way",
+              "paxShare": 100.0
+            }
+          ],
+          "productType": [],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "GB",
+              "country": null,
+              "revenue": 192.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0,
+              "atv": 192.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 192.0,
+            "revVly": 0.0,
+            "pax": 1,
+            "paxVly": 0.0,
+            "atv": 192.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "GB",
+              "revenue": 192.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "IL",
+              "revenue": 192.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 192.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "IL",
+              "revenue": 192.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "LTN-TLV",
+              "revenue": 192.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      },
+      "2026-07": {
+        "kpis": {
+          "revenue": {
+            "value": 193.0,
+            "vly": 0.0,
+            "mom": 0.5
+          },
+          "ondPax": {
+            "value": 1,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "atv": {
+            "value": 193.0,
+            "vly": 0.0,
+            "mom": 0.5
+          },
+          "premium": {
+            "value": 0,
+            "vly": 0.0,
+            "mom": 0.0
+          },
+          "yield": {
+            "economy": {
+              "value": 193.0,
+              "vly": 0.0
+            },
+            "premium": {
+              "value": 0,
+              "vly": 0.0
+            }
+          }
+        },
+        "insights": {
+          "distribution": [],
+          "ancillary": [
+            {
+              "type": "Seats",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Baggage",
+              "segments": 0,
+              "attachRate": 0.0
+            },
+            {
+              "type": "Meals",
+              "segments": 0,
+              "attachRate": 0.0
+            }
+          ],
+          "trafficType": [
+            {
+              "label": "P2P & Stopover",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Connection & Transit",
+              "paxShare": 0.0
+            }
+          ],
+          "cabinSplit": [
+            {
+              "label": "Economy",
+              "paxShare": 100.0
+            },
+            {
+              "label": "Premium",
+              "paxShare": 0.0
+            }
+          ],
+          "tripType": [
+            {
+              "label": "Round trip",
+              "paxShare": 0.0
+            },
+            {
+              "label": "One way",
+              "paxShare": 100.0
+            }
+          ],
+          "productType": [],
+          "bookingWindow": []
+        },
+        "pos": {
+          "regions": [
+            {
+              "region": "IL",
+              "country": null,
+              "revenue": 193.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0,
+              "atv": 193.0,
+              "atvVly": 0.0
+            }
+          ],
+          "grandTotal": {
+            "revenue": 193.0,
+            "revVly": 0.0,
+            "pax": 1,
+            "paxVly": 0.0,
+            "atv": 193.0,
+            "atvVly": 0.0
+          },
+          "topOriginCountries": [
+            {
+              "rank": 1,
+              "country": "IL",
+              "revenue": 193.0
+            }
+          ],
+          "topDestCountries": [
+            {
+              "rank": 1,
+              "country": "GE",
+              "revenue": 193.0
+            }
+          ]
+        },
+        "rankings": {
+          "topRBD": [
+            {
+              "rank": 1,
+              "rbd": "Y",
+              "revenue": 193.0,
+              "revVly": 0.0
+            }
+          ],
+          "topNDCountry": [
+            {
+              "rank": 1,
+              "ond": "GE",
+              "revenue": 193.0,
+              "revVly": 0.0,
+              "pax": 0,
+              "paxVly": 0.0
+            }
+          ],
+          "topNDOND": [
+            {
+              "rank": 1,
+              "ond": "TLV-TBS",
+              "revenue": 193.0,
+              "revVly": 0.0,
+              "pax": 1,
+              "paxVly": 0.0
+            }
+          ]
+        }
+      }
+    },
+    "trendline": [
+      {
+        "month": "2026-04",
+        "revenue": 486.0,
+        "pax": 2
+      },
+      {
+        "month": "2026-05",
+        "revenue": 512.0,
+        "pax": 2
+      },
+      {
+        "month": "2026-06",
+        "revenue": 192.0,
+        "pax": 1
+      },
+      {
+        "month": "2026-07",
+        "revenue": 193.0,
+        "pax": 1
+      }
+    ]
+  }
+}

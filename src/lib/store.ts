@@ -93,10 +93,16 @@ export async function writeContracts(all: ContractRecord[]): Promise<void> {
 export interface AccountMetrics {
   iata: string;
   ytdFlownRevUsd: number;
+  ytdFlownRevLyUsd?: number;
+  ytdFlownRevVlyPct?: number;
   euApacRevUsd: number;
+  euApacRevLyUsd?: number;
+  euApacRevVlyPct?: number;
   npbrUsd: number;
-  lastUpdated: string;   // ISO
-  source: string;        // Leadership_Report filename
+  ondPax?: number;
+  atvUsd?: number;
+  lastUpdated: string;
+  source: string;
 }
 
 export async function listMetrics(): Promise<AccountMetrics[]> {
