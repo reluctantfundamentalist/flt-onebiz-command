@@ -1,0 +1,25 @@
+src/lib/participants.ts
+  s_9442cae20eaecb::t_c1889a0906cc0e 1-33
+src/components/leader/OrgChart.tsx
+  s_9442cae20eaecb::t_fb921c82b77568 2-3,5-32,36-43,50-52,60-65,68,99-100,104-105,108-109,118-119,130-131,136-137,139-146,157-164,174,178,182,184-192,205-206,214-218
+src/app/leader/account/[iata]/page.tsx
+  s_9442cae20eaecb::t_81c2beae569db5 165
+  s_9442cae20eaecb::t_392f3637adfeec 39,45
+  s_9442cae20eaecb::t_5fca0c68e7b894 9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.39-trip",
+  "base_commit_sha": "d2616831839a1307727c75563eabf32ab6224423",
+  "prompts": {},
+  "sessions": {
+    "s_9442cae20eaecb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "327e884e-5cca-46db-9fc0-a3ac34b486a2",
+        "model": "arn:aws:bedrock:us-west-2:133197901387:application-inference-profile/ypvzpmevzxdl"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
