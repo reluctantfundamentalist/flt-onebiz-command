@@ -1,0 +1,21 @@
+src/data-vendor/emails/G9/emails.json
+  s_9442cae20eaecb::t_7ad9f8b35d5671 1-618
+src/data/updates.json
+  s_9442cae20eaecb::t_7ad9f8b35d5671 62-99,330-349,389-408,795-850,902-961,1017-1056,1077-1112,1152-1174,1213-1232,1267-1283,1320-1340
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.39-trip",
+  "base_commit_sha": "c17ec3214afda6c1d3a0d5efeb442f8fbac8d58a",
+  "prompts": {},
+  "sessions": {
+    "s_9442cae20eaecb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "327e884e-5cca-46db-9fc0-a3ac34b486a2",
+        "model": "arn:aws:bedrock:us-west-2:133197901387:application-inference-profile/ypvzpmevzxdl"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
