@@ -5,61 +5,71 @@ export default function OrgChart({ seed }: { seed: OrgSeed }) {
   const trip = seed.nodes.filter((n) => n.side === "trip");
 
   return (
-    <div className="rounded-xl border border-[var(--line)] bg-white p-5">
-      <div className="mb-4 flex items-center justify-between text-[11px] uppercase tracking-wide">
-        <div className="flex items-center gap-2">
-          <span className="rounded bg-orange-50 px-2 py-1 font-bold text-orange-700">
-            Airline
-          </span>
-          <span className="text-[var(--ink-faint)]">reporting chain</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="text-[var(--ink-faint)]">Trip.com counterparts</span>
-          <span className="rounded bg-[var(--brand-soft)] px-2 py-1 font-bold text-[var(--brand-dark)]">
-            Trip.com
-          </span>
+    <div className="rounded-xl border border-[var(--line)] bg-white">
+      {/* Header */}
+      <div className="flex items-center gap-2 border-b border-[var(--line)] px-4 py-2.5">
+        <span className="text-[11px] font-semibold uppercase tracking-wide text-[var(--ink)]">
+          Airline reporting chain
+        </span>
+        <span className="text-[11px] text-[var(--ink-faint)]">— last-90-day activity, top-down</span>
+        <div className="ml-auto flex items-center gap-1.5">
+          <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand)]" />
+          <span className="text-[10px] text-[var(--ink-faint)]">Trip.com counterpart</span>
         </div>
       </div>
 
-      <div className="grid gap-8 lg:grid-cols-2">
-        <div>
-          <ColumnTree nodes={airline} accent="#ea580c" bg="#fff7ed" allNodes={airline} />
-        </div>
-        <div>
-          <ColumnTree nodes={trip} accent="#0b66c2" bg="#e8f1fb" allNodes={trip} />
-        </div>
+      {/* Airline column: full-width */}
+      <div className="p-4">
+        <ColumnTree nodes={airline} allNodes={airline} tripNodes={trip} />
       </div>
 
-      <p className="mt-4 text-[10px] italic text-[var(--ink-faint)]">
-        Counterpart hints (◇) inferred from update participants. v1 will refresh from live message threads.
-      </p>
+      {/* Trip.com reporting line — compact strip at the bottom */}
+      <div className="border-t border-[var(--line)] bg-[var(--bg)] px-4 py-3">
+        <div className="mb-2 text-[10px] font-semibold uppercase tracking-wide text-[var(--brand-dark)]">
+          Trip.com side
+        </div>
+        <div className="flex flex-wrap items-center gap-x-1 gap-y-2">
+          {trip
+            .slice()
+            .sort((a, b) => sortByLevel(a) - sortByLevel(b))
+            .map((n, i) => (
+              <span key={n.id} className="flex items-center gap-1">
+                {i > 0 && <span className="text-[11px] text-[var(--ink-faint)]">→</span>}
+                <span className="rounded-md bg-white px-2 py-1 text-[11px] text-[var(--ink-soft)] ring-1 ring-[var(--brand-soft)]">
+                  <span className="font-semibold text-[var(--ink)]">{n.name.split(" ")[0]}</span>
+                  <span className="text-[var(--ink-faint)]"> · {n.title.split(",")[0]}</span>
+                </span>
+              </span>
+            ))}
+        </div>
+      </div>
     </div>
   );
 }
 
+function sortByLevel(n: OrgNode): number {
+  return n.level === "global" ? 0 : n.level === "regional" ? 1 : 2;
+}
+
 function ColumnTree({
   nodes,
-  accent,
-  bg,
   allNodes,
+  tripNodes,
 }: {
   nodes: OrgNode[];
-  accent: string;
-  bg: string;
   allNodes: OrgNode[];
+  tripNodes: OrgNode[];
 }) {
   const roots = nodes.filter((n) => !n.parentId);
   return (
-    <div>
-      {roots.map((r, i) => (
+    <div className="space-y-1.5">
+      {roots.map((r) => (
         <OrgNodeCard
           key={r.id}
           node={r}
           allNodes={allNodes}
+          tripNodes={tripNodes}
           depth={0}
-          accent={accent}
-          bg={bg}
-          isLast={i === roots.length - 1}
         />
       ))}
     </div>
@@ -69,88 +79,65 @@ function ColumnTree({
 function OrgNodeCard({
   node,
   allNodes,
+  tripNodes,
   depth,
-  accent,
-  bg,
-  isLast,
 }: {
   node: OrgNode;
   allNodes: OrgNode[];
+  tripNodes: OrgNode[];
   depth: number;
-  accent: string;
-  bg: string;
-  isLast: boolean;
 }) {
   const children = allNodes.filter((n) => n.parentId === node.id);
-  const counterpart = allNodes.find((n) => n.counterpartOf === node.id) ?? undefined;
-  const cpLabel = allNodes.find((n) => n.id === node.counterpartOf);
-
-  const indent = depth * 24;
+  const counterpart = tripNodes.find((n) => n.counterpartOf === node.id);
 
   return (
-    <div style={{ marginLeft: indent }} className="relative">
+    <div style={{ marginLeft: depth * 20 }} className="relative">
       {depth > 0 && (
         <>
-          <span
-            className="absolute -left-[13px] top-0 h-full w-px"
-            style={{ background: "#e2e8f0" }}
-          />
-          <span
-            className="absolute -left-[13px] top-6 h-px w-3"
-            style={{ background: "#e2e8f0" }}
-          />
+          <span className="absolute -left-[11px] top-0 h-1/2 w-px bg-[var(--line)]" />
+          <span className="absolute -left-[11px] top-1/2 h-px w-2.5 bg-[var(--line)]" />
         </>
       )}
 
-      <div
-        className="mb-3 flex items-start gap-3 rounded-lg border p-3 shadow-sm"
-        style={{ borderColor: accent, background: bg }}
-      >
-        <div
-          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-[11px] font-bold text-white"
-          style={{ background: accent }}
-        >
-          {node.name.split(" ").map((w) => w[0]).slice(0, 2).join("")}
+      <div className="flex items-center gap-3 rounded-lg border border-[var(--line)] bg-white px-3 py-2 hover:bg-[var(--bg)]">
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--brand-soft)] text-[11px] font-semibold text-[var(--brand-dark)]">
+          {node.name.split(" ").map((w) => w[0]).slice(0, 2).join("").toUpperCase()}
         </div>
         <div className="min-w-0 flex-1">
-          <div className="text-[13px] font-semibold leading-tight text-[var(--ink)]">
+          <div className="truncate text-[13px] font-semibold text-[var(--ink)]">
             {node.name}
           </div>
-          <div className="mt-0.5 text-[11px] leading-tight text-[var(--ink-soft)]">
-            {node.title}
-          </div>
-          <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
-            <span className="rounded bg-white px-1.5 py-0.5 text-[9px] font-semibold uppercase text-[var(--ink-faint)]">
-              {node.level}
-            </span>
-            {node.market && (
-              <span className="rounded bg-white px-1.5 py-0.5 text-[9px] font-semibold text-[var(--ink-soft)]">
-                {node.market}
-              </span>
-            )}
-            {cpLabel && (
-              <span
-                className="rounded px-1.5 py-0.5 text-[9px] font-medium text-[var(--ink-soft)]"
-                style={{ background: "rgba(0,0,0,0.03)" }}
-              >
-                ◇ {cpLabel.name}
-              </span>
-            )}
-          </div>
+          <div className="truncate text-[11px] text-[var(--ink-soft)]">{node.title}</div>
         </div>
+        {node.market && (
+          <span className="hidden shrink-0 rounded bg-[var(--bg)] px-1.5 py-0.5 text-[10px] font-medium text-[var(--ink-soft)] sm:inline">
+            {node.market}
+          </span>
+        )}
+        {counterpart && (
+          <span
+            className="shrink-0 rounded-full px-2 py-0.5 text-[10px] font-medium"
+            style={{ background: "var(--brand-soft)", color: "var(--brand-dark)" }}
+            title={`Trip.com counterpart: ${counterpart.name}`}
+          >
+            ● {counterpart.name.split(" ")[0]}
+          </span>
+        )}
       </div>
 
-      {children.map((c, i) => (
-        <OrgNodeCard
-          key={c.id}
-          node={c}
-          allNodes={allNodes}
-          depth={depth + 1}
-          accent={accent}
-          bg={bg}
-          isLast={i === children.length - 1}
-        />
-      ))}
+      {children.length > 0 && (
+        <div className="mt-1.5 space-y-1.5">
+          {children.map((c) => (
+            <OrgNodeCard
+              key={c.id}
+              node={c}
+              allNodes={allNodes}
+              tripNodes={tripNodes}
+              depth={depth + 1}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

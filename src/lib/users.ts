@@ -64,13 +64,13 @@ export function ownerForRegion(region: AccountRegion): string {
 }
 
 // 5 AE-HQ carriers (matches historic CSV). Wave 2 adds more from KSA/India/Africa
-// slices when those files land.
+// slices when those files land. Air Arabia Group = G9 (Sharjah) + 3L (Abu Dhabi)
+// combined per 2026-08-07 user call.
 export const ACCOUNTS: Account[] = [
   { iata: "EK", name: "Emirates",             hqCountry: "United Arab Emirates", region: "GCC", lat: 25.253, lng: 55.365, ownerId: "praveen" },
   { iata: "EY", name: "Etihad Airways",       hqCountry: "United Arab Emirates", region: "GCC", lat: 24.443, lng: 54.651, ownerId: "praveen" },
   { iata: "FZ", name: "flydubai",             hqCountry: "United Arab Emirates", region: "GCC", lat: 25.253, lng: 55.365, ownerId: "praveen" },
-  { iata: "G9", name: "Air Arabia",           hqCountry: "United Arab Emirates", region: "GCC", lat: 25.328, lng: 55.517, ownerId: "praveen" },
-  { iata: "3L", name: "Air Arabia Abu Dhabi", hqCountry: "United Arab Emirates", region: "GCC", lat: 24.443, lng: 54.651, ownerId: "praveen" },
+  { iata: "G9", name: "Air Arabia Group",     hqCountry: "United Arab Emirates", region: "GCC", lat: 25.328, lng: 55.517, ownerId: "praveen" },
 ];
 
 export function findAccount(iata: string): Account | undefined {

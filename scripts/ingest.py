@@ -53,7 +53,7 @@ AIRLINE_NAMES = {
     "3L":"Air Arabia Abu Dhabi","4Z":"Airlink","5Z":"CemAir","6E":"IndiGo","6H":"Israir",
     "9P":"Air Arabia Jordan","A9":"Georgian Airways","AI":"Air India","E5":"Air Arabia Egypt",
     "EK":"Emirates","EY":"Etihad Airways","F3":"flyadeal","FA":"FlySafair","FZ":"flydubai",
-    "G9":"Air Arabia","GE":"Grand International","GF":"Gulf Air","IX":"Air India Express",
+    "G9":"Air Arabia Group","GE":"Grand International","GF":"Gulf Air","IX":"Air India Express",
     "IZ":"Arkia","J2":"Azerbaijan Airlines","J9":"Jazeera Airways","KQ":"Kenya Airways",
     "KU":"Kuwait Airways","LV":"Level","LY":"El Al","MA":"MEA-JU","MS":"EgyptAir",
     "NE":"Nesma Airlines","NP":"Nile Air","OV":"Salamair","PK":"Pakistan International",
@@ -62,6 +62,17 @@ AIRLINE_NAMES = {
 }
 # 5W (Wizz Air Abu Dhabi) — user excluded 2026-08-06. Vistara (UK) — shut down.
 EXCLUDED_CARRIERS = {"5W", "UK"}
+
+# Group-rollup mapping: some carriers report as one commercial account.
+# Air Arabia Group = G9 (Sharjah) + 3L (Abu Dhabi). Anything landing here
+# is rewritten to the anchor code on ingest so downstream aggregates roll up.
+CARRIER_ROLLUP = {
+    "3L": "G9",   # Air Arabia Abu Dhabi -> Air Arabia Group
+}
+
+
+def canonical_carrier(code: str) -> str:
+    return CARRIER_ROLLUP.get(code, code)
 
 # ─── DB setup ─────────────────────────────────────────────────────────────────
 
@@ -153,6 +164,7 @@ def ingest_csv(conn, path: Path) -> tuple[int, int, int]:
             if carrier in EXCLUDED_CARRIERS:
                 excluded += 1
                 continue
+            carrier = canonical_carrier(carrier)
 
             cp = (row.get("countrypair") or "").strip()
             dep, arr = "", ""

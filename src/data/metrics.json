@@ -1,19 +1,5 @@
 [
   {
-    "iata": "3L",
-    "ytdFlownRevUsd": 770670.0,
-    "ytdFlownRevLyUsd": 426285.0,
-    "ytdFlownRevVlyPct": 80.8,
-    "euApacRevUsd": 0,
-    "euApacRevLyUsd": 0,
-    "euApacRevVlyPct": 0.0,
-    "npbrUsd": 770670.0,
-    "ondPax": 5159,
-    "atvUsd": 149.0,
-    "lastUpdated": "2026-08-06",
-    "source": "sqlite:bookings.db"
-  },
-  {
     "iata": "EK",
     "ytdFlownRevUsd": 78197844.0,
     "ytdFlownRevLyUsd": 133897883.0,
@@ -57,15 +43,15 @@
   },
   {
     "iata": "G9",
-    "ytdFlownRevUsd": 8558216.0,
-    "ytdFlownRevLyUsd": 6557662.0,
-    "ytdFlownRevVlyPct": 30.5,
+    "ytdFlownRevUsd": 9328886.0,
+    "ytdFlownRevLyUsd": 6983947.0,
+    "ytdFlownRevVlyPct": 33.6,
     "euApacRevUsd": 1075541.0,
     "euApacRevLyUsd": 1364409.0,
     "euApacRevVlyPct": -21.2,
-    "npbrUsd": 8558216.0,
-    "ondPax": 34946,
-    "atvUsd": 245.0,
+    "npbrUsd": 9328886.0,
+    "ondPax": 40105,
+    "atvUsd": 233.0,
     "lastUpdated": "2026-08-06",
     "source": "sqlite:bookings.db"
   }
