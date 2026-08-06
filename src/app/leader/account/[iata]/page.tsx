@@ -6,6 +6,7 @@ import { SEED_UPDATES, SEED_MEETINGS, SEED_CONTRACTS } from "@/lib/seed";
 import { listUpdates, listMeetings, listContracts } from "@/lib/store";
 import { loadAirlineDataset } from "@/lib/dashboard-loader";
 import { loadMetricsByIata } from "@/lib/metrics-loader";
+import { loadEdgesForAccount } from "@/lib/participants";
 import { buildTimeline, timelineForAccount } from "@/lib/timeline";
 import { orgFor } from "@/lib/org-seed";
 import AppHeader from "@/components/AppHeader";
@@ -35,12 +36,13 @@ export default async function AccountDetailPage({
   const session = await getSession();
   if (!session) return null;
 
-  const [storedUpdates, storedMeetings, storedContracts, dataset, metricsByIata] = await Promise.all([
+  const [storedUpdates, storedMeetings, storedContracts, dataset, metricsByIata, edges] = await Promise.all([
     listUpdates(),
     listMeetings(),
     listContracts(),
     loadAirlineDataset(account.iata),
     loadMetricsByIata(),
+    loadEdgesForAccount(account.iata),
   ]);
   const updates = (storedUpdates.length ? storedUpdates : SEED_UPDATES).filter(
     (u) => u.accountIata === account.iata,
@@ -160,7 +162,7 @@ export default async function AccountDetailPage({
             </span>
           </div>
           {org ? (
-            <OrgChart seed={org} />
+            <OrgChart seed={org} edges={edges} />
           ) : (
             <div className="rounded-xl border border-dashed border-[var(--line)] bg-white p-6 text-center text-sm text-[var(--ink-faint)]">
               Hierarchy for {account.iata} not yet seeded — will populate from update participants in v1.
