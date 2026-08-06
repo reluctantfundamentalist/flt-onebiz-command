@@ -47,3 +47,7 @@ src/data-vendor/bookings.db-journal
 src/data-vendor/bookings.db-wal
 src/data-vendor/bookings.db-shm
 
+
+# email attachments (regenerable, may contain sensitive commercial docs)
+src/data-vendor/emails/*/attachments/
+
