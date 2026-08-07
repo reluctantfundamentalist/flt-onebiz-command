@@ -1,78 +1,72 @@
 [
   {
     "name": "Skywards \u00d7 Trip Coins loyalty integration",
-    "summary": "Integration of Emirates Skywards program with Trip.com rewards/loyalty. Data infrastructure, point sharing mechanics, and follow-up discussions on alignment and next steps.",
+    "summary": "Alignment on data infrastructure and rewards co-benefits between Skywards and Trip loyalty programs.",
+    "dollarImpact": null,
     "status": "in_progress",
-    "nextStep": "Follow-up discussion post Fernanda's return from sick leave; await internal Emirates alignment on data infrastructure",
+    "nextStep": "Await Fernanda's return from sick leave for data-sharing framework confirmation.",
     "airlineOwners": [
       "Fernanda Pilli"
     ],
     "tripOwners": [
-      "Anuj Bansal",
-      "Shrey Nayar"
+      "Anuj Bansal"
     ],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx"
+      "id=AAMkADYwZGVlZGQ0LWYx_07-31_Fernanda",
+      "id=AAMkADYwZGVlZGQ0LWYx_07-29_Fernanda"
     ],
     "lastTouched": "2026-07-31",
     "priority": "high",
     "accountIata": "EK"
   },
   {
-    "name": "FY26/27 Q1 & Q2 incentive structures",
-    "summary": "Quarterly incentive programs for Trip.com with focus on 6th freedom traffic volume and capacity-adjusted payout mechanisms. Includes pax slab targets and monthly performance reviews.",
+    "name": "Q1 & Q2 FY26/27 incentive structures",
+    "summary": "Design and rollout of volume-based incentives targeting 6th freedom traffic across defined OD pax slabs.",
+    "dollarImpact": null,
     "status": "in_progress",
-    "nextStep": "Continue monthly performance review meetings; finalize Q2 incentive execution and payout schedules",
+    "nextStep": "Finalize Q2 incentive terms and confirm payout thresholds with Rehab and Emre.",
     "airlineOwners": [
       "Emre Coskun",
-      "Mohamed Alshaiba"
+      "Rehab Mansoor"
     ],
     "tripOwners": [
       "Anuj Bansal",
       "Shrey Nayar"
     ],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx"
+      "id=AAMkADYwZGVlZGQ0LWYx_06-30_Emre",
+      "id=AAMkADYwZGVlZGQ0LWYx_06-09_Anuj"
     ],
-    "lastTouched": "2026-07-28",
+    "lastTouched": "2026-06-30",
     "priority": "high",
     "accountIata": "EK"
   },
   {
-    "name": "Joint marketing campaigns and promotions",
-    "summary": "Coordinated campaigns including World Cup North America promo, China campaign production, and promotional assets. Includes revenue analysis, campaign planning, and creative execution.",
-    "status": "in_progress",
-    "nextStep": "Proceed with marketing campaign production and Trip.com share-of-voice investments; finalize campaign revenue analysis",
+    "name": "Monthly performance & incentive payout review",
+    "summary": "Recurring operational cadence tracking Flown Forward incentive payouts and overall commercial performance.",
+    "dollarImpact": null,
+    "status": "active",
+    "nextStep": "Execute monthly performance review meeting scheduled by Mohamed Alshaiba.",
     "airlineOwners": [
-      "Nadia Mohamed Ali",
-      "Fatma Almulla"
+      "Mohamed Alshaiba"
     ],
     "tripOwners": [
       "Anuj Bansal"
     ],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx"
+      "id=AAMkADYwZGVlZGQ0LWYx_07-28_Mohamed",
+      "id=AAMkADYwZGVlZGQ0LWYx_05-21_Mohamed"
     ],
-    "lastTouched": "2026-06-22",
-    "priority": "high",
+    "lastTouched": "2026-07-28",
+    "priority": "medium",
     "accountIata": "EK"
   },
   {
-    "name": "Commercial roadmap & strategic alignment",
-    "summary": "18-month commercial roadmap planning, strategic discussions on partnership growth, capacity planning, and long-term commercial direction. AGC 2026 conference follow-up and alignment meetings.",
+    "name": "18-month commercial roadmap & payout reconciliation",
+    "summary": "Strategic multi-year partnership roadmap with outstanding last-year adjusted payout discussion and office visit planned.",
+    "dollarImpact": null,
     "status": "in_progress",
-    "nextStep": "Internal Emirates review of roadmap and last-year adjusted payout discussion; planned office visit from Rehab and Egor",
+    "nextStep": "Rehab to revert on roadmap and revisit last-year adjusted payout; coordinate office visit with Egor.",
     "airlineOwners": [
       "Rehab Mansoor",
       "Egor Plakhov"
@@ -81,184 +75,143 @@
       "Anuj Bansal"
     ],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx"
+      "id=AAMkADYwZGVlZGQ0LWYx_07-21_Rehab",
+      "id=AAMkADYwZGVlZGQ0LWYx_07-21_Egor"
     ],
     "lastTouched": "2026-07-21",
     "priority": "high",
     "accountIata": "EK"
   },
   {
-    "name": "Virtual cards and payment infrastructure",
-    "summary": "Virtual card (VCC) activation and alignment for Trip.com Malaysia and broader payment integration initiatives.",
+    "name": "Virtual cards alignment and payment infrastructure",
+    "summary": "Technical and commercial alignment on virtual card deployment for enhanced transaction efficiency.",
+    "dollarImpact": null,
     "status": "in_progress",
-    "nextStep": "Await HQ communication on TripMY x EK VCC activation status; confirm next steps",
+    "nextStep": "Follow-up discussion and next steps to be confirmed.",
     "airlineOwners": [
-      "Egor Plakhov",
-      "Nor Azrina Ahmad"
+      "Egor Plakhov"
     ],
     "tripOwners": [],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx"
+      "id=AAMkADYwZGVlZGQ0LWYx_07-27_Egor"
     ],
-    "lastTouched": "2026-05-21",
+    "lastTouched": "2026-07-27",
     "priority": "medium",
     "accountIata": "EK"
   },
   {
-    "name": "EK-FZ codeshare policy & GDS implications",
-    "summary": "End-of-codeshare policy between EK and FZ including ticket issuance in GDS, mixed itinerary handling, and travel document requirements.",
+    "name": "FZ codeshare end policy and GDS management",
+    "summary": "Clarification on EK-FZ codeshare discontinuation, GDS ticket availability, and travel document requirements.",
+    "dollarImpact": null,
     "status": "in_progress",
-    "nextStep": "Clarify GDS removal timeline for new codeshare flights; obtain policy documentation for customer communication",
-    "airlineOwners": [],
+    "nextStep": "AE OneSupport to provide FAQ responses on codeshare flight series and mixed itinerary visibility.",
+    "airlineOwners": [
+      "AE OneSupport"
+    ],
     "tripOwners": [
-      "Zhixuan Zhou",
-      "Anuj Bansal"
+      "Zhixuan Zhou"
     ],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx"
+      "id=AAMkADYwZGVlZGQ0LWYx_07-21_Zhixuan",
+      "id=AAMkADYwZGVlZGQ0LWYx_07-21_AE_OneSupport"
     ],
     "lastTouched": "2026-07-21",
     "priority": "medium",
     "accountIata": "EK"
   },
   {
-    "name": "Customer service & operational issues",
-    "summary": "Ad-hoc operational issues including passenger name corrections, EMD refunds, cancellation follow-ups, and agency debit advisories.",
-    "status": "active",
-    "nextStep": "Complete refund processing and name correction communications; resolve outstanding cancellation issues",
+    "name": "Marketing campaigns and creative production",
+    "summary": "Campaign planning, production approval, and revenue analysis for multi-market initiatives including North America World Cup and China campaigns.",
+    "dollarImpact": null,
+    "status": "in_progress",
+    "nextStep": "Confirm marketing campaign production affirmation and investment share of voice from Trip side; finalize China campaign invoicing.",
     "airlineOwners": [
-      "Mohammad Nabil Dodin",
-      "Vimal Antony"
+      "Misbah Jamali",
+      "Nadia Mohamed Ali",
+      "Fatma Almulla"
     ],
     "tripOwners": [
-      "Thauqeer",
       "Anuj Bansal"
     ],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx"
+      "id=AAMkADYwZGVlZGQ0LWYx_07-07_Anuj",
+      "id=AAMkADYwZGVlZGQ0LWYx_07-01_Anuj",
+      "id=AAMkADYwZGVlZGQ0LWYx_06-16_Anuj",
+      "id=AAMkADYwZGVlZGQ0LWYx_05-19_Fatma",
+      "id=AAMkADYwZGVlZGQ0LWYx_05-12_Rehab"
     ],
-    "lastTouched": "2026-07-08",
-    "priority": "medium",
+    "lastTouched": "2026-07-07",
+    "priority": "high",
     "accountIata": "EK"
   },
   {
-    "name": "Product offerings & special programs",
-    "summary": "Emirates Asia Pass promotion, travel insurance enhancements, EK disruption policy updates, and complementary hotel partnerships.",
-    "status": "active",
-    "nextStep": "Continue promoting Asia Pass during peak season; communicate travel insurance updates and new disruption policy terms",
+    "name": "Disruption policy updates and insurance enhancements",
+    "summary": "Communication of EK Disruption Policy evolution (airspace closure expiry, regional schedule changes) and Comprehensive Travel Insurance enhancements.",
+    "dollarImpact": null,
+    "status": "closed",
+    "nextStep": null,
     "airlineOwners": [
-      "Mohamed Alshaiba",
       "Emre Coskun"
     ],
     "tripOwners": [
       "Anuj Bansal"
     ],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx"
+      "id=AAMkADYwZGVlZGQ0LWYx_05-25_Emre",
+      "id=AAMkADYwZGVlZGQ0LWYx_06-18_Emre"
     ],
-    "lastTouched": "2026-06-25",
+    "lastTouched": "2026-06-18",
     "priority": "medium",
     "accountIata": "EK"
   },
   {
-    "name": "Pricing & competitive rate monitoring",
-    "summary": "Investigation and resolution of cases where Trip.com fares appear lower than Emirates.com direct pricing.",
-    "status": "active",
-    "nextStep": "Complete pricing analysis for flagged routes (e.g., DXB-BOM); clarify discount structure with Nadia",
+    "name": "Emirates Asia Pass promotion",
+    "summary": "Seasonal push to encourage Trip.com promotion of Emirates Asia Pass multi-destination travel product.",
+    "dollarImpact": null,
+    "status": "closed",
+    "nextStep": null,
     "airlineOwners": [
-      "Nadia Mohamed Ali"
-    ],
-    "tripOwners": [
-      "Anuj Bansal"
-    ],
-    "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx"
-    ],
-    "lastTouched": "2026-06-05",
-    "priority": "medium",
-    "accountIata": "EK"
-  },
-  {
-    "name": "Regional team introductions & relationship building",
-    "summary": "New hires and regional manager introductions (Mohammad Nabil Dodin - KSA, Dinit Mehta - Indian subcontinent) to strengthen partnership across geographies.",
-    "status": "active",
-    "nextStep": "Facilitate in-person meetings between new regional managers and Emirates counterparts",
-    "airlineOwners": [
-      "Mohammad Nabil Dodin",
-      "Dinit Mehta"
+      "Mohamed Alshaiba"
     ],
     "tripOwners": [],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx"
+      "id=AAMkADYwZGVlZGQ0LWYx_07-10_Mohamed"
     ],
-    "lastTouched": "2026-06-23",
+    "lastTouched": "2026-07-10",
     "priority": "low",
     "accountIata": "EK"
   },
   {
-    "name": "ATM Dubai 2026 partnership activation",
-    "summary": "Planning and coordination for Arabia Travel Market Dubai September 2026 including partnership booth, meetings, and stakeholder engagement.",
+    "name": "Operational issues: refunds, cancellations, late bookings",
+    "summary": "Resolution of customer service edge cases including name corrections, EMD refunds, late cancellations, and fare discrepancies.",
+    "dollarImpact": null,
     "status": "in_progress",
-    "nextStep": "Confirm meeting schedule with Anuj for ATM Dubai 2026; coordinate internal Emirates preparations",
+    "nextStep": "Trip.com to investigate late cancellation patterns and fare comparison cases; process EMD refunds per guidelines.",
     "airlineOwners": [
-      "Abbygail Cross"
+      "Mohammad Nabil Dodin",
+      "Vimal Antony",
+      "Emre Coskun"
     ],
     "tripOwners": [
-      "Anuj Bansal"
+      "Anuj Bansal",
+      "Thauqeer"
     ],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx"
+      "id=AAMkADYwZGVlZGQ0LWYx_07-08_Mohammad",
+      "id=AAMkADYwZGVlZGQ0LWYx_06-23_Emre",
+      "id=AAMkADYwZGVlZGQ0LWYx_06-05_Anuj",
+      "id=AAMkADYwZGVlZGQ0LWYx_05-20_Vimal"
     ],
-    "lastTouched": "2026-07-21",
+    "lastTouched": "2026-07-08",
     "priority": "medium",
     "accountIata": "EK"
   },
   {
-    "name": "Scheduling, calendar management & OOO",
-    "summary": "Calendar invites, meeting rescheduling, out-of-office notifications, and scheduling coordination across teams.",
-    "status": "active",
-    "nextStep": null,
-    "airlineOwners": [
-      "Nadia Mohamed Ali",
-      "Fernanda Pilli"
-    ],
-    "tripOwners": [
-      "Anuj Bansal",
-      "Shrey Nayar"
-    ],
-    "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx"
-    ],
-    "lastTouched": "2026-07-28",
-    "priority": "low",
-    "accountIata": "EK"
-  },
-  {
-    "name": "EU booster incentive & pro-ration adjustment",
-    "summary": "March EU origin booster incentive reconciliation with cancellations/refunds due to geopolitical tensions; pro-ration approach and payout adjustment.",
+    "name": "EU incentive pro-ration and geopolitical adjustments",
+    "summary": "Reconciliation of EU origin March booster incentive payout with pro-rata adjustment due to cancellations and refunds from geopolitical tensions.",
+    "dollarImpact": null,
     "status": "in_progress",
-    "nextStep": "Finalize pro-ration calculation and payout adjustment pending Rehab's response on last-year adjustments",
+    "nextStep": "Finalize pro-ration methodology and confirm payout adjustment with Rehab.",
     "airlineOwners": [
       "Rehab Mansoor"
     ],
@@ -266,27 +219,114 @@
       "Anuj Bansal"
     ],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx"
+      "id=AAMkADYwZGVlZGQ0LWYx_05-20_Anuj_Ticket"
     ],
     "lastTouched": "2026-05-20",
-    "priority": "high",
+    "priority": "medium",
     "accountIata": "EK"
   },
   {
-    "name": "Creative assets & campaign materials",
-    "summary": "Production and delivery of high-resolution creative assets and promotional materials for campaigns.",
-    "status": "active",
-    "nextStep": "Deliver high-res 'flag will always fly' creative assets to Anuj",
+    "name": "AGC 2026 and strategic partnership planning",
+    "summary": "Post-conference alignment from Amsterdam Global Conference on strategic direction and future growth initiatives.",
+    "dollarImpact": null,
+    "status": "in_progress",
+    "nextStep": "Formalize outcomes and action items from conference dialogue with Matt and Rehab.",
     "airlineOwners": [
-      "Taiba"
+      "Rehab Mansoor"
     ],
     "tripOwners": [
       "Anuj Bansal"
     ],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx"
+      "id=AAMkADYwZGVlZGQ0LWYx_05-20_AGC"
     ],
-    "lastTouched": "2026-05-12",
+    "lastTouched": "2026-05-20",
+    "priority": "medium",
+    "accountIata": "EK"
+  },
+  {
+    "name": "Scheduling, relationship-building & administrative",
+    "summary": "Relationship introductions, meeting scheduling, calendar coordination, and out-of-office notifications.",
+    "dollarImpact": null,
+    "status": "active",
+    "nextStep": "Confirm ATM Dubai September meeting details with Abbygail; finalize TRIP.com Strategy UAE session timing.",
+    "airlineOwners": [
+      "Nadia Mohamed Ali",
+      "Abbygail Cross",
+      "Dinit Mehta",
+      "Mohammad Nabil Dodin"
+    ],
+    "tripOwners": [
+      "Anuj Bansal",
+      "Shrey Nayar"
+    ],
+    "threadIds": [
+      "id=AAMkADYwZGVlZGQ0LWYx_08-04_Nadia",
+      "id=AAMkADYwZGVlZGQ0LWYx_08-03_Anuj",
+      "id=AAMkADYwZGVlZGQ0LWYx_07-28_Nadia",
+      "id=AAMkADYwZGVlZGQ0LWYx_07-21_Abbygail",
+      "id=AAMkADYwZGVlZGQ0LWYx_06-30_Nadia",
+      "id=AAMkADYwZGVlZGQ0LWYx_06-23_Trip_FarEast",
+      "id=AAMkADYwZGVlZGQ0LWYx_06-23_Mohammad_Nabil",
+      "id=AAMkADYwZGVlZGQ0LWYx_06-19_Dinit",
+      "id=AAMkADYwZGVlZGQ0LWYx_06-16_Nadia"
+    ],
+    "lastTouched": "2026-08-04",
+    "priority": "low",
+    "accountIata": "EK"
+  },
+  {
+    "name": "Regional VCC activation and Malaysia partnership",
+    "summary": "Virtual card activation coordination between TripMY and Emirates Malaysia with HQ stakeholder alignment pending.",
+    "dollarImpact": null,
+    "status": "in_progress",
+    "nextStep": "Nor Azrina to provide update once HQ team reverts on VCC activation requirements.",
+    "airlineOwners": [
+      "Nor Azrina Ahmad"
+    ],
+    "tripOwners": [
+      "Dave"
+    ],
+    "threadIds": [
+      "id=AAMkADYwZGVlZGQ0LWYx_05-21_Nor_Azrina"
+    ],
+    "lastTouched": "2026-05-21",
+    "priority": "low",
+    "accountIata": "EK"
+  },
+  {
+    "name": "Jebel Ali guest hotel promotion",
+    "summary": "Complimentary stay offer at JW Marriott Marquis Hotel Dubai for passenger engagement.",
+    "dollarImpact": null,
+    "status": "closed",
+    "nextStep": null,
+    "airlineOwners": [
+      "Abbygail Cross"
+    ],
+    "tripOwners": [
+      "Anuj Bansal"
+    ],
+    "threadIds": [
+      "id=AAMkADYwZGVlZGQ0LWYx_06-22_Abbygail"
+    ],
+    "lastTouched": "2026-06-22",
+    "priority": "low",
+    "accountIata": "EK"
+  },
+  {
+    "name": "Agency debit advisory and ticketing compliance",
+    "summary": "Resolution and clarification of Agency Debit Advisories (ADA) for no-shows and incorrect charges.",
+    "dollarImpact": null,
+    "status": "closed",
+    "nextStep": null,
+    "airlineOwners": [
+      "EK UAE Sales Groups & Pricing"
+    ],
+    "tripOwners": [],
+    "threadIds": [
+      "id=AAMkADYwZGVlZGQ0LWYx_05-19_ADA"
+    ],
+    "lastTouched": "2026-05-19",
     "priority": "low",
     "accountIata": "EK"
   }

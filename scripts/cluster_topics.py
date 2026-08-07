@@ -101,7 +101,8 @@ Below are {len(threads)} email threads (each = a distinct conversation with subj
 
 For each topic produce:
 - `name`: 4-8 words, business-friendly (e.g. "Skywards × Trip Coins loyalty integration")
-- `summary`: 1-2 sentences on what the workstream is about and where it stands
+- `summary`: ONE short sentence (max ~20 words) for a leadership reader — the crux: what is happening and why it matters commercially. No background narration, no list of sub-items, no process descriptions.
+- `dollarImpact`: {{"amountUsd": number, "note": "3-6 word label"}} ONLY when an explicit monetary figure appears in the threads (revenue, payout, refund, target, fee, penalty, invoice). null otherwise. NEVER estimate, extrapolate or invent figures.
 - `status`: one of "active" (ongoing conversation in the last 2 weeks), "in_progress" (multi-week workstream still moving), "closed" (concluded), "dormant" (stalled >4 weeks)
 - `nextStep`: the concrete next action if one is visible in the threads; else null
 - `airlineOwners`: array of participant names from the AIRLINE side (@{list(DOMAINS.keys())[list(DOMAINS.values()).index(iata)]}) most engaged in this topic (top 1-3)
@@ -113,7 +114,7 @@ For each topic produce:
 Rules:
 - Every thread must land in exactly one topic. Do not drop any.
 - Ignore auto-replies, out-of-office, calendar accept/decline as topics but INCLUDE their threadIds under the most-relevant substantive topic if there's context; otherwise a topic named "Scheduling & OOO noise" is fine.
-- Merge aggressively — better 6-10 real topics than 20 thin ones.
+- Merge aggressively — better 6-10 real topics than 20 thin ones. HARD CAP: 12 topics. If you have more, merge the thinnest related ones — variants of the same workstream (e.g. campaign production, campaign revenue analysis, creative assets) belong in ONE topic.
 - Return ONLY JSON, no prose around it. Shape: `{{"topics": [...] }}`
 
 Threads:
@@ -140,10 +141,28 @@ Threads:
     for topic in topics:
         topic["threadIds"] = [id_by_prefix.get(tid, tid) for tid in topic.get("threadIds", [])]
         topic["accountIata"] = iata
+        topic["dollarImpact"] = clean_dollar_impact(topic.get("dollarImpact"))
 
     # Participant co-occurrence edges (mechanical)
     edges = compute_edges(iata, threads)
     return {"topics": topics, "edges": edges}
+
+
+def clean_dollar_impact(v) -> dict | None:
+    """Keep dollarImpact only if it's a sane, explicit figure."""
+    if not isinstance(v, dict):
+        return None
+    amount = v.get("amountUsd")
+    if isinstance(amount, str):
+        amount = re.sub(r"[^0-9.]", "", amount)
+        try:
+            amount = float(amount)
+        except ValueError:
+            return None
+    if not isinstance(amount, (int, float)) or amount <= 0:
+        return None
+    note = str(v.get("note") or "").strip()[:60]
+    return {"amountUsd": amount, "note": note}
 
 
 def compute_edges(iata: str, threads: list) -> list:
@@ -172,6 +191,7 @@ def to_update_record(topic: dict) -> dict:
         "bd": BD_OWNER.get(topic["accountIata"], "praveen"),
         "headline": topic["name"],
         "detail": topic.get("summary", ""),
+        "dollarImpact": topic.get("dollarImpact") or None,
         "nextStep": topic.get("nextStep") or None,
         "isChild": False,
         "source": "outlook_clustered",
@@ -184,9 +204,31 @@ def to_update_record(topic: dict) -> dict:
 
 
 def main():
+    only = {a.upper() for a in sys.argv[1:]} or set(DOMAINS.values())
+    unknown = only - set(DOMAINS.values())
+    if unknown:
+        print(f"ERROR: unknown IATA code(s) {sorted(unknown)}; valid: {sorted(DOMAINS.values())}", file=sys.stderr)
+        sys.exit(1)
+
     all_topics = []
     all_edges = []
+    # When re-clustering a subset, keep edges of untouched accounts
+    if only != set(DOMAINS.values()) and PARTICIPANTS_PATH.exists():
+        try:
+            for e in json.load(open(PARTICIPANTS_PATH)):
+                if e.get("iata") not in only:
+                    all_edges.append(e)
+        except Exception:
+            pass
+
     for iata in DOMAINS.values():
+        if iata not in only:
+            topics_path = EMAIL_DIR / iata / "topics.json"
+            topics = json.load(open(topics_path)) if topics_path.exists() else []
+            print(f"\n─── {iata}: keeping {len(topics)} existing topics ───")
+            all_topics.extend(topics)
+            continue
+
         print(f"\n─── clustering {iata} ───")
         result = cluster_for_iata(iata)
         topics = result["topics"]

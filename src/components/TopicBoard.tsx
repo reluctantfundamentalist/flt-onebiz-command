@@ -19,6 +19,12 @@ const PRIORITY_STYLE = {
   low:    { bg: "#f9fafb", text: "#9ca3af", label: "Low" },
 } as const;
 
+function fmtUsd(n: number) {
+  if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)}M`;
+  if (n >= 1_000) return `$${(n / 1_000).toFixed(0)}K`;
+  return `$${n}`;
+}
+
 export default function TopicBoard({ updates, title = "Active topics" }: Props) {
   const topics = updates.filter((u) => u.status !== undefined);
   const grouped: Record<string, UpdateRecord[]> = {};
@@ -88,6 +94,12 @@ function TopicCard({ topic }: { topic: UpdateRecord }) {
       </div>
       {topic.detail && (
         <p className="text-[11.5px] leading-snug text-[var(--ink-soft)]">{topic.detail}</p>
+      )}
+      {topic.dollarImpact && (
+        <div className="mt-2 inline-flex items-baseline gap-1.5 rounded bg-emerald-50 px-2 py-1 text-[11px] text-emerald-900">
+          <span className="font-bold">{fmtUsd(topic.dollarImpact.amountUsd)}</span>
+          {topic.dollarImpact.note && <span>{topic.dollarImpact.note}</span>}
+        </div>
       )}
       {topic.nextStep && (
         <div className="mt-2 rounded bg-[var(--brand-soft)] px-2 py-1 text-[11px] text-[var(--brand-dark)]">

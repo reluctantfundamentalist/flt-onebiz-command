@@ -1,17 +1,18 @@
 [
   {
-    "id": "topic_EY_trip_com_commercial_offer_partnership_pr",
+    "id": "topic_EY_trip_com_commercial_offer_partnership_te",
     "accountIata": "EY",
     "createdBy": "graph_pull_llm",
     "createdAt": "2026-08-06",
     "scope": "global",
     "bd": "praveen",
-    "headline": "Trip.com Commercial Offer & Partnership Proposal",
-    "detail": "Ongoing negotiation of commercial terms and partnership framework with updates scheduled. Represents broader deal structure discussions between the two parties.",
-    "nextStep": "Schedule call with Sreejith to discuss updates on commercial offer",
+    "headline": "Trip.com Commercial Offer & Partnership Terms",
+    "detail": "Etihad reviewing Trip.com commercial proposal with pending updates from airline side.",
+    "dollarImpact": null,
+    "nextStep": "Schedule call between Anuj and Sreejith to discuss Etihad updates",
     "isChild": false,
     "source": "outlook_clustered",
-    "status": "active",
+    "status": "in_progress",
     "priority": "high",
     "airlineOwners": [
       "Sreejith Rajamohanan"
@@ -22,49 +23,99 @@
     "threadCount": 1
   },
   {
-    "id": "topic_EY_scheduling_operational_noise",
-    "accountIata": "EY",
+    "id": "topic_EK_scheduling_relationship_building_adminis",
+    "accountIata": "EK",
     "createdBy": "graph_pull_llm",
     "createdAt": "2026-08-04",
     "scope": "global",
     "bd": "praveen",
-    "headline": "Scheduling & Operational Noise",
-    "detail": "Calendar meetings, out-of-office notifications, email delivery failures, and TravelFusion direct connect coordination. Scheduling and administrative items.",
-    "nextStep": null,
+    "headline": "Scheduling, relationship-building & administrative",
+    "detail": "Relationship introductions, meeting scheduling, calendar coordination, and out-of-office notifications.",
+    "dollarImpact": null,
+    "nextStep": "Confirm ATM Dubai September meeting details with Abbygail; finalize TRIP.com Strategy UAE session timing.",
     "isChild": false,
     "source": "outlook_clustered",
     "status": "active",
     "priority": "low",
     "airlineOwners": [
-      "Sreejith Rajamohanan"
+      "Nadia Mohamed Ali",
+      "Abbygail Cross",
+      "Dinit Mehta",
+      "Mohammad Nabil Dodin"
     ],
     "tripOwners": [
       "Anuj Bansal",
-      "Joyce Yang"
+      "Shrey Nayar"
     ],
+    "threadCount": 9
+  },
+  {
+    "id": "topic_EY_etihad_direct_connect_integration_travel",
+    "accountIata": "EY",
+    "createdBy": "graph_pull_llm",
+    "createdAt": "2026-08-04",
+    "scope": "global",
+    "bd": "praveen",
+    "headline": "Etihad Direct Connect Integration (TravelFusion)",
+    "detail": "TravelFusion liaison confirms internal process near completion for Etihad Direct Connect technical integration.",
+    "dollarImpact": null,
+    "nextStep": "Await final internal process completion from Etihad side",
+    "isChild": false,
+    "source": "outlook_clustered",
+    "status": "in_progress",
+    "priority": "medium",
+    "airlineOwners": [
+      "Sreejith Rajamohanan"
+    ],
+    "tripOwners": [],
     "threadCount": 1
   },
   {
-    "id": "topic_G9_refunds_pnr_processing_coordination",
+    "id": "topic_G9_refund_and_pnr_processing_operations",
     "accountIata": "G9",
     "createdBy": "graph_pull_llm",
     "createdAt": "2026-08-03",
     "scope": "global",
     "bd": "praveen",
-    "headline": "Refunds & PNR Processing Coordination",
-    "detail": "Bulk refund processing for 1,052 PNRs between Air Arabia and Trip.com operations teams. Internal coordination on financial settlement.",
+    "headline": "Refund and PNR processing operations",
+    "detail": "Resolving bulk refund request (1,052 PNRs) and establishing operational void/reissue policies between partners.",
+    "dollarImpact": null,
+    "nextStep": "Process 1,052 PNR refund batch; confirm involuntary reissue policy with Air Arabia",
+    "isChild": false,
+    "source": "outlook_clustered",
+    "status": "in_progress",
+    "priority": "high",
+    "airlineOwners": [
+      "Tarun Chanana",
+      "Mohammad Nabil Dodin"
+    ],
+    "tripOwners": [
+      "Anuj Bansal"
+    ],
+    "threadCount": 3
+  },
+  {
+    "id": "topic_G9_partnership_team_restructuring_and_ksa_m",
+    "accountIata": "G9",
+    "createdBy": "graph_pull_llm",
+    "createdAt": "2026-08-03",
+    "scope": "global",
+    "bd": "praveen",
+    "headline": "Partnership team restructuring and KSA market lead handoff",
+    "detail": "Introducing new KSA market head (Mohammad Nabil Dodin) and acknowledging Trip.com UAE partnership team changes.",
+    "dollarImpact": null,
     "nextStep": null,
     "isChild": false,
     "source": "outlook_clustered",
     "status": "closed",
-    "priority": "medium",
+    "priority": "low",
     "airlineOwners": [
       "Tarun Chanana"
     ],
     "tripOwners": [
-      "Trip ME ISC Flight Ops"
+      "Anuj Bansal"
     ],
-    "threadCount": 1
+    "threadCount": 2
   },
   {
     "id": "topic_EK_skywards_trip_coins_loyalty_integration",
@@ -74,8 +125,9 @@
     "scope": "global",
     "bd": "praveen",
     "headline": "Skywards \u00d7 Trip Coins loyalty integration",
-    "detail": "Integration of Emirates Skywards program with Trip.com rewards/loyalty. Data infrastructure, point sharing mechanics, and follow-up discussions on alignment and next steps.",
-    "nextStep": "Follow-up discussion post Fernanda's return from sick leave; await internal Emirates alignment on data infrastructure",
+    "detail": "Alignment on data infrastructure and rewards co-benefits between Skywards and Trip loyalty programs.",
+    "dollarImpact": null,
+    "nextStep": "Await Fernanda's return from sick leave for data-sharing framework confirmation.",
     "isChild": false,
     "source": "outlook_clustered",
     "status": "in_progress",
@@ -84,24 +136,24 @@
       "Fernanda Pilli"
     ],
     "tripOwners": [
-      "Anuj Bansal",
-      "Shrey Nayar"
+      "Anuj Bansal"
     ],
-    "threadCount": 4
+    "threadCount": 2
   },
   {
-    "id": "topic_EY_summer_sales_campaign_revenue_accelerati",
+    "id": "topic_EY_summer_mega_sale_tactical_revenue_push",
     "accountIata": "EY",
     "createdBy": "graph_pull_llm",
     "createdAt": "2026-07-30",
     "scope": "global",
     "bd": "praveen",
-    "headline": "Summer Sales Campaign & Revenue Acceleration",
-    "detail": "Trip.com mega summer sale initiative (July-August 2026) with tactical push for long-haul destinations. Includes tactical proposals for EU network expansion and coordinated marketing messaging.",
-    "nextStep": "Execute tactical proposal for EU network (Aug-Sep) and amplify CRM marketing messaging",
+    "headline": "Summer Mega Sale & Tactical Revenue Push",
+    "detail": "Trip.com coordinating tactical sales incentives and promotional push across EU markets for long-haul destination growth.",
+    "dollarImpact": null,
+    "nextStep": "Provide marketing messaging to Trip CRM team to amplify promotional impact",
     "isChild": false,
     "source": "outlook_clustered",
-    "status": "active",
+    "status": "in_progress",
     "priority": "high",
     "airlineOwners": [
       "Sreejith Rajamohanan"
@@ -109,69 +161,66 @@
     "tripOwners": [
       "Anuj Bansal"
     ],
-    "threadCount": 1
+    "threadCount": 3
   },
   {
-    "id": "topic_EK_fy26_27_q1_q2_incentive_structures",
+    "id": "topic_EK_monthly_performance_incentive_payout_rev",
     "accountIata": "EK",
     "createdBy": "graph_pull_llm",
     "createdAt": "2026-07-28",
     "scope": "global",
     "bd": "praveen",
-    "headline": "FY26/27 Q1 & Q2 incentive structures",
-    "detail": "Quarterly incentive programs for Trip.com with focus on 6th freedom traffic volume and capacity-adjusted payout mechanisms. Includes pax slab targets and monthly performance reviews.",
-    "nextStep": "Continue monthly performance review meetings; finalize Q2 incentive execution and payout schedules",
-    "isChild": false,
-    "source": "outlook_clustered",
-    "status": "in_progress",
-    "priority": "high",
-    "airlineOwners": [
-      "Emre Coskun",
-      "Mohamed Alshaiba"
-    ],
-    "tripOwners": [
-      "Anuj Bansal",
-      "Shrey Nayar"
-    ],
-    "threadCount": 5
-  },
-  {
-    "id": "topic_EK_scheduling_calendar_management_ooo",
-    "accountIata": "EK",
-    "createdBy": "graph_pull_llm",
-    "createdAt": "2026-07-28",
-    "scope": "global",
-    "bd": "praveen",
-    "headline": "Scheduling, calendar management & OOO",
-    "detail": "Calendar invites, meeting rescheduling, out-of-office notifications, and scheduling coordination across teams.",
-    "nextStep": null,
+    "headline": "Monthly performance & incentive payout review",
+    "detail": "Recurring operational cadence tracking Flown Forward incentive payouts and overall commercial performance.",
+    "dollarImpact": null,
+    "nextStep": "Execute monthly performance review meeting scheduled by Mohamed Alshaiba.",
     "isChild": false,
     "source": "outlook_clustered",
     "status": "active",
-    "priority": "low",
+    "priority": "medium",
     "airlineOwners": [
-      "Nadia Mohamed Ali",
-      "Fernanda Pilli"
+      "Mohamed Alshaiba"
     ],
     "tripOwners": [
-      "Anuj Bansal",
-      "Shrey Nayar"
+      "Anuj Bansal"
     ],
-    "threadCount": 7
+    "threadCount": 2
   },
   {
-    "id": "topic_EY_q1_2026_commercial_contract_terms",
+    "id": "topic_EK_virtual_cards_alignment_and_payment_infr",
+    "accountIata": "EK",
+    "createdBy": "graph_pull_llm",
+    "createdAt": "2026-07-27",
+    "scope": "global",
+    "bd": "praveen",
+    "headline": "Virtual cards alignment and payment infrastructure",
+    "detail": "Technical and commercial alignment on virtual card deployment for enhanced transaction efficiency.",
+    "dollarImpact": null,
+    "nextStep": "Follow-up discussion and next steps to be confirmed.",
+    "isChild": false,
+    "source": "outlook_clustered",
+    "status": "in_progress",
+    "priority": "medium",
+    "airlineOwners": [
+      "Egor Plakhov"
+    ],
+    "tripOwners": [],
+    "threadCount": 1
+  },
+  {
+    "id": "topic_EY_q1_2026_contract_execution_signature",
     "accountIata": "EY",
     "createdBy": "graph_pull_llm",
     "createdAt": "2026-07-24",
     "scope": "global",
     "bd": "praveen",
-    "headline": "Q1 2026 Commercial Contract & Terms",
-    "detail": "Negotiation and execution of the Q1 2026 partnership contract between Trip.com and Etihad. Contract was sent for signature in late July with discussion of terms and observer inclusion.",
-    "nextStep": "Confirm contract signature completion and secure final executed copies",
+    "headline": "Q1 2026 Contract Execution & Signature",
+    "detail": "Q1 contract sent for signature; coordination on signatory details and completion timeline.",
+    "dollarImpact": null,
+    "nextStep": null,
     "isChild": false,
     "source": "outlook_clustered",
-    "status": "in_progress",
+    "status": "closed",
     "priority": "high",
     "airlineOwners": [
       "Sreejith Rajamohanan"
@@ -180,18 +229,19 @@
       "Anuj Bansal",
       "Kirk Wong"
     ],
-    "threadCount": 1
+    "threadCount": 2
   },
   {
-    "id": "topic_EY_payment_cost_structure_policy_optimizati",
+    "id": "topic_EY_payment_cost_optimization_policy",
     "accountIata": "EY",
     "createdBy": "graph_pull_llm",
     "createdAt": "2026-07-24",
     "scope": "global",
     "bd": "praveen",
-    "headline": "Payment Cost Structure & Policy Optimization",
-    "detail": "Ongoing workstream to optimize payment processing costs and establish formal governance policy. Discussions include partner coordination and rollout of standardized payment cost policy.",
-    "nextStep": "Share final payment cost policy document once internal approval is obtained",
+    "headline": "Payment Cost Optimization & Policy",
+    "detail": "Etihad implementing formal payment cost optimization policy with key partners including Trip.com.",
+    "dollarImpact": null,
+    "nextStep": "Share final payment cost policy document once approved by Etihad leadership",
     "isChild": false,
     "source": "outlook_clustered",
     "status": "in_progress",
@@ -205,37 +255,60 @@
     "threadCount": 1
   },
   {
-    "id": "topic_EY_product_discontinuation_extra_legroom_se",
+    "id": "topic_EY_ancillary_product_extra_legroom_disconti",
     "accountIata": "EY",
     "createdBy": "graph_pull_llm",
     "createdAt": "2026-07-23",
     "scope": "global",
     "bd": "praveen",
-    "headline": "Product Discontinuation: Extra Legroom Seats",
-    "detail": "Notification of Etihad's discontinuation of Extra Legroom seating product with details available on Etihad hub. One-way communication requiring Trip.com compliance.",
+    "headline": "Ancillary Product: Extra Legroom Discontinuation",
+    "detail": "Etihad discontinuing Extra Legroom seat product; notification to distribution partners including Trip.com.",
+    "dollarImpact": null,
     "nextStep": null,
     "isChild": false,
     "source": "outlook_clustered",
     "status": "closed",
-    "priority": "medium",
+    "priority": "low",
+    "airlineOwners": [
+      "Sreejith Rajamohanan"
+    ],
+    "tripOwners": [],
+    "threadCount": 1
+  },
+  {
+    "id": "topic_EY_scheduling_coordination_calls",
+    "accountIata": "EY",
+    "createdBy": "graph_pull_llm",
+    "createdAt": "2026-07-23",
+    "scope": "global",
+    "bd": "praveen",
+    "headline": "Scheduling & Coordination Calls",
+    "detail": "Ongoing scheduling of strategic partnership calls and meetings between Trip.com and Etihad leadership.",
+    "dollarImpact": null,
+    "nextStep": null,
+    "isChild": false,
+    "source": "outlook_clustered",
+    "status": "active",
+    "priority": "low",
     "airlineOwners": [
       "Sreejith Rajamohanan"
     ],
     "tripOwners": [
       "Anuj Bansal"
     ],
-    "threadCount": 1
+    "threadCount": 2
   },
   {
-    "id": "topic_EK_commercial_roadmap_strategic_alignment",
+    "id": "topic_EK_18_month_commercial_roadmap_payout_recon",
     "accountIata": "EK",
     "createdBy": "graph_pull_llm",
     "createdAt": "2026-07-21",
     "scope": "global",
     "bd": "praveen",
-    "headline": "Commercial roadmap & strategic alignment",
-    "detail": "18-month commercial roadmap planning, strategic discussions on partnership growth, capacity planning, and long-term commercial direction. AGC 2026 conference follow-up and alignment meetings.",
-    "nextStep": "Internal Emirates review of roadmap and last-year adjusted payout discussion; planned office visit from Rehab and Egor",
+    "headline": "18-month commercial roadmap & payout reconciliation",
+    "detail": "Strategic multi-year partnership roadmap with outstanding last-year adjusted payout discussion and office visit planned.",
+    "dollarImpact": null,
+    "nextStep": "Rehab to revert on roadmap and revisit last-year adjusted payout; coordinate office visit with Egor.",
     "isChild": false,
     "source": "outlook_clustered",
     "status": "in_progress",
@@ -247,84 +320,66 @@
     "tripOwners": [
       "Anuj Bansal"
     ],
-    "threadCount": 5
-  },
-  {
-    "id": "topic_EK_ek_fz_codeshare_policy_gds_implications",
-    "accountIata": "EK",
-    "createdBy": "graph_pull_llm",
-    "createdAt": "2026-07-21",
-    "scope": "global",
-    "bd": "praveen",
-    "headline": "EK-FZ codeshare policy & GDS implications",
-    "detail": "End-of-codeshare policy between EK and FZ including ticket issuance in GDS, mixed itinerary handling, and travel document requirements.",
-    "nextStep": "Clarify GDS removal timeline for new codeshare flights; obtain policy documentation for customer communication",
-    "isChild": false,
-    "source": "outlook_clustered",
-    "status": "in_progress",
-    "priority": "medium",
-    "airlineOwners": [],
-    "tripOwners": [
-      "Zhixuan Zhou",
-      "Anuj Bansal"
-    ],
     "threadCount": 2
   },
   {
-    "id": "topic_EK_atm_dubai_2026_partnership_activation",
+    "id": "topic_EK_fz_codeshare_end_policy_and_gds_manageme",
     "accountIata": "EK",
     "createdBy": "graph_pull_llm",
     "createdAt": "2026-07-21",
     "scope": "global",
     "bd": "praveen",
-    "headline": "ATM Dubai 2026 partnership activation",
-    "detail": "Planning and coordination for Arabia Travel Market Dubai September 2026 including partnership booth, meetings, and stakeholder engagement.",
-    "nextStep": "Confirm meeting schedule with Anuj for ATM Dubai 2026; coordinate internal Emirates preparations",
+    "headline": "FZ codeshare end policy and GDS management",
+    "detail": "Clarification on EK-FZ codeshare discontinuation, GDS ticket availability, and travel document requirements.",
+    "dollarImpact": null,
+    "nextStep": "AE OneSupport to provide FAQ responses on codeshare flight series and mixed itinerary visibility.",
     "isChild": false,
     "source": "outlook_clustered",
     "status": "in_progress",
     "priority": "medium",
     "airlineOwners": [
-      "Abbygail Cross"
+      "AE OneSupport"
     ],
     "tripOwners": [
-      "Anuj Bansal"
+      "Zhixuan Zhou"
     ],
-    "threadCount": 1
+    "threadCount": 2
   },
   {
-    "id": "topic_G9_portal_setup_user_management_automation",
+    "id": "topic_G9_portal_setup_and_ticketing_system_integr",
     "accountIata": "G9",
     "createdBy": "graph_pull_llm",
     "createdAt": "2026-07-21",
     "scope": "global",
     "bd": "praveen",
-    "headline": "Portal Setup & User Management Automation",
-    "detail": "G9 portal user creation and automation for Air Arabia team members. Request for involuntary reissue policy guidance and user sheet bulk onboarding.",
-    "nextStep": "Automate user creation for remaining users on sheet; provide involuntary reissue policy feedback",
+    "headline": "Portal setup and ticketing system integration",
+    "detail": "Onboarding Air Arabia onto Trip.com G9 portal with user automation and ticket voiding functionality verification across systems.",
+    "dollarImpact": null,
+    "nextStep": "Complete user creation automation; resolve TF ticket void capability; retest ticketing on UKDC",
     "isChild": false,
     "source": "outlook_clustered",
     "status": "in_progress",
-    "priority": "medium",
+    "priority": "high",
     "airlineOwners": [
-      "Mohammad Nabil Dodin",
-      "Tarun Chanana"
-    ],
-    "tripOwners": [
       "Mohammad Nabil Dodin"
     ],
-    "threadCount": 1
+    "tripOwners": [
+      "Trip ME ISC Flight Ops",
+      "Leo Liu"
+    ],
+    "threadCount": 3
   },
   {
-    "id": "topic_G9_tactical_sales_campaigns_fare_promotions",
+    "id": "topic_G9_tactical_sales_campaigns_and_promotions",
     "accountIata": "G9",
     "createdBy": "graph_pull_llm",
     "createdAt": "2026-07-15",
     "scope": "global",
     "bd": "praveen",
-    "headline": "Tactical Sales Campaigns & Fare Promotions",
-    "detail": "Joint marketing campaigns for Europe routes (SHJ-EU extension through Aug 15), Vienna special fares, and Munich flight operations activation. Ongoing coordination to drive incremental sales through promotional campaigns.",
-    "nextStep": "Extend campaign period and push ATH route activation",
+    "headline": "Tactical sales campaigns and promotions",
+    "detail": "Trip.com executing time-bound promotional campaigns (Vienna fares, EU routes, Munich) with airline support to drive incremental bookings.",
+    "dollarImpact": null,
+    "nextStep": "Extend Europe campaign support through 15 August; activate Athens route marketing",
     "isChild": false,
     "source": "outlook_clustered",
     "status": "in_progress",
@@ -333,20 +388,22 @@
       "Tarun Chanana"
     ],
     "tripOwners": [
-      "Anuj Bansal"
+      "Anuj Bansal",
+      "Shrey Nayar"
     ],
-    "threadCount": 1
+    "threadCount": 4
   },
   {
-    "id": "topic_EY_private_fares_trip_member_exclusive_offe",
+    "id": "topic_EY_private_fares_member_exclusive_offers",
     "accountIata": "EY",
     "createdBy": "graph_pull_llm",
     "createdAt": "2026-07-14",
     "scope": "global",
     "bd": "praveen",
-    "headline": "Private Fares & Trip Member Exclusive Offers",
-    "detail": "Configuration of private fares and Trip member-exclusive offers for non-EU markets. Requires exchange of office IDs and account codes for targeted visibility.",
-    "nextStep": "Provide Trip.com office IDs and account codes to Etihad for private fare filing",
+    "headline": "Private Fares & Member-Exclusive Offers",
+    "detail": "Trip.com filing private member fares with Etihad; coordination on office IDs and account codes for targeted exposure.",
+    "dollarImpact": null,
+    "nextStep": "Provide Trip.com office IDs and specific account codes to Etihad for private fare filing",
     "isChild": false,
     "source": "outlook_clustered",
     "status": "in_progress",
@@ -360,132 +417,90 @@
     "threadCount": 1
   },
   {
-    "id": "topic_EY_sale_participation_invoicing_finance",
+    "id": "topic_EY_invoice_sale_participation_billing",
     "accountIata": "EY",
     "createdBy": "graph_pull_llm",
     "createdAt": "2026-07-13",
     "scope": "global",
     "bd": "praveen",
-    "headline": "Sale Participation Invoicing & Finance",
-    "detail": "Invoice processing for Trip.com's participation in Etihad mega sales (e.g., IT and ES markets in May). Financial settlement and cost tracking.",
+    "headline": "Invoice & Sale Participation Billing",
+    "detail": "Trip.com invoicing Etihad for mega sale participation in IT and ES markets.",
+    "dollarImpact": null,
+    "nextStep": null,
+    "isChild": false,
+    "source": "outlook_clustered",
+    "status": "closed",
+    "priority": "medium",
+    "airlineOwners": [],
+    "tripOwners": [
+      "Anuj Bansal"
+    ],
+    "threadCount": 1
+  },
+  {
+    "id": "topic_EK_emirates_asia_pass_promotion",
+    "accountIata": "EK",
+    "createdBy": "graph_pull_llm",
+    "createdAt": "2026-07-10",
+    "scope": "global",
+    "bd": "praveen",
+    "headline": "Emirates Asia Pass promotion",
+    "detail": "Seasonal push to encourage Trip.com promotion of Emirates Asia Pass multi-destination travel product.",
+    "dollarImpact": null,
     "nextStep": null,
     "isChild": false,
     "source": "outlook_clustered",
     "status": "closed",
     "priority": "low",
     "airlineOwners": [
-      "Sreejith Rajamohanan"
+      "Mohamed Alshaiba"
     ],
-    "tripOwners": [
-      "Anuj Bansal"
-    ],
+    "tripOwners": [],
     "threadCount": 1
   },
   {
-    "id": "topic_EK_customer_service_operational_issues",
+    "id": "topic_EK_operational_issues_refunds_cancellations",
     "accountIata": "EK",
     "createdBy": "graph_pull_llm",
     "createdAt": "2026-07-08",
     "scope": "global",
     "bd": "praveen",
-    "headline": "Customer service & operational issues",
-    "detail": "Ad-hoc operational issues including passenger name corrections, EMD refunds, cancellation follow-ups, and agency debit advisories.",
-    "nextStep": "Complete refund processing and name correction communications; resolve outstanding cancellation issues",
-    "isChild": false,
-    "source": "outlook_clustered",
-    "status": "active",
-    "priority": "medium",
-    "airlineOwners": [
-      "Mohammad Nabil Dodin",
-      "Vimal Antony"
-    ],
-    "tripOwners": [
-      "Thauqeer",
-      "Anuj Bansal"
-    ],
-    "threadCount": 6
-  },
-  {
-    "id": "topic_EY_iata_code_brand_tracking_reconciliation",
-    "accountIata": "EY",
-    "createdBy": "graph_pull_llm",
-    "createdAt": "2026-06-26",
-    "scope": "global",
-    "bd": "praveen",
-    "headline": "IATA Code & Brand Tracking Reconciliation",
-    "detail": "Validation of IATA codes assigned to Trip.com and Travix brands in Etihad's tracking system. Gap identification and correction.",
-    "nextStep": "Review provided IATA list and confirm any gaps or corrections required",
+    "headline": "Operational issues: refunds, cancellations, late bookings",
+    "detail": "Resolution of customer service edge cases including name corrections, EMD refunds, late cancellations, and fare discrepancies.",
+    "dollarImpact": null,
+    "nextStep": "Trip.com to investigate late cancellation patterns and fare comparison cases; process EMD refunds per guidelines.",
     "isChild": false,
     "source": "outlook_clustered",
     "status": "in_progress",
     "priority": "medium",
     "airlineOwners": [
-      "Sreejith Rajamohanan"
-    ],
-    "tripOwners": [
-      "Anuj Bansal"
-    ],
-    "threadCount": 1
-  },
-  {
-    "id": "topic_EK_product_offerings_special_programs",
-    "accountIata": "EK",
-    "createdBy": "graph_pull_llm",
-    "createdAt": "2026-06-25",
-    "scope": "global",
-    "bd": "praveen",
-    "headline": "Product offerings & special programs",
-    "detail": "Emirates Asia Pass promotion, travel insurance enhancements, EK disruption policy updates, and complementary hotel partnerships.",
-    "nextStep": "Continue promoting Asia Pass during peak season; communicate travel insurance updates and new disruption policy terms",
-    "isChild": false,
-    "source": "outlook_clustered",
-    "status": "active",
-    "priority": "medium",
-    "airlineOwners": [
-      "Mohamed Alshaiba",
+      "Mohammad Nabil Dodin",
+      "Vimal Antony",
       "Emre Coskun"
     ],
     "tripOwners": [
-      "Anuj Bansal"
+      "Anuj Bansal",
+      "Thauqeer"
     ],
     "threadCount": 4
   },
   {
-    "id": "topic_EK_regional_team_introductions_relationship",
+    "id": "topic_EK_marketing_campaigns_and_creative_product",
     "accountIata": "EK",
     "createdBy": "graph_pull_llm",
-    "createdAt": "2026-06-23",
+    "createdAt": "2026-07-07",
     "scope": "global",
     "bd": "praveen",
-    "headline": "Regional team introductions & relationship building",
-    "detail": "New hires and regional manager introductions (Mohammad Nabil Dodin - KSA, Dinit Mehta - Indian subcontinent) to strengthen partnership across geographies.",
-    "nextStep": "Facilitate in-person meetings between new regional managers and Emirates counterparts",
-    "isChild": false,
-    "source": "outlook_clustered",
-    "status": "active",
-    "priority": "low",
-    "airlineOwners": [
-      "Mohammad Nabil Dodin",
-      "Dinit Mehta"
-    ],
-    "tripOwners": [],
-    "threadCount": 2
-  },
-  {
-    "id": "topic_EK_joint_marketing_campaigns_and_promotions",
-    "accountIata": "EK",
-    "createdBy": "graph_pull_llm",
-    "createdAt": "2026-06-22",
-    "scope": "global",
-    "bd": "praveen",
-    "headline": "Joint marketing campaigns and promotions",
-    "detail": "Coordinated campaigns including World Cup North America promo, China campaign production, and promotional assets. Includes revenue analysis, campaign planning, and creative execution.",
-    "nextStep": "Proceed with marketing campaign production and Trip.com share-of-voice investments; finalize campaign revenue analysis",
+    "headline": "Marketing campaigns and creative production",
+    "detail": "Campaign planning, production approval, and revenue analysis for multi-market initiatives including North America World Cup and China campaigns.",
+    "dollarImpact": null,
+    "nextStep": "Confirm marketing campaign production affirmation and investment share of voice from Trip side; finalize China campaign invoicing.",
     "isChild": false,
     "source": "outlook_clustered",
     "status": "in_progress",
     "priority": "high",
     "airlineOwners": [
+      "Misbah Jamali",
       "Nadia Mohamed Ali",
       "Fatma Almulla"
     ],
@@ -495,60 +510,44 @@
     "threadCount": 5
   },
   {
-    "id": "topic_G9_stakeholder_alignment_partnership_update",
-    "accountIata": "G9",
+    "id": "topic_EK_q1_q2_fy26_27_incentive_structures",
+    "accountIata": "EK",
     "createdBy": "graph_pull_llm",
-    "createdAt": "2026-06-18",
+    "createdAt": "2026-06-30",
     "scope": "global",
     "bd": "praveen",
-    "headline": "Stakeholder Alignment & Partnership Updates",
-    "detail": "Leadership introductions (Mohammad Nabil Dodin as Head of KSA) and strategic partnership recap post-AGC 2026 conference. Internal org updates and relationship establishment.",
-    "nextStep": null,
+    "headline": "Q1 & Q2 FY26/27 incentive structures",
+    "detail": "Design and rollout of volume-based incentives targeting 6th freedom traffic across defined OD pax slabs.",
+    "dollarImpact": null,
+    "nextStep": "Finalize Q2 incentive terms and confirm payout thresholds with Rehab and Emre.",
     "isChild": false,
     "source": "outlook_clustered",
-    "status": "closed",
-    "priority": "low",
+    "status": "in_progress",
+    "priority": "high",
     "airlineOwners": [
-      "Tarun Chanana"
+      "Emre Coskun",
+      "Rehab Mansoor"
     ],
     "tripOwners": [
-      "Anuj Bansal"
+      "Anuj Bansal",
+      "Shrey Nayar"
     ],
-    "threadCount": 1
+    "threadCount": 2
   },
   {
-    "id": "topic_G9_new_route_launches_schedule_updates",
-    "accountIata": "G9",
-    "createdBy": "graph_pull_llm",
-    "createdAt": "2026-06-17",
-    "scope": "global",
-    "bd": "praveen",
-    "headline": "New Route Launches & Schedule Updates",
-    "detail": "Air Arabia communicating new route launches (Karachi-Dammam for Fly Jinnah, Amman City Airport for Air Arabia Abu Dhabi) and requesting verification of all routes live on Trip.com platform. Operational coordination on schedule activation.",
-    "nextStep": null,
-    "isChild": false,
-    "source": "outlook_clustered",
-    "status": "closed",
-    "priority": "medium",
-    "airlineOwners": [
-      "Tarun Chanana"
-    ],
-    "tripOwners": [],
-    "threadCount": 1
-  },
-  {
-    "id": "topic_EY_fare_content_competitive_pricing_monitor",
+    "id": "topic_EY_iata_code_alignment_brand_tracking",
     "accountIata": "EY",
     "createdBy": "graph_pull_llm",
-    "createdAt": "2026-06-16",
+    "createdAt": "2026-06-26",
     "scope": "global",
     "bd": "praveen",
-    "headline": "Fare Content & Competitive Pricing Monitoring",
-    "detail": "Handling of fare undercutting concerns and verification that pricing discrepancies are from non-contracted suppliers, not contract violations. Operational compliance discussion.",
-    "nextStep": null,
+    "headline": "IATA Code Alignment & Brand Tracking",
+    "detail": "Etihad verifying IATA codes for Trip.com brands to ensure accurate revenue tracking and reporting.",
+    "dollarImpact": null,
+    "nextStep": "Trip.com review IATA list and confirm gaps or corrections before call with Etihad",
     "isChild": false,
     "source": "outlook_clustered",
-    "status": "closed",
+    "status": "in_progress",
     "priority": "medium",
     "airlineOwners": [
       "Sreejith Rajamohanan"
@@ -559,14 +558,107 @@
     "threadCount": 1
   },
   {
-    "id": "topic_G9_technical_issues_platform_support",
+    "id": "topic_EK_jebel_ali_guest_hotel_promotion",
+    "accountIata": "EK",
+    "createdBy": "graph_pull_llm",
+    "createdAt": "2026-06-22",
+    "scope": "global",
+    "bd": "praveen",
+    "headline": "Jebel Ali guest hotel promotion",
+    "detail": "Complimentary stay offer at JW Marriott Marquis Hotel Dubai for passenger engagement.",
+    "dollarImpact": null,
+    "nextStep": null,
+    "isChild": false,
+    "source": "outlook_clustered",
+    "status": "closed",
+    "priority": "low",
+    "airlineOwners": [
+      "Abbygail Cross"
+    ],
+    "tripOwners": [
+      "Anuj Bansal"
+    ],
+    "threadCount": 1
+  },
+  {
+    "id": "topic_EK_disruption_policy_updates_and_insurance_",
+    "accountIata": "EK",
+    "createdBy": "graph_pull_llm",
+    "createdAt": "2026-06-18",
+    "scope": "global",
+    "bd": "praveen",
+    "headline": "Disruption policy updates and insurance enhancements",
+    "detail": "Communication of EK Disruption Policy evolution (airspace closure expiry, regional schedule changes) and Comprehensive Travel Insurance enhancements.",
+    "dollarImpact": null,
+    "nextStep": null,
+    "isChild": false,
+    "source": "outlook_clustered",
+    "status": "closed",
+    "priority": "medium",
+    "airlineOwners": [
+      "Emre Coskun"
+    ],
+    "tripOwners": [
+      "Anuj Bansal"
+    ],
+    "threadCount": 2
+  },
+  {
+    "id": "topic_G9_route_activation_and_inventory_managemen",
+    "accountIata": "G9",
+    "createdBy": "graph_pull_llm",
+    "createdAt": "2026-06-17",
+    "scope": "global",
+    "bd": "praveen",
+    "headline": "Route activation and inventory management",
+    "detail": "Air Arabia notifying Trip.com of new routes (Karachi-Dammam, Amman City, etc.) and requesting live inventory availability on platform.",
+    "dollarImpact": null,
+    "nextStep": null,
+    "isChild": false,
+    "source": "outlook_clustered",
+    "status": "closed",
+    "priority": "medium",
+    "airlineOwners": [
+      "Tarun Chanana"
+    ],
+    "tripOwners": [
+      "Anuj Bansal"
+    ],
+    "threadCount": 3
+  },
+  {
+    "id": "topic_EY_fare_compliance_undercutting_resolution",
+    "accountIata": "EY",
+    "createdBy": "graph_pull_llm",
+    "createdAt": "2026-06-16",
+    "scope": "global",
+    "bd": "praveen",
+    "headline": "Fare Compliance & Undercutting Resolution",
+    "detail": "Etihad raised fare undercutting alert; Trip.com confirmed content from third-party supplier, not a breach.",
+    "dollarImpact": null,
+    "nextStep": null,
+    "isChild": false,
+    "source": "outlook_clustered",
+    "status": "closed",
+    "priority": "low",
+    "airlineOwners": [
+      "Sreejith Rajamohanan"
+    ],
+    "tripOwners": [
+      "Anuj Bansal"
+    ],
+    "threadCount": 1
+  },
+  {
+    "id": "topic_G9_technical_platform_incidents_and_support",
     "accountIata": "G9",
     "createdBy": "graph_pull_llm",
     "createdAt": "2026-06-15",
     "scope": "global",
     "bd": "praveen",
-    "headline": "Technical Issues & Platform Support",
-    "detail": "Miscellaneous technical issues including Lark service disruption, website errors, and ticketing system void policy validation during UKDC testing.",
+    "headline": "Technical platform incidents and support",
+    "detail": "Resolving Lark communication tool outage and escalating website error from business travel customer service.",
+    "dollarImpact": null,
     "nextStep": null,
     "isChild": false,
     "source": "outlook_clustered",
@@ -576,64 +668,40 @@
       "Zhixuan Zhou"
     ],
     "tripOwners": [
-      "Leo Liu"
+      "Zhixuan Zhou"
     ],
-    "threadCount": 1
+    "threadCount": 2
   },
   {
-    "id": "topic_EK_pricing_competitive_rate_monitoring",
-    "accountIata": "EK",
+    "id": "topic_EY_delivery_system_issues",
+    "accountIata": "EY",
     "createdBy": "graph_pull_llm",
-    "createdAt": "2026-06-05",
+    "createdAt": "2026-06-09",
     "scope": "global",
     "bd": "praveen",
-    "headline": "Pricing & competitive rate monitoring",
-    "detail": "Investigation and resolution of cases where Trip.com fares appear lower than Emirates.com direct pricing.",
-    "nextStep": "Complete pricing analysis for flagged routes (e.g., DXB-BOM); clarify discount structure with Nadia",
+    "headline": "Delivery & System Issues",
+    "detail": "Undeliverable email notification for KSA sales support address; permission issue with Etihad mail system.",
+    "dollarImpact": null,
+    "nextStep": null,
     "isChild": false,
     "source": "outlook_clustered",
-    "status": "active",
-    "priority": "medium",
-    "airlineOwners": [
-      "Nadia Mohamed Ali"
-    ],
-    "tripOwners": [
-      "Anuj Bansal"
-    ],
+    "status": "closed",
+    "priority": "low",
+    "airlineOwners": [],
+    "tripOwners": [],
     "threadCount": 1
   },
   {
-    "id": "topic_G9_sales_processing_flight_operations_setup",
+    "id": "topic_G9_campaign_winner_ticketing_and_promotion_",
     "accountIata": "G9",
     "createdBy": "graph_pull_llm",
-    "createdAt": "2026-06-01",
+    "createdAt": "2026-05-25",
     "scope": "global",
     "bd": "praveen",
-    "headline": "Sales Processing & Flight Operations Setup",
-    "detail": "Trip.com gathering operational policies from Air Arabia (void policy, reissue procedures, ticket processing rules) to configure sales and ticketing systems. Standard activation questionnaire for flight operations.",
-    "nextStep": "Air Arabia to provide void policy, reissue policy, and ticket processing guidelines",
-    "isChild": false,
-    "source": "outlook_clustered",
-    "status": "in_progress",
-    "priority": "high",
-    "airlineOwners": [
-      "Tarun Chanana"
-    ],
-    "tripOwners": [
-      "Trip ME ISC Flight Ops"
-    ],
-    "threadCount": 1
-  },
-  {
-    "id": "topic_G9_promotional_campaigns_ticket_disbursemen",
-    "accountIata": "G9",
-    "createdBy": "graph_pull_llm",
-    "createdAt": "2026-05-22",
-    "scope": "global",
-    "bd": "praveen",
-    "headline": "Promotional Campaigns & Ticket Disbursement",
-    "detail": "ENBD Noon Campaign winners ticket disbursement and follow-up. Promotional co-marketing efforts with banking partners.",
-    "nextStep": "Complete ticket disbursement for ENBD Noon Campaign winners",
+    "headline": "Campaign winner ticketing and promotion fulfillment",
+    "detail": "Disbursing tickets to winners of ENBD Noon co-branded campaign and thanking partner leadership at AGC conference.",
+    "dollarImpact": null,
+    "nextStep": "Confirm ticket disbursement completion for ENBD Noon Campaign winners",
     "isChild": false,
     "source": "outlook_clustered",
     "status": "in_progress",
@@ -645,43 +713,46 @@
     "tripOwners": [
       "Anuj Bansal"
     ],
-    "threadCount": 1
+    "threadCount": 2
   },
   {
-    "id": "topic_EK_virtual_cards_and_payment_infrastructure",
+    "id": "topic_EK_regional_vcc_activation_and_malaysia_par",
     "accountIata": "EK",
     "createdBy": "graph_pull_llm",
     "createdAt": "2026-05-21",
     "scope": "global",
     "bd": "praveen",
-    "headline": "Virtual cards and payment infrastructure",
-    "detail": "Virtual card (VCC) activation and alignment for Trip.com Malaysia and broader payment integration initiatives.",
-    "nextStep": "Await HQ communication on TripMY x EK VCC activation status; confirm next steps",
+    "headline": "Regional VCC activation and Malaysia partnership",
+    "detail": "Virtual card activation coordination between TripMY and Emirates Malaysia with HQ stakeholder alignment pending.",
+    "dollarImpact": null,
+    "nextStep": "Nor Azrina to provide update once HQ team reverts on VCC activation requirements.",
     "isChild": false,
     "source": "outlook_clustered",
     "status": "in_progress",
-    "priority": "medium",
+    "priority": "low",
     "airlineOwners": [
-      "Egor Plakhov",
       "Nor Azrina Ahmad"
     ],
-    "tripOwners": [],
-    "threadCount": 2
+    "tripOwners": [
+      "Dave"
+    ],
+    "threadCount": 1
   },
   {
-    "id": "topic_EK_eu_booster_incentive_pro_ration_adjustme",
+    "id": "topic_EK_eu_incentive_pro_ration_and_geopolitical",
     "accountIata": "EK",
     "createdBy": "graph_pull_llm",
     "createdAt": "2026-05-20",
     "scope": "global",
     "bd": "praveen",
-    "headline": "EU booster incentive & pro-ration adjustment",
-    "detail": "March EU origin booster incentive reconciliation with cancellations/refunds due to geopolitical tensions; pro-ration approach and payout adjustment.",
-    "nextStep": "Finalize pro-ration calculation and payout adjustment pending Rehab's response on last-year adjustments",
+    "headline": "EU incentive pro-ration and geopolitical adjustments",
+    "detail": "Reconciliation of EU origin March booster incentive payout with pro-rata adjustment due to cancellations and refunds from geopolitical tensions.",
+    "dollarImpact": null,
+    "nextStep": "Finalize pro-ration methodology and confirm payout adjustment with Rehab.",
     "isChild": false,
     "source": "outlook_clustered",
     "status": "in_progress",
-    "priority": "high",
+    "priority": "medium",
     "airlineOwners": [
       "Rehab Mansoor"
     ],
@@ -691,21 +762,22 @@
     "threadCount": 1
   },
   {
-    "id": "topic_EY_ksa_market_ticketing_authority_policy_qu",
-    "accountIata": "EY",
+    "id": "topic_EK_agc_2026_and_strategic_partnership_plann",
+    "accountIata": "EK",
     "createdBy": "graph_pull_llm",
-    "createdAt": "2026-05-19",
+    "createdAt": "2026-05-20",
     "scope": "global",
     "bd": "praveen",
-    "headline": "KSA Market Ticketing Authority & Policy Questions",
-    "detail": "Trip.com's inquiry regarding grant of ticketing authority for the Saudi Arabia (KSA) market and related policy clarifications. Resolved via reference to Etihad hub.",
-    "nextStep": null,
+    "headline": "AGC 2026 and strategic partnership planning",
+    "detail": "Post-conference alignment from Amsterdam Global Conference on strategic direction and future growth initiatives.",
+    "dollarImpact": null,
+    "nextStep": "Formalize outcomes and action items from conference dialogue with Matt and Rehab.",
     "isChild": false,
     "source": "outlook_clustered",
-    "status": "closed",
-    "priority": "low",
+    "status": "in_progress",
+    "priority": "medium",
     "airlineOwners": [
-      "Sreejith Rajamohanan"
+      "Rehab Mansoor"
     ],
     "tripOwners": [
       "Anuj Bansal"
@@ -713,43 +785,66 @@
     "threadCount": 1
   },
   {
-    "id": "topic_EY_tactical_incentives_share_of_voice_sov_o",
-    "accountIata": "EY",
+    "id": "topic_G9_activation_setup_and_fare_testing",
+    "accountIata": "G9",
     "createdBy": "graph_pull_llm",
-    "createdAt": "2026-05-14",
+    "createdAt": "2026-05-20",
     "scope": "global",
     "bd": "praveen",
-    "headline": "Tactical Incentives & Share of Voice (SoV) Optimization",
-    "detail": "Alignment on tactical incentives to boost sales with increased SoV exposure for specific destinations/origins. CRM marketing messaging preparation required.",
-    "nextStep": "Provide marketing messaging guidance to amplify CRM campaign impact",
+    "headline": "Activation setup and fare testing",
+    "detail": "Confirming Trip.com activation readiness and testing Munich fare reflection for marketing campaign launch.",
+    "dollarImpact": null,
+    "nextStep": null,
     "isChild": false,
     "source": "outlook_clustered",
-    "status": "active",
-    "priority": "medium",
+    "status": "closed",
+    "priority": "low",
     "airlineOwners": [
-      "Sreejith Rajamohanan"
+      "Tarun Chanana"
     ],
     "tripOwners": [
       "Anuj Bansal"
     ],
-    "threadCount": 0
+    "threadCount": 2
   },
   {
-    "id": "topic_EK_creative_assets_campaign_materials",
+    "id": "topic_EK_agency_debit_advisory_and_ticketing_comp",
     "accountIata": "EK",
     "createdBy": "graph_pull_llm",
-    "createdAt": "2026-05-12",
+    "createdAt": "2026-05-19",
     "scope": "global",
     "bd": "praveen",
-    "headline": "Creative assets & campaign materials",
-    "detail": "Production and delivery of high-resolution creative assets and promotional materials for campaigns.",
-    "nextStep": "Deliver high-res 'flag will always fly' creative assets to Anuj",
+    "headline": "Agency debit advisory and ticketing compliance",
+    "detail": "Resolution and clarification of Agency Debit Advisories (ADA) for no-shows and incorrect charges.",
+    "dollarImpact": null,
+    "nextStep": null,
     "isChild": false,
     "source": "outlook_clustered",
-    "status": "active",
+    "status": "closed",
     "priority": "low",
     "airlineOwners": [
-      "Taiba"
+      "EK UAE Sales Groups & Pricing"
+    ],
+    "tripOwners": [],
+    "threadCount": 1
+  },
+  {
+    "id": "topic_EY_ksa_market_ticketing_authority_policy",
+    "accountIata": "EY",
+    "createdBy": "graph_pull_llm",
+    "createdAt": "2026-05-19",
+    "scope": "global",
+    "bd": "praveen",
+    "headline": "KSA Market Ticketing Authority & Policy",
+    "detail": "Trip.com inquiry on KSA ticketing authority requirements; Etihad directs to etihadhub policy documentation.",
+    "dollarImpact": null,
+    "nextStep": null,
+    "isChild": false,
+    "source": "outlook_clustered",
+    "status": "closed",
+    "priority": "low",
+    "airlineOwners": [
+      "Sreejith Rajamohanan"
     ],
     "tripOwners": [
       "Anuj Bansal"

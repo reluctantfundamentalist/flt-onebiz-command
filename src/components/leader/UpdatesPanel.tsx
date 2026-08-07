@@ -108,6 +108,13 @@ export default function UpdatesPanel({ updates, accountName, metrics }: Props) {
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-[var(--ink-soft)]">{hero.detail}</p>
 
+            {hero.dollarImpact && (
+              <div className="mt-2 inline-flex items-baseline gap-1.5 rounded bg-emerald-50 px-2 py-1 text-[12px] text-emerald-900">
+                <span className="font-bold">{fmtUsd(hero.dollarImpact.amountUsd)}</span>
+                {hero.dollarImpact.note && <span>{hero.dollarImpact.note}</span>}
+              </div>
+            )}
+
             {heroMetric && (
               <div className="mt-3 flex flex-wrap items-center gap-3 rounded-lg bg-[var(--bg)] px-3 py-2 text-[11px]">
                 <span className="font-semibold text-[var(--ink-soft)]">Impact:</span>

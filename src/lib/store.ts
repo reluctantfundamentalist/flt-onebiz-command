@@ -34,6 +34,7 @@ export interface UpdateRecord {
   bd: string;
   headline: string;
   detail: string;
+  dollarImpact?: { amountUsd: number; note: string } | null;
   nextStep?: string | null;
   isChild?: boolean;
   parentOwner?: string;
