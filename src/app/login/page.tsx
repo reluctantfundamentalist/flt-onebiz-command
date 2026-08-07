@@ -3,6 +3,13 @@ import { useState, useEffect, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { USERS } from "@/lib/users";
 
+// Who shows up on the login screen (all USERS stay valid for sessions,
+// ownership and org data — this only limits the picker).
+const LOGIN_USER_IDS = ["anuj", "praveen", "snehal", "nabil", "dinit"];
+const LOGIN_USERS = LOGIN_USER_IDS
+  .map((id) => USERS.find((u) => u.id === id))
+  .filter((u): u is (typeof USERS)[number] => Boolean(u));
+
 export default function LoginPage() {
   const router = useRouter();
   const [nextPath, setNextPath] = useState("/");
@@ -65,7 +72,7 @@ export default function LoginPage() {
           className="mb-4 w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2.5 text-sm text-[var(--ink)] outline-none focus:border-[var(--brand)] focus:ring-1 focus:ring-[var(--brand)]"
         >
           <option value="">Select user</option>
-          {USERS.map((u) => (
+          {LOGIN_USERS.map((u) => (
             <option key={u.id} value={u.id}>
               {u.name} — {u.title}
             </option>
