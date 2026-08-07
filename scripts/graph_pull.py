@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Pull last 90 days of email from Anuj's Outlook where sender or recipient
 is @emirates.com or @etihad.ae. Writes:
-  - src/data-vendor/emails/{EK,EY}/emails.json      (message metadata + snippets)
-  - src/data-vendor/emails/{EK,EY}/attachments/     (downloaded attachments)
-  - src/data/updates.json                            (appended, dedup by id)
+  - src/data-vendor/emails/{EK,EY,G9}/emails.json      (message metadata + snippets)
+  - src/data-vendor/emails/{EK,EY,G9}/digests.json     (full bodies + attachment
+                                                        text; local-only, gitignored)
+  - src/data-vendor/emails/{EK,EY,G9}/attachments/     (downloaded attachments)
+  - src/data/updates.json                              (appended, dedup by id)
 
 Reuses tokens from ~/.openclaw/credentials/microsoft-graph.json.
 Refresh happens automatically if the access token is close to expiry.
@@ -11,6 +13,8 @@ Refresh happens automatically if the access token is close to expiry.
 
 from __future__ import annotations
 
+import base64
+import io
 import json
 import os
 import re
@@ -18,7 +22,10 @@ import ssl
 import sys
 import urllib.parse
 import urllib.request
+import zipfile
+from collections import defaultdict
 from datetime import datetime, timezone, timedelta
+from html.parser import HTMLParser
 from pathlib import Path
 
 CREDS_PATH = Path.home() / ".openclaw" / "credentials" / "microsoft-graph.json"
@@ -80,7 +87,7 @@ def search_domain(token, domain, since_iso, top=200):
     q = f'"{domain}"'
     params = urllib.parse.urlencode({
         "$search": q,
-        "$select": "id,subject,from,toRecipients,ccRecipients,receivedDateTime,bodyPreview,hasAttachments,conversationId,internetMessageId,parentFolderId",
+        "$select": "id,subject,from,toRecipients,ccRecipients,receivedDateTime,bodyPreview,body,hasAttachments,conversationId,internetMessageId,parentFolderId",
         "$top": str(top),
     })
     url = f"{GRAPH}/me/messages?{params}"
@@ -109,22 +116,193 @@ def search_domain(token, domain, since_iso, top=200):
     return all_msgs
 
 
-def download_attachments(token, msg_id, out_dir):
-    url = f"{GRAPH}/me/messages/{msg_id}/attachments"
-    resp = graph_get(url, token)
-    saved = []
-    for a in resp.get("value", []):
-        if a.get("@odata.type") != "#microsoft.graph.fileAttachment":
+# ─── Body + attachment text extraction ────────────────────────────────────────
+
+BODY_CAP = 4000          # chars of email body kept per message
+ATT_TEXT_CAP = 6000      # chars of extracted text kept per attachment
+MAX_ATT_BYTES = 8 * 1024 * 1024
+MAX_ATTS_PER_THREAD = 12
+
+TEXT_EXTS = {"txt", "csv", "tsv", "xml", "ics", "eml", "log", "htm", "html", "json"}
+
+
+class _HTMLText(HTMLParser):
+    SKIP = {"script", "style", "head"}
+    BREAKS = {"br", "p", "div", "tr", "li", "h1", "h2", "h3", "h4"}
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.parts = []
+        self._skip = 0
+
+    def handle_starttag(self, tag, attrs):
+        if tag in self.SKIP:
+            self._skip += 1
+        elif tag in self.BREAKS:
+            self.parts.append("\n")
+
+    def handle_endtag(self, tag):
+        if tag in self.SKIP and self._skip:
+            self._skip -= 1
+        elif tag in self.BREAKS:
+            self.parts.append("\n")
+
+    def handle_data(self, data):
+        if not self._skip:
+            self.parts.append(data)
+
+
+def html_to_text(html: str) -> str:
+    p = _HTMLText()
+    try:
+        p.feed(html)
+    except Exception:
+        return ""
+    text = "".join(p.parts)
+    text = re.sub(r"[ \t]+", " ", text)
+    text = re.sub(r"\n\s*\n+", "\n", text)
+    return text.strip()
+
+
+def body_text(msg: dict) -> str:
+    body = msg.get("body") or {}
+    content = body.get("content") or ""
+    if body.get("contentType") == "text":
+        text = content
+    else:
+        text = html_to_text(content)
+    return text[:BODY_CAP]
+
+
+def _decode(raw: bytes) -> str:
+    for enc in ("utf-8", "latin-1"):
+        try:
+            return raw.decode(enc)
+        except UnicodeDecodeError:
             continue
-        name = re.sub(r"[^A-Za-z0-9._-]+", "_", a.get("name", "attachment"))[:120]
-        content_b64 = a.get("contentBytes")
-        if not content_b64:
+    return raw.decode("utf-8", errors="replace")
+
+
+def _extract_xlsx(raw: bytes) -> str:
+    import openpyxl
+    wb = openpyxl.load_workbook(io.BytesIO(raw), read_only=True, data_only=True)
+    out = []
+    for sheet in list(wb.worksheets)[:3]:
+        rows = []
+        for i, row in enumerate(sheet.iter_rows(values_only=True)):
+            if i >= 30:
+                break
+            cells = ["" if c is None else str(c)[:40] for c in row[:15]]
+            if any(cells):
+                rows.append(" | ".join(cells).strip(" |"))
+        if rows:
+            out.append(f"[Sheet: {sheet.title}]")
+            out.extend(rows)
+    wb.close()
+    return "\n".join(out)
+
+
+def _extract_xls(raw: bytes) -> str:
+    import xlrd
+    wb = xlrd.open_workbook(file_contents=raw)
+    out = []
+    for sheet in wb.sheets()[:3]:
+        rows = []
+        for i in range(min(sheet.nrows, 30)):
+            cells = [str(sheet.cell_value(i, j))[:40] for j in range(min(sheet.ncols, 15))]
+            if any(cells):
+                rows.append(" | ".join(cells).strip(" |"))
+        if rows:
+            out.append(f"[Sheet: {sheet.name}]")
+            out.extend(rows)
+    return "\n".join(out)
+
+
+def _extract_csv(raw: bytes) -> str:
+    text = _decode(raw)
+    lines = [ln for ln in text.splitlines() if ln.strip()][:40]
+    return "\n".join(lines)
+
+
+def _extract_pdf(raw: bytes) -> str:
+    from pypdf import PdfReader
+    reader = PdfReader(io.BytesIO(raw))
+    out = []
+    for page in reader.pages[:10]:
+        try:
+            out.append(page.extract_text() or "")
+        except Exception:
             continue
-        import base64
-        out = out_dir / f"{msg_id[:12]}_{name}"
-        out.write_bytes(base64.b64decode(content_b64))
-        saved.append(out.name)
-    return saved
+    return "\n".join(out)
+
+
+def _extract_docx(raw: bytes) -> str:
+    import docx
+    d = docx.Document(io.BytesIO(raw))
+    out = [p.text for p in d.paragraphs if p.text.strip()]
+    for table in d.tables[:5]:
+        for row in list(table.rows)[:20]:
+            cells = [c.text.strip()[:40] for c in row.cells[:10]]
+            if any(cells):
+                out.append(" | ".join(cells))
+    return "\n".join(out)
+
+
+def _extract_pptx(raw: bytes) -> str:
+    z = zipfile.ZipFile(io.BytesIO(raw))
+    slides = sorted(
+        (n for n in z.namelist() if re.match(r"ppt/slides/slide\d+\.xml$", n)),
+        key=lambda n: int(re.search(r"\d+", n).group()),
+    )
+    out = []
+    for n in slides[:15]:
+        xml = z.read(n).decode("utf-8", errors="replace")
+        texts = re.findall(r"<a:t>([^<]*)</a:t>", xml)
+        line = " ".join(t.strip() for t in texts if t.strip())
+        if line:
+            out.append(line)
+    return "\n".join(out)
+
+
+def extract_text(name: str, raw: bytes) -> str | None:
+    """Extract readable text from an attachment; None = type we don't parse
+    (images etc.) — caller records name/size only."""
+    ext = name.lower().rsplit(".", 1)[-1] if "." in name else ""
+    try:
+        if ext in TEXT_EXTS:
+            if ext in ("htm", "html"):
+                return html_to_text(_decode(raw))
+            return _extract_csv(raw) if ext in ("csv", "tsv") else _decode(raw)
+        if ext in ("xlsx", "xlsm"):
+            return _extract_xlsx(raw)
+        if ext == "xls":
+            return _extract_xls(raw)
+        if ext == "pdf":
+            return _extract_pdf(raw)
+        if ext == "docx":
+            return _extract_docx(raw)
+        if ext == "pptx":
+            return _extract_pptx(raw)
+    except Exception as e:
+        return f"[unreadable {ext}: {e}]"[:200]
+    return None
+
+
+def list_attachments(token, msg_id):
+    resp = graph_get(f"{GRAPH}/me/messages/{msg_id}/attachments", token)
+    return resp.get("value", [])
+
+
+def fetch_attachment_bytes(token, msg_id, att):
+    if att.get("contentBytes"):
+        return base64.b64decode(att["contentBytes"])
+    if (att.get("size") or 0) <= MAX_ATT_BYTES:
+        return graph_bytes(f"{GRAPH}/me/messages/{msg_id}/attachments/{att['id']}/$value", token)
+    return None
+
+
+def safe_name(name: str) -> str:
+    return re.sub(r"[^A-Za-z0-9._-]+", "_", name or "attachment")[:120]
 
 
 def clean(msg, domain):
@@ -139,6 +317,7 @@ def clean(msg, domain):
         "cc": [{"name": r.get("name", ""), "address": (r.get("address") or "").lower()} for r in cc],
         "receivedDateTime": msg.get("receivedDateTime"),
         "bodyPreview": msg.get("bodyPreview", "").replace("\r", " ").strip()[:1000],
+        "_body": body_text(msg),  # full body text → moved to digests.json before write
         "hasAttachments": msg.get("hasAttachments", False),
         "conversationId": msg.get("conversationId"),
         "domain": domain,
@@ -212,22 +391,73 @@ def main():
 
         # dedupe by conversationId — keep newest per thread
         by_conv = {}
+        conv_msgs = defaultdict(list)
         for m in cleaned:
             k = m["conversationId"] or m["id"]
+            conv_msgs[k].append(m)
             if k not in by_conv or m["receivedDateTime"] > by_conv[k]["receivedDateTime"]:
                 by_conv[k] = m
         threads = list(by_conv.values())
         print(f"  {len(threads)} unique threads")
 
-        for m in threads:
-            if m["hasAttachments"]:
+        # Attachments: collect across ALL messages of each thread (not just the
+        # newest), dedupe by (name, size), save the file + extract text.
+        thread_atts = {}
+        n_atts = 0
+        for conv_key, msgs in conv_msgs.items():
+            atts_by_key = {}
+            for m in msgs:
+                if not m.get("hasAttachments"):
+                    continue
                 try:
-                    saved = download_attachments(token, m["id"], att_dir)
-                    if saved:
-                        m["attachments"] = saved
+                    atts = list_attachments(token, m["id"])
                 except Exception as e:
-                    print(f"  ! attachment failed for {m['id'][:12]}: {e}")
+                    print(f"  ! att list failed {m['id'][:12]}: {e}")
+                    continue
+                for a in atts:
+                    if len(atts_by_key) >= MAX_ATTS_PER_THREAD:
+                        break
+                    if a.get("@odata.type") != "#microsoft.graph.fileAttachment":
+                        continue
+                    key = (a.get("name"), a.get("size"))
+                    if key in atts_by_key:
+                        continue
+                    try:
+                        raw_bytes = fetch_attachment_bytes(token, m["id"], a)
+                    except Exception as e:
+                        print(f"  ! att fetch failed {a.get('name')}: {e}")
+                        continue
+                    if raw_bytes is None:
+                        print(f"  · skipped oversized attachment {a.get('name')}")
+                        continue
+                    name = safe_name(a.get("name"))
+                    out = att_dir / f"{m['id'][:12]}_{name}"
+                    if not out.exists():
+                        out.write_bytes(raw_bytes)
+                    text = extract_text(name, raw_bytes)
+                    atts_by_key[key] = {
+                        "name": a.get("name") or name,
+                        "size": len(raw_bytes),
+                        "text": (text[:ATT_TEXT_CAP] if text else None),
+                    }
+                    n_atts += 1
+            if atts_by_key:
+                thread_atts[conv_key] = list(atts_by_key.values())
+        print(f"  extracted {n_atts} unique attachments")
 
+        # emails.json keeps metadata only; full bodies + attachment text go to
+        # digests.json (gitignored — may contain sensitive commercial docs).
+        digests = {}
+        for m in threads:
+            k = m["conversationId"] or m["id"]
+            digests[m["id"]] = {
+                "body": m.pop("_body", ""),
+                "attachments": thread_atts.get(k, []),
+            }
+            atts = thread_atts.get(k, [])
+            if atts:
+                m["attachments"] = [{"name": a["name"], "size": a["size"]} for a in atts]
+        (out_dir / "digests.json").write_text(json.dumps(digests, indent=2))
         (out_dir / "emails.json").write_text(json.dumps(threads, indent=2))
         updates = [to_update_record(m, iata) for m in threads]
         added = append_updates(updates)

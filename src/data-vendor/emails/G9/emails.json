@@ -30,7 +30,33 @@
     "bodyPreview": "Classification: Internal \n \nDear @Trip ME ISC Flight Ops \n \nThanks! \n \n \nRegards| Tarun Chanana|+971-50-199-4787 \n \nFrom: Trip ME ISC Flight Ops <MEISCTrip.GlobalFlightsOPs@trip.com> \nSent: 03 August 2026 14:54 \nTo: Tarun Chanana <tchanana@airarabia.com>;",
     "hasAttachments": false,
     "conversationId": "AAQkADYwZGVlZGQ0LWYxMmQtNDYxNC1hYThkLTk3Y2RjOGZkYTI5ZQAQAM_GkRasAPNBnMHp9a85l1o=",
-    "domain": "airarabia.com"
+    "domain": "airarabia.com",
+    "attachments": [
+      {
+        "name": "G9-Trip-Refund Batch 4- 0803.xlsx",
+        "size": 59522
+      },
+      {
+        "name": "image001.png",
+        "size": 11630
+      },
+      {
+        "name": "image002.png",
+        "size": 512
+      },
+      {
+        "name": "image003.png",
+        "size": 27692
+      },
+      {
+        "name": "image004.png",
+        "size": 219459
+      },
+      {
+        "name": "G9-4th batch.xlsx",
+        "size": 120126
+      }
+    ]
   },
   {
     "id": "AAMkADYwZGVlZGQ0LWYxMmQtNDYxNC1hYThkLTk3Y2RjOGZkYTI5ZQBGAAAAAACatksMrruzQKikggCRos6KBwCjYeCIjtRbQYHjxTxvQ4fjAAAAAAEMAACjYeCIjtRbQYHjxTxvQ4fjAAEADTpYAAA=",
@@ -94,27 +120,54 @@
     "conversationId": "AAQkADYwZGVlZGQ0LWYxMmQtNDYxNC1hYThkLTk3Y2RjOGZkYTI5ZQAQAC9nQy7MB0fii5WSy5uQzGY=",
     "domain": "airarabia.com",
     "attachments": [
-      "AAMkADYwZGVl_image001.png",
-      "AAMkADYwZGVl_image002.png",
-      "AAMkADYwZGVl_image003.png",
-      "AAMkADYwZGVl_image004.png",
-      "AAMkADYwZGVl_image005.png",
-      "AAMkADYwZGVl_image006.png",
-      "AAMkADYwZGVl_image007.png",
-      "AAMkADYwZGVl_image008.png",
-      "AAMkADYwZGVl_image009.png",
-      "AAMkADYwZGVl_image010.png",
-      "AAMkADYwZGVl_image.png",
-      "AAMkADYwZGVl_image.png",
-      "AAMkADYwZGVl_image.png",
-      "AAMkADYwZGVl_image.png",
-      "AAMkADYwZGVl_image.png",
-      "AAMkADYwZGVl_image.png",
-      "AAMkADYwZGVl_image.png",
-      "AAMkADYwZGVl_image.png",
-      "AAMkADYwZGVl_image.png",
-      "AAMkADYwZGVl_image.png",
-      "AAMkADYwZGVl_Trip.com_G9_portal_application.xlsx"
+      {
+        "name": "image001.png",
+        "size": 170
+      },
+      {
+        "name": "image002.png",
+        "size": 880
+      },
+      {
+        "name": "image003.png",
+        "size": 494
+      },
+      {
+        "name": "image004.png",
+        "size": 681
+      },
+      {
+        "name": "image005.png",
+        "size": 2632
+      },
+      {
+        "name": "image006.png",
+        "size": 1899
+      },
+      {
+        "name": "image007.png",
+        "size": 2333
+      },
+      {
+        "name": "image008.png",
+        "size": 1762
+      },
+      {
+        "name": "image009.png",
+        "size": 33423
+      },
+      {
+        "name": "image010.png",
+        "size": 24639
+      },
+      {
+        "name": "image.png",
+        "size": 170
+      },
+      {
+        "name": "image.png",
+        "size": 880
+      }
     ]
   },
   {
@@ -212,7 +265,10 @@
     "conversationId": "AAQkADYwZGVlZGQ0LWYxMmQtNDYxNC1hYThkLTk3Y2RjOGZkYTI5ZQAQAE6Lh2CFykrwjFEHpxtZzzw=",
     "domain": "airarabia.com",
     "attachments": [
-      "AAMkADYwZGVl_route_list.xlsx"
+      {
+        "name": "route list.xlsx",
+        "size": 22899
+      }
     ]
   },
   {
@@ -502,7 +558,10 @@
     "conversationId": "AAQkADYwZGVlZGQ0LWYxMmQtNDYxNC1hYThkLTk3Y2RjOGZkYTI5ZQAQACl79I1N3RZOgmRdUJ114O8=",
     "domain": "airarabia.com",
     "attachments": [
-      "AAMkADYwZGVl_image001.jpg"
+      {
+        "name": "image001.jpg",
+        "size": 19392
+      }
     ]
   },
   {

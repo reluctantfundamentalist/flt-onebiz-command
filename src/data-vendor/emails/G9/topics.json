@@ -1,31 +1,31 @@
 [
   {
-    "name": "Route activation and inventory management",
-    "summary": "Air Arabia notifying Trip.com of new routes (Karachi-Dammam, Amman City, etc.) and requesting live inventory availability on platform.",
+    "name": "Refund batch processing and reconciliation",
+    "summary": "Air Arabia and Trip.com coordinating bulk refund batch processing with PNR-level reconciliation across multiple markets.",
     "dollarImpact": null,
-    "status": "closed",
-    "nextStep": null,
+    "status": "in_progress",
+    "nextStep": "Trip to remove refunded tickets and share updated refund list; Air Arabia to confirm final PNR applicability",
     "airlineOwners": [
       "Tarun Chanana"
     ],
     "tripOwners": [
-      "Anuj Bansal"
+      "Zhixuan Zhou",
+      "Anuj Bansal",
+      "Praveen Das Kulangara"
     ],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx_route_khi_dmm",
-      "id=AAMkADYwZGVlZGQ0LWYx_route_adj",
-      "id=AAMkADYwZGVlZGQ0LWYx_route_list_verify"
+      "id=AAMkADYwZGVlZGQ0LWYx"
     ],
-    "lastTouched": "2026-06-17",
-    "priority": "medium",
+    "lastTouched": "2026-08-03",
+    "priority": "high",
     "accountIata": "G9"
   },
   {
-    "name": "Tactical sales campaigns and promotions",
-    "summary": "Trip.com executing time-bound promotional campaigns (Vienna fares, EU routes, Munich) with airline support to drive incremental bookings.",
+    "name": "Europe route resumption tactical campaign",
+    "summary": "Multi-month marketing and incentive campaign driving bookings on Air Arabia's 9 resumed European routes with EUR 4 per-pax incentive.",
     "dollarImpact": null,
-    "status": "in_progress",
-    "nextStep": "Extend Europe campaign support through 15 August; activate Athens route marketing",
+    "status": "active",
+    "nextStep": "Extend campaign period to 15 August; add ATH (Athens) to promotion push",
     "airlineOwners": [
       "Tarun Chanana"
     ],
@@ -34,62 +34,120 @@
       "Shrey Nayar"
     ],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx_vie_special_fares",
-      "id=AAMkADYwZGVlZGQ0LWYx_tactical_shj_eu",
-      "id=AAMkADYwZGVlZGQ0LWYx_europe_routes_campaign",
-      "id=AAMkADYwZGVlZGQ0LWYx_muc_flight_ops"
+      "id=AAMkADYwZGVlZGQ0LWYx",
+      "id=AAMkADYwZGVlZGQ0LWYx"
     ],
     "lastTouched": "2026-07-15",
     "priority": "high",
     "accountIata": "G9"
   },
   {
-    "name": "Refund and PNR processing operations",
-    "summary": "Resolving bulk refund request (1,052 PNRs) and establishing operational void/reissue policies between partners.",
+    "name": "Portal access and user account management",
+    "summary": "Trip.com provisioning Air Arabia user accounts and admin access on partner portal; pending automation for bulk user creation.",
     "dollarImpact": null,
     "status": "in_progress",
-    "nextStep": "Process 1,052 PNR refund batch; confirm involuntary reissue policy with Air Arabia",
+    "nextStep": "Automate remaining user creation on sheet; provide involuntary reissue policy documentation",
     "airlineOwners": [
-      "Tarun Chanana",
-      "Mohammad Nabil Dodin"
+      "Tarun Chanana"
     ],
     "tripOwners": [
-      "Anuj Bansal"
+      "Mohammad Nabil Dodin",
+      "Zhixuan Zhou"
     ],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx_pnr_refund_1052",
-      "id=AAMkADYwZGVlZGQ0LWYx_g9_portal_automation",
-      "id=AAMkADYwZGVlZGQ0LWYx_ey_activation_questions"
+      "id=AAMkADYwZGVlZGQ0LWYx"
+    ],
+    "lastTouched": "2026-07-21",
+    "priority": "medium",
+    "accountIata": "G9"
+  },
+  {
+    "name": "New route activations and network updates",
+    "summary": "Air Arabia notifying Trip.com of new and resumed routes (9P Karachi-Dammam, 3L Amman City, European expansion) requiring inventory activation.",
+    "dollarImpact": null,
+    "status": "in_progress",
+    "nextStep": "Trip.com to verify all routes live on platform; refresh inventory using updated route list; confirm activations",
+    "airlineOwners": [
+      "Tarun Chanana"
+    ],
+    "tripOwners": [
+      "Shrey Nayar"
+    ],
+    "threadIds": [
+      "id=AAMkADYwZGVlZGQ0LWYx",
+      "id=AAMkADYwZGVlZGQ0LWYx",
+      "id=AAMkADYwZGVlZGQ0LWYx"
+    ],
+    "lastTouched": "2026-06-17",
+    "priority": "high",
+    "accountIata": "G9"
+  },
+  {
+    "name": "Exclusive fare loading and pricing management",
+    "summary": "Air Arabia loading special discounted fares (7% Vienna, Munich confirmation pending) to drive Trip.com channel sales growth.",
+    "dollarImpact": null,
+    "status": "in_progress",
+    "nextStep": "Trip.com to verify fares display correctly; activate marketing push for Munich; confirm Vienna fare activation",
+    "airlineOwners": [
+      "Tarun Chanana"
+    ],
+    "tripOwners": [
+      "Anuj Bansal",
+      "Shrey Nayar"
+    ],
+    "threadIds": [
+      "id=AAMkADYwZGVlZGQ0LWYx",
+      "id=AAMkADYwZGVlZGQ0LWYx"
+    ],
+    "lastTouched": "2026-06-11",
+    "priority": "medium",
+    "accountIata": "G9"
+  },
+  {
+    "name": "Strategic partnership roadmap and structure",
+    "summary": "Trip.com and Air Arabia establishing formal governance with dedicated regional leadership and multi-year commercial collaboration framework.",
+    "dollarImpact": null,
+    "status": "active",
+    "nextStep": "Anuj to lead strategic partnership from Dubai; Snehal to manage day-to-day UAE account; structure joint marketing and TO fare expansion",
+    "airlineOwners": [
+      "Tarun Chanana"
+    ],
+    "tripOwners": [
+      "Shrey Nayar",
+      "Anuj Bansal",
+      "Snehal Bagal"
+    ],
+    "threadIds": [
+      "id=AAMkADYwZGVlZGQ0LWYx",
+      "id=AAMkADYwZGVlZGQ0LWYx"
     ],
     "lastTouched": "2026-08-03",
     "priority": "high",
     "accountIata": "G9"
   },
   {
-    "name": "Portal setup and ticketing system integration",
-    "summary": "Onboarding Air Arabia onto Trip.com G9 portal with user automation and ticket voiding functionality verification across systems.",
+    "name": "Ticket setup and operational policies",
+    "summary": "Trip.com collecting void, refund, date-change, and support policies from Air Arabia and Etihad for ticketing system configuration.",
     "dollarImpact": null,
     "status": "in_progress",
-    "nextStep": "Complete user creation automation; resolve TF ticket void capability; retest ticketing on UKDC",
+    "nextStep": "Air Arabia to provide void policy, refund method (cash/credit, GDS/BSP), date-change collection (EMD/tax), local contact number",
     "airlineOwners": [
-      "Mohammad Nabil Dodin"
+      "Tarun Chanana"
     ],
     "tripOwners": [
-      "Trip ME ISC Flight Ops",
-      "Leo Liu"
+      "Zhixuan Zhou",
+      "Mohammad Nabil Dodin"
     ],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx_g9_portal_automation",
-      "id=AAMkADYwZGVlZGQ0LWYx_ey_activation_questions",
-      "id=AAMkADYwZGVlZGQ0LWYx_ukdc_ticketing_void"
+      "id=AAMkADYwZGVlZGQ0LWYx"
     ],
-    "lastTouched": "2026-07-21",
-    "priority": "high",
+    "lastTouched": "2026-06-01",
+    "priority": "medium",
     "accountIata": "G9"
   },
   {
-    "name": "Partnership team restructuring and KSA market lead handoff",
-    "summary": "Introducing new KSA market head (Mohammad Nabil Dodin) and acknowledging Trip.com UAE partnership team changes.",
+    "name": "KSA market leadership transition",
+    "summary": "Trip.com appointing Mohammad Nabil Dodin as Head of KSA to lead airline partnerships and commercial negotiations across Saudi market.",
     "dollarImpact": null,
     "status": "closed",
     "nextStep": null,
@@ -100,57 +158,87 @@
       "Anuj Bansal"
     ],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx_uae_partnership_update",
-      "id=AAMkADYwZGVlZGQ0LWYx_ksa_head_intro"
+      "id=AAMkADYwZGVlZGQ0LWYx"
     ],
-    "lastTouched": "2026-08-03",
+    "lastTouched": "2026-06-18",
     "priority": "low",
     "accountIata": "G9"
   },
   {
-    "name": "Campaign winner ticketing and promotion fulfillment",
-    "summary": "Disbursing tickets to winners of ENBD Noon co-branded campaign and thanking partner leadership at AGC conference.",
+    "name": "Prize fulfillment and ticket issuance",
+    "summary": "Trip.com disbursing winner tickets from ENBD Noon campaign; Air Arabia managing blackout periods and date/destination flexibility.",
     "dollarImpact": null,
-    "status": "in_progress",
-    "nextStep": "Confirm ticket disbursement completion for ENBD Noon Campaign winners",
+    "status": "dormant",
+    "nextStep": "Finalize travel dates/flights for winner SHEFEER PAMBANTAKATH; issue ticket for 29 May \u2013 2 June 2026 or approved alternative",
     "airlineOwners": [
-      "Tarun Chanana",
-      "Rajiv Bhattacharjee"
+      "Tarun Chanana"
     ],
     "tripOwners": [
       "Anuj Bansal"
     ],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx_enbd_ticket_disbursement",
-      "id=AAMkADYwZGVlZGQ0LWYx_agc_2026_recap"
+      "id=AAMkADYwZGVlZGQ0LWYx"
     ],
-    "lastTouched": "2026-05-25",
+    "lastTouched": "2026-05-22",
+    "priority": "low",
+    "accountIata": "G9"
+  },
+  {
+    "name": "Business travel refund access and permissions",
+    "summary": "Trip.com's B2B refund team reporting loss of permission to process Air Arabia refunds; escalation for system/account access restoration.",
+    "dollarImpact": null,
+    "status": "dormant",
+    "nextStep": "Air Arabia trade support to investigate and restore offline account refund permissions",
+    "airlineOwners": [],
+    "tripOwners": [
+      "Dragon Zhao (\u8d75\u4f83)"
+    ],
+    "threadIds": [
+      "id=AAMkADYwZGVlZGQ0LWYx"
+    ],
+    "lastTouched": "2026-05-21",
     "priority": "medium",
     "accountIata": "G9"
   },
   {
-    "name": "Technical platform incidents and support",
-    "summary": "Resolving Lark communication tool outage and escalating website error from business travel customer service.",
+    "name": "NDC ticketing platform activation and testing",
+    "summary": "Riyadh Air and other partners activating NDC/RX ticketing channels through Trip.com with post-sales SOP alignment and void-policy validation.",
     "dollarImpact": null,
-    "status": "dormant",
-    "nextStep": null,
-    "airlineOwners": [
-      "Zhixuan Zhou"
+    "status": "in_progress",
+    "nextStep": "Verify TF void functionality for AEDC; complete ticketing test on UKDC; activate RX if no errors",
+    "airlineOwners": [],
+    "tripOwners": [
+      "Numaan Khaleel Shereeff",
+      "Leo Liu",
+      "Jason Zhu"
     ],
+    "threadIds": [
+      "id=AAMkADYwZGVlZGQ0LWYx"
+    ],
+    "lastTouched": "2026-05-19",
+    "priority": "medium",
+    "accountIata": "G9"
+  },
+  {
+    "name": "Operational alerts and incident support",
+    "summary": "Lark messaging platform service disruption notification to partnership team; temporary communication channel issue.",
+    "dollarImpact": null,
+    "status": "closed",
+    "nextStep": null,
+    "airlineOwners": [],
     "tripOwners": [
       "Zhixuan Zhou"
     ],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx_lark_disruption",
-      "id=AAMkADYwZGVlZGQ4LWYx_website_error"
+      "id=AAMkADYwZGVlZGQ0LWYx"
     ],
     "lastTouched": "2026-06-15",
     "priority": "low",
     "accountIata": "G9"
   },
   {
-    "name": "Activation setup and fare testing",
-    "summary": "Confirming Trip.com activation readiness and testing Munich fare reflection for marketing campaign launch.",
+    "name": "Noise and administrative coordination",
+    "summary": "Email corrections, accidental forwards, and routine acknowledgments; no commercial substance.",
     "dollarImpact": null,
     "status": "closed",
     "nextStep": null,
@@ -161,10 +249,9 @@
       "Anuj Bansal"
     ],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx_trip_activation_note",
-      "id=AAMkADYwZGVlZGQ0LWYx_muc_flight_ops"
+      "id=AAMkADYwZGVlZGQ0LWYx"
     ],
-    "lastTouched": "2026-05-20",
+    "lastTouched": "2026-05-19",
     "priority": "low",
     "accountIata": "G9"
   }

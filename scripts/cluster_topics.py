@@ -62,7 +62,7 @@ def claude_call(prompt: str, max_tokens: int = 4096) -> str:
     req.add_header("anthropic-version", "2023-06-01")
     req.add_header("Authorization", f"Bearer {API_TOKEN}")
     try:
-        resp = urllib.request.urlopen(req, context=SSL_CTX, timeout=120)
+        resp = urllib.request.urlopen(req, context=SSL_CTX, timeout=300)
         data = json.loads(resp.read())
         return data["content"][0]["text"]
     except urllib.error.HTTPError as e:
@@ -72,12 +72,31 @@ def claude_call(prompt: str, max_tokens: int = 4096) -> str:
 
 # ─── Prep: build a compact per-thread payload for the LLM ─────────────────────
 
-def thread_summary_line(t: dict) -> str:
+BODY_EXCERPT = 1500      # chars of email body per thread
+ATT_EXCERPT = 700        # chars of extracted text per attachment
+MAX_ATTS_IN_PROMPT = 3   # attachments excerpted per thread; rest listed by name
+
+
+def thread_block(t: dict, digest: dict | None) -> str:
     date = (t.get("receivedDateTime") or "")[:10]
     frm = t.get("from", {}).get("name") or t.get("from", {}).get("address") or "?"
     subj = re.sub(r"^\s*(re|fw|fwd|\[external\])[:\s]*", "", (t.get("subject") or "").strip(), flags=re.I).strip()
-    body = (t.get("bodyPreview") or "").replace("\n", " ")[:400]
-    return f"[{date} · {frm}] {subj}\n  {body}"
+    body = ((digest or {}).get("body") or t.get("bodyPreview") or "").replace("\n", " ")[:BODY_EXCERPT]
+    lines = [f"[{date} · {frm}] {subj}", f"  {body}"]
+
+    atts = (digest or {}).get("attachments") or []
+    with_text = sorted((a for a in atts if a.get("text")), key=lambda a: len(a["text"]), reverse=True)
+    top = with_text[:MAX_ATTS_IN_PROMPT]
+    top_ids = {id(a) for a in top}
+    for a in top:
+        lines.append(f"  [attachment: {a['name']}]")
+        lines.append("  " + a["text"].replace("\n", " | ")[:ATT_EXCERPT])
+    for a in atts:
+        if id(a) in top_ids:
+            continue
+        kind = "content not readable" if a.get("text") is None else "excerpt omitted"
+        lines.append(f"  [attachment: {a['name']} ({(a.get('size') or 0) // 1024}KB, {kind})]")
+    return "\n".join(lines)
 
 
 def cluster_for_iata(iata: str) -> dict:
@@ -88,21 +107,32 @@ def cluster_for_iata(iata: str) -> dict:
     if not threads:
         return {"topics": [], "edges": []}
 
+    digests = {}
+    digests_path = EMAIL_DIR / iata / "digests.json"
+    if digests_path.exists():
+        try:
+            digests = json.load(open(digests_path))
+        except Exception:
+            digests = {}
+
+    blocks = {}
     lines = []
     for t in threads:
+        block = thread_block(t, digests.get(t["id"]))
+        blocks[t["id"]] = block
         lines.append(f"id={t['id'][:20]}")
-        lines.append(thread_summary_line(t))
+        lines.append(block)
         lines.append("")
 
     airline_name = {"EK": "Emirates", "EY": "Etihad", "G9": "Air Arabia Group"}[iata]
     prompt = f"""You are structuring commercial-partnership emails between Trip.com and {airline_name}.
 
-Below are {len(threads)} email threads (each = a distinct conversation with subject + preview). Cluster them into TOPICS. Each topic groups threads that discuss the same commercial workstream.
+Below are {len(threads)} email threads. Each includes subject + email body and, where available, extracted text from the thread's attachments (invoices, incentive/payout sheets, campaign decks etc.). Cluster them into TOPICS. Each topic groups threads that discuss the same commercial workstream.
 
 For each topic produce:
 - `name`: 4-8 words, business-friendly (e.g. "Skywards × Trip Coins loyalty integration")
 - `summary`: ONE short sentence (max ~20 words) for a leadership reader — the crux: what is happening and why it matters commercially. No background narration, no list of sub-items, no process descriptions.
-- `dollarImpact`: {{"amountUsd": number, "note": "3-6 word label"}} ONLY when an explicit monetary figure appears in the threads (revenue, payout, refund, target, fee, penalty, invoice). null otherwise. NEVER estimate, extrapolate or invent figures.
+- `dollarImpact`: {{"amountUsd": number, "note": "3-6 word label", "quote": "the VERBATIM sentence fragment from the thread (body or attachment text) where this exact figure is written"}} ONLY when an explicit monetary figure appears anywhere in the thread — email bodies OR attachment text (invoices, payout/revenue sheets, penalty notes). The quote must be copied word-for-word from the material below; it is mechanically verified and the figure is dropped if it cannot be found. null if no figure is stated. NEVER estimate, extrapolate, sum or invent figures.
 - `status`: one of "active" (ongoing conversation in the last 2 weeks), "in_progress" (multi-week workstream still moving), "closed" (concluded), "dormant" (stalled >4 weeks)
 - `nextStep`: the concrete next action if one is visible in the threads; else null
 - `airlineOwners`: array of participant names from the AIRLINE side (@{list(DOMAINS.keys())[list(DOMAINS.values()).index(iata)]}) most engaged in this topic (top 1-3)
@@ -138,18 +168,54 @@ Threads:
     topics = parsed.get("topics", [])
     # Resolve short thread ids -> full ids
     id_by_prefix = {t["id"][:20]: t["id"] for t in threads}
+    all_src = " ".join(blocks.values())
     for topic in topics:
         topic["threadIds"] = [id_by_prefix.get(tid, tid) for tid in topic.get("threadIds", [])]
         topic["accountIata"] = iata
-        topic["dollarImpact"] = clean_dollar_impact(topic.get("dollarImpact"))
+        src = " ".join(blocks.get(tid, "") for tid in topic["threadIds"])
+        topic["dollarImpact"] = clean_dollar_impact(topic.get("dollarImpact"), src, all_src)
 
     # Participant co-occurrence edges (mechanical)
     edges = compute_edges(iata, threads)
     return {"topics": topics, "edges": edges}
 
 
-def clean_dollar_impact(v) -> dict | None:
-    """Keep dollarImpact only if it's a sane, explicit figure."""
+def _norm_text(s: str) -> str:
+    return re.sub(r"\s+", "", s).lower()
+
+
+def _word_overlap(quote: str, source: str) -> float:
+    qwords = set(re.findall(r"[a-z0-9$,.]+", quote.lower()))
+    if not qwords:
+        return 0.0
+    swords = set(re.findall(r"[a-z0-9$,.]+", source.lower()))
+    return len(qwords & swords) / len(qwords)
+
+
+def _quote_amounts(quote: str) -> list:
+    """Parse every plausible monetary figure out of the quote."""
+    vals = []
+    text = quote.lower()
+    for m in re.finditer(r"(\d{1,3}(?:[,\s]\d{3})+|\d+)(?:\.(\d{1,2}))?\s*(k|m|bn|b)?(?![\d%])", text):
+        num = float(m.group(1).replace(",", "").replace(" ", ""))
+        if m.group(2):
+            num = float(f"{m.group(1).replace(',', '').replace(' ', '')}.{m.group(2)}")
+        suf = m.group(3)
+        if suf == "k":
+            num *= 1e3
+        elif suf == "m":
+            num *= 1e6
+        elif suf in ("b", "bn"):
+            num *= 1e9
+        vals.append(num)
+    return vals
+
+
+def clean_dollar_impact(v, source_text: str = "", fallback_source: str = "") -> dict | None:
+    """Keep dollarImpact only if it's a sane, explicit figure backed by a quote
+    that (a) is largely grounded in the source text and (b) actually contains
+    the claimed amount. Guards against invented numbers. Falls back to the whole
+    account's source when the quote sits in an adjacent thread."""
     if not isinstance(v, dict):
         return None
     amount = v.get("amountUsd")
@@ -161,6 +227,22 @@ def clean_dollar_impact(v) -> dict | None:
             return None
     if not isinstance(amount, (int, float)) or amount <= 0:
         return None
+    quote = str(v.get("quote") or "").strip()
+
+    def verified(src: str) -> bool:
+        if len(quote) < 10 or not src.strip():
+            return False
+        grounded = _norm_text(quote) in _norm_text(src) or _word_overlap(quote, src) >= 0.7
+        amounts_ok = any(abs(q - amount) <= 0.05 * amount for q in _quote_amounts(quote))
+        return grounded and amounts_ok
+
+    if source_text or fallback_source:
+        if not verified(source_text):
+            if fallback_source and verified(fallback_source):
+                print(f"    ~ kept dollar figure {amount:,.0f} (quoted from an adjacent thread)")
+            else:
+                print(f"    ! dropped unverified dollar figure {amount:,.0f} — quote: {quote[:90]!r}")
+                return None
     note = str(v.get("note") or "").strip()[:60]
     return {"amountUsd": amount, "note": note}
 

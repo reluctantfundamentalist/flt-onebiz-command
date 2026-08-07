@@ -1,10 +1,10 @@
 [
   {
-    "name": "Q1 2026 Contract Execution & Signature",
-    "summary": "Q1 contract sent for signature; coordination on signatory details and completion timeline.",
+    "name": "Commercial partnership agreement & contracting",
+    "summary": "Negotiating and executing multi-quarter performance agreements and NDC contracts between Trip.com and Etihad Airways.",
     "dollarImpact": null,
-    "status": "closed",
-    "nextStep": null,
+    "status": "in_progress",
+    "nextStep": "Fast-track Amadeus contracting at EY end; target NDC agreement signature by 15-Aug-26",
     "airlineOwners": [
       "Sreejith Rajamohanan"
     ],
@@ -13,38 +13,40 @@
       "Kirk Wong"
     ],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx"
-    ],
-    "lastTouched": "2026-07-24",
-    "priority": "high",
-    "accountIata": "EY"
-  },
-  {
-    "name": "Trip.com Commercial Offer & Partnership Terms",
-    "summary": "Etihad reviewing Trip.com commercial proposal with pending updates from airline side.",
-    "dollarImpact": null,
-    "status": "in_progress",
-    "nextStep": "Schedule call between Anuj and Sreejith to discuss Etihad updates",
-    "airlineOwners": [
-      "Sreejith Rajamohanan"
-    ],
-    "tripOwners": [
-      "Anuj Bansal"
-    ],
-    "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx"
+      "id=AAMkADYwZGVlZGQ0LWYx[2026-08-06]",
+      "id=AAMkADYwZGVlZGQ0LWYx[2026-07-24\u00b7Sreejith\u00b7Q1]"
     ],
     "lastTouched": "2026-08-06",
     "priority": "high",
     "accountIata": "EY"
   },
   {
-    "name": "Summer Mega Sale & Tactical Revenue Push",
-    "summary": "Trip.com coordinating tactical sales incentives and promotional push across EU markets for long-haul destination growth.",
+    "name": "NDC direct connectivity & technical integration",
+    "summary": "Establishing Trip.com\u2013Etihad direct NDC connection via Amadeus; awaiting internal approval and signature from Etihad.",
     "dollarImpact": null,
     "status": "in_progress",
-    "nextStep": "Provide marketing messaging to Trip CRM team to amplify promotional impact",
+    "nextStep": "Complete internal approval and signature process on Etihad side; confirm timeline with Lorena",
+    "airlineOwners": [
+      "Sreejith Rajamohanan",
+      "Ma. Lorena Rodessa Manalastas Sicat"
+    ],
+    "tripOwners": [
+      "Jason Zhu",
+      "Joyce Yang"
+    ],
+    "threadIds": [
+      "id=AAMkADYwZGVlZGQ0LWYx[2026-08-04\u00b7Joyce]"
+    ],
+    "lastTouched": "2026-08-04",
+    "priority": "high",
+    "accountIata": "EY"
+  },
+  {
+    "name": "Segment incentives & tactical sales campaigns",
+    "summary": "Rolling out EU tactical fares (Aug\u2013Sep) and segment-based incentive structures to drive higher-brand bookings and long-haul volume.",
+    "dollarImpact": null,
+    "status": "in_progress",
+    "nextStep": "Confirm implementation of EU tactical offer with segment incentives by tier; provide marketing messaging for CRM campaign",
     "airlineOwners": [
       "Sreejith Rajamohanan"
     ],
@@ -52,111 +54,44 @@
       "Anuj Bansal"
     ],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx"
+      "id=AAMkADYwZGVlZGQ0LWYx[2026-07-30]",
+      "id=AAMkADYwZGVlZGQ0LWYx[2026-05-14]"
     ],
     "lastTouched": "2026-07-30",
     "priority": "high",
     "accountIata": "EY"
   },
   {
-    "name": "Invoice & Sale Participation Billing",
-    "summary": "Trip.com invoicing Etihad for mega sale participation in IT and ES markets.",
-    "dollarImpact": null,
-    "status": "closed",
-    "nextStep": null,
-    "airlineOwners": [],
-    "tripOwners": [
-      "Anuj Bansal"
-    ],
-    "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx"
-    ],
-    "lastTouched": "2026-07-13",
-    "priority": "medium",
-    "accountIata": "EY"
-  },
-  {
-    "name": "Payment Cost Optimization & Policy",
-    "summary": "Etihad implementing formal payment cost optimization policy with key partners including Trip.com.",
-    "dollarImpact": null,
-    "status": "in_progress",
-    "nextStep": "Share final payment cost policy document once approved by Etihad leadership",
-    "airlineOwners": [
-      "Sreejith Rajamohanan"
-    ],
-    "tripOwners": [
-      "Anuj Bansal"
-    ],
-    "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx"
-    ],
-    "lastTouched": "2026-07-24",
-    "priority": "medium",
-    "accountIata": "EY"
-  },
-  {
-    "name": "Ancillary Product: Extra Legroom Discontinuation",
-    "summary": "Etihad discontinuing Extra Legroom seat product; notification to distribution partners including Trip.com.",
-    "dollarImpact": null,
+    "name": "Summer sale campaign & co-marketing initiatives",
+    "summary": "Trip.com flagship summer sale (July 2026) with Etihad exclusive fare discount and joint marketing investment for high-yield long-haul destinations.",
+    "dollarImpact": {
+      "amountUsd": 10000,
+      "note": "Trip marketing co-investment"
+    },
     "status": "closed",
     "nextStep": null,
     "airlineOwners": [
       "Sreejith Rajamohanan"
     ],
-    "tripOwners": [],
-    "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx"
-    ],
-    "lastTouched": "2026-07-23",
-    "priority": "low",
-    "accountIata": "EY"
-  },
-  {
-    "name": "Private Fares & Member-Exclusive Offers",
-    "summary": "Trip.com filing private member fares with Etihad; coordination on office IDs and account codes for targeted exposure.",
-    "dollarImpact": null,
-    "status": "in_progress",
-    "nextStep": "Provide Trip.com office IDs and specific account codes to Etihad for private fare filing",
-    "airlineOwners": [
-      "Sreejith Rajamohanan"
-    ],
     "tripOwners": [
       "Anuj Bansal"
     ],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx"
-    ],
-    "lastTouched": "2026-07-14",
-    "priority": "medium",
-    "accountIata": "EY"
-  },
-  {
-    "name": "IATA Code Alignment & Brand Tracking",
-    "summary": "Etihad verifying IATA codes for Trip.com brands to ensure accurate revenue tracking and reporting.",
-    "dollarImpact": null,
-    "status": "in_progress",
-    "nextStep": "Trip.com review IATA list and confirm gaps or corrections before call with Etihad",
-    "airlineOwners": [
-      "Sreejith Rajamohanan"
-    ],
-    "tripOwners": [
-      "Anuj Bansal"
-    ],
-    "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx"
+      "id=AAMkADYwZGVlZGQ0LWYx[2026-06-26\u00b7Anuj\u00b7mega]"
     ],
     "lastTouched": "2026-06-26",
     "priority": "medium",
     "accountIata": "EY"
   },
   {
-    "name": "Fare Compliance & Undercutting Resolution",
-    "summary": "Etihad raised fare undercutting alert; Trip.com confirmed content from third-party supplier, not a breach.",
-    "dollarImpact": null,
-    "status": "closed",
-    "nextStep": null,
+    "name": "Business development funds & marketing investment",
+    "summary": "Allocating 400K USD for FY 2026-27 joint marketing and revenue initiatives aligned with Etihad's brand strategy.",
+    "dollarImpact": {
+      "amountUsd": 400000,
+      "note": "BDF investment Jul-26 to Mar-27"
+    },
+    "status": "in_progress",
+    "nextStep": "Align on marketing and revenue teams' utilization of BDF for bespoke solutions delivery",
     "airlineOwners": [
       "Sreejith Rajamohanan"
     ],
@@ -164,51 +99,131 @@
       "Anuj Bansal"
     ],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx"
+      "id=AAMkADYwZGVlZGQ0LWYx[2026-08-06]"
     ],
-    "lastTouched": "2026-06-16",
-    "priority": "low",
+    "lastTouched": "2026-08-06",
+    "priority": "high",
     "accountIata": "EY"
   },
   {
-    "name": "KSA Market Ticketing Authority & Policy",
-    "summary": "Trip.com inquiry on KSA ticketing authority requirements; Etihad directs to etihadhub policy documentation.",
-    "dollarImpact": null,
-    "status": "closed",
-    "nextStep": null,
-    "airlineOwners": [
-      "Sreejith Rajamohanan"
-    ],
-    "tripOwners": [
-      "Anuj Bansal"
-    ],
-    "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx"
-    ],
-    "lastTouched": "2026-05-19",
-    "priority": "low",
-    "accountIata": "EY"
-  },
-  {
-    "name": "Etihad Direct Connect Integration (TravelFusion)",
-    "summary": "TravelFusion liaison confirms internal process near completion for Etihad Direct Connect technical integration.",
+    "name": "Payment cost optimization & UATP commercials",
+    "summary": "Reducing payment processing costs to <1.75% via Visa/Mastercard commercial products and establishing formal payment policy.",
     "dollarImpact": null,
     "status": "in_progress",
-    "nextStep": "Await final internal process completion from Etihad side",
+    "nextStep": "Review payment product thresholds and explore UATP commercial options to manage MSF",
+    "airlineOwners": [
+      "Sreejith Rajamohanan"
+    ],
+    "tripOwners": [
+      "Anuj Bansal"
+    ],
+    "threadIds": [
+      "id=AAMkADYwZGVlZGQ0LWYx[2026-07-24\u00b7Sreejith\u00b7Payment]"
+    ],
+    "lastTouched": "2026-07-24",
+    "priority": "medium",
+    "accountIata": "EY"
+  },
+  {
+    "name": "Trip member exclusive fares & private fare filing",
+    "summary": "Creating member-only Etihad deals for Trip.com customers out of EU; requires office IDs and account codes for private fare filing.",
+    "dollarImpact": null,
+    "status": "in_progress",
+    "nextStep": "Provide Trip office IDs and account codes to Etihad for private fare setup with front-end masking",
+    "airlineOwners": [
+      "Sreejith Rajamohanan"
+    ],
+    "tripOwners": [
+      "Anuj Bansal"
+    ],
+    "threadIds": [
+      "id=AAMkADYwZGVlZGQ0LWYx[2026-07-14]"
+    ],
+    "lastTouched": "2026-07-14",
+    "priority": "medium",
+    "accountIata": "EY"
+  },
+  {
+    "name": "Fare parity & content integrity",
+    "summary": "Resolving 30% fare undercutting concerns on Trip.com; clarifying marketplace seller dynamics vs. OTA violations.",
+    "dollarImpact": null,
+    "status": "closed",
+    "nextStep": null,
+    "airlineOwners": [
+      "Sreejith Rajamohanan"
+    ],
+    "tripOwners": [
+      "Anuj Bansal"
+    ],
+    "threadIds": [
+      "id=AAMkADYwZGVlZGQ0LWYx[2026-06-16]"
+    ],
+    "lastTouched": "2026-06-16",
+    "priority": "medium",
+    "accountIata": "EY"
+  },
+  {
+    "name": "Marketing campaigns & mega-sale placements",
+    "summary": "Invoicing Etihad for 5.5 mega-sale ad placements in Italy and Spain; driving brand visibility on Trip.com.",
+    "dollarImpact": {
+      "amountUsd": 15411.6,
+      "note": "EUR 13,500 mega-sale placements IT/ES"
+    },
+    "status": "closed",
+    "nextStep": null,
+    "airlineOwners": [
+      "Sreejith Rajamohanan"
+    ],
+    "tripOwners": [
+      "Anuj Bansal"
+    ],
+    "threadIds": [
+      "id=AAMkADYwZGVlZGQ0LWYx[2026-07-13]"
+    ],
+    "lastTouched": "2026-07-13",
+    "priority": "low",
+    "accountIata": "EY"
+  },
+  {
+    "name": "IATA agency management & ticketing activation",
+    "summary": "Maintaining Trip/Travix IATA registry; activating KSA ticketing authority on BSP and coordinating activation forms.",
+    "dollarImpact": null,
+    "status": "in_progress",
+    "nextStep": "Review IATA list for gaps; provide KSA activation forms and confirm etihadhub.com policy reference",
+    "airlineOwners": [
+      "Sreejith Rajamohanan"
+    ],
+    "tripOwners": [
+      "Anuj Bansal"
+    ],
+    "threadIds": [
+      "id=AAMkADYwZGVlZGQ0LWYx[2026-06-26\u00b7Sreejith\u00b7IATA]",
+      "id=AAMkADYwZGVlZGQ0LWYx[2026-05-19]"
+    ],
+    "lastTouched": "2026-06-26",
+    "priority": "medium",
+    "accountIata": "EY"
+  },
+  {
+    "name": "Product policy updates & ancillary discontinuation",
+    "summary": "Communicating Etihad policy changes, including discontinuation of extra-legroom seat product to Trip partners.",
+    "dollarImpact": null,
+    "status": "closed",
+    "nextStep": null,
     "airlineOwners": [
       "Sreejith Rajamohanan"
     ],
     "tripOwners": [],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx"
+      "id=AAMkADYwZGVlZGQ0LWYx[2026-07-23\u00b7Sreejith\u00b7Extra]"
     ],
-    "lastTouched": "2026-08-04",
-    "priority": "medium",
+    "lastTouched": "2026-07-23",
+    "priority": "low",
     "accountIata": "EY"
   },
   {
-    "name": "Scheduling & Coordination Calls",
-    "summary": "Ongoing scheduling of strategic partnership calls and meetings between Trip.com and Etihad leadership.",
+    "name": "Scheduling & meeting coordination",
+    "summary": "Internal meeting scheduling and coordination calls between Trip and Etihad stakeholders.",
     "dollarImpact": null,
     "status": "active",
     "nextStep": null,
@@ -219,23 +234,23 @@
       "Anuj Bansal"
     ],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx",
-      "id=AAMkADYwZGVlZGQ0LWYx"
+      "id=AAMkADYwZGVlZGQ0LWYx[2026-07-23\u00b7Anuj\u00b7EY]",
+      "id=AAMkADYwZGVlZGQ0LWYx[2026-06-26\u00b7Sreejith\u00b7Trip.com]"
     ],
     "lastTouched": "2026-07-23",
     "priority": "low",
     "accountIata": "EY"
   },
   {
-    "name": "Delivery & System Issues",
-    "summary": "Undeliverable email notification for KSA sales support address; permission issue with Etihad mail system.",
+    "name": "Inbox errors & system noise",
+    "summary": "Undeliverable mail and system bouncebacks; no business impact.",
     "dollarImpact": null,
     "status": "closed",
     "nextStep": null,
     "airlineOwners": [],
     "tripOwners": [],
     "threadIds": [
-      "id=AAMkADYwZGVlZGQ0LWYx"
+      "id=AAMkADYwZGVlZGQ0LWYx[2026-06-09]"
     ],
     "lastTouched": "2026-06-09",
     "priority": "low",
