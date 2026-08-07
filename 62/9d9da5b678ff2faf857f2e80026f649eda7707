@@ -1,0 +1,22 @@
+src/app/login/page.tsx
+  s_8ffd519bb9a5a4::t_8183671b170b88 6-12
+  s_8ffd519bb9a5a4::t_3d1a0c16844c73 75
+src/app/layout.tsx
+  s_8ffd519bb9a5a4::t_95aee1cfd9f9c1 15-40,46-49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.39-trip",
+  "base_commit_sha": "629d9da5b678ff2faf857f2e80026f649eda7707",
+  "prompts": {},
+  "sessions": {
+    "s_8ffd519bb9a5a4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f90e05d7-4479-44ad-b129-a4c3b4c5ad70",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
