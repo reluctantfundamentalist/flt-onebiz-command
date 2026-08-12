@@ -1,0 +1,19 @@
+docs/fltonebiz-circle-context.md
+  s_8b1e674c1004bd::t_a7207de79cb4b5 1-52
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.39-trip",
+  "base_commit_sha": "a09bada92a3f269c87b21dce4b8bbcb847028be6",
+  "prompts": {},
+  "sessions": {
+    "s_8b1e674c1004bd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "19ed44b5-ef47-49e2-8a2e-defa00e0c0fd",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
