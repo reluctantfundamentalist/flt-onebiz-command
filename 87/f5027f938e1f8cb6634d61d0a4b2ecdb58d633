@@ -1,0 +1,26 @@
+public/avatars/README.md
+  s_2ac98e2dfd2aeb::t_a15101f74a7396 1-7
+src/components/leader/AccountMap.tsx
+  s_2ac98e2dfd2aeb::t_690c6bccdfe5cc 7
+  s_2ac98e2dfd2aeb::t_25c76c6f9c6961 216
+  s_2ac98e2dfd2aeb::t_fcc1b69743060b 64-81
+  s_2ac98e2dfd2aeb::t_b57468804f5bd8 215,217-235
+  s_2ac98e2dfd2aeb::t_ae9a9af62195d8 3-4,8
+  s_2ac98e2dfd2aeb::t_2360f6831434b2 36-38,59,82,85-91,95-110,114,116-117,129-149,153-161,211-214,236-263,265-268,279-284
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.39-trip",
+  "base_commit_sha": "87f5027f938e1f8cb6634d61d0a4b2ecdb58d633",
+  "prompts": {},
+  "sessions": {
+    "s_2ac98e2dfd2aeb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "600dbe39-00a6-4423-8147-55a03acb78a5",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
