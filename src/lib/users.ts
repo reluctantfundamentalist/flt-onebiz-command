@@ -34,7 +34,7 @@ export interface Account {
 }
 
 const SEED_HASH =
-  "$2b$10$v57QPvSzpH/P91hMpflUr.KMv7lC0xMbCi/EEdbf4yPbElh4kXVi.";
+  "$2b$10$v57QPvSzpH/P91hMpflUr.KMv7lC0xMbCi/EEdbf4yPbElh4kXVi."; // TEMP local-preview only (password: mea-preview). Revert before merging.
 
 export const USERS: User[] = [
   { id: "anuj",    name: "Anuj Bansal",             title: "Director, Middle East and Africa",       role: "leader", passwordHash: SEED_HASH },

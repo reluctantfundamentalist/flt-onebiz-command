@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import L from "leaflet";
-import { MapContainer, TileLayer, CircleMarker, Marker, Tooltip, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, CircleMarker, Marker, Tooltip, ZoomControl, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useRouter } from "next/navigation";
 import type { Account, AccountRegion } from "@/lib/users";
@@ -246,7 +246,7 @@ export default function AccountMap({ accounts, metrics, selected = "", onSelect 
 
   return (
     <div className="flex h-full flex-col">
-      <div className="flex items-center gap-3 border-b border-[var(--line)] bg-white px-3 py-2">
+      <div className="relative z-20 flex items-center gap-3 border-b border-[var(--line)] bg-white px-3 py-2">
         <AccountSelect accounts={accounts} selected={selected} onPick={pick} />
         {selected && (
           <button
@@ -258,9 +258,10 @@ export default function AccountMap({ accounts, metrics, selected = "", onSelect 
         )}
       </div>
 
-      <div className="relative flex-1">
-        <MapContainer center={[22, 45]} zoom={3} minZoom={2} scrollWheelZoom={false} style={{ height: "100%", width: "100%" }}>
+      <div className="relative z-0 flex-1">
+        <MapContainer center={[22, 45]} zoom={3} minZoom={2} zoomControl={false} scrollWheelZoom={false} style={{ height: "100%", width: "100%" }}>
           <TileLayer attribution='&copy; <a href="https://carto.com/attributions">CARTO</a>' url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" />
+          <ZoomControl position="bottomright" />
           <MapEvents onZoom={setZoom} />
           <FlyTo target={flyTarget} zoom={flyZoom} />
 
