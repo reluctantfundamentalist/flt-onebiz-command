@@ -1,0 +1,21 @@
+src/lib/users.ts
+  s_2ac98e2dfd2aeb::t_19ce56d04e9000 66-68,70-107
+src/components/leader/AccountMap.tsx
+  s_2ac98e2dfd2aeb::t_2f6ed1da436b23 2-3,7,25-34,47-67,70-90,93-108,110-163,165-180
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.39-trip",
+  "base_commit_sha": "de9fdd98f6d2afd4c8d6aeddc873e47bf8c1e138",
+  "prompts": {},
+  "sessions": {
+    "s_2ac98e2dfd2aeb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "600dbe39-00a6-4423-8147-55a03acb78a5",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
