@@ -16,9 +16,13 @@ const AccountMap = dynamic(() => import("./AccountMap"), {
 export default function AccountMapClient({
   accounts,
   metrics,
+  selected,
+  onSelect,
 }: {
   accounts: Account[];
   metrics: Record<string, AccountMetrics>;
+  selected?: string;
+  onSelect?: (iata: string) => void;
 }) {
-  return <AccountMap accounts={accounts} metrics={metrics} />;
+  return <AccountMap accounts={accounts} metrics={metrics} selected={selected} onSelect={onSelect} />;
 }

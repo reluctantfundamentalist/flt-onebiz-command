@@ -11,6 +11,8 @@ import type { AccountMetrics } from "@/lib/store";
 interface Props {
   accounts: Account[];
   metrics: Record<string, AccountMetrics>;
+  selected?: string;
+  onSelect?: (iata: string) => void;
 }
 
 const REGION_COLORS: Record<string, string> = {
@@ -33,7 +35,6 @@ const REGION_LABELS: Record<string, string> = {
   OTHER: "Other",
 };
 
-// Below this zoom we draw one bubble per region; at or above it we draw accounts.
 const DETAIL_ZOOM = 5;
 
 function fmtUsd(n: number | undefined) {
@@ -48,7 +49,33 @@ function bubbleRadius(rev: number | undefined) {
   return 6 + Math.min(18, Math.sqrt(rev / 200_000));
 }
 
-// Nudge markers that share a city so they don't stack exactly on top of each other.
+function logoSrc(iata: string) {
+  return `/logos/${iata.toLowerCase()}.png`;
+}
+
+function LogoBadge({ iata, size = 20 }: { iata: string; size?: number }) {
+  const color = "#0b66c2";
+  return (
+    <span className="relative inline-flex shrink-0 items-center justify-center" style={{ width: size, height: size }}>
+      <img
+        src={logoSrc(iata)}
+        alt=""
+        style={{ width: size, height: size, borderRadius: 5, objectFit: "contain", background: "#fff" }}
+        onError={(e) => {
+          e.currentTarget.style.display = "none";
+          const el = e.currentTarget.nextElementSibling as HTMLElement | null;
+          if (el) el.style.display = "flex";
+        }}
+      />
+      <span
+        style={{ display: "none", width: size, height: size, borderRadius: 5, background: color, color: "#fff", alignItems: "center", justifyContent: "center", fontSize: size * 0.45, fontWeight: 700 }}
+      >
+        {iata.slice(0, 2)}
+      </span>
+    </span>
+  );
+}
+
 function declutter(accounts: Account[]): Map<string, [number, number]> {
   const seen = new Map<string, number>();
   const out = new Map<string, [number, number]>();
@@ -65,8 +92,6 @@ function initials(name: string) {
   return name.split(/\s+/).map((w) => w[0]).slice(0, 2).join("").toUpperCase();
 }
 
-// A person-chip marker: shows the BD's headshot from /avatars/<id>.png when one
-// exists, otherwise a clean initials chip ringed in the region colour.
 function ownerIcon(ownerId: string, color: string) {
   const name = findUser(ownerId)?.name ?? ownerId;
   const html =
@@ -108,23 +133,79 @@ interface RegionGroup {
   total: number;
 }
 
-export default function AccountMap({ accounts, metrics }: Props) {
+function AccountSelect({
+  accounts,
+  selected,
+  onPick,
+}: {
+  accounts: Account[];
+  selected: string;
+  onPick: (iata: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const byOwner = useMemo(() => {
+    const g = new Map<string, Account[]>();
+    for (const a of accounts) {
+      const list = g.get(a.ownerId) ?? [];
+      list.push(a);
+      g.set(a.ownerId, list);
+    }
+    return [...g.entries()];
+  }, [accounts]);
+
+  const current = accounts.find((a) => a.iata === selected);
+
+  return (
+    <div className="relative min-w-0 flex-1">
+      <button
+        onClick={() => setOpen((o) => !o)}
+        className="flex h-9 w-full items-center gap-2 rounded-md border border-[var(--line)] bg-white px-2 text-left text-[13px] text-[var(--ink)] focus:outline-none focus:ring-2 focus:ring-[#0b66c2]/30"
+      >
+        {current ? (
+          <>
+            <LogoBadge iata={current.iata} />
+            <span className="truncate">{current.iata} · {current.name}</span>
+          </>
+        ) : (
+          <span className="text-[var(--ink-faint)]">Select an airline…</span>
+        )}
+        <span className="ml-auto text-[10px] text-[var(--ink-faint)]">{open ? "▲" : "▼"}</span>
+      </button>
+
+      {open && (
+        <div className="absolute left-0 right-0 top-10 z-[500] max-h-72 overflow-y-auto rounded-md border border-[var(--line)] bg-white shadow-lg">
+          {byOwner.map(([ownerId, list]) => (
+            <div key={ownerId}>
+              <div className="sticky top-0 bg-[var(--bg)] px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-[var(--ink-faint)]">
+                {findUser(ownerId)?.name ?? ownerId}
+              </div>
+              {list.map((a) => (
+                <button
+                  key={a.iata}
+                  onClick={() => {
+                    onPick(a.iata);
+                    setOpen(false);
+                  }}
+                  className={`flex w-full items-center gap-2 px-2 py-1.5 text-left text-[13px] hover:bg-[var(--brand-soft)] ${selected === a.iata ? "bg-[var(--brand-soft)]" : ""}`}
+                >
+                  <LogoBadge iata={a.iata} />
+                  <span className="truncate text-[var(--ink)]">{a.iata} · {a.name}</span>
+                </button>
+              ))}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default function AccountMap({ accounts, metrics, selected = "", onSelect }: Props) {
   const router = useRouter();
-  const [selected, setSelected] = useState<string>("");
   const [zoom, setZoom] = useState(3);
   const [flyTarget, setFlyTarget] = useState<[number, number] | null>(null);
   const [flyZoom, setFlyZoom] = useState(3);
   const positions = useMemo(() => declutter(accounts), [accounts]);
-
-  const byOwner = useMemo(() => {
-    const groups = new Map<string, Account[]>();
-    for (const a of accounts) {
-      const list = groups.get(a.ownerId) ?? [];
-      list.push(a);
-      groups.set(a.ownerId, list);
-    }
-    return [...groups.entries()];
-  }, [accounts]);
 
   const regionGroups = useMemo<RegionGroup[]>(() => {
     const g = new Map<string, { lat: number; lng: number; count: number; total: number }>();
@@ -148,7 +229,7 @@ export default function AccountMap({ accounts, metrics }: Props) {
   const detailed = zoom >= DETAIL_ZOOM;
 
   function pick(iata: string) {
-    setSelected(iata);
+    onSelect?.(iata);
     const a = accounts.find((x) => x.iata === iata);
     if (a) {
       setFlyTarget(positions.get(a.iata) ?? [a.lat, a.lng]);
@@ -166,30 +247,11 @@ export default function AccountMap({ accounts, metrics }: Props) {
   return (
     <div className="flex h-full flex-col">
       <div className="flex items-center gap-3 border-b border-[var(--line)] bg-white px-3 py-2">
-        <label htmlFor="account-select" className="text-[11px] font-medium text-[var(--ink-faint)]">
-          Account
-        </label>
-        <select
-          id="account-select"
-          value={selected}
-          onChange={(e) => pick(e.target.value)}
-          className="h-8 min-w-0 flex-1 rounded-md border border-[var(--line)] bg-white px-2 text-[13px] text-[var(--ink)] focus:outline-none focus:ring-2 focus:ring-[#0b66c2]/30"
-        >
-          <option value="">Select an airline…</option>
-          {byOwner.map(([ownerId, list]) => (
-            <optgroup key={ownerId} label={findUser(ownerId)?.name ?? ownerId}>
-              {list.map((a) => (
-                <option key={a.iata} value={a.iata}>
-                  {a.iata} · {a.name}
-                </option>
-              ))}
-            </optgroup>
-          ))}
-        </select>
+        <AccountSelect accounts={accounts} selected={selected} onPick={pick} />
         {selected && (
           <button
             onClick={() => router.push(`/leader/account/${selected}`)}
-            className="h-8 shrink-0 rounded-md bg-[#0b66c2] px-3 text-[12px] font-medium text-white hover:bg-[#0a5aa8]"
+            className="h-9 shrink-0 rounded-md bg-[#0b66c2] px-3 text-[12px] font-medium text-white hover:bg-[#0a5aa8]"
           >
             Open
           </button>
@@ -197,17 +259,8 @@ export default function AccountMap({ accounts, metrics }: Props) {
       </div>
 
       <div className="relative flex-1">
-        <MapContainer
-          center={[22, 45]}
-          zoom={3}
-          minZoom={2}
-          scrollWheelZoom={false}
-          style={{ height: "100%", width: "100%" }}
-        >
-          <TileLayer
-            attribution='&copy; <a href="https://carto.com/attributions">CARTO</a>'
-            url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
-          />
+        <MapContainer center={[22, 45]} zoom={3} minZoom={2} scrollWheelZoom={false} style={{ height: "100%", width: "100%" }}>
+          <TileLayer attribution='&copy; <a href="https://carto.com/attributions">CARTO</a>' url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" />
           <MapEvents onZoom={setZoom} />
           <FlyTo target={flyTarget} zoom={flyZoom} />
 
@@ -216,12 +269,7 @@ export default function AccountMap({ accounts, metrics }: Props) {
               const owner = ownerForRegion(r.region as AccountRegion);
               const color = REGION_COLORS[r.region] ?? REGION_COLORS.OTHER;
               return (
-                <Marker
-                  key={r.region}
-                  position={[r.lat, r.lng]}
-                  icon={ownerIcon(owner, color)}
-                  eventHandlers={{ click: () => openRegion(r) }}
-                >
+                <Marker key={r.region} position={[r.lat, r.lng]} icon={ownerIcon(owner, color)} eventHandlers={{ click: () => openRegion(r) }}>
                   <Tooltip direction="top" offset={[0, -20]}>
                     <div className="text-[12px]">
                       <span className="font-semibold">{findUser(owner)?.name ?? owner}</span>
@@ -245,12 +293,7 @@ export default function AccountMap({ accounts, metrics }: Props) {
                   key={a.iata}
                   center={pos}
                   radius={isSel ? bubbleRadius(m?.ytdFlownRevUsd) + 3 : bubbleRadius(m?.ytdFlownRevUsd)}
-                  pathOptions={{
-                    color: isSel ? "#111" : color,
-                    fillColor: color,
-                    fillOpacity: isSel ? 0.9 : 0.7,
-                    weight: isSel ? 2.5 : 1.5,
-                  }}
+                  pathOptions={{ color: isSel ? "#111" : color, fillColor: color, fillOpacity: isSel ? 0.9 : 0.7, weight: isSel ? 2.5 : 1.5 }}
                   eventHandlers={{ click: () => pick(a.iata) }}
                 >
                   <Tooltip sticky>

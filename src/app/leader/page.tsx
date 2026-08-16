@@ -4,8 +4,7 @@ import { SEED_UPDATES, SEED_CONTRACTS, SEED_MEETINGS } from "@/lib/seed";
 import { listMetrics, listUpdates, listContracts, listMeetings } from "@/lib/store";
 import { loadMetricsByIata } from "@/lib/metrics-loader";
 import { buildTimeline, timelineByBdSummary } from "@/lib/timeline";
-import AccountMapClient from "@/components/leader/AccountMapClient";
-import UpdatesPanel from "@/components/leader/UpdatesPanel";
+import LeaderMapWorkspace from "@/components/leader/LeaderMapWorkspace";
 import ContractTable from "@/components/leader/ContractTable";
 import BdNavStrip from "@/components/leader/BdNavStrip";
 import AppHeader from "@/components/AppHeader";
@@ -48,14 +47,7 @@ export default async function LeaderPage() {
           <BdNavStrip summary={bdSummary} />
         </section>
 
-        <section className="grid gap-6 lg:grid-cols-2">
-          <div className="rounded-xl border border-[var(--line)] bg-white overflow-hidden" style={{ height: 480 }}>
-            <AccountMapClient accounts={ACCOUNTS} metrics={metricsByIata} />
-          </div>
-          <div style={{ maxHeight: 480 }} className="overflow-y-auto scroll-slim pr-1">
-            <UpdatesPanel updates={updates} metrics={metricsByIata} />
-          </div>
-        </section>
+        <LeaderMapWorkspace accounts={ACCOUNTS} metrics={metricsByIata} updates={updates} />
 
         <section>
           <div className="mb-3 flex items-center justify-between">
