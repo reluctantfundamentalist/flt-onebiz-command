@@ -1,0 +1,26 @@
+src/components/leader/AccountMap.tsx
+  s_2ac98e2dfd2aeb::t_2318be49b43d88 14-15,52-78,136-145,147,149,151,153,156-209,232,250,254,262-263,272,296
+src/app/leader/page.tsx
+  s_2ac98e2dfd2aeb::t_ea72a7f4acd8ed 50
+  s_2ac98e2dfd2aeb::t_ef1cf5775ecbb4 7
+src/components/leader/LeaderMapWorkspace.tsx
+  s_2ac98e2dfd2aeb::t_dd1b4e718205e7 1-125
+src/components/leader/AccountMapClient.tsx
+  s_2ac98e2dfd2aeb::t_dfc077764054c7 19-20,24-25,27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.39-trip",
+  "base_commit_sha": "c077011a71247938e74da2a5b42d9a11cb53522c",
+  "prompts": {},
+  "sessions": {
+    "s_2ac98e2dfd2aeb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "600dbe39-00a6-4423-8147-55a03acb78a5",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
