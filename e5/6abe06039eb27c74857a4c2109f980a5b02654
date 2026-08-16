@@ -1,0 +1,21 @@
+src/components/leader/AccountMap.tsx
+  s_2ac98e2dfd2aeb::t_0fe8471d43c03b 261-262,264
+  s_2ac98e2dfd2aeb::t_bb4d47be003632 4
+  s_2ac98e2dfd2aeb::t_42ccdcdf2a66bb 249
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.39-trip",
+  "base_commit_sha": "e56abe06039eb27c74857a4c2109f980a5b02654",
+  "prompts": {},
+  "sessions": {
+    "s_2ac98e2dfd2aeb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "600dbe39-00a6-4423-8147-55a03acb78a5",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
