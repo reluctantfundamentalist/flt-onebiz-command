@@ -27,13 +27,34 @@ EMAIL_DIR = REPO_ROOT / "src" / "data-vendor" / "emails"
 UPDATES_PATH = REPO_ROOT / "src" / "data" / "updates.json"
 PARTICIPANTS_PATH = REPO_ROOT / "src" / "data" / "participants.json"
 
-# Domain -> IATA
-DOMAINS = {
-    "emirates.com": "EK",
-    "etihad.ae": "EY",
-    "airarabia.com": "G9",
+# Per-owner config mirrors graph_pull. EMAIL_USER=<id> selects whose mail to
+# cluster; default is Anuj. Mail lives under emails/<owner>/<IATA>/.
+USER_DOMAINS = {
+    "anuj": {"EK": "emirates.com", "EY": "etihad.ae", "G9": "airarabia.com"},
+    "nabil": {
+        "SV": "saudia.com", "XY": "flynas.com", "F3": "flyadeal.com",
+        "PK": "pakistaninternational.com", "PF": "airsial.com", "PA": "airblue.com",
+        "EY": "etihad.ae",
+    },
 }
-BD_OWNER = {"EK": "praveen", "EY": "praveen", "G9": "praveen"}
+_email_user = os.environ.get("EMAIL_USER", "")
+OWNER = _email_user if _email_user in USER_DOMAINS else "anuj"
+
+# Domain -> IATA for the active owner.
+DOMAINS = {v: k for k, v in USER_DOMAINS[OWNER].items()}
+
+# Relationship-owned attribution: a BD's pull is attributed to that BD (his
+# relationships, including local offices of globally-owned carriers). The
+# director's (Anuj) pull uses the global owner map.
+_GLOBAL_BD = {"EK": "praveen", "EY": "praveen", "G9": "praveen"}
+if OWNER == "anuj":
+    BD_OWNER = dict(_GLOBAL_BD)
+else:
+    BD_OWNER = {iata: OWNER for iata in DOMAINS.values()}
+
+
+def email_dir(iata: str) -> Path:
+    return EMAIL_DIR / OWNER / iata
 
 # Trip proxy Claude API
 API_TOKEN = os.environ.get("ANTHROPIC_AUTH_TOKEN")
@@ -100,7 +121,7 @@ def thread_block(t: dict, digest: dict | None) -> str:
 
 
 def cluster_for_iata(iata: str) -> dict:
-    emails_path = EMAIL_DIR / iata / "emails.json"
+    emails_path = email_dir(iata) /"emails.json"
     if not emails_path.exists():
         return {"topics": [], "edges": []}
     threads = json.load(open(emails_path))
@@ -108,7 +129,7 @@ def cluster_for_iata(iata: str) -> dict:
         return {"topics": [], "edges": []}
 
     digests = {}
-    digests_path = EMAIL_DIR / iata / "digests.json"
+    digests_path = email_dir(iata) /"digests.json"
     if digests_path.exists():
         try:
             digests = json.load(open(digests_path))
@@ -124,7 +145,11 @@ def cluster_for_iata(iata: str) -> dict:
         lines.append(block)
         lines.append("")
 
-    airline_name = {"EK": "Emirates", "EY": "Etihad", "G9": "Air Arabia Group"}[iata]
+    airline_name = {
+        "EK": "Emirates", "EY": "Etihad", "G9": "Air Arabia Group",
+        "SV": "Saudia", "XY": "flynas", "F3": "flyadeal",
+        "PK": "Pakistan International", "PF": "Air Sial", "PA": "Air Blue",
+    }.get(iata, iata)
     prompt = f"""You are structuring commercial-partnership emails between Trip.com and {airline_name}.
 
 Below are {len(threads)} email threads. Each includes subject + email body and, where available, extracted text from the thread's attachments (invoices, incentive/payout sheets, campaign decks etc.). Cluster them into TOPICS. Each topic groups threads that discuss the same commercial workstream.
@@ -267,7 +292,7 @@ def to_update_record(topic: dict) -> dict:
     return {
         "id": f"topic_{topic['accountIata']}_{re.sub(r'[^a-z0-9]+', '_', topic['name'].lower())[:40]}",
         "accountIata": topic["accountIata"],
-        "createdBy": "graph_pull_llm",
+        "createdBy": f"graph_pull_llm_{OWNER}",
         "createdAt": topic.get("lastTouched") or datetime.now(timezone.utc).isoformat(),
         "scope": "global",
         "bd": BD_OWNER.get(topic["accountIata"], "praveen"),
@@ -305,7 +330,7 @@ def main():
 
     for iata in DOMAINS.values():
         if iata not in only:
-            topics_path = EMAIL_DIR / iata / "topics.json"
+            topics_path = email_dir(iata) /"topics.json"
             topics = json.load(open(topics_path)) if topics_path.exists() else []
             print(f"\n─── {iata}: keeping {len(topics)} existing topics ───")
             all_topics.extend(topics)
@@ -319,7 +344,7 @@ def main():
         for t in topics:
             print(f"    · [{t.get('status','?'):<11}] {t['name']}  ({len(t.get('threadIds', []))} threads)")
 
-        (EMAIL_DIR / iata / "topics.json").write_text(json.dumps(topics, indent=2))
+        (email_dir(iata) /"topics.json").write_text(json.dumps(topics, indent=2))
         all_topics.extend(topics)
         for e in edges:
             e["iata"] = iata
@@ -335,7 +360,10 @@ def main():
             existing = json.load(open(UPDATES_PATH))
         except Exception:
             existing = []
-    keep = [u for u in existing if u.get("createdBy") not in ("graph_pull", "graph_pull_llm")]
+    # Drop this owner's previous llm records (rebuilt below) but keep every other
+    # owner's records and any manual logs, so per-owner runs never clobber each other.
+    drop = {"graph_pull", "graph_pull_llm", f"graph_pull_llm_{OWNER}"}
+    keep = [u for u in existing if u.get("createdBy") not in drop]
     new_records = [to_update_record(t) for t in all_topics]
     combined = new_records + keep
     combined.sort(key=lambda u: u.get("createdAt", ""), reverse=True)

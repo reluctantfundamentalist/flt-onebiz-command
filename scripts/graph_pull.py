@@ -39,6 +39,29 @@ DOMAINS = {
     "EY": "etihad.ae",
     "G9": "airarabia.com",
 }
+
+# Per-BD onboarding: EMAIL_USER=<id> switches creds + carrier domains.
+# Default (unset) is Anuj, unchanged. Pull is read-only (Graph search/get).
+# Mail is stored per owner (emails/<owner>/<IATA>) so a BD's local thread on a
+# globally-owned carrier never overwrites the global owner's mail. Attribution is
+# relationship-owned: a BD's pull is attributed to that BD (see cluster_topics).
+USER_DOMAINS = {
+    "anuj": {"EK": "emirates.com", "EY": "etihad.ae", "G9": "airarabia.com"},
+    "nabil": {
+        "SV": "saudia.com", "XY": "flynas.com", "F3": "flyadeal.com",
+        "PK": "pakistaninternational.com", "PF": "airsial.com", "PA": "airblue.com",
+        "EY": "etihad.ae",  # EY local Saudi relationship is Nabil's
+    },
+}
+_email_user = os.environ.get("EMAIL_USER", "")
+OWNER = _email_user if _email_user in USER_DOMAINS else "anuj"
+if _email_user in USER_DOMAINS:
+    DOMAINS = USER_DOMAINS[_email_user]
+    CREDS_PATH = Path.home() / ".openclaw" / "credentials" / f"microsoft-graph-{_email_user}.json"
+
+
+def email_dir(iata: str) -> Path:
+    return EMAIL_DIR / OWNER / iata
 DAYS_BACK = 90
 
 SSL_CTX = ssl.create_default_context()
@@ -381,7 +404,7 @@ def main():
 
     for iata, domain in DOMAINS.items():
         print(f"\n─── {iata} · @{domain} · since {since[:10]} ───")
-        out_dir = EMAIL_DIR / iata
+        out_dir = email_dir(iata)
         att_dir = out_dir / "attachments"
         att_dir.mkdir(parents=True, exist_ok=True)
 
@@ -465,7 +488,7 @@ def main():
         print(f"  {added} new updates appended (existing skipped)")
 
     print(f"\nTotal new updates: {total_new_updates}")
-    print(f"Attachments dir:   {EMAIL_DIR}/<IATA>/attachments/")
+    print(f"Attachments dir:   {EMAIL_DIR}/<owner>/<IATA>/attachments/")
 
 
 if __name__ == "__main__":
