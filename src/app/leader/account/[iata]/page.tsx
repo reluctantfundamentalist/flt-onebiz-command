@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getSession } from "@/lib/auth";
-import { findAccount, findUser, ACCOUNTS } from "@/lib/users";
+import { findAccount, findUser, layersFor, ACCOUNTS } from "@/lib/users";
 import { SEED_UPDATES, SEED_MEETINGS, SEED_CONTRACTS } from "@/lib/seed";
 import { listUpdates, listMeetings, listContracts } from "@/lib/store";
 import { loadAirlineDataset } from "@/lib/dashboard-loader";
@@ -55,6 +55,7 @@ export default async function AccountDetailPage({
   );
   const contract = contracts[0];
   const owner = findUser(account.ownerId);
+  const layers = layersFor(account);
   const org = orgFor(account.iata);
 
   const accountLabelById = Object.fromEntries(ACCOUNTS.map((a) => [a.iata, `${a.iata} · ${a.name}`]));
@@ -104,6 +105,46 @@ export default async function AccountDetailPage({
             )}
           </div>
         )}
+
+        <section>
+          <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-[var(--ink)]">
+            <span>Ownership layers</span>
+            <span className="rounded bg-[var(--bg)] px-1.5 py-0.5 text-[10px] font-normal text-[var(--ink-faint)]">
+              stored global + local hierarchy
+            </span>
+          </div>
+          <div className="grid gap-3 lg:grid-cols-2">
+            {layers.map((layer) => {
+              const layerUpdates = updates.filter((u) => u.bd === layer.ownerId);
+              const isGlobal = layer.market === "GLOBAL";
+              return (
+                <div key={layer.market} className="rounded-xl border border-[var(--line)] bg-white p-4">
+                  <div className="mb-1 flex items-center justify-between">
+                    <div className="text-[13px] font-semibold text-[var(--ink)]">
+                      {isGlobal ? "Global" : `Local · ${layer.market}`}
+                    </div>
+                    <span className="rounded bg-[var(--brand-soft)] px-1.5 py-0.5 text-[10px] font-semibold text-[var(--brand-dark)]">
+                      {findUser(layer.ownerId)?.name ?? layer.ownerId}
+                    </span>
+                  </div>
+                  <div className="text-[11px] text-[var(--ink-faint)]">
+                    {layerUpdates.length} intel topics from inbox
+                  </div>
+                  {layerUpdates.slice(0, 2).map((u) => (
+                    <div key={u.id} className="mt-1.5 border-l-2 border-[var(--line)] pl-2 text-[12px] text-[var(--ink-soft)]">
+                      {u.headline}
+                    </div>
+                  ))}
+                  {!isGlobal && (
+                    <div className="mt-2 text-[10px] italic text-[var(--ink-faint)]">
+                      raises a flag to the global layer when it needs HQ leverage
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </section>
 
         <section>
           <div className="mb-3 text-sm font-semibold text-[var(--ink)]">Pipeline (Gantt)</div>

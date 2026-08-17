@@ -70,3 +70,15 @@ Gaps by phase:
   but not piped into continuous repo feeds.
 
 Shape: we built the eyes; the brain (synthesis) is still to come.
+
+## Since this check (2026-08-17, later)
+
+- Account hierarchy is now a STORED structure: `Account.layers` in
+  `src/lib/users.ts` (global node + local nodes), via `layersFor()`. EY and QR
+  carry `GLOBAL: praveen` + `KSA: nabil`. The account page renders an
+  "Ownership layers" section, splitting inbox intel by layer owner.
+- Map: clicking a BD+Region person-chip now updates the side pane with that
+  BD's details synced from the inbox (`BdSide`), alongside the airline view.
+- So the earlier gap "EY two-layer console view (sketched, not built)" is now
+  built for EY/QR; other accounts default to a single global layer until a
+  local layer is added to their `layers`.

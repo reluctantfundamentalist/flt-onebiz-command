@@ -4,7 +4,7 @@ import Link from "next/link";
 import AccountMapClient from "./AccountMapClient";
 import UpdatesPanel from "./UpdatesPanel";
 import type { Account } from "@/lib/users";
-import { findAccount, findUser } from "@/lib/users";
+import { findAccount, findUser, layersFor, ACCOUNTS } from "@/lib/users";
 import type { AccountMetrics, UpdateRecord } from "@/lib/store";
 
 function fmtUsd(n: number | undefined) {
@@ -97,6 +97,62 @@ function AccountSide({
   );
 }
 
+function BdSide({
+  bd,
+  metrics,
+  updates,
+}: {
+  bd: string;
+  metrics: Record<string, AccountMetrics>;
+  updates: UpdateRecord[];
+}) {
+  const name = findUser(bd)?.name ?? bd;
+  const accounts = ACCOUNTS.filter(
+    (a) => a.ownerId === bd || layersFor(a).some((l) => l.ownerId === bd),
+  );
+  const topics = updates.filter((u) => u.bd === bd);
+
+  return (
+    <div className="space-y-4">
+      <div className="rounded-xl border border-[var(--line)] bg-white p-4">
+        <div className="text-[16px] font-semibold text-[var(--ink)]">{name}</div>
+        <div className="mt-1 text-[11px] text-[var(--ink-faint)]">
+          {topics.length} inbox intel topics · {accounts.length} accounts
+        </div>
+        <div className="mt-2 flex flex-wrap gap-1.5">
+          {accounts.map((a) => (
+            <span key={a.iata} className="rounded bg-[var(--brand-soft)] px-1.5 py-0.5 text-[10px] font-semibold text-[var(--brand-dark)]">
+              {a.iata}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div className="rounded-xl border border-[var(--line)] bg-white p-4">
+        <div className="mb-2 text-[10px] font-semibold uppercase tracking-wide text-[var(--ink-faint)]">
+          Inbox intel · synced
+        </div>
+        {topics.length === 0 ? (
+          <div className="text-sm text-[var(--ink-faint)]">No inbox intel synced for this BD yet.</div>
+        ) : (
+          <ul className="space-y-3">
+            {topics.map((u) => (
+              <li key={u.id} className="border-l-2 border-[var(--brand-soft)] pl-3">
+                <div className="flex items-center gap-2 text-[10px] text-[var(--ink-faint)]">
+                  <span className="rounded bg-[var(--bg)] px-1.5 py-0.5 font-medium">{u.accountIata}</span>
+                  <span>{new Date(u.createdAt).toLocaleDateString()}</span>
+                </div>
+                <div className="text-sm font-medium text-[var(--ink)]">{u.headline}</div>
+                {u.detail && <p className="mt-0.5 text-[12px] text-[var(--ink-soft)]">{u.detail}</p>}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function LeaderMapWorkspace({
   accounts,
   metrics,
@@ -107,15 +163,30 @@ export default function LeaderMapWorkspace({
   updates: UpdateRecord[];
 }) {
   const [selected, setSelected] = useState<string>("");
+  const [selectedBd, setSelectedBd] = useState<string>("");
 
   return (
     <section className="grid gap-6 lg:grid-cols-2">
       <div className="overflow-hidden rounded-xl border border-[var(--line)] bg-white" style={{ height: 480 }}>
-        <AccountMapClient accounts={accounts} metrics={metrics} selected={selected} onSelect={setSelected} />
+        <AccountMapClient
+          accounts={accounts}
+          metrics={metrics}
+          selected={selected}
+          onSelect={(iata) => {
+            setSelected(iata);
+            setSelectedBd("");
+          }}
+          onSelectBd={(bd) => {
+            setSelectedBd(bd);
+            setSelected("");
+          }}
+        />
       </div>
       <div className="scroll-slim overflow-y-auto pr-1" style={{ maxHeight: 480 }}>
         {selected ? (
           <AccountSide iata={selected} metrics={metrics} updates={updates} />
+        ) : selectedBd ? (
+          <BdSide bd={selectedBd} metrics={metrics} updates={updates} />
         ) : (
           <UpdatesPanel updates={updates} metrics={metrics} />
         )}

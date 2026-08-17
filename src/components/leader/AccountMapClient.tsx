@@ -18,11 +18,13 @@ export default function AccountMapClient({
   metrics,
   selected,
   onSelect,
+  onSelectBd,
 }: {
   accounts: Account[];
   metrics: Record<string, AccountMetrics>;
   selected?: string;
   onSelect?: (iata: string) => void;
+  onSelectBd?: (bd: string) => void;
 }) {
-  return <AccountMap accounts={accounts} metrics={metrics} selected={selected} onSelect={onSelect} />;
+  return <AccountMap accounts={accounts} metrics={metrics} selected={selected} onSelect={onSelect} onSelectBd={onSelectBd} />;
 }

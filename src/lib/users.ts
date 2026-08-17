@@ -23,6 +23,11 @@ export type AccountRegion =
   | "CAUCASUS"
   | "OTHER";
 
+export interface AccountLayer {
+  market: string;      // "GLOBAL" or a country/market, e.g. "KSA"
+  ownerId: string;     // who owns this layer
+}
+
 export interface Account {
   iata: string;
   name: string;
@@ -30,11 +35,12 @@ export interface Account {
   region: AccountRegion;
   lat: number;
   lng: number;
-  ownerId: string;
+  ownerId: string;             // global owner
+  layers?: AccountLayer[];     // stored ownership hierarchy: global + local nodes
 }
 
 const SEED_HASH =
-  "$2b$10$nlUKnH4RWhg/DYaG7givwevV1phpYHo1FEk/5BA2WxZlMvi6/VzSC"; // TEMP local-preview only (password: mea-preview). Revert before merging.
+  "$2b$10$nlUKnH4RWhg/DYaG7givwevV1phpYHo1FEk/5BA2WxZlMvi6/VzSC"; // bcrypt("onebiz2026"), matches the login page hint.
 
 export const USERS: User[] = [
   { id: "anuj",    name: "Anuj Bansal",             title: "Director, Middle East and Africa",       role: "leader", passwordHash: SEED_HASH },
@@ -69,10 +75,12 @@ export function ownerForRegion(region: AccountRegion): string {
 export const ACCOUNTS: Account[] = [
   // Praveen — GCC
   { iata: "EK", name: "Emirates",              hqCountry: "United Arab Emirates", region: "GCC", lat: 25.253, lng: 55.365, ownerId: "praveen" },
-  { iata: "EY", name: "Etihad Airways",        hqCountry: "United Arab Emirates", region: "GCC", lat: 24.443, lng: 54.651, ownerId: "praveen" },
+  { iata: "EY", name: "Etihad Airways",        hqCountry: "United Arab Emirates", region: "GCC", lat: 24.443, lng: 54.651, ownerId: "praveen",
+    layers: [ { market: "GLOBAL", ownerId: "praveen" }, { market: "KSA", ownerId: "nabil" } ] },
   { iata: "FZ", name: "flydubai",              hqCountry: "United Arab Emirates", region: "GCC", lat: 25.253, lng: 55.365, ownerId: "praveen" },
   { iata: "G9", name: "Air Arabia Group",      hqCountry: "United Arab Emirates", region: "GCC", lat: 25.328, lng: 55.517, ownerId: "praveen" },
-  { iata: "QR", name: "Qatar Airways",         hqCountry: "Qatar",                region: "GCC", lat: 25.273, lng: 51.608, ownerId: "praveen" },
+  { iata: "QR", name: "Qatar Airways",         hqCountry: "Qatar",                region: "GCC", lat: 25.273, lng: 51.608, ownerId: "praveen",
+    layers: [ { market: "GLOBAL", ownerId: "praveen" }, { market: "KSA", ownerId: "nabil" } ] },
   { iata: "KU", name: "Kuwait Airways",        hqCountry: "Kuwait",               region: "GCC", lat: 29.227, lng: 47.983, ownerId: "praveen" },
   { iata: "J9", name: "Jazeera Airways",       hqCountry: "Kuwait",               region: "GCC", lat: 29.227, lng: 47.983, ownerId: "praveen" },
   { iata: "GF", name: "Gulf Air",              hqCountry: "Bahrain",              region: "GCC", lat: 26.271, lng: 50.633, ownerId: "praveen" },
@@ -109,6 +117,13 @@ export const ACCOUNTS: Account[] = [
 
 export function findAccount(iata: string): Account | undefined {
   return ACCOUNTS.find((a) => a.iata.toUpperCase() === iata.toUpperCase());
+}
+
+// Stored ownership hierarchy: the account's layers, defaulting to one global node.
+export function layersFor(account: Account): AccountLayer[] {
+  return account.layers && account.layers.length > 0
+    ? account.layers
+    : [{ market: "GLOBAL", ownerId: account.ownerId }];
 }
 
 export function accountsForUser(user: User): Account[] {

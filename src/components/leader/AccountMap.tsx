@@ -13,6 +13,7 @@ interface Props {
   metrics: Record<string, AccountMetrics>;
   selected?: string;
   onSelect?: (iata: string) => void;
+  onSelectBd?: (bd: string) => void;
 }
 
 const REGION_COLORS: Record<string, string> = {
@@ -200,7 +201,7 @@ function AccountSelect({
   );
 }
 
-export default function AccountMap({ accounts, metrics, selected = "", onSelect }: Props) {
+export default function AccountMap({ accounts, metrics, selected = "", onSelect, onSelectBd }: Props) {
   const router = useRouter();
   const [zoom, setZoom] = useState(3);
   const [flyTarget, setFlyTarget] = useState<[number, number] | null>(null);
@@ -270,7 +271,7 @@ export default function AccountMap({ accounts, metrics, selected = "", onSelect 
               const owner = ownerForRegion(r.region as AccountRegion);
               const color = REGION_COLORS[r.region] ?? REGION_COLORS.OTHER;
               return (
-                <Marker key={r.region} position={[r.lat, r.lng]} icon={ownerIcon(owner, color)} eventHandlers={{ click: () => openRegion(r) }}>
+                <Marker key={r.region} position={[r.lat, r.lng]} icon={ownerIcon(owner, color)} eventHandlers={{ click: () => { openRegion(r); onSelectBd?.(owner); } }}>
                   <Tooltip direction="top" offset={[0, -20]}>
                     <div className="text-[12px]">
                       <span className="font-semibold">{findUser(owner)?.name ?? owner}</span>
