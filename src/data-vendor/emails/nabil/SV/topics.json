@@ -1,0 +1,250 @@
+[
+  {
+    "name": "2026 Commercial Agreement & Incentive Terms",
+    "summary": "Clause 2.4 incentive structure negotiation at contract signature deadline; Trip.com pushback on 70% vs 90% gap unresolved after five months.",
+    "dollarImpact": null,
+    "status": "active",
+    "nextStep": "Agreement must be signed by 20 August 2026 or Trip.com drops out of incentive program.",
+    "airlineOwners": [
+      "Lee wai Loon"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin",
+      "Anuj Bansal",
+      "Shrey Nayar"
+    ],
+    "threadIds": [
+      "id=AAMkADZhNjc3MTM0LTNl_2026-08-13_Re_Saudia_Airlines_Commercials_2026"
+    ],
+    "lastTouched": "2026-08-13",
+    "priority": "high",
+    "accountIata": "SV"
+  },
+  {
+    "name": "H2 2026 Revenue Strategy & NDC Pricing",
+    "summary": "Trip.com targets USD 150M H2 revenue through five commercial levers including private fares, NDC pricing, and campaign visibility to close 15% competitive gap post-June.",
+    "dollarImpact": {
+      "amountUsd": 150000000,
+      "note": "H2 revenue target across five months"
+    },
+    "status": "active",
+    "nextStep": "Saudia to approve private fare (10% discount), nett fares, and other commercial levers; Trip.com to align global marketing team on execution.",
+    "airlineOwners": [
+      "Alexander Gali"
+    ],
+    "tripOwners": [
+      "Praveen Das Kulangara"
+    ],
+    "threadIds": [
+      "id=AAMkADZhNjc3MTM0LTNl_2026-07-07_H2_Plan_Saudia_Airlines"
+    ],
+    "lastTouched": "2026-07-07",
+    "priority": "high",
+    "accountIata": "SV"
+  },
+  {
+    "name": "9.9 Global Sale Campaign Planning",
+    "summary": "Trip.com 9.9 Mega Sale Sept 4\u201311 across 12 markets targeting 940M+ impressions; Saudia participation on selected Europe and Asia POSs pending final proposal and revenue team sign-off.",
+    "dollarImpact": null,
+    "status": "in_progress",
+    "nextStep": "Trip.com to share final 9.9 proposal deck; Saudia revenue team to complete actions and confirm participation details.",
+    "airlineOwners": [
+      "Lee wai Loon"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin"
+    ],
+    "threadIds": [
+      "id=AAMkADZhNjc3MTM0LTNl_2026-08-14_Re_9_9_Global_Sale_Summer_Prolonged_Proposal",
+      "id=AAMkADZhNjc3MTM0LTNl_2026-07-31_Re_Trip_com_Group_Team_Update_NDC_Progress"
+    ],
+    "lastTouched": "2026-08-14",
+    "priority": "high",
+    "accountIata": "SV"
+  },
+  {
+    "name": "August Flash Sale & SV Global Promo Execution",
+    "summary": "SV Weekend Flash Sales (7\u201316 Aug, up to 15%) and Global Promo (20 Aug\u20133 Sep, up to 50%) campaign execution requiring Trip.com homepage/app placements, EDM, and social amplification.",
+    "dollarImpact": null,
+    "status": "active",
+    "nextStep": "Trip.com to execute marketing placements and push notifications; Saudia confirms campaign details and support requests.",
+    "airlineOwners": [
+      "Lee wai Loon"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin"
+    ],
+    "threadIds": [
+      "id=AAMkADZhNjc3MTM0LTNl_2026-08-06_SV_August_Weekend_Flash_Sale_SV_Global_Promo"
+    ],
+    "lastTouched": "2026-08-06",
+    "priority": "medium",
+    "accountIata": "SV"
+  },
+  {
+    "name": "Tokyo Route Launch & Fare Activation",
+    "summary": "Saudia Tokyo Narita winter launch; exclusive launch fare live through 19 Aug on Japan office IDs; Trip.com Japan POS internal activation in progress with market-by-market checklist completion.",
+    "dollarImpact": null,
+    "status": "in_progress",
+    "nextStep": "Trip.com JP team to complete internal POS activation; confirm if fare can be filed on alternative IATA (ID/SG/KR) if needed.",
+    "airlineOwners": [
+      "Lee wai Loon"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin"
+    ],
+    "threadIds": [
+      "id=AAMkADZhNjc3MTM0LTNl_2026-08-06_Mohammad_Nabil_Dodin_Saudia_Tokyo_Special_Launch_Fare",
+      "id=AAMkADZhNjc3MTM0LTNl_2026-07-22_Re_Saudia_is_flying_from_Riyadh_to_Tokyo"
+    ],
+    "lastTouched": "2026-08-06",
+    "priority": "medium",
+    "accountIata": "SV"
+  },
+  {
+    "name": "NDC Activation & Private Fare Strategy",
+    "summary": "NDC private fares fully implemented globally for SV plate holders; Trip.com activating NDC sales on UK IATA; NDC policy clarification on irregular operations/disruption sought.",
+    "dollarImpact": null,
+    "status": "in_progress",
+    "nextStep": "Trip.com to negotiate NDC private fare terms with Saudia for UK POS; NDC Support to confirm disruption policy alignment with GDS procedures.",
+    "airlineOwners": [
+      "Abdulaziz H Alyami"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin",
+      "Numaan Khaleel Shereeff"
+    ],
+    "threadIds": [
+      "id=AAMkADZhNjc3MTM0LTNl_2026-08-13_NDC_Activation_Trip_com_Group",
+      "id=AAMkADZhNjc3MTM0LTNl_2026-07-29_SV_NDC_Feedback",
+      "id=AAMkADZhNjc3MTM0LTNl_2026-07-07_NDC_content_for_UK_POS"
+    ],
+    "lastTouched": "2026-08-13",
+    "priority": "medium",
+    "accountIata": "SV"
+  },
+  {
+    "name": "Fare Misuse & SV Pricing Issue Resolution",
+    "summary": "Saudia flagged fare basis CAOXMUF5 block on all MRU flights due to artificially low fares via sector manipulation; Trip.com requested SOP clarification on PNR cancellation, passenger travel rights, and standard procedures.",
+    "dollarImpact": null,
+    "status": "active",
+    "nextStep": "Saudia to confirm whether PNRs will be cancelled or passengers can travel normally; provide standard operating procedure for correction.",
+    "airlineOwners": [
+      "Lee wai Loon"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin"
+    ],
+    "threadIds": [
+      "id=AAMkADZhNjc3MTM0LTNl_2026-08-14_SV_Pricing_issue_Urgent",
+      "id=AAMkADZhNjc3MTM0LTNl_2026-07-28_Fare_misuse_practice_Reemphasizing_Saudia_procedures_policies"
+    ],
+    "lastTouched": "2026-08-14",
+    "priority": "medium",
+    "accountIata": "SV"
+  },
+  {
+    "name": "SV Inactive Segments & Schedule Change Procedures",
+    "summary": "Trip.com requested clarification on segment status transitions (TK/UN to HK), timeframes for passenger confirmation post-schedule changes, auto-confirmation rules, and involuntary refund entitlements; Saudia provided detailed procedural SOP.",
+    "dollarImpact": null,
+    "status": "closed",
+    "nextStep": null,
+    "airlineOwners": [
+      "Lee wai Loon"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin"
+    ],
+    "threadIds": [
+      "id=AAMkADZhNjc3MTM0LTNl_2026-08-12_Re_SV_inactive_segments_process"
+    ],
+    "lastTouched": "2026-08-12",
+    "priority": "low",
+    "accountIata": "SV"
+  },
+  {
+    "name": "Marketing Fund & FTS Revenue Reconciliation",
+    "summary": "Trip.com requested monthly POS-wise breakdown of Flown Ticket Sales (FTS) figures for 2026 YTD reconciliation; Saudia confirms reporting but Trip.com Finance needs detailed monthly breakdown to align prior-year discrepancies.",
+    "dollarImpact": null,
+    "status": "in_progress",
+    "nextStep": "Saudia to provide detailed monthly POS-wise FTS breakdown; Trip.com Finance to reconcile with prior year figures.",
+    "airlineOwners": [
+      "Lee wai Loon"
+    ],
+    "tripOwners": [
+      "Praveen Das Kulangara",
+      "Mohammad Nabil Dodin"
+    ],
+    "threadIds": [
+      "id=AAMkADZhNjc3MTM0LTNl_2026-08-03_Re_Trip_com_Marketing_Fund_2025"
+    ],
+    "lastTouched": "2026-08-03",
+    "priority": "medium",
+    "accountIata": "SV"
+  },
+  {
+    "name": "KSA Ticketing Authority & Documentation",
+    "summary": "Trip.com submitted commercial registration (CR) and company establishment contracts for KSA ticketing authority; Saudia flagged CR expiry and requested valid CR and establishment contract renewal.",
+    "dollarImpact": null,
+    "status": "in_progress",
+    "nextStep": "Trip.com to provide valid (non-expired) CR and current company establishment contracts to Saudia for KSA ticketing authority approval.",
+    "airlineOwners": [
+      "Mamdouh A Almallouhi"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin"
+    ],
+    "threadIds": [
+      "id=AAMkADZhNjc3MTM0LTNl_2026-07-14_Trip_com_KSA_Ticketing_Authority_SV"
+    ],
+    "lastTouched": "2026-07-14",
+    "priority": "medium",
+    "accountIata": "SV"
+  },
+  {
+    "name": "US POS Refund & Cancellation Inquiries",
+    "summary": "Trip.com escalated involuntary refund requests (TKT 065-7386006942/065-7386006943) and reissued ticket inquiries to Saudia US operations; Saudia escalated to colleague for further assistance.",
+    "dollarImpact": null,
+    "status": "in_progress",
+    "nextStep": "Saudia US operations team to provide clarification on refund requests and ticket cancellation reasons.",
+    "airlineOwners": [
+      "Abdulaziz H Alyami"
+    ],
+    "tripOwners": [
+      "Praveen Das Kulangara"
+    ],
+    "threadIds": [
+      "id=AAMkADZhNjc3MTM0LTNl_2026-07-14_RE_RE_Confirmation_of_SV_contact_for_US_POS"
+    ],
+    "lastTouched": "2026-07-14",
+    "priority": "low",
+    "accountIata": "SV"
+  },
+  {
+    "name": "Scheduling & OOO Noise",
+    "summary": "Calendar confirmations, auto-replies, and out-of-office notices; in-office meeting scheduled for Riyadh 25 August 2026 with Trip.com and Saudia stakeholders.",
+    "dollarImpact": null,
+    "status": "closed",
+    "nextStep": null,
+    "airlineOwners": [
+      "Maram N Alkathiri",
+      "Mamdouh A Almallouhi",
+      "Abdulaziz H Alyami"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin"
+    ],
+    "threadIds": [
+      "id=AAMkADZhNjc3MTM0LTNl_2026-08-17_Accepted_SV_Trip_com",
+      "id=AAMkADZhNjc3MTM0LTNl_2026-08-17_Trip_com_SA_SV_Local_meeting",
+      "id=AAMkADZhNjc3MTM0LTNl_2026-07-31_Automatic_reply_Saudia_Flash_Sale_closes",
+      "id=AAMkADZhNjc3MTM0LTNl_2026-07-21_Automatic_reply_Signature_Authority_for_SV",
+      "id=AAMkADZhNjc3MTM0LTNl_2026-07-08_Saudia_TA_Discussion",
+      "id=AAMkADZhNjc3MTM0LTNl_2026-07-20_External_Sv_meeting",
+      "id=AAMkADZhNjc3MTM0LTNl_2026-08-06_continuation"
+    ],
+    "lastTouched": "2026-08-17",
+    "priority": "low",
+    "accountIata": "SV"
+  }
+]

@@ -1,0 +1,197 @@
+[
+  {
+    "name": "DMM-DXB exclusive route campaign & performance",
+    "summary": "Flynas and Trip.com launched exclusive 5% discount DMM-DXB route deal; Trip.com activated via CRM and paid channels with internal investment, reporting booking metrics and requesting broader multi-route deals.",
+    "dollarImpact": null,
+    "status": "closed",
+    "nextStep": "Expand to broader exclusive route portfolio covering multiple destinations",
+    "airlineOwners": [
+      "Syed Mazharuddin"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin"
+    ],
+    "threadIds": [
+      "id=AAMkADZhNjc3MTM0LTNl"
+    ],
+    "lastTouched": "2026-08-17",
+    "priority": "medium",
+    "accountIata": "XY"
+  },
+  {
+    "name": "2026 flynas PLB incentive plan negotiation",
+    "summary": "Trip.com and flynas negotiating annual PLB incentive structure for MENA region; meeting scheduled to discuss terms and performance targets.",
+    "dollarImpact": null,
+    "status": "in_progress",
+    "nextStep": "Complete incentive plan negotiation meeting",
+    "airlineOwners": [
+      "Syed Mazharuddin"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin"
+    ],
+    "threadIds": [
+      "id=AAMkADZhNjc3MTM0LTNl"
+    ],
+    "lastTouched": "2026-07-30",
+    "priority": "high",
+    "accountIata": "XY"
+  },
+  {
+    "name": "Summer 2026 promotional campaigns & discounts",
+    "summary": "Trip.com executing multiple limited-time flynas fare campaigns (SAR 239\u2013289 international, SAR 209 domestic) via CRM and paid channels; dates extended through August.",
+    "dollarImpact": null,
+    "status": "closed",
+    "nextStep": null,
+    "airlineOwners": [
+      "Syed Mazharuddin"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin",
+      "Praveen Das Kulangara"
+    ],
+    "threadIds": [
+      "id=AAMkADZhNjc3MTM0LTNl"
+    ],
+    "lastTouched": "2026-07-29",
+    "priority": "medium",
+    "accountIata": "XY"
+  },
+  {
+    "name": "Saudi Arabia summer campaign with regional discount",
+    "summary": "Trip.com proposing aggressive multi-region summer campaign (7\u201310 July) targeting +60% ex-Saudi growth; requesting extended discount across Europe, homebound, Far East, and domestic routes.",
+    "dollarImpact": null,
+    "status": "closed",
+    "nextStep": null,
+    "airlineOwners": [
+      "Syed Mazharuddin"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin",
+      "Shrey Nayar"
+    ],
+    "threadIds": [
+      "id=AAMkADZhNjc3MTM0LTNl"
+    ],
+    "lastTouched": "2026-06-28",
+    "priority": "medium",
+    "accountIata": "XY"
+  },
+  {
+    "name": "Riyadh-Cochin new direct route launch",
+    "summary": "Flynas announcing new RUH-COK twice-weekly service (effective 2 September 2026); Trip.com to integrate and promote via sales channels.",
+    "dollarImpact": null,
+    "status": "active",
+    "nextStep": null,
+    "airlineOwners": [
+      "Syed Mazharuddin"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin"
+    ],
+    "threadIds": [
+      "id=AAMkADZhNjc3MTM0LTNl"
+    ],
+    "lastTouched": "2026-08-04",
+    "priority": "medium",
+    "accountIata": "XY"
+  },
+  {
+    "name": "Inventory blocking & seat hold technical issue",
+    "summary": "Trip.com sub-agents blocking seats without creating PNRs, causing inventory hold problems; Trip.com acknowledging issue and investigating sub-user behavior.",
+    "dollarImpact": null,
+    "status": "in_progress",
+    "nextStep": "Trip.com to investigate and resolve sub-agent seat-blocking behavior",
+    "airlineOwners": [
+      "Syed Mazharuddin"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin",
+      "Praveen Das Kulangara",
+      "Shrey Nayar"
+    ],
+    "threadIds": [
+      "id=AAMkADZhNjc3MTM0LTNl"
+    ],
+    "lastTouched": "2026-07-14",
+    "priority": "high",
+    "accountIata": "XY"
+  },
+  {
+    "name": "Credit shell and expired card refund resolution",
+    "summary": "Trip.com requesting flynas finance assistance on 50 PNRs: refunds already given to passengers on credit shells; expired card refunds need alternative processing.",
+    "dollarImpact": null,
+    "status": "in_progress",
+    "nextStep": "Flynas finance to assist on credit shell and expired card refund forms",
+    "airlineOwners": [
+      "Syed Mazharuddin"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin",
+      "Zhixuan Zhou"
+    ],
+    "threadIds": [
+      "id=AAMkADZhNjc3MTM0LTNl"
+    ],
+    "lastTouched": "2026-07-08",
+    "priority": "medium",
+    "accountIata": "XY"
+  },
+  {
+    "name": "Change & cancellation waiver for airspace closure",
+    "summary": "Flynas issuing change/cancellation waivers and free rebooking/refunds for flights affected by airspace closures; Trip.com to communicate policy to customers.",
+    "dollarImpact": null,
+    "status": "closed",
+    "nextStep": null,
+    "airlineOwners": [
+      "Syed Mazharuddin"
+    ],
+    "tripOwners": [
+      "Praveen Das Kulangara",
+      "Anuj Bansal",
+      "Shrey Nayar"
+    ],
+    "threadIds": [
+      "id=AAMkADZhNjc3MTM0LTNl"
+    ],
+    "lastTouched": "2026-05-25",
+    "priority": "low",
+    "accountIata": "XY"
+  },
+  {
+    "name": "Scheduling & OOO noise",
+    "summary": "Calendar accept/decline and meeting confirmations for in-person KSA office visits and campaign discussions.",
+    "dollarImpact": null,
+    "status": "closed",
+    "nextStep": null,
+    "airlineOwners": [
+      "Syed Mazharuddin"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin"
+    ],
+    "threadIds": [
+      "id=AAMkADZhNjc3MTM0LTNl"
+    ],
+    "lastTouched": "2026-08-16",
+    "priority": "low",
+    "accountIata": "XY"
+  },
+  {
+    "name": "India travel Air Suvidha compliance update",
+    "summary": "Flynas notifying trade partners of mandatory Air Suvidha self-declaration form requirement for all India-bound passengers.",
+    "dollarImpact": null,
+    "status": "closed",
+    "nextStep": null,
+    "airlineOwners": [
+      "Syed Mazharuddin"
+    ],
+    "tripOwners": [],
+    "threadIds": [
+      "id=AAMkADZhNjc3MTM0LTNl"
+    ],
+    "lastTouched": "2026-06-27",
+    "priority": "low",
+    "accountIata": "XY"
+  }
+]

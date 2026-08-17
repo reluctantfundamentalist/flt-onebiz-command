@@ -1,0 +1,199 @@
+[
+  {
+    "name": "Summer 2026 promotional campaign & incentives",
+    "summary": "Coordinating flyadeal summer campaign (July\u2013August 2026) with up to 7% incentives and special fares across domestic/international routes to drive bookings.",
+    "dollarImpact": null,
+    "status": "closed",
+    "nextStep": null,
+    "airlineOwners": [
+      "Danish Ashraf"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin",
+      "Praveen Das Kulangara"
+    ],
+    "threadIds": [
+      "AAMkADZhNjc3MTM0LTNl-summer-incentive",
+      "AAMkADZhNjc3MTM0LTNl-summer-sale",
+      "AAMkADZhNjc3MTM0LTNl-special-fare",
+      "AAMkADZhNjc3MTM0LTNl-summer-campaign-hyd",
+      "AAMkADZhNjc3MTM0LTNl-marketing-summer"
+    ],
+    "lastTouched": "2026-07-02",
+    "priority": "high",
+    "accountIata": "F3"
+  },
+  {
+    "name": "New international routes launch & scheduling",
+    "summary": "Launching two new international routes (BOM\u2013RUH, KHI\u2013MED) with detailed schedules; Trip.com to update systems and activate distribution.",
+    "dollarImpact": null,
+    "status": "in_progress",
+    "nextStep": "Update Trip.com systems and make services available across distribution channels",
+    "airlineOwners": [
+      "Danish Ashraf"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin"
+    ],
+    "threadIds": [
+      "AAMkADZhNjc3MTM0LTNl-new-routes"
+    ],
+    "lastTouched": "2026-08-13",
+    "priority": "high",
+    "accountIata": "F3"
+  },
+  {
+    "name": "API fee removal & technical integration",
+    "summary": "Admin fee removed from API configuration; go-live on 27 July 2026 with Trip.com technical team verification.",
+    "dollarImpact": null,
+    "status": "closed",
+    "nextStep": null,
+    "airlineOwners": [
+      "Danish Ashraf"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin"
+    ],
+    "threadIds": [
+      "AAMkADZhNjc3MTM0LTNl-apif-fee"
+    ],
+    "lastTouched": "2026-07-28",
+    "priority": "medium",
+    "accountIata": "F3"
+  },
+  {
+    "name": "Base fare configuration & system development",
+    "summary": "Implementing base fare setup in test environment for new fare structure; development pending with August 15 deadline pressure.",
+    "dollarImpact": null,
+    "status": "in_progress",
+    "nextStep": "Confirm maximum possible timeline with flyadeal development team to meet 15 August deadline",
+    "airlineOwners": [
+      "Danish Ashraf"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin"
+    ],
+    "threadIds": [
+      "AAMkADZhNjc3MTM0LTNl-base-fare"
+    ],
+    "lastTouched": "2026-08-04",
+    "priority": "high",
+    "accountIata": "F3"
+  },
+  {
+    "name": "Promo code activation & coupon management",
+    "summary": "F3 \u00d7 Trip.com promo code deployed and tested; all profit strategies and coupon mechanics confirmed live.",
+    "dollarImpact": null,
+    "status": "closed",
+    "nextStep": null,
+    "airlineOwners": [
+      "Danish Ashraf",
+      "Farooq Ahmad"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin"
+    ],
+    "threadIds": [
+      "AAMkADZhNjc3MTM0LTNl-promo-code"
+    ],
+    "lastTouched": "2026-07-16",
+    "priority": "medium",
+    "accountIata": "F3"
+  },
+  {
+    "name": "International routes promotional push",
+    "summary": "Promoting flyadeal international routes (Aug 1\u201331 travel window) across Trip.com channels to boost bookings.",
+    "dollarImpact": null,
+    "status": "closed",
+    "nextStep": null,
+    "airlineOwners": [
+      "Danish Ashraf"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin"
+    ],
+    "threadIds": [
+      "AAMkADZhNjc3MTM0LTNl-intl-promo"
+    ],
+    "lastTouched": "2026-07-26",
+    "priority": "medium",
+    "accountIata": "F3"
+  },
+  {
+    "name": "Performance analytics & booking insights",
+    "summary": "Trip.com sharing granular booking data by route and segment (domestic 72%, international 28%) to inform flyadeal incentive strategy.",
+    "dollarImpact": null,
+    "status": "closed",
+    "nextStep": null,
+    "airlineOwners": [
+      "Danish Ashraf"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin"
+    ],
+    "threadIds": [
+      "AAMkADZhNjc3MTM0LTNl-incentive-performance"
+    ],
+    "lastTouched": "2026-07-29",
+    "priority": "medium",
+    "accountIata": "F3"
+  },
+  {
+    "name": "Refund discrepancy investigation & resolution",
+    "summary": "Investigating passenger refund mismatch on F3 PNRs; flyadeal confirms full refund processed, awaiting Trip.com evidence.",
+    "dollarImpact": null,
+    "status": "in_progress",
+    "nextStep": "Trip.com support to provide refund screenshot evidence to flyadeal for further investigation",
+    "airlineOwners": [
+      "Hatoon Basoudan",
+      "Danish Ashraf"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin"
+    ],
+    "threadIds": [
+      "AAMkADZhNjc3MTM0LTNl-refund-discrepancy"
+    ],
+    "lastTouched": "2026-08-13",
+    "priority": "medium",
+    "accountIata": "F3"
+  },
+  {
+    "name": "In-person partnership meeting & alignment",
+    "summary": "Trip.com arranging on-site visit to flyadeal Jeddah office during 16\u201320 Aug duty travel for operational alignment.",
+    "dollarImpact": null,
+    "status": "in_progress",
+    "nextStep": "Danish Ashraf to provide available time slots and office location details",
+    "airlineOwners": [
+      "Danish Ashraf"
+    ],
+    "tripOwners": [
+      "Mohammad Nabil Dodin"
+    ],
+    "threadIds": [
+      "AAMkADZhNjc3MTM0LTNl-local-meeting"
+    ],
+    "lastTouched": "2026-08-13",
+    "priority": "low",
+    "accountIata": "F3"
+  },
+  {
+    "name": "Relationship check-in & strategic discussion",
+    "summary": "Informal catch-up meeting invitation between flyadeal and Trip.com leadership for partnership review.",
+    "dollarImpact": null,
+    "status": "dormant",
+    "nextStep": null,
+    "airlineOwners": [
+      "Danish Ashraf"
+    ],
+    "tripOwners": [
+      "Praveen Das Kulangara"
+    ],
+    "threadIds": [
+      "AAMkADZhNjc3MTM0LTNl-catch-up"
+    ],
+    "lastTouched": "2026-06-18",
+    "priority": "low",
+    "accountIata": "F3"
+  }
+]

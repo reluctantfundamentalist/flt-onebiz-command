@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Etihad ticket sales setup and operations",
+    "summary": "Trip.com seeking Etihad's operational policies (void, refund, date-change, local support) to activate ticket sales on platform.",
+    "dollarImpact": null,
+    "status": "in_progress",
+    "nextStep": "Await Etihad response to Trip.com's setup questionnaire covering void policy, refund mechanics, EMD/tax handling, and local support contacts.",
+    "airlineOwners": [
+      "salessupportksa@etihad.ae"
+    ],
+    "tripOwners": [
+      "Anuj Bansal",
+      "Zhixuan Zhou"
+    ],
+    "threadIds": [
+      "id=AAMkADZhNjc3MTM0LTNl"
+    ],
+    "lastTouched": "2026-06-09",
+    "priority": "high",
+    "accountIata": "EY"
+  }
+]
