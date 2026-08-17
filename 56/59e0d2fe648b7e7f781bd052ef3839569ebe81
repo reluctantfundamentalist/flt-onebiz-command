@@ -1,0 +1,39 @@
+src/components/leader/AccountMapClient.tsx
+  s_2ac98e2dfd2aeb::t_bdc237bd34c84a 21,27,29
+src/app/leader/account/[iata]/page.tsx
+  s_2ac98e2dfd2aeb::t_73398dfa84bb89 110-148
+  s_2ac98e2dfd2aeb::t_603dc37d1b2843 58
+  s_2ac98e2dfd2aeb::t_2cffef504e9daf 4
+src/lib/users.ts
+  s_2ac98e2dfd2aeb::t_a6428de0bca4ff 122-128
+  s_2ac98e2dfd2aeb::t_0ce02699ae4b03 78-79
+  s_2ac98e2dfd2aeb::t_927039fc986d68 82-83
+  s_2ac98e2dfd2aeb::t_16e8cdc67cfbaa 26-30,38-39
+  s_2ac98e2dfd2aeb::t_80be4210391db0 43
+src/components/leader/LeaderMapWorkspace.tsx
+  s_2ac98e2dfd2aeb::t_e8dd73e38a8067 100-155
+  s_2ac98e2dfd2aeb::t_036e642188899e 166,171-183,188-189
+  s_2ac98e2dfd2aeb::t_e246c89c4a6588 7
+docs/build-state-check.md
+  s_2ac98e2dfd2aeb::t_ca3893ffa8b7d6 73-84
+src/components/leader/AccountMap.tsx
+  s_2ac98e2dfd2aeb::t_3e94af412e11fd 16
+  s_2ac98e2dfd2aeb::t_e5a29c5fe5c4d9 204
+  s_2ac98e2dfd2aeb::t_4f4b78a9cfa03b 274
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.39-trip",
+  "base_commit_sha": "5659e0d2fe648b7e7f781bd052ef3839569ebe81",
+  "prompts": {},
+  "sessions": {
+    "s_2ac98e2dfd2aeb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "600dbe39-00a6-4423-8147-55a03acb78a5",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
