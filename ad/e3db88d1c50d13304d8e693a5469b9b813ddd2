@@ -1,0 +1,23 @@
+src/data/mail_nabil.json
+  s_2ac98e2dfd2aeb::t_3075bfcbaa8f5f 1-130
+scripts/pull_user_mail.py
+  s_2ac98e2dfd2aeb::t_92892d4b2669ba 1-78
+scripts/graph_readonly.py
+  s_2ac98e2dfd2aeb::t_ecdc9e46ea3183 1-69
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.39-trip",
+  "base_commit_sha": "ade3db88d1c50d13304d8e693a5469b9b813ddd2",
+  "prompts": {},
+  "sessions": {
+    "s_2ac98e2dfd2aeb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "600dbe39-00a6-4423-8147-55a03acb78a5",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
