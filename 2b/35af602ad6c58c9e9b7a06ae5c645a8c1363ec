@@ -1,0 +1,65 @@
+src/data-vendor/emails/nabil/PA/digests.json
+  s_2ac98e2dfd2aeb::t_bc2c3125bfc05d 1
+src/data-vendor/emails/anuj/EY/topics.json
+  s_2ac98e2dfd2aeb::t_9df135d6717ca7 1-265
+src/data-vendor/emails/nabil/XY/emails.json
+  s_2ac98e2dfd2aeb::t_bc2c3125bfc05d 1-532
+src/data-vendor/emails/nabil/XY/digests.json
+  s_2ac98e2dfd2aeb::t_bc2c3125bfc05d 1-298
+src/data-vendor/emails/nabil/PF/digests.json
+  s_2ac98e2dfd2aeb::t_bc2c3125bfc05d 1
+src/data-vendor/emails/nabil/SV/topics.json
+  s_2ac98e2dfd2aeb::t_37fe7dc67cbdea 1-250
+src/data-vendor/emails/nabil/SV/emails.json
+  s_2ac98e2dfd2aeb::t_bc2c3125bfc05d 1-1000
+src/data-vendor/emails/nabil/F3/emails.json
+  s_2ac98e2dfd2aeb::t_bc2c3125bfc05d 1-414
+src/data-vendor/emails/nabil/PF/emails.json
+  s_2ac98e2dfd2aeb::t_bc2c3125bfc05d 1
+src/data-vendor/emails/anuj/EK/topics.json
+  s_2ac98e2dfd2aeb::t_9df135d6717ca7 1-257
+src/data-vendor/emails/nabil/EY/digests.json
+  s_2ac98e2dfd2aeb::t_bc2c3125bfc05d 1-6
+src/data-vendor/emails/nabil/PK/emails.json
+  s_2ac98e2dfd2aeb::t_bc2c3125bfc05d 1
+src/data-vendor/emails/anuj/G9/topics.json
+  s_2ac98e2dfd2aeb::t_9df135d6717ca7 1-263
+src/data-vendor/emails/nabil/SV/digests.json
+  s_2ac98e2dfd2aeb::t_bc2c3125bfc05d 1-548
+src/data-vendor/emails/nabil/F3/digests.json
+  s_2ac98e2dfd2aeb::t_bc2c3125bfc05d 1-196
+src/data-vendor/emails/nabil/PK/digests.json
+  s_2ac98e2dfd2aeb::t_bc2c3125bfc05d 1
+src/data-vendor/emails/nabil/PF/topics.json
+  s_2ac98e2dfd2aeb::t_37fe7dc67cbdea 1
+src/data-vendor/emails/nabil/PK/topics.json
+  s_2ac98e2dfd2aeb::t_37fe7dc67cbdea 1
+src/data-vendor/emails/nabil/PA/topics.json
+  s_2ac98e2dfd2aeb::t_37fe7dc67cbdea 1
+src/data-vendor/emails/nabil/EY/topics.json
+  s_2ac98e2dfd2aeb::t_37fe7dc67cbdea 1-22
+src/data-vendor/emails/nabil/PA/emails.json
+  s_2ac98e2dfd2aeb::t_bc2c3125bfc05d 1
+src/data-vendor/emails/nabil/EY/emails.json
+  s_2ac98e2dfd2aeb::t_bc2c3125bfc05d 1-39
+src/data-vendor/emails/nabil/F3/topics.json
+  s_2ac98e2dfd2aeb::t_37fe7dc67cbdea 1-199
+src/data-vendor/emails/nabil/XY/topics.json
+  s_2ac98e2dfd2aeb::t_37fe7dc67cbdea 1-197
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.39-trip",
+  "base_commit_sha": "2b35af602ad6c58c9e9b7a06ae5c645a8c1363ec",
+  "prompts": {},
+  "sessions": {
+    "s_2ac98e2dfd2aeb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "600dbe39-00a6-4423-8147-55a03acb78a5",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
