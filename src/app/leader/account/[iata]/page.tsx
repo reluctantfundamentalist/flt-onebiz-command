@@ -17,6 +17,10 @@ import RecentEvents from "@/components/RecentEvents";
 import LogUpdateForm from "@/components/LogUpdateForm";
 import TopicBoard from "@/components/TopicBoard";
 import { DashboardShell } from "@/components/dashboard/DashboardShell";
+import SignalStrip from "@/components/leader/SignalStrip";
+import { buildSignals } from "@/lib/signals";
+import { readFileSync } from "fs";
+import { join } from "path";
 
 function fmtUsd(n: number) {
   if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)}M`;
@@ -61,6 +65,10 @@ export default async function AccountDetailPage({
   const accountLabelById = Object.fromEntries(ACCOUNTS.map((a) => [a.iata, `${a.iata} · ${a.name}`]));
   const timeline = timelineForAccount(buildTimeline(updates, meetings, contracts), account.iata);
   const metric = metricsByIata[account.iata];
+  const intel = JSON.parse(
+    readFileSync(join(process.cwd(), "src/data/market_intel.json"), "utf8"),
+  );
+  const signals = buildSignals(account.iata, metric, updates, intel);
 
   return (
     <div className="min-h-screen bg-[var(--bg)]">
@@ -83,6 +91,16 @@ export default async function AccountDetailPage({
             </div>
           </div>
         </div>
+
+        <section>
+          <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-[var(--ink)]">
+            <span>Signals</span>
+            <span className="rounded bg-[var(--bg)] px-1.5 py-0.5 text-[10px] font-normal text-[var(--ink-faint)]">
+              metrics + market intel + BD inbox · what's coming / happening / happened
+            </span>
+          </div>
+          <SignalStrip groups={signals} />
+        </section>
 
         {(contract || metric) && (
           <div className="grid gap-3 sm:grid-cols-4">

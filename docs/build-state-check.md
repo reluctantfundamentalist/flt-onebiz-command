@@ -79,6 +79,12 @@ Shape: we built the eyes; the brain (synthesis) is still to come.
   "Ownership layers" section, splitting inbox intel by layer owner.
 - Map: clicking a BD+Region person-chip now updates the side pane with that
   BD's details synced from the inbox (`BdSide`), alongside the airline view.
+- Signal strip (the smoke/opportunity layer) is built: `src/lib/signals.ts`
+  synthesizes three sources (metrics, web market intel in
+  `src/data/market_intel.json`, BD inputs + scraped emails) into
+  coming / happening / happened, rendered on top of the account view and the
+  leader map side panel (`SignalStrip`). Opportunity vs threat via keyword +
+  metric heuristics.
 - So the earlier gap "EY two-layer console view (sketched, not built)" is now
   built for EY/QR; other accounts default to a single global layer until a
   local layer is added to their `layers`.

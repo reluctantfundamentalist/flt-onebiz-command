@@ -5,6 +5,8 @@ import { listMetrics, listUpdates, listContracts, listMeetings } from "@/lib/sto
 import { loadMetricsByIata } from "@/lib/metrics-loader";
 import { buildTimeline, timelineByBdSummary } from "@/lib/timeline";
 import LeaderMapWorkspace from "@/components/leader/LeaderMapWorkspace";
+import { readFileSync } from "fs";
+import { join } from "path";
 import ContractTable from "@/components/leader/ContractTable";
 import BdNavStrip from "@/components/leader/BdNavStrip";
 import AppHeader from "@/components/AppHeader";
@@ -32,6 +34,9 @@ export default async function LeaderPage() {
 
   const timeline = buildTimeline(updates, meetings, contracts);
   const bdSummary = timelineByBdSummary(timeline);
+  const intel = JSON.parse(
+    readFileSync(join(process.cwd(), "src/data/market_intel.json"), "utf8"),
+  );
 
   return (
     <div className="min-h-screen bg-[var(--bg)]">
@@ -47,7 +52,7 @@ export default async function LeaderPage() {
           <BdNavStrip summary={bdSummary} />
         </section>
 
-        <LeaderMapWorkspace accounts={ACCOUNTS} metrics={metricsByIata} updates={updates} />
+        <LeaderMapWorkspace accounts={ACCOUNTS} metrics={metricsByIata} updates={updates} intel={intel} />
 
         <section>
           <div className="mb-3 flex items-center justify-between">

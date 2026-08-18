@@ -3,6 +3,8 @@ import { useState } from "react";
 import Link from "next/link";
 import AccountMapClient from "./AccountMapClient";
 import UpdatesPanel from "./UpdatesPanel";
+import SignalStrip from "./SignalStrip";
+import { buildSignals, type MarketIntel } from "@/lib/signals";
 import type { Account } from "@/lib/users";
 import { findAccount, findUser, layersFor, ACCOUNTS } from "@/lib/users";
 import type { AccountMetrics, UpdateRecord } from "@/lib/store";
@@ -157,10 +159,12 @@ export default function LeaderMapWorkspace({
   accounts,
   metrics,
   updates,
+  intel,
 }: {
   accounts: Account[];
   metrics: Record<string, AccountMetrics>;
   updates: UpdateRecord[];
+  intel: MarketIntel[];
 }) {
   const [selected, setSelected] = useState<string>("");
   const [selectedBd, setSelectedBd] = useState<string>("");
@@ -184,7 +188,10 @@ export default function LeaderMapWorkspace({
       </div>
       <div className="scroll-slim overflow-y-auto pr-1" style={{ maxHeight: 480 }}>
         {selected ? (
-          <AccountSide iata={selected} metrics={metrics} updates={updates} />
+          <div className="space-y-4">
+            <SignalStrip groups={buildSignals(selected, metrics[selected], updates, intel)} />
+            <AccountSide iata={selected} metrics={metrics} updates={updates} />
+          </div>
         ) : selectedBd ? (
           <BdSide bd={selectedBd} metrics={metrics} updates={updates} />
         ) : (
