@@ -1,0 +1,11 @@
+node_modules
+.next
+.turbo
+coverage
+src/data-vendor/bookings.db
+src/data-vendor/bookings.db-journal
+src/data-vendor/bookings.db-wal
+src/data-vendor/bookings.db-shm
+src/data-vendor/emails/*/attachments
+src/data-vendor/emails/*/digests.json
+src/data-vendor/emails/*/emails.json
