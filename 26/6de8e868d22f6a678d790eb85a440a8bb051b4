@@ -1,0 +1,37 @@
+src/components/leader/LeaderMapWorkspace.tsx
+  s_2ac98e2dfd2aeb::t_2de87c5394a9c5 162,167
+  s_2ac98e2dfd2aeb::t_c6d89ce107758b 191-194
+  s_2ac98e2dfd2aeb::t_a6fc7825e4177f 6-7
+docs/build-state-check.md
+  s_2ac98e2dfd2aeb::t_b3faff3c9432d7 82-87
+src/app/leader/account/[iata]/page.tsx
+  s_2ac98e2dfd2aeb::t_d4af3357ce5f0b 20-23
+  s_2ac98e2dfd2aeb::t_adab08cbdc7b96 68-71
+  s_2ac98e2dfd2aeb::t_64b6d0ece9f088 95-104
+src/app/leader/page.tsx
+  s_2ac98e2dfd2aeb::t_677fb9338c2a7c 8-9
+  s_2ac98e2dfd2aeb::t_7589d86ee1e04d 55
+  s_2ac98e2dfd2aeb::t_1e064555482cd3 37-39
+src/data/market_intel.json
+  s_2ac98e2dfd2aeb::t_25d0ec925c64ec 1-7
+src/lib/signals.ts
+  s_2ac98e2dfd2aeb::t_f3865cb4159f8e 1-82
+src/components/leader/SignalStrip.tsx
+  s_2ac98e2dfd2aeb::t_a386b300eebbd7 1-51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.39-trip",
+  "base_commit_sha": "266de8e868d22f6a678d790eb85a440a8bb051b4",
+  "prompts": {},
+  "sessions": {
+    "s_2ac98e2dfd2aeb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "600dbe39-00a6-4423-8147-55a03acb78a5",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
