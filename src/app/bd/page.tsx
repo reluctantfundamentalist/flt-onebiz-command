@@ -7,7 +7,7 @@ import { buildTimeline, timelineForBd } from "@/lib/timeline";
 import AppHeader from "@/components/AppHeader";
 import GanttChart from "@/components/gantt/GanttChart";
 import LogUpdateForm from "@/components/LogUpdateForm";
-import TopicBoard from "@/components/TopicBoard";
+import BdTopics from "@/components/bd/BdTopics";
 
 export default async function BdPage() {
   const session = await getSession();
@@ -98,7 +98,7 @@ export default async function BdPage() {
               LLM-clustered from Outlook · last 90 days
             </span>
           </div>
-          <TopicBoard updates={updates} />
+          <BdTopics updates={updates} />
         </section>
       </main>
     </div>

@@ -26,6 +26,11 @@ export interface TimelineItem {
   sourceUpdateId?: string;
   sourceMeetingId?: string;
   sourceContract?: string; // account iata
+  detail?: string;         // hover: crux of the workstream
+  dollarUsd?: number;      // hover: explicit dollar figure if any
+  priority?: string;       // hover: high/medium/low
+  bdName?: string;         // hover: owning BD
+  attendees?: string[];    // hover: meeting attendees
 }
 
 const DAY_MS = 24 * 60 * 60 * 1000;
@@ -65,6 +70,10 @@ function updateToTimeline(update: UpdateRecord): TimelineItem | null {
     status,
     kind: "next_step",
     sourceUpdateId: update.id,
+    detail: update.detail,
+    dollarUsd: update.dollarImpact?.amountUsd,
+    priority: update.priority,
+    bdName: findUser(bd)?.name,
   };
 }
 
@@ -89,6 +98,8 @@ function meetingToTimeline(meeting: MeetingRecord): TimelineItem {
     status,
     kind: "meeting",
     sourceMeetingId: meeting.id,
+    bdName: findUser(meeting.bd)?.name,
+    attendees: meeting.attendees,
   };
 }
 

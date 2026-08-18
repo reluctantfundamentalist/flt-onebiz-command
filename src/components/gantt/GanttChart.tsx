@@ -175,11 +175,21 @@ function RowLane({
         const outline = KIND_COLOR[it.kind];
         const status = STATUS_STYLE[it.status];
         if (right <= 0 || left >= 100) return null;
+        const tip = [
+          `[${it.accountIata}] ${it.label}`,
+          `Kind: ${it.kind.replace("_", " ")} · Status: ${it.status.replace("_", " ")}`,
+          it.bdName ? `BD: ${it.bdName}` : null,
+          `${new Date(it.startISO).toLocaleDateString()} → ${new Date(it.endISO).toLocaleDateString()}`,
+          it.dollarUsd ? `Value: $${(it.dollarUsd / 1_000_000).toFixed(2)}M` : null,
+          it.priority ? `Priority: ${it.priority}` : null,
+          it.attendees?.length ? `With: ${it.attendees.join(", ")}` : null,
+          it.detail ? `— ${it.detail}` : null,
+        ].filter(Boolean).join("\n");
         return (
           <Link
             key={it.id}
             href={`/leader/account/${it.accountIata}`}
-            title={`[${it.accountIata}] ${it.label} — ${it.status}`}
+            title={tip}
             className="absolute flex items-center rounded-md border-l-[3px] px-2 shadow-sm transition hover:brightness-95"
             style={{
               left: `${left}%`,

@@ -5,6 +5,8 @@ import { listMetrics, listUpdates, listContracts, listMeetings } from "@/lib/sto
 import { loadMetricsByIata } from "@/lib/metrics-loader";
 import { buildTimeline, timelineByBdSummary } from "@/lib/timeline";
 import LeaderMapWorkspace from "@/components/leader/LeaderMapWorkspace";
+import SourceBoard from "@/components/leader/SourceBoard";
+import { buildSourceBoard } from "@/lib/signals";
 import { readFileSync } from "fs";
 import { join } from "path";
 import ContractTable from "@/components/leader/ContractTable";
@@ -37,12 +39,21 @@ export default async function LeaderPage() {
   const intel = JSON.parse(
     readFileSync(join(process.cwd(), "src/data/market_intel.json"), "utf8"),
   );
+  const board = buildSourceBoard(metricsByIata, updates, intel);
 
   return (
     <div className="min-h-screen bg-[var(--bg)]">
       <AppHeader session={session} subtitle="Leadership workspace" />
 
       <main className="mx-auto max-w-7xl px-4 pb-20 pt-6 space-y-6">
+        <section>
+          <div className="mb-3 flex items-center gap-2">
+            <h2 className="text-sm font-semibold text-[var(--ink)]">Opportunity & threat map</h2>
+            <span className="text-[11px] text-[var(--ink-faint)]">three sources · hover a card for detail</span>
+          </div>
+          <SourceBoard board={board} />
+        </section>
+
         {/* BD nav strip: cross-BD pipeline pointer */}
         <section>
           <div className="mb-3 flex items-center justify-between">

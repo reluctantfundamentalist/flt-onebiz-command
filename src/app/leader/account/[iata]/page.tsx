@@ -165,13 +165,22 @@ export default async function AccountDetailPage({
         </section>
 
         <section>
-          <div className="mb-3 text-sm font-semibold text-[var(--ink)]">Pipeline (Gantt)</div>
-          <GanttChart
-            items={timeline}
-            groupBy="account"
-            accountLabelById={accountLabelById}
-            emptyLabel="No pending next-steps, meetings, or milestones."
-          />
+          <details className="group rounded-xl border border-[var(--line)] bg-white">
+            <summary className="flex cursor-pointer items-center justify-between px-4 py-3 text-sm font-semibold text-[var(--ink)]">
+              <span>Pipeline (Gantt)</span>
+              <span className="text-[11px] font-normal text-[var(--ink-faint)] group-open:hidden">
+                click to view
+              </span>
+            </summary>
+            <div className="px-4 pb-4">
+              <GanttChart
+                items={timeline}
+                groupBy="account"
+                accountLabelById={accountLabelById}
+                emptyLabel="No pending next-steps, meetings, or milestones."
+              />
+            </div>
+          </details>
         </section>
 
         <section className="grid gap-6 lg:grid-cols-3">
