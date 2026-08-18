@@ -1,0 +1,39 @@
+src/lib/signals.ts
+  s_2ac98e2dfd2aeb::t_eec7204e2c7b36 15-24
+  s_2ac98e2dfd2aeb::t_eaa197b23fd198 93-138
+src/components/leader/SourceBoard.tsx
+  s_2ac98e2dfd2aeb::t_7b5d54dec11f91 1-69
+src/components/gantt/GanttChart.tsx
+  s_2ac98e2dfd2aeb::t_e43e747a2d141c 178-187,192
+src/lib/timeline.ts
+  s_2ac98e2dfd2aeb::t_e0ff257b91438f 29-33
+  s_2ac98e2dfd2aeb::t_bfecdebe5719ae 101-102
+  s_2ac98e2dfd2aeb::t_f0292f08bca4c7 73-76
+src/app/leader/page.tsx
+  s_2ac98e2dfd2aeb::t_5e3f104fa9b46f 49-56
+  s_2ac98e2dfd2aeb::t_c2a410c6228cbc 42
+  s_2ac98e2dfd2aeb::t_132808bf69f5c2 8-9
+src/components/bd/BdTopics.tsx
+  s_2ac98e2dfd2aeb::t_b53e8219335fe0 1-66
+src/app/bd/page.tsx
+  s_2ac98e2dfd2aeb::t_72eb2f967418c5 101
+  s_2ac98e2dfd2aeb::t_946e7dba71bd6d 10
+src/app/leader/account/[iata]/page.tsx
+  s_2ac98e2dfd2aeb::t_95783f316f1ab9 168-183
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.39-trip",
+  "base_commit_sha": "97cc9ba37a6244fc86610a90987d6b7fca7a161b",
+  "prompts": {},
+  "sessions": {
+    "s_2ac98e2dfd2aeb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "600dbe39-00a6-4423-8147-55a03acb78a5",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
