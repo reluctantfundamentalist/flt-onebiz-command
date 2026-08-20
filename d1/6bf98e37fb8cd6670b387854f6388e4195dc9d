@@ -1,0 +1,45 @@
+src/data/opportunities.json
+  s_9ad07db2fe84be::t_0e92c6b51d2570 8-10,18-19,27-30,38-39,47-49,65-67,83-86,94-95,103-106,114-115,123-125,139,141-144,160-162,170-171,179-181,197-200,208-209,217-219,235-237,245-246,252,254-256,272-274,290-292,308-310,320
+src/lib/signals.ts
+  s_9ad07db2fe84be::t_3955e3079d9b69 161
+  s_9ad07db2fe84be::t_1cfc6fe5a6eb37 20
+src/lib/store.ts
+  s_9ad07db2fe84be::t_428e8fc3b88339 148-151
+src/components/leader/OpportunitiesTab.tsx
+  s_9ad07db2fe84be::t_d09fc679af21bf 215,219
+  s_9ad07db2fe84be::t_f67629e503fc5b 261-264,274
+  s_9ad07db2fe84be::t_cbe234637c7fa7 32,35,38,41
+  s_9ad07db2fe84be::t_66462f2aceab81 339-346
+  s_9ad07db2fe84be::t_a4b95870f00cea 101-127
+src/components/leader/HomeTabs.tsx
+  s_9ad07db2fe84be::t_2826f820955f46 90-94
+src/app/api/opportunities/route.ts
+  s_9ad07db2fe84be::t_13c95fb6270dd3 61-71
+  s_9ad07db2fe84be::t_aa8c79a3279453 93
+  s_9ad07db2fe84be::t_4dac5062b1261e 15,24
+scripts/graph_readonly.py
+  s_9ad07db2fe84be::t_610ce85709111a 19
+src/app/leader/account/[iata]/page.tsx
+  s_9ad07db2fe84be::t_1e7d43e040ef2b 288-339
+scripts/calendar_pull.py
+  s_9ad07db2fe84be::t_091f267a12795e 24-25
+  s_9ad07db2fe84be::t_57898b8c2d8078 1-23,26-118
+src/data/meetings.json
+  s_9ad07db2fe84be::t_ab551dc6a8ec08 1-104
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.39-trip",
+  "base_commit_sha": "d16bf98e37fb8cd6670b387854f6388e4195dc9d",
+  "prompts": {},
+  "sessions": {
+    "s_9ad07db2fe84be": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4469f407-a824-4b5f-aaf0-83dc390bf278",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
