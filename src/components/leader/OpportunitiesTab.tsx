@@ -2,13 +2,18 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import type { OpportunityRecord, OpportunityStatus } from "@/lib/store";
-import type { SourceBucket, Signal } from "@/lib/signals";
+import type { OpportunityRecord, OpportunityStatus, OpportunityPriority } from "@/lib/store";
 import { THEME_BY_ID } from "@/lib/themes";
 import { findAccount, findUser } from "@/lib/users";
 import { dwellDays, isStale, STATUS_META, fmtUsd } from "@/lib/opportunity-view";
 
 const STATUS_ORDER: OpportunityStatus[] = ["open", "stalled", "won", "lost"];
+const PRIO_META: Record<OpportunityPriority, { label: string; bg: string; text: string; next: OpportunityPriority }> = {
+  high:   { label: "P1", bg: "#fee2e2", text: "#991b1b", next: "low" },
+  medium: { label: "P2", bg: "#fef3c7", text: "#92400e", next: "high" },
+  low:    { label: "P3", bg: "#f3f4f6", text: "#6b7280", next: "medium" },
+};
+const PRIO_WEIGHT: Record<OpportunityPriority, number> = { high: 0, medium: 1, low: 2 };
 
 function ThemeChip({ id }: { id: string }) {
   const t = THEME_BY_ID[id];
@@ -27,16 +32,43 @@ function ThemeChip({ id }: { id: string }) {
   );
 }
 
+function ActionBtn({
+  label,
+  tone,
+  onClick,
+}: {
+  label: string;
+  tone: "good" | "warn" | "bad" | "neutral";
+  onClick: () => void;
+}) {
+  const cls = {
+    good: "border-emerald-200 bg-emerald-50 text-emerald-800 hover:bg-emerald-100",
+    warn: "border-amber-200 bg-amber-50 text-amber-800 hover:bg-amber-100",
+    bad: "border-red-200 bg-red-50 text-red-700 hover:bg-red-100",
+    neutral: "border-[var(--line)] bg-white text-[var(--ink-soft)] hover:bg-[var(--bg)]",
+  }[tone];
+  return (
+    <button
+      onClick={onClick}
+      className={`rounded-md border px-2 py-1 text-[10.5px] font-semibold transition ${cls}`}
+    >
+      {label}
+    </button>
+  );
+}
+
 function Card({
   rec,
   hasContract,
   onStatus,
+  onPriority,
   onDismiss,
   onLinkContract,
 }: {
   rec: OpportunityRecord;
   hasContract: boolean;
   onStatus: (id: string, status: OpportunityStatus) => void;
+  onPriority: (id: string, priority: OpportunityPriority) => void;
   onDismiss: (id: string) => void;
   onLinkContract: (id: string, link: boolean) => void;
 }) {
@@ -47,6 +79,7 @@ function Card({
   const stale = isStale(rec);
   const threat = rec.kind === "threat";
   const value = fmtUsd(rec.valueUsd);
+  const prio = PRIO_META[rec.priority ?? "medium"];
 
   return (
     <div
@@ -55,6 +88,15 @@ function Card({
       }`}
     >
       <div className="flex items-center gap-2">
+        {/* Priority: click to cycle P3 → P2 → P1 */}
+        <button
+          onClick={() => onPriority(rec.id, prio.next)}
+          title="Priority — click to change"
+          className="shrink-0 rounded px-1.5 py-0.5 text-[10px] font-bold"
+          style={{ background: prio.bg, color: prio.text }}
+        >
+          {prio.label}
+        </button>
         <span
           className={`rounded px-1.5 py-0.5 text-[10px] font-bold ${
             threat
@@ -67,6 +109,7 @@ function Card({
         <Link
           href={`/leader/account/${rec.accountIata}`}
           className="truncate text-[11px] text-[var(--ink-faint)] hover:text-[var(--brand)]"
+          title={`${acct?.name ?? ""} · BD: ${owner?.name ?? ""}`}
         >
           {acct?.name ?? rec.accountIata}
         </Link>
@@ -87,21 +130,13 @@ function Card({
       <div className="mt-1.5 text-[13px] font-semibold leading-snug text-[var(--ink)]">
         {rec.title}
       </div>
-      {rec.detail && (
-        <p className="mt-1 text-[11.5px] leading-snug text-[var(--ink-soft)]">{rec.detail}</p>
-      )}
 
       <div className="mt-2 flex flex-wrap items-center gap-1">
         {rec.themes.map((t) => <ThemeChip key={t} id={t} />)}
-        {rec.themes.length === 0 && (
-          <span className="rounded border border-dashed border-[var(--line)] px-1.5 py-0.5 text-[9.5px] text-[var(--ink-faint)]">
-            untagged
-          </span>
-        )}
         {rec.sourceUpdateId && (
           <span
-            title="Promoted from an email thread — link preserved"
-            className="rounded bg-orange-50 px-1.5 py-0.5 text-[9.5px] font-semibold text-orange-700"
+            title="Linked to the email thread it came from"
+            className="rounded border border-orange-200 bg-orange-50 px-1.5 py-0.5 text-[9.5px] font-semibold text-orange-700"
           >
             ⟵ thread
           </span>
@@ -111,7 +146,7 @@ function Card({
             <button
               onClick={() => onLinkContract(rec.id, false)}
               title="Linked to this account's contract — click to unlink"
-              className="rounded bg-violet-50 px-1.5 py-0.5 text-[9.5px] font-semibold text-violet-700 hover:bg-violet-100"
+              className="rounded border border-violet-200 bg-violet-50 px-1.5 py-0.5 text-[9.5px] font-semibold text-violet-700 hover:bg-violet-100"
             >
               ⇢ contract ✓
             </button>
@@ -143,7 +178,7 @@ function Card({
           </span>
         )}
         <span
-          title="Maturity confidence"
+          title={`Maturity confidence: ${rec.confidence}`}
           className={`rounded px-1.5 py-0.5 text-[10px] font-bold ${
             rec.confidence === "high"
               ? "bg-[var(--ink)] text-white"
@@ -152,18 +187,26 @@ function Card({
         >
           {rec.confidence === "high" ? "HIGH" : "LOW"}
         </span>
-        <span className="ml-auto text-[10px] text-[var(--ink-faint)]">
-          {owner?.name.split(" ")[0] ?? rec.ownerBdId}
+
+        {/* Status actions: close / reopen / move */}
+        <span className="ml-auto flex items-center gap-1">
+          {rec.status === "open" && (
+            <>
+              <ActionBtn label="Won ✓" tone="good" onClick={() => onStatus(rec.id, "won")} />
+              <ActionBtn label="Stall" tone="warn" onClick={() => onStatus(rec.id, "stalled")} />
+              <ActionBtn label="Lost" tone="bad" onClick={() => onStatus(rec.id, "lost")} />
+            </>
+          )}
+          {rec.status === "stalled" && (
+            <>
+              <ActionBtn label="Reopen" tone="neutral" onClick={() => onStatus(rec.id, "open")} />
+              <ActionBtn label="Lost" tone="bad" onClick={() => onStatus(rec.id, "lost")} />
+            </>
+          )}
+          {(rec.status === "won" || rec.status === "lost") && (
+            <ActionBtn label="Reopen" tone="neutral" onClick={() => onStatus(rec.id, "open")} />
+          )}
         </span>
-        <select
-          value={rec.status}
-          onChange={(e) => onStatus(rec.id, e.target.value as OpportunityStatus)}
-          className="rounded border border-[var(--line)] bg-white px-1 py-0.5 text-[10px] text-[var(--ink-soft)]"
-        >
-          {STATUS_ORDER.map((s) => (
-            <option key={s} value={s}>{STATUS_META[s].label}</option>
-          ))}
-        </select>
       </div>
 
       {rec.nextAction && (
@@ -175,47 +218,11 @@ function Card({
   );
 }
 
-function SignalRow({ s, onPromote }: { s: Signal; onPromote: (s: Signal) => void }) {
-  const trackable = s.iata && findAccount(s.iata);
-  const hover = s.detail ? `${s.text} — ${s.detail}` : s.text;
-  return (
-    <li
-      title={hover}
-      className="flex items-start gap-2 rounded-md border border-[var(--line)] bg-white px-2 py-1.5"
-    >
-      {s.iata && (
-        <span className="mt-0.5 shrink-0 rounded bg-[var(--brand-soft)] px-1 py-0.5 text-[9px] font-bold text-[var(--brand-dark)]">
-          {s.iata}
-        </span>
-      )}
-      <span className="min-w-0 flex-1 text-[11.5px] leading-snug text-[var(--ink-soft)]">
-        <span className="font-semibold text-[var(--ink)]">{s.short ?? s.text}</span>
-        {s.dollar !== undefined && fmtUsd(s.dollar) && (
-          <span className="ml-1.5 rounded bg-emerald-50 px-1 py-0.5 text-[10px] font-bold text-emerald-800">
-            {fmtUsd(s.dollar)}
-          </span>
-        )}
-      </span>
-      {trackable && (
-        <button
-          onClick={() => onPromote(s)}
-          title="Promote to tracked item"
-          className="shrink-0 rounded border border-[var(--line)] px-1.5 py-0.5 text-[9.5px] font-semibold text-[var(--brand)] hover:bg-[var(--brand-soft)]"
-        >
-          + Track
-        </button>
-      )}
-    </li>
-  );
-}
-
 export default function OpportunitiesTab({
   opportunities,
-  board,
   contractIatas = [],
 }: {
   opportunities: OpportunityRecord[];
-  board: SourceBucket[];
   contractIatas?: string[];
 }) {
   const router = useRouter();
@@ -232,11 +239,20 @@ export default function OpportunitiesTab({
     threats: opportunities.filter((o) => o.kind === "threat" && o.status !== "lost").length,
   };
 
-  const visible = opportunities.filter((o) => {
-    if (kindFilter !== "all" && o.kind !== kindFilter) return false;
-    if (statusFilter !== "all" && o.status !== statusFilter) return false;
-    return true;
-  });
+  const visible = opportunities
+    .filter((o) => {
+      if (kindFilter !== "all" && o.kind !== kindFilter) return false;
+      if (statusFilter !== "all" && o.status !== statusFilter) return false;
+      return true;
+    })
+    .sort((a, b) => {
+      const p = PRIO_WEIGHT[a.priority ?? "medium"] - PRIO_WEIGHT[b.priority ?? "medium"];
+      if (p !== 0) return p; // P1 first
+      const sa = isStale(a) ? 0 : 1;
+      const sb = isStale(b) ? 0 : 1;
+      if (sa !== sb) return sa - sb; // stale floats up
+      return dwellDays(b) - dwellDays(a);
+    });
 
   async function post(body: unknown) {
     setBusy(true);
@@ -255,24 +271,15 @@ export default function OpportunitiesTab({
   function onStatus(id: string, status: OpportunityStatus) {
     post({ action: "status", id, status });
   }
+  function onPriority(id: string, priority: OpportunityPriority) {
+    post({ action: "priority", id, priority });
+  }
   function onDismiss(id: string) {
     post({ action: "dismiss", id });
   }
   function onLinkContract(id: string, link: boolean) {
     const rec = opportunities.find((o) => o.id === id);
     post({ action: "link", id, contractIata: link && rec ? rec.accountIata : null });
-  }
-  function onPromote(s: Signal) {
-    post({
-      action: "promote",
-      accountIata: s.iata,
-      title: s.text,
-      detail: s.detail,
-      kind: s.kind === "threat" ? "threat" : "opportunity",
-      source: s.source,
-      valueUsd: s.dollar ?? null,
-      sourceUpdateId: s.updateId,
-    });
   }
 
   const chip = (active: boolean) =>
@@ -341,59 +348,13 @@ export default function OpportunitiesTab({
               rec={rec}
               hasContract={contractIatas.includes(rec.accountIata)}
               onStatus={onStatus}
+              onPriority={onPriority}
               onDismiss={onDismiss}
               onLinkContract={onLinkContract}
             />
           ))}
         </div>
       )}
-
-      {/* Signal radar: untracked signals from the three sources */}
-      <div className="mt-6">
-        <div className="mb-2 flex items-center gap-2">
-          <h3 className="text-[12px] font-semibold text-[var(--ink)]">Signal radar</h3>
-          <span className="text-[10.5px] text-[var(--ink-faint)]">
-            three sources · + Track promotes a signal onto the board with auto-suggested theme tags
-          </span>
-        </div>
-        <div className="grid gap-3 lg:grid-cols-3">
-          {board.map((b) => (
-            <div key={b.key} className="rounded-xl border border-[var(--line)] bg-white p-3">
-              <div className="mb-2 text-[12px] font-semibold text-[var(--ink)]">{b.label}</div>
-              <div className="flex gap-3">
-                <div className="min-w-0 flex-1">
-                  <div className="mb-1.5 text-[10px] font-bold uppercase tracking-wide text-[var(--good,#16a34a)]">
-                    Opportunities · {b.opportunities.length}
-                  </div>
-                  {b.opportunities.length === 0 ? (
-                    <div className="text-[10.5px] text-[var(--ink-faint)]">Nothing flagged.</div>
-                  ) : (
-                    <ul className="space-y-1.5">
-                      {b.opportunities.slice(0, 4).map((s, i) => (
-                        <SignalRow key={i} s={s} onPromote={onPromote} />
-                      ))}
-                    </ul>
-                  )}
-                </div>
-                <div className="min-w-0 flex-1">
-                  <div className="mb-1.5 text-[10px] font-bold uppercase tracking-wide text-[var(--bad,#dc2626)]">
-                    Threats · {b.threats.length}
-                  </div>
-                  {b.threats.length === 0 ? (
-                    <div className="text-[10.5px] text-[var(--ink-faint)]">Nothing flagged.</div>
-                  ) : (
-                    <ul className="space-y-1.5">
-                      {b.threats.slice(0, 4).map((s, i) => (
-                        <SignalRow key={i} s={s} onPromote={onPromote} />
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
     </div>
   );
 }

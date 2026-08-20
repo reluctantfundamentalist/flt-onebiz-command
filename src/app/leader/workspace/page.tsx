@@ -11,9 +11,6 @@ import {
 import { loadMetricsByIata } from "@/lib/metrics-loader";
 import { buildTimeline, timelineByBdSummary } from "@/lib/timeline";
 import HomeTabs, { type HomeTabKey } from "@/components/leader/HomeTabs";
-import { buildSourceBoard } from "@/lib/signals";
-import { readFileSync } from "fs";
-import { join } from "path";
 import AppHeader from "@/components/AppHeader";
 
 const VALID_TABS: HomeTabKey[] = ["opportunities", "activity", "contracts", "metrics"];
@@ -51,10 +48,6 @@ export default async function WorkspacePage({
 
   const timeline = buildTimeline(updates, meetings, contracts);
   const bdSummary = timelineByBdSummary(timeline);
-  const intel = JSON.parse(
-    readFileSync(join(process.cwd(), "src/data/market_intel.json"), "utf8"),
-  );
-  const board = buildSourceBoard(metricsByIata, updates, intel);
 
   return (
     <div className="min-h-screen bg-[var(--bg)]">
@@ -64,7 +57,6 @@ export default async function WorkspacePage({
         <HomeTabs
           tab={tab}
           opportunities={opportunities}
-          board={board}
           summary={bdSummary}
           timeline={timeline}
           updates={updates}

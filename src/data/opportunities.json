@@ -16,7 +16,8 @@
     "ownerBdId": "praveen",
     "source": "bd_report",
     "createdAt": "2026-07-01T09:00:00Z",
-    "contractIata": "QR"
+    "contractIata": "QR",
+    "priority": "high"
   },
   {
     "id": "o2",
@@ -36,7 +37,9 @@
     "ownerBdId": "nabil",
     "source": "bd_report",
     "createdAt": "2026-08-01T09:00:00Z",
-    "contractIata": "SV"
+    "contractIata": "SV",
+    "priority": "high",
+    "sourceUpdateId": "topic_SV_9_9_global_sale_campaign_planning"
   },
   {
     "id": "o3",
@@ -54,7 +57,8 @@
     "nextAction": "Chase airline technical team for go-live date",
     "ownerBdId": "nabil",
     "source": "bd_report",
-    "createdAt": "2026-06-20T09:00:00Z"
+    "createdAt": "2026-06-20T09:00:00Z",
+    "priority": "low"
   },
   {
     "id": "o4",
@@ -72,7 +76,8 @@
     "nextAction": "Get discount commitment in writing",
     "ownerBdId": "praveen",
     "source": "bd_report",
-    "createdAt": "2026-07-20T09:00:00Z"
+    "createdAt": "2026-07-20T09:00:00Z",
+    "priority": "medium"
   },
   {
     "id": "o5",
@@ -92,7 +97,8 @@
     "ownerBdId": "dinit",
     "source": "bd_report",
     "createdAt": "2026-07-15T09:00:00Z",
-    "contractIata": "AI"
+    "contractIata": "AI",
+    "priority": "medium"
   },
   {
     "id": "o6",
@@ -112,7 +118,8 @@
     "ownerBdId": "dinit",
     "source": "bd_report",
     "createdAt": "2026-07-28T09:00:00Z",
-    "contractIata": "AI"
+    "contractIata": "AI",
+    "priority": "high"
   },
   {
     "id": "o7",
@@ -130,7 +137,8 @@
     "nextAction": "Kick off first campaign under the framework",
     "ownerBdId": "dinit",
     "source": "bd_report",
-    "createdAt": "2026-06-15T09:00:00Z"
+    "createdAt": "2026-06-15T09:00:00Z",
+    "priority": "high"
   },
   {
     "id": "o8",
@@ -149,7 +157,8 @@
     "nextAction": "Schedule renewal review with commercial head",
     "ownerBdId": "nabil",
     "source": "bd_report",
-    "createdAt": "2026-07-10T09:00:00Z"
+    "createdAt": "2026-07-10T09:00:00Z",
+    "priority": "low"
   },
   {
     "id": "o9",
@@ -168,7 +177,8 @@
     "ownerBdId": "snehal",
     "source": "bd_report",
     "createdAt": "2026-06-10T09:00:00Z",
-    "contractIata": "MS"
+    "contractIata": "MS",
+    "priority": "low"
   },
   {
     "id": "o10",
@@ -186,7 +196,9 @@
     "nextAction": "Scope a member-only fare pilot",
     "ownerBdId": "praveen",
     "source": "bd_report",
-    "createdAt": "2026-08-05T09:00:00Z"
+    "createdAt": "2026-08-05T09:00:00Z",
+    "priority": "medium",
+    "sourceUpdateId": "topic_EK_skywards_trip_rewards_loyalty_integratio"
   },
   {
     "id": "o11",
@@ -206,7 +218,9 @@
     "ownerBdId": "praveen",
     "source": "bd_report",
     "createdAt": "2026-07-22T09:00:00Z",
-    "contractIata": "EY"
+    "contractIata": "EY",
+    "priority": "high",
+    "sourceUpdateId": "topic_EY_commercial_agreement_contract_execution"
   },
   {
     "id": "o12",
@@ -224,7 +238,8 @@
     "nextAction": "Exchange redlines on renewal clauses",
     "ownerBdId": "snehal",
     "source": "bd_report",
-    "createdAt": "2026-07-18T09:00:00Z"
+    "createdAt": "2026-07-18T09:00:00Z",
+    "priority": "medium"
   },
   {
     "id": "t1",
@@ -243,7 +258,9 @@
     "ownerBdId": "praveen",
     "source": "bd_report",
     "createdAt": "2026-07-01T09:00:00Z",
-    "contractIata": "EK"
+    "contractIata": "EK",
+    "priority": "high",
+    "sourceUpdateId": "topic_EK_q2_q3_q4_fy26_27_incentive_payout_admini"
   },
   {
     "id": "t2",
@@ -261,7 +278,8 @@
     "nextAction": "Present search-optimization plan to airline",
     "ownerBdId": "praveen",
     "source": "bd_report",
-    "createdAt": "2026-08-01T09:00:00Z"
+    "createdAt": "2026-08-01T09:00:00Z",
+    "priority": "medium"
   },
   {
     "id": "t3",
@@ -279,7 +297,8 @@
     "nextAction": "Re-engage once airline confirms vendor milestone",
     "ownerBdId": "praveen",
     "source": "bd_report",
-    "createdAt": "2026-06-01T09:00:00Z"
+    "createdAt": "2026-06-01T09:00:00Z",
+    "priority": "low"
   },
   {
     "id": "t4",
@@ -297,7 +316,8 @@
     "nextAction": "Get impact assessment before restructure goes live",
     "ownerBdId": "snehal",
     "source": "bd_report",
-    "createdAt": "2026-07-20T09:00:00Z"
+    "createdAt": "2026-07-20T09:00:00Z",
+    "priority": "medium"
   },
   {
     "id": "o13",
@@ -315,6 +335,7 @@
     "nextAction": "Revisit at next contract cycle",
     "ownerBdId": "praveen",
     "source": "bd_report",
-    "createdAt": "2026-06-18T09:00:00Z"
+    "createdAt": "2026-06-18T09:00:00Z",
+    "priority": "low"
   }
 ]

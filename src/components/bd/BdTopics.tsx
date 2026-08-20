@@ -1,12 +1,14 @@
 "use client";
 import { useState } from "react";
 import TopicBoard from "@/components/TopicBoard";
+import { isNoise } from "@/lib/signals";
 import type { UpdateRecord } from "@/lib/store";
 
 export default function BdTopics({ updates }: { updates: UpdateRecord[] }) {
   const [active, setActive] = useState<Set<string>>(new Set());
+  const clean = updates.filter((u) => !isNoise(u.headline));
 
-  const accountTags = [...new Set(updates.map((u) => u.accountIata))].sort();
+  const accountTags = [...new Set(clean.map((u) => u.accountIata))].sort();
   const prioTags = ["high", "medium", "low"];
 
   function toggle(tag: string) {
@@ -18,7 +20,7 @@ export default function BdTopics({ updates }: { updates: UpdateRecord[] }) {
     });
   }
 
-  const filtered = updates.filter(
+  const filtered = clean.filter(
     (u) =>
       active.size === 0 ||
       active.has(u.accountIata) ||

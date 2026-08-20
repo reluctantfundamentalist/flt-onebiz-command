@@ -5,12 +5,14 @@ import {
   writeOpportunities,
   type OpportunityRecord,
   type OpportunityStatus,
+  type OpportunityPriority,
 } from "@/lib/store";
 import { findUser, findAccount } from "@/lib/users";
 import { suggestThemes } from "@/lib/themes";
 
 type Body =
   | { action: "status"; id: string; status: OpportunityStatus }
+  | { action: "priority"; id: string; priority: OpportunityPriority }
   | { action: "dismiss"; id: string }
   | { action: "link"; id: string; contractIata: string | null }
   | {
@@ -22,9 +24,11 @@ type Body =
       source: string;
       valueUsd?: number | null;
       sourceUpdateId?: string;
+      priority?: OpportunityPriority;
     };
 
 const STATUSES: OpportunityStatus[] = ["open", "won", "lost", "stalled"];
+const PRIORITIES: OpportunityPriority[] = ["high", "medium", "low"];
 
 export async function POST(req: NextRequest) {
   const session = await getSession();
@@ -48,6 +52,17 @@ export async function POST(req: NextRequest) {
     if (!rec) return NextResponse.json({ error: "not found" }, { status: 404 });
     rec.status = body.status;
     rec.statusChangedAt = now; // dwell chip restarts on every stage change
+    await writeOpportunities(all);
+    return NextResponse.json({ ok: true });
+  }
+
+  if (body.action === "priority") {
+    if (!PRIORITIES.includes(body.priority)) {
+      return NextResponse.json({ error: "invalid priority" }, { status: 400 });
+    }
+    const rec = all.find((o) => o.id === body.id);
+    if (!rec) return NextResponse.json({ error: "not found" }, { status: 404 });
+    rec.priority = body.priority;
     await writeOpportunities(all);
     return NextResponse.json({ ok: true });
   }
@@ -85,6 +100,7 @@ export async function POST(req: NextRequest) {
       status: "open",
       statusChangedAt: now,
       confidence: "low",
+      priority: body.priority ?? "medium",
       valueUsd: body.valueUsd ?? null,
       nextAction: null,
       ownerBdId: account.ownerId,

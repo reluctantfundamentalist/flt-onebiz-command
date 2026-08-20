@@ -1,11 +1,12 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import AccountMapClient from "./AccountMapClient";
 import { buildScopedSignals, isMegaSignal, type MarketIntel, type Signal } from "@/lib/signals";
 import type { Account } from "@/lib/users";
 import { findAccount, findUser, layersFor, ACCOUNTS } from "@/lib/users";
-import type { AccountMetrics, UpdateRecord, MeetingRecord } from "@/lib/store";
+import type { AccountMetrics, UpdateRecord, MeetingRecord, OpportunityRecord } from "@/lib/store";
 
 function fmtUsd(n: number | undefined) {
   if (n === undefined || !n) return "—";
@@ -27,7 +28,7 @@ function accountsForBd(bd: string): Account[] {
   );
 }
 
-function SignalRow({ s }: { s: Signal }) {
+function SignalRow({ s, tracked, onPromote }: { s: Signal; tracked: boolean; onPromote: (s: Signal) => void }) {
   const hover = s.detail ? `${s.text} — ${s.detail}` : s.text;
   return (
     <li
@@ -52,6 +53,19 @@ function SignalRow({ s }: { s: Signal }) {
         )}
         <span className="ml-1.5 text-[10px] text-[var(--ink-faint)]">{s.source}</span>
       </span>
+      {tracked ? (
+        <span className="shrink-0 rounded bg-[var(--bg)] px-1.5 py-0.5 text-[9.5px] font-semibold text-[var(--ink-faint)]">
+          on board ✓
+        </span>
+      ) : (
+        <button
+          onClick={() => onPromote(s)}
+          title="Track as an opportunity — keeps the thread link"
+          className="shrink-0 rounded border border-[var(--line)] px-1.5 py-0.5 text-[9.5px] font-semibold text-[var(--brand)] hover:bg-[var(--brand-soft)]"
+        >
+          + Track
+        </button>
+      )}
     </li>
   );
 }
@@ -71,12 +85,16 @@ export default function HomeWorkspace({
   updates,
   intel,
   meetings,
+  opportunities,
 }: {
   metrics: Record<string, AccountMetrics>;
   updates: UpdateRecord[];
   intel: MarketIntel[];
   meetings: MeetingRecord[];
+  opportunities: OpportunityRecord[];
 }) {
+  const router = useRouter();
+  const [promoting, setPromoting] = useState(false);
   const [selectedIata, setSelectedIata] = useState("");
   const [selectedBd, setSelectedBd] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("");
@@ -132,6 +150,12 @@ export default function HomeWorkspace({
     return { rev, yoy, pax, covered };
   }, [iatas.join(","), metrics]);
 
+  // Threads already promoted onto the board — rows show "on board" instead of +Track.
+  const trackedIds = useMemo(
+    () => new Set(opportunities.map((o) => o.sourceUpdateId).filter(Boolean) as string[]),
+    [opportunities],
+  );
+
   // Mega-only signals for the scope, bucketed by time.
   const groups = useMemo(() => {
     const g = buildScopedSignals(iatas, metrics, updates, intel, meetings);
@@ -148,6 +172,30 @@ export default function HomeWorkspace({
       happened: mega(g.happened),
     };
   }, [iatas.join(","), metrics, updates, intel, meetings]);
+
+  async function onPromote(s: Signal) {
+    setPromoting(true);
+    try {
+      await fetch("/api/opportunities", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          action: "promote",
+          accountIata: s.iata,
+          title: s.text,
+          detail: s.detail,
+          kind: s.kind === "threat" ? "threat" : "opportunity",
+          source: s.source,
+          valueUsd: s.dollar ?? null,
+          sourceUpdateId: s.updateId,
+          priority: s.priority === "high" || s.priority === "low" ? s.priority : "medium",
+        }),
+      });
+      router.refresh();
+    } finally {
+      setPromoting(false);
+    }
+  }
 
   const bdRegions = selectedBd
     ? Array.from(new Set(accountsForBd(selectedBd).map((a) => a.region)))
@@ -304,8 +352,15 @@ export default function HomeWorkspace({
               </div>
             ) : (
               <>
-                <ul className="space-y-1.5">
-                  {visible.slice(0, expanded ? 20 : 5).map((s, i) => <SignalRow key={i} s={s} />)}
+                <ul className={`space-y-1.5 ${promoting ? "opacity-60 pointer-events-none" : ""}`}>
+                  {visible.slice(0, expanded ? 20 : 5).map((s, i) => (
+                    <SignalRow
+                      key={i}
+                      s={s}
+                      tracked={!!s.updateId && trackedIds.has(s.updateId)}
+                      onPromote={onPromote}
+                    />
+                  ))}
                 </ul>
                 {visible.length > 5 && (
                   <button

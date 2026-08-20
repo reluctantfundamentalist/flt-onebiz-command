@@ -1,7 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
 import type { OpportunityRecord, UpdateRecord, ContractRecord, AccountMetrics } from "@/lib/store";
-import type { SourceBucket } from "@/lib/signals";
 import type { TimelineItem } from "@/lib/timeline";
 import type { User } from "@/lib/users";
 import OpportunitiesTab from "./OpportunitiesTab";
@@ -28,7 +27,6 @@ interface BdSummary {
 export default function HomeTabs({
   tab,
   opportunities,
-  board,
   summary,
   timeline,
   updates,
@@ -39,7 +37,6 @@ export default function HomeTabs({
 }: {
   tab: HomeTabKey;
   opportunities: OpportunityRecord[];
-  board: SourceBucket[];
   summary: BdSummary[];
   timeline: TimelineItem[];
   updates: UpdateRecord[];
@@ -89,7 +86,6 @@ export default function HomeTabs({
         {tab === "opportunities" && (
           <OpportunitiesTab
             opportunities={opportunities}
-            board={board}
             contractIatas={contracts.map((c) => c.accountIata)}
           />
         )}

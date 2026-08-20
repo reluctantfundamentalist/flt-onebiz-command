@@ -1,6 +1,6 @@
 import { getSession } from "@/lib/auth";
 import { SEED_UPDATES, SEED_MEETINGS } from "@/lib/seed";
-import { listUpdates, listMeetings } from "@/lib/store";
+import { listUpdates, listMeetings, listOpportunities } from "@/lib/store";
 import { loadMetricsByIata } from "@/lib/metrics-loader";
 import HomeWorkspace from "@/components/leader/HomeWorkspace";
 import { readFileSync } from "fs";
@@ -11,10 +11,11 @@ export default async function LeaderPage() {
   const session = await getSession();
   if (!session) return null;
 
-  const [storedUpdates, storedMeetings, aggregatedMetrics] = await Promise.all([
+  const [storedUpdates, storedMeetings, aggregatedMetrics, opportunities] = await Promise.all([
     listUpdates(),
     listMeetings(),
     loadMetricsByIata(),
+    listOpportunities(),
   ]);
 
   const updates = storedUpdates.length ? storedUpdates : SEED_UPDATES;
@@ -33,6 +34,7 @@ export default async function LeaderPage() {
           updates={updates}
           intel={intel}
           meetings={meetings}
+          opportunities={opportunities}
         />
       </main>
     </div>

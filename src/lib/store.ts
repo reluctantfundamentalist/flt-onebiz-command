@@ -128,6 +128,7 @@ export async function writeMetrics(all: AccountMetrics[]): Promise<void> {
 
 export type OpportunityStatus = "open" | "won" | "lost" | "stalled";
 export type OpportunityConfidence = "high" | "low";
+export type OpportunityPriority = "high" | "medium" | "low";
 export type OpportunityKind = "opportunity" | "threat";
 
 export interface OpportunityRecord {
@@ -140,6 +141,7 @@ export interface OpportunityRecord {
   status: OpportunityStatus;
   statusChangedAt: string;     // ISO — dwell = days since this changed
   confidence: OpportunityConfidence;
+  priority: OpportunityPriority;
   valueUsd?: number | null;    // expected value, quote-verified only
   nextAction?: string | null;
   ownerBdId: string;

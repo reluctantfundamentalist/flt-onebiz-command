@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { findUser } from "@/lib/users";
+import { isNoise } from "@/lib/signals";
 import type { UpdateRecord, MeetingRecord, ContractRecord } from "@/lib/store";
 
 type Event = {
@@ -17,6 +18,7 @@ function toEvents(
 ): Event[] {
   const ev: Event[] = [];
   for (const u of updates) {
+    if (isNoise(u.headline)) continue;
     ev.push({
       when: u.createdAt,
       kind: "update",

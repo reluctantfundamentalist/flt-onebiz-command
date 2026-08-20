@@ -1,4 +1,5 @@
 import type { UpdateRecord } from "@/lib/store";
+import { isNoise } from "@/lib/signals";
 
 interface Props {
   updates: UpdateRecord[];
@@ -26,7 +27,8 @@ function fmtUsd(n: number) {
 }
 
 export default function TopicBoard({ updates, title = "Active topics" }: Props) {
-  const topics = updates.filter((u) => u.status !== undefined);
+  // Noise (OOO chatter, scheduling pings) is never a topic to prioritize.
+  const topics = updates.filter((u) => u.status !== undefined && !isNoise(u.headline));
   const grouped: Record<string, UpdateRecord[]> = {};
   for (const t of topics) {
     const s = t.status ?? "active";
