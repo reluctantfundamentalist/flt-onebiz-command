@@ -1,0 +1,28 @@
+src/lib/signals.ts
+  s_9ad07db2fe84be::t_55efb37fc1ce30 75
+  s_9ad07db2fe84be::t_9aa23f52c2de73 153-154
+  s_9ad07db2fe84be::t_ac51faf0b3f779 40-48,51-54
+src/components/leader/UpdatesPanel.tsx
+  s_9ad07db2fe84be::t_45bff0900b29a1 49-50,53
+  s_9ad07db2fe84be::t_812e7acf52efcc 3
+src/components/leader/LeaderMapWorkspace.tsx
+  s_9ad07db2fe84be::t_f7813bb8000cac 41
+  s_9ad07db2fe84be::t_3ab2b259577161 115
+  s_9ad07db2fe84be::t_2bd25a08c7e290 7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.39-trip",
+  "base_commit_sha": "602699f2e326192410d31ba1139f37de74615344",
+  "prompts": {},
+  "sessions": {
+    "s_9ad07db2fe84be": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4469f407-a824-4b5f-aaf0-83dc390bf278",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
