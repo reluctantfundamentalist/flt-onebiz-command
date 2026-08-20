@@ -1,0 +1,48 @@
+src/lib/intel-buckets.ts
+  s_9ad07db2fe84be::t_b1d06ed9a31a24 61
+  s_9ad07db2fe84be::t_cd7ec1d3f7e640 81-102
+  s_9ad07db2fe84be::t_dc80affd4d30c9 1-7,9-60,62-80,103-153
+  s_9ad07db2fe84be::t_b086b160c23a17 8
+src/components/leader/HomeWorkspace.tsx
+  s_9ad07db2fe84be::t_00b5ac0b98f173 98
+  s_9ad07db2fe84be::t_7cc4813e35fff8 8
+  s_9ad07db2fe84be::t_121ad55aa47632 180,195-198
+  s_9ad07db2fe84be::t_e798de88a9747b 317-321
+  s_9ad07db2fe84be::t_d296af4c60f9ce 407
+  s_9ad07db2fe84be::t_3afcd1299a72d5 220-258
+src/data/stakeholders.json
+  s_9ad07db2fe84be::t_9337af7d55bf98 1-230
+src/components/leader/StakeholderPanel.tsx
+  s_9ad07db2fe84be::t_1b9db9eb49916e 1-94
+src/components/gantt/GanttChart.tsx
+  s_9ad07db2fe84be::t_5891bd24d86b58 17
+  s_9ad07db2fe84be::t_7969cf88a7ae93 41
+  s_9ad07db2fe84be::t_273194e149659d 159,165
+  s_9ad07db2fe84be::t_c21cf21d48dcca 196
+  s_9ad07db2fe84be::t_b4ef0262aec237 132
+src/components/leader/IntelBuckets.tsx
+  s_9ad07db2fe84be::t_f15dab5c65d669 1-180
+src/app/leader/account/[iata]/page.tsx
+  s_9ad07db2fe84be::t_50d70c5a3e4d0a 301
+  s_9ad07db2fe84be::t_188fd01075f885 6,11-12,17-18,20-23,29,36,74-85,99-104,108-117,121,142,147,158,185,189-236,240-242,245,247-250,252-260,262-270,283-300,302-307,334,339-340,342,344-350
+src/data/opportunities.json
+  s_9ad07db2fe84be::t_259ef9968c61af 340-359
+src/lib/stakeholder-loader.ts
+  s_9ad07db2fe84be::t_4ff755a1917bfa 1-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.39-trip",
+  "base_commit_sha": "7b729c186db08626260f041c5e432798b550376e",
+  "prompts": {},
+  "sessions": {
+    "s_9ad07db2fe84be": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4469f407-a824-4b5f-aaf0-83dc390bf278",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
