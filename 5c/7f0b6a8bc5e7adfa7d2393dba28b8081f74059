@@ -1,0 +1,28 @@
+src/app/leader/bd/[uid]/page.tsx
+  s_9ad07db2fe84be::t_31622f8731e156 44
+src/components/AppHeader.tsx
+  s_9ad07db2fe84be::t_f220d01fde8f4b 8
+src/components/leader/HomeTabs.tsx
+  s_9ad07db2fe84be::t_dbe53ca5614982 65
+src/app/leader/workspace/page.tsx
+  s_9ad07db2fe84be::t_f2e10459827b68 61
+src/app/leader/account/[iata]/page.tsx
+  s_9ad07db2fe84be::t_030423b52f7989 24-32,39-51,54,57,66-70,105-106,124,147-165,167-173,175-198,200-203,205-207,209,211-220,222-224,226-232,234-283,285-294,296-298
+  s_9ad07db2fe84be::t_93b881d14b65bc 103
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.39-trip",
+  "base_commit_sha": "5c7f0b6a8bc5e7adfa7d2393dba28b8081f74059",
+  "prompts": {},
+  "sessions": {
+    "s_9ad07db2fe84be": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4469f407-a824-4b5f-aaf0-83dc390bf278",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
