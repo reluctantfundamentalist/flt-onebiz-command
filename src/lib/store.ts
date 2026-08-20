@@ -120,3 +120,37 @@ export async function listMetrics(): Promise<AccountMetrics[]> {
 export async function writeMetrics(all: AccountMetrics[]): Promise<void> {
   await writeJson("metrics.json", all);
 }
+
+// ── Opportunities & threats (the CRM backbone) ──
+// No traditional deal funnel: airline work is multi-theme, so each record
+// carries theme tags (src/lib/themes.ts), a 4-state status, and a maturity
+// confidence. statusChangedAt drives the dwell chip ("Open · 23d").
+
+export type OpportunityStatus = "open" | "won" | "lost" | "stalled";
+export type OpportunityConfidence = "high" | "low";
+export type OpportunityKind = "opportunity" | "threat";
+
+export interface OpportunityRecord {
+  id: string;
+  accountIata: string;
+  kind: OpportunityKind;
+  title: string;
+  detail?: string;
+  themes: string[];            // theme ids from src/lib/themes.ts
+  status: OpportunityStatus;
+  statusChangedAt: string;     // ISO — dwell = days since this changed
+  confidence: OpportunityConfidence;
+  valueUsd?: number | null;    // expected value, quote-verified only
+  nextAction?: string | null;
+  ownerBdId: string;
+  source: string;              // "bd_report" | "market_intel" | "mail" | "metrics" | "manual"
+  createdAt: string;
+}
+
+export async function listOpportunities(): Promise<OpportunityRecord[]> {
+  return readJson<OpportunityRecord[]>("opportunities.json", []);
+}
+
+export async function writeOpportunities(all: OpportunityRecord[]): Promise<void> {
+  await writeJson("opportunities.json", all);
+}
