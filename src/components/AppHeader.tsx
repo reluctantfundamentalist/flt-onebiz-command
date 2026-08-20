@@ -1,13 +1,24 @@
 "use client";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { SessionPayload } from "@/lib/auth";
+
+const LEADER_NAV: { key: string; label: string; href: string }[] = [
+  { key: "overview", label: "Overview", href: "/leader" },
+  { key: "opportunities", label: "Opportunities & Threats", href: "/leader/workspace?tab=opportunities" },
+  { key: "activity", label: "Activity", href: "/leader/workspace?tab=activity" },
+  { key: "contracts", label: "Contracts & Financials", href: "/leader/workspace?tab=contracts" },
+  { key: "metrics", label: "Metrics", href: "/leader/workspace?tab=metrics" },
+];
 
 export default function AppHeader({
   session,
   subtitle,
+  navActive,
 }: {
   session: SessionPayload;
   subtitle: string;
+  navActive?: string;
 }) {
   const router = useRouter();
 
@@ -58,6 +69,27 @@ export default function AppHeader({
           </button>
         </div>
       </div>
+
+      {session.role === "leader" && (
+        <nav className="mx-auto flex max-w-7xl gap-1 overflow-x-auto px-4 pb-2">
+          {LEADER_NAV.map((item) => {
+            const active = navActive === item.key;
+            return (
+              <Link
+                key={item.key}
+                href={item.href}
+                className={`whitespace-nowrap rounded-md px-2.5 py-1 text-[11.5px] font-semibold transition ${
+                  active
+                    ? "bg-[var(--brand-soft)] text-[var(--brand-dark)]"
+                    : "text-[var(--ink-faint)] hover:bg-[var(--bg)] hover:text-[var(--ink)]"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+        </nav>
+      )}
     </header>
   );
 }

@@ -1,4 +1,4 @@
-import type { UpdateRecord, AccountMetrics } from "@/lib/store";
+import type { UpdateRecord, AccountMetrics, MeetingRecord } from "@/lib/store";
 
 export interface MarketIntel {
   iata: string;
@@ -16,6 +16,7 @@ export interface Signal {
   detail?: string;   // hover / below description
   iata?: string;     // account tag for keyword shine
   short?: string;    // concise keyword line for a leader glance
+  priority?: string; // high/medium/low when the source carries one
 }
 
 function concise(text: string, words = 5): string {
@@ -160,4 +161,105 @@ export function buildSourceBoard(
   }
 
   return [market, metrics, mail];
+}
+
+// ── Mega updates ──
+// The home page shows only mega updates: dollar impact ≥ $100K, high priority,
+// or a strategic keyword. Everything else stays out of the leader's glance.
+
+const MEGA_KEYWORD =
+  /contract.*(sign|won|renew|award)|framework|go.?live|mega|11\.11|9\.9|8\.8|marketing fund|exclusive fare|share.recovery|strategic partnership|incentive.*(sign|agree|confirm)|fund.*(confirm|arrive)/i;
+
+export const MEGA_DOLLAR_THRESHOLD = 100_000;
+
+export function isMegaUpdate(u: UpdateRecord): boolean {
+  if (u.dollarImpact && u.dollarImpact.amountUsd >= MEGA_DOLLAR_THRESHOLD) return true;
+  if (u.priority === "high") return true;
+  return MEGA_KEYWORD.test(u.headline);
+}
+
+export function isMegaSignal(s: Signal): boolean {
+  // Curated market intel is mega by definition; the rule filters machine noise.
+  if (s.source === "market intel") return true;
+  if (s.dollar !== undefined && s.dollar >= MEGA_DOLLAR_THRESHOLD) return true;
+  if (s.priority === "high") return true;
+  return MEGA_KEYWORD.test(s.text);
+}
+
+// Scoped coming / happening / happened for any slice of the portfolio:
+// the whole book, one BD's carriers (optionally one region), or one account.
+export function buildScopedSignals(
+  iatas: string[],
+  metricsByIata: Record<string, AccountMetrics>,
+  updates: UpdateRecord[],
+  intel: MarketIntel[],
+  meetings: MeetingRecord[],
+): SignalGroups {
+  const scope = new Set(iatas);
+  const inScope = (iata: string) => scope.has(iata);
+
+  const coming: Signal[] = [];
+  const happening: Signal[] = [];
+  const happened: Signal[] = [];
+
+  // Market intel carries its own time bucket.
+  for (const m of intel.filter((x) => inScope(x.iata))) {
+    const sig: Signal = { kind: m.kind, text: m.headline, source: "market intel", iata: m.iata };
+    (m.when === "happening" ? happening : coming).push(sig);
+  }
+
+  for (const u of updates.filter((x) => inScope(x.accountIata))) {
+    if (isNoise(u.headline)) continue;
+    const base: Signal = {
+      kind: emailKind(u.headline),
+      text: u.headline,
+      source: "BD update",
+      iata: u.accountIata,
+      detail: u.detail,
+      dollar: u.dollarImpact?.amountUsd,
+      priority: u.priority,
+    };
+    if ((u.status || "").toLowerCase() === "closed") happened.push(base);
+    else happening.push(base);
+    if (u.nextStep) {
+      coming.push({
+        kind: "opportunity",
+        text: `Next: ${u.nextStep}`,
+        source: "BD update",
+        iata: u.accountIata,
+        priority: u.priority,
+      });
+    }
+  }
+
+  const now = Date.now();
+  for (const m of meetings.filter((x) => inScope(x.accountIata))) {
+    const past = new Date(m.when).getTime() < now;
+    const sig: Signal = {
+      kind: "info",
+      text: m.agenda,
+      source: "meeting",
+      iata: m.accountIata,
+      detail: m.attendees?.length ? `With: ${m.attendees.join(", ")}` : undefined,
+    };
+    if (past && m.outcome) happened.push(sig);
+    else if (!past) coming.push(sig);
+  }
+
+  // Realized performance per account, only when it moves (≥10% either way).
+  for (const iata of iatas) {
+    const p = metricsByIata[iata]?.ytdFlownRevVlyPct;
+    if (p === undefined) continue;
+    if (p >= 10 || p <= -15) {
+      happened.push({
+        kind: p >= 0 ? "opportunity" : "threat",
+        text: `${iata} YTD flown ${p >= 0 ? "+" : ""}${p.toFixed(1)}% vLY`,
+        source: "metrics",
+        iata,
+        dollar: metricsByIata[iata]?.ytdFlownRevUsd,
+      });
+    }
+  }
+
+  return { coming, happening, happened };
 }
