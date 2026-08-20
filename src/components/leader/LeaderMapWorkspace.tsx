@@ -4,7 +4,7 @@ import Link from "next/link";
 import AccountMapClient from "./AccountMapClient";
 import UpdatesPanel from "./UpdatesPanel";
 import SignalStrip from "./SignalStrip";
-import { buildSignals, type MarketIntel } from "@/lib/signals";
+import { buildSignals, isNoise, type MarketIntel } from "@/lib/signals";
 import type { Account } from "@/lib/users";
 import { findAccount, findUser, layersFor, ACCOUNTS } from "@/lib/users";
 import type { AccountMetrics, UpdateRecord } from "@/lib/store";
@@ -38,7 +38,7 @@ function AccountSide({
   const acc = findAccount(iata);
   const m = metrics[iata];
   const list = updates
-    .filter((u) => u.accountIata === iata)
+    .filter((u) => u.accountIata === iata && !isNoise(u.headline))
     .sort((a, b) => b.createdAt.localeCompare(a.createdAt));
 
   if (!acc) return null;
@@ -112,7 +112,7 @@ function BdSide({
   const accounts = ACCOUNTS.filter(
     (a) => a.ownerId === bd || layersFor(a).some((l) => l.ownerId === bd),
   );
-  const topics = updates.filter((u) => u.bd === bd);
+  const topics = updates.filter((u) => u.bd === bd && !isNoise(u.headline));
 
   return (
     <div className="space-y-4">

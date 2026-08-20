@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { findUser, findAccount, USERS } from "@/lib/users";
+import { isNoise } from "@/lib/signals";
 import type { UpdateRecord, AccountMetrics } from "@/lib/store";
 
 interface Props {
@@ -45,10 +46,11 @@ function weekBucket(iso: string): string {
 }
 
 export default function UpdatesPanel({ updates, accountName, metrics }: Props) {
-  const globals = updates
+  const clean = updates.filter((u) => !isNoise(u.headline));
+  const globals = clean
     .filter((u) => u.scope === "global")
     .sort((a, b) => b.createdAt.localeCompare(a.createdAt));
-  const locals = updates
+  const locals = clean
     .filter((u) => u.scope === "local")
     .sort((a, b) => b.createdAt.localeCompare(a.createdAt));
 

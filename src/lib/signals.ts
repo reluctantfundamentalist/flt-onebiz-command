@@ -37,9 +37,21 @@ export interface SignalGroups {
 }
 
 const THREAT = /refund|disput|undercut|penalt|ban|void|reject|issue|problem|risk|loss|leak|suspend/i;
+// Administrative noise — scheduling chatter, OOO replies — is never a signal.
+const NOISE = /scheduling\s*(?:&|and)?\s*ooo|out of office|ooo noise|auto-?repl/i;
+// An opportunity needs a commercial substance, not just a meeting having happened.
+const COMMERCIAL =
+  /incentive|fare|campaign|contract|commission|fund|marketing|revenue|partnership|agreement|promotion|promo|sale|loyalty|ndc|route|launch|enablement|activation|co-invest|co-brand|rebate|qbr|commercial|exclusive|member|ancillar|interline|authority|iata/i;
+
+export function isNoise(text: string): boolean {
+  return NOISE.test(text);
+}
 
 function emailKind(text: string): Signal["kind"] {
-  return THREAT.test(text) ? "threat" : "opportunity";
+  if (NOISE.test(text)) return "info";
+  if (THREAT.test(text)) return "threat";
+  if (COMMERCIAL.test(text)) return "opportunity";
+  return "info"; // neutral — a meeting fact, admin, structure: not board material
 }
 
 // Synthesizes the three sources (metrics, market intel, BD inputs/emails) into
@@ -60,6 +72,7 @@ export function buildSignals(
   }
 
   for (const u of updates.filter((x) => x.accountIata === iata)) {
+    if (isNoise(u.headline)) continue;
     const status = (u.status || "").toLowerCase();
     if (status === "closed") {
       happened.push({ kind: emailKind(u.headline), text: u.headline, source: "BD email" });
@@ -137,6 +150,8 @@ export function buildSourceBoard(
 
   for (const u of updates) {
     const kind = emailKind(u.headline);
+    // Noise and neutral items (plain meeting facts, admin) don't belong on the board.
+    if (kind === "info") continue;
     (kind === "threat" ? mail.threats : mail.opportunities).push({
       kind, text: u.headline, source: "mail", iata: u.accountIata,
       dollar: u.dollarImpact?.amountUsd, detail: u.detail,
