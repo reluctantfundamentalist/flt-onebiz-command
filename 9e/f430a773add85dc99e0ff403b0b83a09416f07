@@ -1,0 +1,51 @@
+src/components/leader/StakeholderPanel.tsx
+  s_9ad07db2fe84be::t_0a4972befb2f34 38-41
+src/app/leader/account/[iata]/page.tsx
+  s_9ad07db2fe84be::t_b2d25c3caa6825 215-222
+  s_9ad07db2fe84be::t_7d98ad26debb3d 22
+src/lib/signals.ts
+  s_9ad07db2fe84be::t_f345f7c538fe2f 223,234
+src/components/leader/HomeWorkspace.tsx
+  s_9ad07db2fe84be::t_935974b165f6d0 102-104
+  s_9ad07db2fe84be::t_a0392943792850 35,45,54
+  s_9ad07db2fe84be::t_6730f90f7ed0cc 563
+  s_9ad07db2fe84be::t_f9fa60f7fa6ce7 147-150
+  s_9ad07db2fe84be::t_3debb2241fa811 32-34,36-44,46-52,55-56,58-101,107-146,151-161,167-185
+  s_9ad07db2fe84be::t_9d706983b78548 544-562,565-572
+  s_9ad07db2fe84be::t_9222ee18c63d0b 564
+  s_9ad07db2fe84be::t_54c4caeee48a55 291-293,310-318,321-340
+  s_9ad07db2fe84be::t_962d349fda282a 9-10
+  s_9ad07db2fe84be::t_6ce77458e4b26d 215-216
+src/components/leader/OpportunitiesTab.tsx
+  s_9ad07db2fe84be::t_b546877012bf49 260-262
+  s_9ad07db2fe84be::t_4ce65d1c2aa7c7 80
+  s_9ad07db2fe84be::t_d7df07eacd2484 181-188
+  s_9ad07db2fe84be::t_a479212a4d17ea 8
+src/data/opportunities.json
+  s_9ad07db2fe84be::t_2550fa2e105f11 42-43,81-82,124-125,151,156-157,164-165
+src/lib/store.ts
+  s_9ad07db2fe84be::t_892721ace62cca 150
+scripts/cluster_topics.py
+  s_9ad07db2fe84be::t_eb1e33dd462219 167,170-171
+src/lib/opportunity-view.ts
+  s_9ad07db2fe84be::t_222a1d497f0825 18-25
+src/data/stakeholders.json
+  s_9ad07db2fe84be::t_6e9dcd75f91abd 118
+  s_9ad07db2fe84be::t_aa30cf1b667174 6,9-15,24-27,39-43,54-57,69-72,84-86,98-100,112-115,127-130,142-144,156-159,161,171-173,185-187,199-202,204,214-216,228-230,242-245,247,257-259,271-275,279
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.39-trip",
+  "base_commit_sha": "9ef430a773add85dc99e0ff403b0b83a09416f07",
+  "prompts": {},
+  "sessions": {
+    "s_9ad07db2fe84be": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4469f407-a824-4b5f-aaf0-83dc390bf278",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
