@@ -1,5 +1,5 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import AccountMapClient from "./AccountMapClient";
 import { buildScopedSignals, isMegaSignal, type MarketIntel, type Signal } from "@/lib/signals";
@@ -81,6 +81,12 @@ export default function HomeWorkspace({
   const [selectedBd, setSelectedBd] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("");
   const [timeTab, setTimeTab] = useState<"coming" | "happening" | "happened">("coming");
+  const [expanded, setExpanded] = useState(false);
+
+  // A new selection or tab starts collapsed again.
+  useEffect(() => {
+    setExpanded(false);
+  }, [timeTab, selectedIata, selectedBd, selectedRegion]);
 
   // Resolve the selection into a carrier scope.
   const { scopeAccounts, label, bdUser } = useMemo(() => {
@@ -297,9 +303,19 @@ export default function HomeWorkspace({
                 No mega updates for this selection.
               </div>
             ) : (
-              <ul className="scroll-slim max-h-[300px] space-y-1.5 overflow-y-auto pr-1">
-                {visible.slice(0, 50).map((s, i) => <SignalRow key={i} s={s} />)}
-              </ul>
+              <>
+                <ul className="space-y-1.5">
+                  {visible.slice(0, expanded ? 20 : 5).map((s, i) => <SignalRow key={i} s={s} />)}
+                </ul>
+                {visible.length > 5 && (
+                  <button
+                    onClick={() => setExpanded(!expanded)}
+                    className="mt-2 w-full rounded-md border border-[var(--line)] bg-white py-1.5 text-[11px] font-semibold text-[var(--ink-soft)] hover:bg-[var(--bg)]"
+                  >
+                    {expanded ? "Show less" : `Show ${Math.min(visible.length, 20) - 5} more`}
+                  </button>
+                )}
+              </>
             )}
           </div>
         </div>
