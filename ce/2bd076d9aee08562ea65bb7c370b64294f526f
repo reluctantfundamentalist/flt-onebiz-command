@@ -1,0 +1,43 @@
+src/components/leader/MetricsTab.tsx
+  s_9ad07db2fe84be::t_d6dbdb9bd7f899 1,3-149
+  s_9ad07db2fe84be::t_5e0fc3c0737c81 2
+src/app/api/opportunities/route.ts
+  s_9ad07db2fe84be::t_b2da27e9830c2f 1-87
+src/app/leader/page.tsx
+  s_9ad07db2fe84be::t_36e299cc2dae59 2
+  s_9ad07db2fe84be::t_0d838d77b457f6 4-10,14,20-26,30-43,66,69-80
+src/lib/opportunity-view.ts
+  s_9ad07db2fe84be::t_fa18b8db7c16b6 1-33
+src/lib/themes.ts
+  s_9ad07db2fe84be::t_9568e578622f41 1-121
+src/components/leader/OpportunitiesTab.tsx
+  s_9ad07db2fe84be::t_32380d00b8d38e 7
+  s_9ad07db2fe84be::t_029e0803ebc132 1-6,8-354
+src/components/leader/ActivityTab.tsx
+  s_9ad07db2fe84be::t_ef81cbe8c11aca 1-69
+src/components/leader/ContractsTab.tsx
+  s_9ad07db2fe84be::t_63d26b67fbdafe 1-136
+src/lib/store.ts
+  s_9ad07db2fe84be::t_442d756b7b7ba6 123-156
+src/data/opportunities.json
+  s_9ad07db2fe84be::t_74724534d3135c 8,24,40-42,56,72,88,104,120,136,152,168,184,200,216,232,248,264,274
+  s_9ad07db2fe84be::t_d6d24623ecbdaa 1-7,9-23,25-39,43-55,57-71,73-87,89-103,105-119,121-135,137-151,153-167,169-183,185-199,201-215,217-231,233-247,249-263,265-273
+src/components/leader/HomeTabs.tsx
+  s_9ad07db2fe84be::t_e2a6ab0a162710 1-107
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.39-trip",
+  "base_commit_sha": "ce2bd076d9aee08562ea65bb7c370b64294f526f",
+  "prompts": {},
+  "sessions": {
+    "s_9ad07db2fe84be": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4469f407-a824-4b5f-aaf0-83dc390bf278",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
