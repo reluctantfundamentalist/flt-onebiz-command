@@ -1,0 +1,34 @@
+src/components/AppHeader.tsx
+  s_9ad07db2fe84be::t_742ac704b70cb2 2,6-13,17,21
+  s_9ad07db2fe84be::t_5a0b588c7765e8 72-92
+src/app/leader/page.tsx
+  s_9ad07db2fe84be::t_1764f74c556aa0 2-3,5,10,14-18,28,31-32,34-35
+src/lib/signals.ts
+  s_9ad07db2fe84be::t_8edbdd23a7c9f8 19
+  s_9ad07db2fe84be::t_88c1cd9109f7fa 1
+  s_9ad07db2fe84be::t_0d3f119849c220 182-183
+  s_9ad07db2fe84be::t_2fdda043ef28b4 165-181,184-265
+src/components/leader/HomeWorkspace.tsx
+  s_9ad07db2fe84be::t_0729696040d05c 301
+  s_9ad07db2fe84be::t_482579418389b7 1-5,7-132,139-300,302-309
+  s_9ad07db2fe84be::t_f04f529417b328 133-138
+  s_9ad07db2fe84be::t_6b480d8326bc4f 6
+src/app/leader/workspace/page.tsx
+  s_9ad07db2fe84be::t_51c457e8416954 1-85
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.39-trip",
+  "base_commit_sha": "4231099a096525c370aa20860372ae95eb6820d2",
+  "prompts": {},
+  "sessions": {
+    "s_9ad07db2fe84be": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4469f407-a824-4b5f-aaf0-83dc390bf278",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
