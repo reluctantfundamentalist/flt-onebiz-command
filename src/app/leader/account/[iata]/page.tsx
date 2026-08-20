@@ -10,7 +10,6 @@ import { loadEdgesForAccount } from "@/lib/participants";
 import { buildTimeline, timelineForAccount } from "@/lib/timeline";
 import { orgFor } from "@/lib/org-seed";
 import AppHeader from "@/components/AppHeader";
-import UpdatesPanel from "@/components/leader/UpdatesPanel";
 import OrgChart from "@/components/leader/OrgChart";
 import GanttChart from "@/components/gantt/GanttChart";
 import RecentEvents from "@/components/RecentEvents";
@@ -22,16 +21,40 @@ import { buildSignals } from "@/lib/signals";
 import { readFileSync } from "fs";
 import { join } from "path";
 
+const ACCOUNT_TABS = [
+  { key: "overview", label: "Overview" },
+  { key: "performance", label: "Performance" },
+  { key: "activity", label: "Intel & Activity" },
+  { key: "people", label: "People" },
+] as const;
+
+type AccountTabKey = (typeof ACCOUNT_TABS)[number]["key"];
+
 function fmtUsd(n: number) {
   if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)}M`;
   if (n >= 1_000) return `$${(n / 1_000).toFixed(0)}K`;
   return `$${n}`;
 }
 
+function SectionLabel({ text, hint }: { text: string; hint?: string }) {
+  return (
+    <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-[var(--ink)]">
+      <span>{text}</span>
+      {hint && (
+        <span className="rounded bg-[var(--bg)] px-1.5 py-0.5 text-[10px] font-normal text-[var(--ink-faint)]">
+          {hint}
+        </span>
+      )}
+    </div>
+  );
+}
+
 export default async function AccountDetailPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ iata: string }>;
+  searchParams: Promise<{ tab?: string }>;
 }) {
   const { iata } = await params;
   const account = findAccount(iata);
@@ -39,6 +62,11 @@ export default async function AccountDetailPage({
 
   const session = await getSession();
   if (!session) return null;
+
+  const { tab } = await searchParams;
+  const active: AccountTabKey = ACCOUNT_TABS.some((t) => t.key === tab)
+    ? (tab as AccountTabKey)
+    : "overview";
 
   const [storedUpdates, storedMeetings, storedContracts, dataset, metricsByIata, edges] = await Promise.all([
     listUpdates(),
@@ -72,9 +100,10 @@ export default async function AccountDetailPage({
 
   return (
     <div className="min-h-screen bg-[var(--bg)]">
-      <AppHeader session={session} subtitle={`${account.iata} · ${account.name}`} />
+      <AppHeader session={session} subtitle={`${account.iata} · ${account.name}`} navActive="workspace" />
 
-      <main className="mx-auto max-w-7xl px-4 pb-20 pt-6 space-y-6">
+      <main className="mx-auto max-w-7xl px-4 pb-20 pt-6 space-y-5">
+        {/* Title row */}
         <div className="flex items-center gap-3 text-sm">
           <Link
             href={session.role === "leader" ? "/leader" : "/bd"}
@@ -92,16 +121,7 @@ export default async function AccountDetailPage({
           </div>
         </div>
 
-        <section>
-          <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-[var(--ink)]">
-            <span>Signals</span>
-            <span className="rounded bg-[var(--bg)] px-1.5 py-0.5 text-[10px] font-normal text-[var(--ink-faint)]">
-              metrics + market intel + BD inbox · what's coming / happening / happened
-            </span>
-          </div>
-          <SignalStrip groups={signals} />
-        </section>
-
+        {/* At-a-glance stats, always visible */}
         {(contract || metric) && (
           <div className="grid gap-3 sm:grid-cols-4">
             {contract && (
@@ -124,159 +144,158 @@ export default async function AccountDetailPage({
           </div>
         )}
 
-        <section>
-          <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-[var(--ink)]">
-            <span>Ownership layers</span>
-            <span className="rounded bg-[var(--bg)] px-1.5 py-0.5 text-[10px] font-normal text-[var(--ink-faint)]">
-              stored global + local hierarchy
-            </span>
-          </div>
-          <div className="grid gap-3 lg:grid-cols-2">
-            {layers.map((layer) => {
-              const layerUpdates = updates.filter((u) => u.bd === layer.ownerId);
-              const isGlobal = layer.market === "GLOBAL";
-              return (
-                <div key={layer.market} className="rounded-xl border border-[var(--line)] bg-white p-4">
-                  <div className="mb-1 flex items-center justify-between">
-                    <div className="text-[13px] font-semibold text-[var(--ink)]">
-                      {isGlobal ? "Global" : `Local · ${layer.market}`}
+        {/* Tab bar */}
+        <div className="flex flex-wrap gap-1 border-b border-[var(--line)]">
+          {ACCOUNT_TABS.map((t) => {
+            const isActive = t.key === active;
+            return (
+              <Link
+                key={t.key}
+                href={`/leader/account/${account.iata}?tab=${t.key}`}
+                className={`relative -mb-px rounded-t-lg border px-3.5 py-2 text-[12px] font-semibold transition ${
+                  isActive
+                    ? "border-[var(--line)] border-b-white bg-white text-[var(--brand)]"
+                    : "border-transparent text-[var(--ink-faint)] hover:text-[var(--ink)]"
+                }`}
+              >
+                {t.label}
+              </Link>
+            );
+          })}
+        </div>
+
+        {/* Tab content */}
+        {active === "overview" && (
+          <div className="space-y-6">
+            <section>
+              <SectionLabel text="Signals" hint="metrics + market intel + BD inbox" />
+              <SignalStrip groups={signals} />
+            </section>
+
+            <section>
+              <SectionLabel text="Ownership layers" hint="global + local hierarchy" />
+              <div className="grid gap-3 lg:grid-cols-2">
+                {layers.map((layer) => {
+                  const layerUpdates = updates.filter((u) => u.bd === layer.ownerId);
+                  const isGlobal = layer.market === "GLOBAL";
+                  return (
+                    <div key={layer.market} className="rounded-xl border border-[var(--line)] bg-white p-4">
+                      <div className="mb-1 flex items-center justify-between">
+                        <div className="text-[13px] font-semibold text-[var(--ink)]">
+                          {isGlobal ? "Global" : `Local · ${layer.market}`}
+                        </div>
+                        <span className="rounded bg-[var(--brand-soft)] px-1.5 py-0.5 text-[10px] font-semibold text-[var(--brand-dark)]">
+                          {findUser(layer.ownerId)?.name ?? layer.ownerId}
+                        </span>
+                      </div>
+                      <div className="text-[11px] text-[var(--ink-faint)]">
+                        {layerUpdates.length} intel topics from inbox
+                      </div>
+                      {layerUpdates.slice(0, 2).map((u) => (
+                        <div key={u.id} className="mt-1.5 border-l-2 border-[var(--line)] pl-2 text-[12px] text-[var(--ink-soft)]">
+                          {u.headline}
+                        </div>
+                      ))}
                     </div>
-                    <span className="rounded bg-[var(--brand-soft)] px-1.5 py-0.5 text-[10px] font-semibold text-[var(--brand-dark)]">
-                      {findUser(layer.ownerId)?.name ?? layer.ownerId}
-                    </span>
-                  </div>
-                  <div className="text-[11px] text-[var(--ink-faint)]">
-                    {layerUpdates.length} intel topics from inbox
-                  </div>
-                  {layerUpdates.slice(0, 2).map((u) => (
-                    <div key={u.id} className="mt-1.5 border-l-2 border-[var(--line)] pl-2 text-[12px] text-[var(--ink-soft)]">
-                      {u.headline}
-                    </div>
-                  ))}
-                  {!isGlobal && (
-                    <div className="mt-2 text-[10px] italic text-[var(--ink-faint)]">
-                      raises a flag to the global layer when it needs HQ leverage
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
-        <section>
-          <details className="group rounded-xl border border-[var(--line)] bg-white">
-            <summary className="flex cursor-pointer items-center justify-between px-4 py-3 text-sm font-semibold text-[var(--ink)]">
-              <span>Pipeline (Gantt)</span>
-              <span className="text-[11px] font-normal text-[var(--ink-faint)] group-open:hidden">
-                click to view
-              </span>
-            </summary>
-            <div className="px-4 pb-4">
-              <GanttChart
-                items={timeline}
-                groupBy="account"
-                accountLabelById={accountLabelById}
-                emptyLabel="No pending next-steps, meetings, or milestones."
-              />
-            </div>
-          </details>
-        </section>
-
-        <section className="grid gap-6 lg:grid-cols-3">
-          <div className="lg:col-span-2">
-            <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-[var(--ink)]">
-              <span>Topics from inbox</span>
-              <span className="rounded bg-[var(--bg)] px-1.5 py-0.5 text-[10px] font-normal text-[var(--ink-faint)]">
-                LLM-clustered from Outlook · last 90 days
-              </span>
-            </div>
-            <TopicBoard updates={updates} />
-          </div>
-          <div>
-            <div className="mb-3 text-sm font-semibold text-[var(--ink)]">Meeting pipeline</div>
-            <div className="rounded-xl border border-[var(--line)] bg-white p-4">
-              {meetings.length === 0 && (
-                <p className="text-xs text-[var(--ink-faint)]">No meetings on record.</p>
-              )}
-              <ul className="space-y-3">
-                {meetings.map((m) => (
-                  <li key={m.id} className="border-b border-[var(--line)] pb-3 last:border-0 last:pb-0">
-                    <div className="flex items-center gap-2 text-[10px] text-[var(--ink-faint)]">
-                      <span className="rounded bg-[var(--bg)] px-1.5 py-0.5 font-medium">
-                        {new Date(m.when).toLocaleDateString()}
-                      </span>
-                      <span>{findUser(m.bd)?.name ?? m.bd}</span>
-                    </div>
-                    <div className="mt-1 text-sm font-medium text-[var(--ink)]">{m.agenda}</div>
-                    <div className="mt-1 text-[11px] text-[var(--ink-soft)]">
-                      {m.attendees.join(" · ")}
-                    </div>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-3 text-[11px] italic text-[var(--ink-faint)]">
-                Outlook calendar pull wires in v1.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-[var(--ink)]">
-            <span>Hierarchy</span>
-            <span className="rounded bg-[var(--bg)] px-1.5 py-0.5 text-[10px] font-normal text-[var(--ink-faint)]">
-              airline reporting chain × Trip.com counterparts
-            </span>
-          </div>
-          {org ? (
-            <OrgChart seed={org} edges={edges} />
-          ) : (
-            <div className="rounded-xl border border-dashed border-[var(--line)] bg-white p-6 text-center text-sm text-[var(--ink-faint)]">
-              Hierarchy for {account.iata} not yet seeded — will populate from update participants in v1.
-            </div>
-          )}
-        </section>
-
-        <section>
-          <div className="mb-3 text-sm font-semibold text-[var(--ink)]">Recent events</div>
-          <RecentEvents updates={updates} meetings={meetings} contracts={contracts} />
-        </section>
-
-        <section>
-          <LogUpdateForm accounts={ACCOUNTS} defaultAccountIata={account.iata} />
-        </section>
-
-        <section>
-          <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-[var(--ink)]">
-            <span>Performance dashboard</span>
-            {dataset ? (
-              <span className="rounded bg-[var(--brand-soft)] px-1.5 py-0.5 text-[10px] font-normal text-[var(--brand-dark)]">
-                {dataset.meta.airlineName} · report {dataset.meta.reportMonth}
-              </span>
-            ) : (
-              <span className="rounded bg-[var(--bg)] px-1.5 py-0.5 text-[10px] font-normal text-[var(--ink-faint)]">
-                dataset pending — run `npm run refresh`
-              </span>
-            )}
-          </div>
-          {dataset ? (
-            <div className="rounded-xl border border-[var(--line)] bg-white p-4">
-              <DashboardShell data={dataset} />
-            </div>
-          ) : (
-            <div className="rounded-xl border border-dashed border-[var(--line)] bg-white p-8 text-center">
-              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--bg)] text-2xl">
-                📊
+                  );
+                })}
               </div>
-              <h3 className="text-lg font-semibold text-[var(--ink)]">Dataset not yet vendored</h3>
-              <p className="mt-2 text-sm text-[var(--ink-soft)]">
-                Run <code>npm run refresh</code> against the latest noSave_*.csv to populate
-                <code> src/data-vendor/{account.iata}/latest.json</code>.
-              </p>
-            </div>
-          )}
-        </section>
+            </section>
+
+            <section>
+              <LogUpdateForm accounts={ACCOUNTS} defaultAccountIata={account.iata} />
+            </section>
+          </div>
+        )}
+
+        {active === "performance" && (
+          <section>
+            <SectionLabel
+              text="Performance dashboard"
+              hint={
+                dataset
+                  ? `${dataset.meta.airlineName} · report ${dataset.meta.reportMonth}`
+                  : "dataset pending — run `npm run refresh`"
+              }
+            />
+            {dataset ? (
+              <div className="rounded-xl border border-[var(--line)] bg-white p-4">
+                <DashboardShell data={dataset} />
+              </div>
+            ) : (
+              <div className="rounded-xl border border-dashed border-[var(--line)] bg-white p-8 text-center">
+                <h3 className="text-lg font-semibold text-[var(--ink)]">Dataset not yet vendored</h3>
+                <p className="mt-2 text-sm text-[var(--ink-soft)]">
+                  Run <code>npm run refresh</code> against the latest noSave_*.csv to populate
+                  <code> src/data-vendor/{account.iata}/latest.json</code>.
+                </p>
+              </div>
+            )}
+          </section>
+        )}
+
+        {active === "activity" && (
+          <div className="space-y-6">
+            <section>
+              <SectionLabel text="Topics from inbox" hint="LLM-clustered from Outlook · last 90 days" />
+              <TopicBoard updates={updates} />
+            </section>
+
+            <section className="grid gap-6 lg:grid-cols-3">
+              <div className="lg:col-span-2">
+                <SectionLabel text="Pipeline" hint="next steps · meetings · contract period" />
+                <GanttChart
+                  items={timeline}
+                  groupBy="account"
+                  accountLabelById={accountLabelById}
+                  emptyLabel="No pending next-steps, meetings, or milestones."
+                />
+              </div>
+              <div>
+                <SectionLabel text="Meetings" />
+                <div className="rounded-xl border border-[var(--line)] bg-white p-4">
+                  {meetings.length === 0 && (
+                    <p className="text-xs text-[var(--ink-faint)]">No meetings on record.</p>
+                  )}
+                  <ul className="space-y-3">
+                    {meetings.map((m) => (
+                      <li key={m.id} className="border-b border-[var(--line)] pb-3 last:border-0 last:pb-0">
+                        <div className="flex items-center gap-2 text-[10px] text-[var(--ink-faint)]">
+                          <span className="rounded bg-[var(--bg)] px-1.5 py-0.5 font-medium">
+                            {new Date(m.when).toLocaleDateString()}
+                          </span>
+                          <span>{findUser(m.bd)?.name ?? m.bd}</span>
+                        </div>
+                        <div className="mt-1 text-sm font-medium text-[var(--ink)]">{m.agenda}</div>
+                        <div className="mt-1 text-[11px] text-[var(--ink-soft)]">
+                          {m.attendees.join(" · ")}
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <SectionLabel text="Recent events" />
+              <RecentEvents updates={updates} meetings={meetings} contracts={contracts} />
+            </section>
+          </div>
+        )}
+
+        {active === "people" && (
+          <section>
+            <SectionLabel text="Hierarchy" hint="airline reporting chain × Trip.com counterparts" />
+            {org ? (
+              <OrgChart seed={org} edges={edges} />
+            ) : (
+              <div className="rounded-xl border border-dashed border-[var(--line)] bg-white p-6 text-center text-sm text-[var(--ink-faint)]">
+                Hierarchy for {account.iata} not yet seeded — will populate from update participants in v1.
+              </div>
+            )}
+          </section>
+        )}
       </main>
     </div>
   );

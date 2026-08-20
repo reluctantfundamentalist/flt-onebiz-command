@@ -41,7 +41,7 @@ export default async function BdDetailPage({
 
   return (
     <div className="min-h-screen bg-[var(--bg)]">
-      <AppHeader session={session} subtitle={`BD board · ${bd.name}`} />
+      <AppHeader session={session} subtitle={`BD board · ${bd.name}`} navActive="workspace" />
 
       <main className="mx-auto max-w-7xl px-4 pb-20 pt-6 space-y-6">
         <div className="flex items-center gap-3">

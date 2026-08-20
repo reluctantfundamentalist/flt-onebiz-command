@@ -62,7 +62,7 @@ export default function HomeTabs({
           return (
             <button
               key={t.key}
-              onClick={() => router.replace(`/leader?tab=${t.key}`, { scroll: false })}
+              onClick={() => router.replace(`/leader/workspace?tab=${t.key}`, { scroll: false })}
               className={`relative -mb-px flex items-center gap-1.5 rounded-t-lg border px-3.5 py-2 text-[12px] font-semibold transition ${
                 active
                   ? "border-[var(--line)] border-b-white bg-white text-[var(--brand)]"

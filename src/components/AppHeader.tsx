@@ -5,10 +5,7 @@ import type { SessionPayload } from "@/lib/auth";
 
 const LEADER_NAV: { key: string; label: string; href: string }[] = [
   { key: "overview", label: "Overview", href: "/leader" },
-  { key: "opportunities", label: "Opportunities & Threats", href: "/leader/workspace?tab=opportunities" },
-  { key: "activity", label: "Activity", href: "/leader/workspace?tab=activity" },
-  { key: "contracts", label: "Contracts & Financials", href: "/leader/workspace?tab=contracts" },
-  { key: "metrics", label: "Metrics", href: "/leader/workspace?tab=metrics" },
+  { key: "workspace", label: "Workspace", href: "/leader/workspace" },
 ];
 
 export default function AppHeader({

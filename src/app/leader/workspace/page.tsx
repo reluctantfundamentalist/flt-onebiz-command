@@ -58,7 +58,7 @@ export default async function WorkspacePage({
 
   return (
     <div className="min-h-screen bg-[var(--bg)]">
-      <AppHeader session={session} subtitle="Leadership workspace" navActive={tab} />
+      <AppHeader session={session} subtitle="Leadership workspace" navActive="workspace" />
 
       <main className="mx-auto max-w-7xl px-4 pb-20 pt-6 space-y-6">
         <HomeTabs
