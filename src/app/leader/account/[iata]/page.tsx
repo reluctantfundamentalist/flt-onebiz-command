@@ -285,16 +285,58 @@ export default async function AccountDetailPage({
         )}
 
         {active === "people" && (
-          <section>
-            <SectionLabel text="Hierarchy" hint="airline reporting chain × Trip.com counterparts" />
-            {org ? (
-              <OrgChart seed={org} edges={edges} />
-            ) : (
-              <div className="rounded-xl border border-dashed border-[var(--line)] bg-white p-6 text-center text-sm text-[var(--ink-faint)]">
-                Hierarchy for {account.iata} not yet seeded — will populate from update participants in v1.
-              </div>
-            )}
-          </section>
+          <div className="space-y-6">
+            <section>
+              <SectionLabel text="Hierarchy" hint="airline reporting chain × Trip.com counterparts" />
+              {org ? (
+                <OrgChart seed={org} edges={edges} />
+              ) : (
+                <div className="rounded-xl border border-dashed border-[var(--line)] bg-white p-6 text-center text-sm text-[var(--ink-faint)]">
+                  Hierarchy for {account.iata} not yet seeded — will populate from update participants in v1.
+                </div>
+              )}
+            </section>
+
+            <section>
+              <SectionLabel
+                text="Contact rollup"
+                hint={`${edges.length} airline contacts from email threads · last 90 days`}
+              />
+              {edges.length === 0 ? (
+                <div className="rounded-xl border border-dashed border-[var(--line)] bg-white p-6 text-center text-sm text-[var(--ink-faint)]">
+                  No email-thread participants captured yet for {account.iata}.
+                </div>
+              ) : (
+                <div className="overflow-hidden rounded-xl border border-[var(--line)] bg-white">
+                  <table className="w-full text-sm">
+                    <thead className="bg-[var(--bg)] text-[11px] uppercase tracking-wide text-[var(--ink-faint)]">
+                      <tr>
+                        <th className="px-4 py-2 text-left font-semibold">Airline contact</th>
+                        <th className="px-4 py-2 text-left font-semibold">Trip counterpart</th>
+                        <th className="px-4 py-2 text-right font-semibold">Threads</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[...edges]
+                        .sort((a, b) => b.threads - a.threads)
+                        .slice(0, 15)
+                        .map((e, i) => (
+                          <tr key={i} className="border-t border-[var(--line)]">
+                            <td className="px-4 py-2.5 font-medium text-[var(--ink)]">{e.airline}</td>
+                            <td className="px-4 py-2.5 text-[12px] text-[var(--ink-soft)]">{e.trip}</td>
+                            <td className="px-4 py-2.5 text-right">
+                              <span className="rounded bg-[var(--brand-soft)] px-1.5 py-0.5 text-[11px] font-semibold text-[var(--brand-dark)]">
+                                {e.threads}
+                              </span>
+                            </td>
+                          </tr>
+                        ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+            </section>
+          </div>
         )}
       </main>
     </div>

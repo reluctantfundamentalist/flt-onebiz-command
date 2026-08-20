@@ -145,6 +145,10 @@ export interface OpportunityRecord {
   ownerBdId: string;
   source: string;              // "bd_report" | "market_intel" | "mail" | "metrics" | "manual"
   createdAt: string;
+  // Referential links — the Conversation → Thread → Opportunity chain and
+  // the tie to a concrete business object.
+  sourceUpdateId?: string;     // the update/email thread this came from
+  contractIata?: string;       // the contract this opportunity belongs to
 }
 
 export async function listOpportunities(): Promise<OpportunityRecord[]> {

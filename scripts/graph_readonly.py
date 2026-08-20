@@ -16,6 +16,7 @@ GRAPH = "https://graph.microsoft.com"
 READ_ALLOWLIST = (
     "/v1.0/me/messages",
     "/v1.0/me/mailfolders",
+    "/v1.0/me/calendarview",
     "/v1.0/me",
 )
 

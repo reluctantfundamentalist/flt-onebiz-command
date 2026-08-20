@@ -29,12 +29,16 @@ function ThemeChip({ id }: { id: string }) {
 
 function Card({
   rec,
+  hasContract,
   onStatus,
   onDismiss,
+  onLinkContract,
 }: {
   rec: OpportunityRecord;
+  hasContract: boolean;
   onStatus: (id: string, status: OpportunityStatus) => void;
   onDismiss: (id: string) => void;
+  onLinkContract: (id: string, link: boolean) => void;
 }) {
   const acct = findAccount(rec.accountIata);
   const owner = findUser(rec.ownerBdId);
@@ -93,6 +97,33 @@ function Card({
           <span className="rounded border border-dashed border-[var(--line)] px-1.5 py-0.5 text-[9.5px] text-[var(--ink-faint)]">
             untagged
           </span>
+        )}
+        {rec.sourceUpdateId && (
+          <span
+            title="Promoted from an email thread — link preserved"
+            className="rounded bg-orange-50 px-1.5 py-0.5 text-[9.5px] font-semibold text-orange-700"
+          >
+            ⟵ thread
+          </span>
+        )}
+        {hasContract && (
+          rec.contractIata ? (
+            <button
+              onClick={() => onLinkContract(rec.id, false)}
+              title="Linked to this account's contract — click to unlink"
+              className="rounded bg-violet-50 px-1.5 py-0.5 text-[9.5px] font-semibold text-violet-700 hover:bg-violet-100"
+            >
+              ⇢ contract ✓
+            </button>
+          ) : (
+            <button
+              onClick={() => onLinkContract(rec.id, true)}
+              title="Link to this account's contract"
+              className="rounded border border-dashed border-violet-300 px-1.5 py-0.5 text-[9.5px] font-semibold text-violet-600 hover:bg-violet-50"
+            >
+              ⇢ link contract
+            </button>
+          )
         )}
       </div>
 
@@ -181,9 +212,11 @@ function SignalRow({ s, onPromote }: { s: Signal; onPromote: (s: Signal) => void
 export default function OpportunitiesTab({
   opportunities,
   board,
+  contractIatas = [],
 }: {
   opportunities: OpportunityRecord[];
   board: SourceBucket[];
+  contractIatas?: string[];
 }) {
   const router = useRouter();
   const [kindFilter, setKindFilter] = useState<"all" | "opportunity" | "threat">("all");
@@ -225,6 +258,10 @@ export default function OpportunitiesTab({
   function onDismiss(id: string) {
     post({ action: "dismiss", id });
   }
+  function onLinkContract(id: string, link: boolean) {
+    const rec = opportunities.find((o) => o.id === id);
+    post({ action: "link", id, contractIata: link && rec ? rec.accountIata : null });
+  }
   function onPromote(s: Signal) {
     post({
       action: "promote",
@@ -234,6 +271,7 @@ export default function OpportunitiesTab({
       kind: s.kind === "threat" ? "threat" : "opportunity",
       source: s.source,
       valueUsd: s.dollar ?? null,
+      sourceUpdateId: s.updateId,
     });
   }
 
@@ -298,7 +336,14 @@ export default function OpportunitiesTab({
       ) : (
         <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
           {visible.map((rec) => (
-            <Card key={rec.id} rec={rec} onStatus={onStatus} onDismiss={onDismiss} />
+            <Card
+              key={rec.id}
+              rec={rec}
+              hasContract={contractIatas.includes(rec.accountIata)}
+              onStatus={onStatus}
+              onDismiss={onDismiss}
+              onLinkContract={onLinkContract}
+            />
           ))}
         </div>
       )}

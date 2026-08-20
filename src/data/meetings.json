@@ -1,0 +1,104 @@
+[
+  {
+    "id": "cal_AAMkADYwZGVlZGQ0LWYxMmQtNDYxNC1hYThkLTk3",
+    "accountIata": "EY",
+    "when": "2026-08-07T12:00:00.0000000Z",
+    "attendees": [
+      "Sreejith Rajamohanan",
+      "Anuj Bansal"
+    ],
+    "agenda": "Catchup",
+    "bd": "anuj"
+  },
+  {
+    "id": "cal_AAMkADYwZGVlZGQ0LWYxMmQtNDYxNC1hYThkLTk3",
+    "accountIata": "EK",
+    "when": "2026-08-13T06:30:00.0000000Z",
+    "attendees": [
+      "Rehab Mansoor - Manager Leisure & Commercial Segments",
+      "Egor Plakhov - VP CO West \u2013 Large Markets & Regional Support"
+    ],
+    "agenda": "Virtual cards- Alignment and next steps",
+    "bd": "anuj"
+  },
+  {
+    "id": "cal_AAMkADYwZGVlZGQ0LWYxMmQtNDYxNC1hYThkLTk3",
+    "accountIata": "AI",
+    "when": "2026-08-14T15:00:00.0000000Z",
+    "attendees": [
+      "Samir Gandhi",
+      "Shrey Nayar",
+      "Anuj Bansal",
+      "Snehal Bagal",
+      "Parminder Pal Singh",
+      "Ashish Kumar"
+    ],
+    "agenda": "Air India Group | Trip.com Meeting (dinner)",
+    "bd": "anuj"
+  },
+  {
+    "id": "cal_AAMkADYwZGVlZGQ0LWYxMmQtNDYxNC1hYThkLTk3",
+    "accountIata": "SV",
+    "when": "2026-08-20T05:00:00.0000000Z",
+    "attendees": [
+      "Mohammad Nabil Dodin",
+      "Lee wai Loon",
+      "Anuj Bansal",
+      "Hayden Gomes"
+    ],
+    "agenda": "SV & Trip.com",
+    "bd": "anuj"
+  },
+  {
+    "id": "cal_AAMkADYwZGVlZGQ0LWYxMmQtNDYxNC1hYThkLTk3",
+    "accountIata": "EK",
+    "when": "2026-08-25T07:00:00.0000000Z",
+    "attendees": [
+      "Mohamed Alshaiba",
+      "Emre Coskun",
+      "Shrey Nayar",
+      "Anuj Bansal"
+    ],
+    "agenda": "EK / Trip.com Monthly Performance ",
+    "bd": "anuj"
+  },
+  {
+    "id": "cal_AAMkADYwZGVlZGQ0LWYxMmQtNDYxNC1hYThkLTk3",
+    "accountIata": "FZ",
+    "when": "2026-09-01T11:00:00.0000000Z",
+    "attendees": [
+      "Sushma Timalsina",
+      "Sameer Parkar",
+      "Anuj Bansal",
+      "Praveen Das Kulangara"
+    ],
+    "agenda": "flydubai - Trip.com",
+    "bd": "anuj"
+  },
+  {
+    "id": "cal_AAMkADYwZGVlZGQ0LWYxMmQtNDYxNC1hYThkLTk3",
+    "accountIata": "EK",
+    "when": "2026-09-22T07:00:00.0000000Z",
+    "attendees": [
+      "Mohamed Alshaiba",
+      "Emre Coskun",
+      "Shrey Nayar",
+      "Anuj Bansal"
+    ],
+    "agenda": "EK / Trip.com Monthly Performance ",
+    "bd": "anuj"
+  },
+  {
+    "id": "cal_AAMkADYwZGVlZGQ0LWYxMmQtNDYxNC1hYThkLTk3",
+    "accountIata": "EK",
+    "when": "2026-10-27T07:00:00.0000000Z",
+    "attendees": [
+      "Mohamed Alshaiba",
+      "Emre Coskun",
+      "Shrey Nayar",
+      "Anuj Bansal"
+    ],
+    "agenda": "EK / Trip.com Monthly Performance ",
+    "bd": "anuj"
+  }
+]

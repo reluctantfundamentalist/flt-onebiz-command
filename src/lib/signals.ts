@@ -17,6 +17,7 @@ export interface Signal {
   iata?: string;     // account tag for keyword shine
   short?: string;    // concise keyword line for a leader glance
   priority?: string; // high/medium/low when the source carries one
+  updateId?: string; // source update id, so promotion keeps the thread link
 }
 
 function concise(text: string, words = 5): string {
@@ -157,6 +158,7 @@ export function buildSourceBoard(
       kind, text: u.headline, source: "mail", iata: u.accountIata,
       dollar: u.dollarImpact?.amountUsd, detail: u.detail,
       short: concise(u.headline),
+      updateId: u.id,
     });
   }
 

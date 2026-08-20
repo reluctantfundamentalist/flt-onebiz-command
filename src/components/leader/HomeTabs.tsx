@@ -87,7 +87,11 @@ export default function HomeTabs({
       {/* Active panel */}
       <div className="pt-5">
         {tab === "opportunities" && (
-          <OpportunitiesTab opportunities={opportunities} board={board} />
+          <OpportunitiesTab
+            opportunities={opportunities}
+            board={board}
+            contractIatas={contracts.map((c) => c.accountIata)}
+          />
         )}
         {tab === "activity" && (
           <ActivityTab

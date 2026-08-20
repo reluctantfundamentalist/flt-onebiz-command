@@ -12,6 +12,7 @@ import { suggestThemes } from "@/lib/themes";
 type Body =
   | { action: "status"; id: string; status: OpportunityStatus }
   | { action: "dismiss"; id: string }
+  | { action: "link"; id: string; contractIata: string | null }
   | {
       action: "promote";
       accountIata: string;
@@ -20,6 +21,7 @@ type Body =
       kind: "opportunity" | "threat";
       source: string;
       valueUsd?: number | null;
+      sourceUpdateId?: string;
     };
 
 const STATUSES: OpportunityStatus[] = ["open", "won", "lost", "stalled"];
@@ -56,6 +58,17 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true });
   }
 
+  if (body.action === "link") {
+    const rec = all.find((o) => o.id === body.id);
+    if (!rec) return NextResponse.json({ error: "not found" }, { status: 404 });
+    if (body.contractIata !== null && !findAccount(body.contractIata)) {
+      return NextResponse.json({ error: "invalid contract account" }, { status: 400 });
+    }
+    rec.contractIata = body.contractIata ?? undefined;
+    await writeOpportunities(all);
+    return NextResponse.json({ ok: true });
+  }
+
   if (body.action === "promote") {
     const account = findAccount(body.accountIata);
     if (!account || !body.title?.trim()) {
@@ -77,6 +90,7 @@ export async function POST(req: NextRequest) {
       ownerBdId: account.ownerId,
       source: body.source || "manual",
       createdAt: now,
+      sourceUpdateId: body.sourceUpdateId || undefined,
     };
     all.unshift(record);
     await writeOpportunities(all);
