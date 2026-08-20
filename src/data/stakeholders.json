@@ -3,13 +3,16 @@
     "iata": "EK",
     "name": "Mohamed Alshaiba",
     "title": "Commercial Manager, GMEI",
-    "weight": 74,
+    "weight": 34,
     "threads": 12,
     "primaryBd": "shrey",
-    "traits": ["commercial authority", "performance-loop regular"],
-    "movers": "Delivery against monthly performance targets; responds to crisp numbers.",
-    "style": "Leads the monthly performance review cadence — the working commercial counterpart.",
-    "approach": "Bring target-vs-actual deltas and a concrete ask; he operates on evidence."
+    "traits": [
+      "administrative role",
+      "no commercial authority"
+    ],
+    "movers": "Process and paperwork; no observed decision weight.",
+    "style": "Attends performance meetings in an administrative capacity \u2014 a clerk, not a decision-maker.",
+    "approach": "Courtesy contact only. Route commercial substance to Rehab Mansoor (workstreams) and Abbygail Cross (contracts)."
   },
   {
     "iata": "EK",
@@ -18,7 +21,10 @@
     "weight": 78,
     "threads": 9,
     "primaryBd": "anuj",
-    "traits": ["workstream driver", "execution-focused"],
+    "traits": [
+      "workstream driver",
+      "execution-focused"
+    ],
     "movers": "Operational readiness and clear next steps; owns the VCC alignment workstream.",
     "style": "Drives cross-team alignment meetings; converts discussion into action lists.",
     "approach": "Hand her the workstream: VCC and payment enablement run through her."
@@ -30,8 +36,11 @@
     "weight": 66,
     "threads": 5,
     "primaryBd": "praveen",
-    "traits": ["loyalty gatekeeper", "global scope"],
-    "movers": "Member value exchange — earn/burn economics and partner visibility.",
+    "traits": [
+      "loyalty gatekeeper",
+      "global scope"
+    ],
+    "movers": "Member value exchange \u2014 earn/burn economics and partner visibility.",
     "style": "Owns the loyalty surface; measured, partnership-first language.",
     "approach": "Pitch loyalty as member value, not discounting; she controls the Skywards door."
   },
@@ -42,7 +51,10 @@
     "weight": 62,
     "threads": 4,
     "primaryBd": "praveen",
-    "traits": ["clause-level detail", "process-driven"],
+    "traits": [
+      "clause-level detail",
+      "process-driven"
+    ],
     "movers": "Clean contract language and low-risk amendments.",
     "style": "Precise, clause-by-clause; risk-averse.",
     "approach": "Route contract and incentive-term changes through her with redlines ready."
@@ -54,7 +66,10 @@
     "weight": 56,
     "threads": 4,
     "primaryBd": "praveen",
-    "traits": ["partnership scope", "trade-channel focus"],
+    "traits": [
+      "partnership scope",
+      "trade-channel focus"
+    ],
     "movers": "Channel performance and trade visibility.",
     "style": "Partnership-oriented; responsive to joint-plan framing.",
     "approach": "Frame asks as joint trade plans with shared KPIs."
@@ -66,7 +81,9 @@
     "weight": 50,
     "threads": 3,
     "primaryBd": "praveen",
-    "traits": ["distribution channel owner"],
+    "traits": [
+      "distribution channel owner"
+    ],
     "movers": "Channel economics and distribution cost.",
     "style": "Technical-distribution language; cares about channel shape.",
     "approach": "Relevant for NDC/distribution-shape conversations."
@@ -78,7 +95,9 @@
     "weight": 40,
     "threads": 2,
     "primaryBd": "praveen",
-    "traits": ["sales execution"],
+    "traits": [
+      "sales execution"
+    ],
     "movers": "Campaign mechanics and seat commitments.",
     "style": "Execution-level; follows commercial direction set above.",
     "approach": "Use for campaign logistics, not commercial decisions."
@@ -90,10 +109,13 @@
     "weight": 32,
     "threads": 6,
     "primaryBd": "praveen",
-    "traits": ["low commercial leverage", "title-senior only"],
+    "traits": [
+      "low commercial leverage",
+      "title-senior only"
+    ],
     "movers": "Little observed decision weight in commercial threads.",
     "style": "Present in the chain but threads show limited authority over outcomes.",
-    "approach": "Courtesy copy only; invest meeting time with Alshaiba, Mansoor, Cross instead."
+    "approach": "Courtesy copy only; invest meeting time with Rehab Mansoor, Abbygail Cross, Fernanda Pilli instead."
   },
   {
     "iata": "SV",
@@ -102,7 +124,10 @@
     "weight": 85,
     "threads": 9,
     "primaryBd": "nabil",
-    "traits": ["primary commercial counterpart", "high engagement"],
+    "traits": [
+      "primary commercial counterpart",
+      "high engagement"
+    ],
     "movers": "Commercial progression on fares and campaign participation.",
     "style": "Highest-volume thread partner for KSA; direct working relationship.",
     "approach": "First call for any SV commercial ask; relationship is warm and active."
@@ -114,7 +139,9 @@
     "weight": 74,
     "threads": 7,
     "primaryBd": "nabil",
-    "traits": ["active negotiator"],
+    "traits": [
+      "active negotiator"
+    ],
     "movers": "Deal terms and incentive structure.",
     "style": "Substantive thread content; engaged on commercial detail.",
     "approach": "Include in incentive and contract-term discussions."
@@ -126,9 +153,12 @@
     "weight": 70,
     "threads": 8,
     "primaryBd": "nabil",
-    "traits": ["multi-level engagement", "leadership exposure"],
+    "traits": [
+      "multi-level engagement",
+      "leadership exposure"
+    ],
     "movers": "Strategic alignment; engages beyond the working level.",
-    "style": "Threads with both KSA BD and Global Head — bridges working and senior levels.",
+    "style": "Threads with both KSA BD and Global Head \u2014 bridges working and senior levels.",
     "approach": "Use as the escalation bridge when a decision needs senior air."
   },
   {
@@ -138,7 +168,9 @@
     "weight": 52,
     "threads": 3,
     "primaryBd": "nabil",
-    "traits": ["supporting counterpart"],
+    "traits": [
+      "supporting counterpart"
+    ],
     "movers": "Operational follow-through.",
     "style": "Mid-volume threads; execution support.",
     "approach": "Coordinate logistics and follow-ups."
@@ -150,7 +182,9 @@
     "weight": 52,
     "threads": 3,
     "primaryBd": "nabil",
-    "traits": ["supporting counterpart"],
+    "traits": [
+      "supporting counterpart"
+    ],
     "movers": "Operational follow-through.",
     "style": "Mid-volume threads; execution support.",
     "approach": "Coordinate logistics and follow-ups."
@@ -162,9 +196,12 @@
     "weight": 88,
     "threads": 16,
     "primaryBd": "nabil",
-    "traits": ["key decision counterpart", "cross-level engagement"],
+    "traits": [
+      "key decision counterpart",
+      "cross-level engagement"
+    ],
     "movers": "Incentive plans and route-level commercial deals.",
-    "style": "Engages with KSA BD, GCC RM and Director — the flynas decision hub.",
+    "style": "Engages with KSA BD, GCC RM and Director \u2014 the flynas decision hub.",
     "approach": "The flynas PLB incentive plan runs through him; prioritize the relationship."
   },
   {
@@ -174,7 +211,9 @@
     "weight": 55,
     "threads": 3,
     "primaryBd": "nabil",
-    "traits": ["supporting counterpart"],
+    "traits": [
+      "supporting counterpart"
+    ],
     "movers": "Deal execution.",
     "style": "Working-level threads.",
     "approach": "Coordinate execution detail."
@@ -186,7 +225,9 @@
     "weight": 55,
     "threads": 3,
     "primaryBd": "nabil",
-    "traits": ["supporting counterpart"],
+    "traits": [
+      "supporting counterpart"
+    ],
     "movers": "Deal execution.",
     "style": "Working-level threads.",
     "approach": "Coordinate execution detail."
@@ -198,9 +239,12 @@
     "weight": 82,
     "threads": 11,
     "primaryBd": "nabil",
-    "traits": ["primary counterpart", "multi-stakeholder reach"],
+    "traits": [
+      "primary counterpart",
+      "multi-stakeholder reach"
+    ],
     "movers": "Commercial progression across campaigns and fares.",
-    "style": "Threads with KSA BD, GCC RM and Global Head — the flyadeal hub.",
+    "style": "Threads with KSA BD, GCC RM and Global Head \u2014 the flyadeal hub.",
     "approach": "First call for flyadeal; relationship spans the whole Trip chain."
   },
   {
@@ -210,7 +254,9 @@
     "weight": 48,
     "threads": 2,
     "primaryBd": "nabil",
-    "traits": ["supporting counterpart"],
+    "traits": [
+      "supporting counterpart"
+    ],
     "movers": "Execution support.",
     "style": "Lower-volume threads.",
     "approach": "Coordinate follow-ups."
@@ -222,8 +268,11 @@
     "weight": 20,
     "threads": 4,
     "primaryBd": "nabil",
-    "traits": ["shared mailbox only", "no named stakeholder captured"],
-    "movers": "Unknown — no individual captured yet.",
+    "traits": [
+      "shared mailbox only",
+      "no named stakeholder captured"
+    ],
+    "movers": "Unknown \u2014 no individual captured yet.",
     "style": "All EY KSA threads route through a shared mailbox.",
     "approach": "Coverage gap: name the humans behind the mailbox before the next negotiation."
   }

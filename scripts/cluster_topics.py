@@ -164,11 +164,11 @@ For each topic produce:
 - `tripOwners`: array of Trip.com side participants (typically Anuj Bansal, Kirk Wong, PJ Zhou, Shrey Nayar, or another @trip.com)
 - `threadIds`: array of thread ids (use the id= prefix from below) belonging to this topic
 - `lastTouched`: ISO date of the most recent thread in the cluster
-- `priority`: "high" | "medium" | "low" — high if the topic drives revenue/contracts, medium if operational, low if noise
+- `priority`: "high" | "medium" | "low" — high if the topic drives revenue/contracts, medium if operational, low if minor operational value. Noise is never a topic and never prioritized.
 
 Rules:
-- Every thread must land in exactly one topic. Do not drop any.
-- Ignore auto-replies, out-of-office, calendar accept/decline as topics but INCLUDE their threadIds under the most-relevant substantive topic if there's context; otherwise a topic named "Scheduling & OOO noise" is fine.
+- Every SUBSTANTIVE thread must land in exactly one topic.
+- Auto-replies, out-of-office, and calendar accept/decline threads are NOT topics: drop them entirely — no noise topic, and do not attach their threadIds to any topic.
 - Merge aggressively — better 6-10 real topics than 20 thin ones. HARD CAP: 12 topics. If you have more, merge the thinnest related ones — variants of the same workstream (e.g. campaign production, campaign revenue analysis, creative assets) belong in ONE topic.
 - Return ONLY JSON, no prose around it. Shape: `{{"topics": [...] }}`
 

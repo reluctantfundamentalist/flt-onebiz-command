@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import type { OpportunityRecord, OpportunityStatus, OpportunityPriority } from "@/lib/store";
 import { THEME_BY_ID } from "@/lib/themes";
 import { findAccount, findUser } from "@/lib/users";
-import { dwellDays, isStale, STATUS_META, fmtUsd } from "@/lib/opportunity-view";
+import { dwellDays, isStale, isPastDue, STATUS_META, fmtUsd } from "@/lib/opportunity-view";
 
 const STATUS_ORDER: OpportunityStatus[] = ["open", "stalled", "won", "lost"];
 const PRIO_META: Record<OpportunityPriority, { label: string; bg: string; text: string; next: OpportunityPriority }> = {
@@ -77,6 +77,7 @@ function Card({
   const meta = STATUS_META[rec.status];
   const dwell = dwellDays(rec);
   const stale = isStale(rec);
+  const pastDue = isPastDue(rec);
   const threat = rec.kind === "threat";
   const value = fmtUsd(rec.valueUsd);
   const prio = PRIO_META[rec.priority ?? "medium"];
@@ -177,6 +178,14 @@ function Card({
             ⚠ stale
           </span>
         )}
+        {pastDue && (
+          <span
+            title={`The dated event (${rec.dueDate}) has passed — close it or reschedule`}
+            className="rounded bg-red-100 px-1.5 py-0.5 text-[10px] font-bold text-red-800"
+          >
+            ⚠ past due
+          </span>
+        )}
         <span
           title={`Maturity confidence: ${rec.confidence}`}
           className={`rounded px-1.5 py-0.5 text-[10px] font-bold ${
@@ -248,6 +257,9 @@ export default function OpportunitiesTab({
     .sort((a, b) => {
       const p = PRIO_WEIGHT[a.priority ?? "medium"] - PRIO_WEIGHT[b.priority ?? "medium"];
       if (p !== 0) return p; // P1 first
+      const pa = isPastDue(a) ? 0 : 1;
+      const pb = isPastDue(b) ? 0 : 1;
+      if (pa !== pb) return pa - pb; // past due floats up
       const sa = isStale(a) ? 0 : 1;
       const sb = isStale(b) ? 0 : 1;
       if (sa !== sb) return sa - sb; // stale floats up

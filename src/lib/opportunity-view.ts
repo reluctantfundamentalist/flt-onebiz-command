@@ -15,6 +15,14 @@ export function isStale(rec: OpportunityRecord, now = new Date()): boolean {
   return dwellDays(rec, now) > STALE_AFTER_DAYS;
 }
 
+// Past due: the dated event behind this item (campaign, go-live, review)
+// has passed and the item is still open — it should be closed.
+export function isPastDue(rec: OpportunityRecord, now = new Date()): boolean {
+  if (!rec.dueDate) return false;
+  if (rec.status === "won" || rec.status === "lost") return false;
+  return new Date(rec.dueDate).getTime() < now.getTime();
+}
+
 export const STATUS_META: Record<
   OpportunityStatus,
   { label: string; bg: string; text: string }

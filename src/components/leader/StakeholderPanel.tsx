@@ -35,8 +35,10 @@ export default function StakeholderPanel({ stakeholders }: { stakeholders: Stake
   return (
     <div className="space-y-3">
       <p className="text-[10.5px] text-[var(--ink-faint)]">
-        Influence score synthesized from engagement volume, writing authority, and observed
-        decision weight — ranked by value to the conversation, not by title.
+        Influence score = observed decision authority first, engagement volume second. High thread
+        count alone never raises a score — authority signals (who sets terms, who signs off,
+        writing style, counterpart seniority) outweigh volume. Ranked by value to the
+        conversation, not by title.
       </p>
       <div className="grid gap-3 lg:grid-cols-2">
         {sorted.map((s) => {

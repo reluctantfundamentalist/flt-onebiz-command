@@ -6,7 +6,8 @@ import AccountMapClient from "./AccountMapClient";
 import { buildScopedSignals, isMegaSignal, type MarketIntel, type Signal } from "@/lib/signals";
 import type { Account } from "@/lib/users";
 import { findAccount, findUser, layersFor, ACCOUNTS, USERS } from "@/lib/users";
-import type { AccountMetrics, UpdateRecord, MeetingRecord, OpportunityRecord } from "@/lib/store";
+import type { AccountMetrics, UpdateRecord, MeetingRecord, OpportunityRecord, OpportunityStatus } from "@/lib/store";
+import { STATUS_META } from "@/lib/opportunity-view";
 
 function fmtUsd(n: number | undefined) {
   if (n === undefined || !n) return "—";
@@ -28,45 +29,160 @@ function accountsForBd(bd: string): Account[] {
   );
 }
 
-function SignalRow({ s, tracked, onPromote }: { s: Signal; tracked: boolean; onPromote: (s: Signal) => void }) {
+function MegaRow({
+  s,
+  linkedOpp,
+  justTracked,
+  sourceNextStep,
+  expanded,
+  busy,
+  onToggle,
+  onPromote,
+  onStatus,
+}: {
+  s: Signal;
+  linkedOpp: OpportunityRecord | undefined;
+  justTracked: boolean;
+  sourceNextStep?: string;
+  expanded: boolean;
+  busy: boolean;
+  onToggle: () => void;
+  onPromote: (s: Signal) => void;
+  onStatus: (id: string, status: "open" | "won" | "lost" | "stalled") => void;
+}) {
   const hover = s.detail ? `${s.text} — ${s.detail}` : s.text;
+  const tracked = !!linkedOpp || justTracked;
+  const meta = linkedOpp ? STATUS_META[linkedOpp.status] : null;
+
   return (
-    <li
-      title={hover}
-      className="flex items-start gap-2 rounded-md border border-[var(--line)] bg-white px-2.5 py-2"
-    >
-      <span
-        className="mt-1.5 inline-block h-2 w-2 shrink-0 rounded-full"
-        style={{ background: KIND_DOT[s.kind] }}
-      />
-      {s.iata && (
-        <span className="mt-0.5 shrink-0 rounded bg-[var(--brand-soft)] px-1 py-0.5 text-[9px] font-bold text-[var(--brand-dark)]">
-          {s.iata}
-        </span>
-      )}
-      <span className="min-w-0 flex-1 text-[12px] leading-snug text-[var(--ink-soft)]">
-        <span className="font-semibold text-[var(--ink)]">{s.text}</span>
-        {s.dollar !== undefined && s.dollar >= 100_000 && (
-          <span className="ml-1.5 rounded bg-emerald-50 px-1 py-0.5 text-[10px] font-bold text-emerald-800">
-            {fmtUsd(s.dollar)}
+    <li className={`rounded-md border bg-white ${tracked ? "border-[var(--brand)]/40" : "border-[var(--line)]"}`}>
+      <div className={`flex items-start gap-2 px-2.5 py-2 ${busy ? "opacity-60 pointer-events-none" : ""}`}>
+        <div className="flex min-w-0 flex-1 cursor-pointer items-start gap-2" onClick={onToggle} title={hover}>
+          <span
+            className="mt-1.5 inline-block h-2 w-2 shrink-0 rounded-full"
+            style={{ background: KIND_DOT[s.kind] }}
+          />
+          {s.iata && (
+            <span className="mt-0.5 shrink-0 rounded bg-[var(--brand-soft)] px-1 py-0.5 text-[9px] font-bold text-[var(--brand-dark)]">
+              {s.iata}
+            </span>
+          )}
+          <span className="min-w-0 flex-1 text-[12px] leading-snug text-[var(--ink-soft)]">
+            <span className="font-semibold text-[var(--ink)]">{s.text}</span>
+            {s.dollar !== undefined && s.dollar >= 100_000 && (
+              <span className="ml-1.5 rounded bg-emerald-50 px-1 py-0.5 text-[10px] font-bold text-emerald-800">
+                {fmtUsd(s.dollar)}
+              </span>
+            )}
+            <span className="ml-1.5 text-[10px] text-[var(--ink-faint)]">{s.source}</span>
+          </span>
+          {meta && (
+            <span
+              className="mt-0.5 shrink-0 rounded px-1.5 py-0.5 text-[9.5px] font-bold"
+              style={{ background: meta.bg, color: meta.text }}
+            >
+              {meta.label}
+            </span>
+          )}
+          <span className="mt-0.5 shrink-0 text-[10px] text-[var(--ink-faint)]">{expanded ? "▲" : "▼"}</span>
+        </div>
+
+        {!tracked && s.iata && (
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onPromote(s);
+            }}
+            title="Track as an opportunity — keeps the thread link"
+            className="shrink-0 rounded border border-[var(--line)] px-1.5 py-0.5 text-[9.5px] font-semibold text-[var(--brand)] hover:bg-[var(--brand-soft)]"
+          >
+            + Track
+          </button>
+        )}
+        {justTracked && !linkedOpp && (
+          <span className="shrink-0 rounded bg-emerald-50 px-1.5 py-0.5 text-[9.5px] font-bold text-emerald-800">
+            on board ✓
           </span>
         )}
-        <span className="ml-1.5 text-[10px] text-[var(--ink-faint)]">{s.source}</span>
-      </span>
-      {tracked ? (
-        <span className="shrink-0 rounded bg-[var(--bg)] px-1.5 py-0.5 text-[9.5px] font-semibold text-[var(--ink-faint)]">
-          on board ✓
-        </span>
-      ) : (
-        <button
-          onClick={() => onPromote(s)}
-          title="Track as an opportunity — keeps the thread link"
-          className="shrink-0 rounded border border-[var(--line)] px-1.5 py-0.5 text-[9.5px] font-semibold text-[var(--brand)] hover:bg-[var(--brand-soft)]"
-        >
-          + Track
-        </button>
+        {!tracked && !s.iata && (
+          <span className="shrink-0 rounded bg-[var(--bg)] px-1.5 py-0.5 text-[9.5px] font-semibold text-[var(--ink-faint)]">
+            no account
+          </span>
+        )}
+      </div>
+
+      {expanded && (
+        <div className="space-y-2 border-t border-[var(--line)] px-3 py-2">
+          {s.detail && <p className="text-[11.5px] leading-snug text-[var(--ink-soft)]">{s.detail}</p>}
+
+          {sourceNextStep && (
+            <div className="rounded bg-[var(--brand-soft)] px-2 py-1.5 text-[11px] text-[var(--brand-dark)]">
+              <span className="font-semibold">BD action item: </span>{sourceNextStep}
+            </div>
+          )}
+
+          {linkedOpp ? (
+            <div className="flex flex-wrap items-center gap-1.5">
+              <span className="text-[10.5px] font-semibold text-[var(--ink-soft)]">
+                On the board{linkedOpp.valueUsd ? ` · ${fmtUsd(linkedOpp.valueUsd)}` : ""}
+              </span>
+              {linkedOpp.nextAction && (
+                <span className="text-[10.5px] text-[var(--ink-faint)]">
+                  · next: {linkedOpp.nextAction}
+                </span>
+              )}
+              <span className="ml-auto flex gap-1">
+                {linkedOpp.status === "open" && (
+                  <>
+                    <MiniBtn tone="good" onClick={() => onStatus(linkedOpp.id, "won")}>Won ✓</MiniBtn>
+                    <MiniBtn tone="warn" onClick={() => onStatus(linkedOpp.id, "stalled")}>Stall</MiniBtn>
+                    <MiniBtn tone="bad" onClick={() => onStatus(linkedOpp.id, "lost")}>Lost</MiniBtn>
+                  </>
+                )}
+                {(linkedOpp.status === "won" || linkedOpp.status === "lost" || linkedOpp.status === "stalled") && (
+                  <MiniBtn tone="neutral" onClick={() => onStatus(linkedOpp.id, "open")}>Reopen</MiniBtn>
+                )}
+              </span>
+            </div>
+          ) : justTracked ? (
+            <div className="rounded bg-emerald-50 px-2 py-1.5 text-[11px] font-semibold text-emerald-800">
+              On the board ✓ — open Workspace to manage it
+            </div>
+          ) : (
+            s.iata && (
+              <Link
+                href={`/leader/account/${s.iata}?tab=intel`}
+                className="inline-block text-[10.5px] font-semibold text-[var(--brand)] hover:underline"
+              >
+                Open {s.iata} intel →
+              </Link>
+            )
+          )}
+        </div>
       )}
     </li>
+  );
+}
+
+function MiniBtn({
+  tone,
+  onClick,
+  children,
+}: {
+  tone: "good" | "warn" | "bad" | "neutral";
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  const cls = {
+    good: "border-emerald-200 bg-emerald-50 text-emerald-800 hover:bg-emerald-100",
+    warn: "border-amber-200 bg-amber-50 text-amber-800 hover:bg-amber-100",
+    bad: "border-red-200 bg-red-50 text-red-700 hover:bg-red-100",
+    neutral: "border-[var(--line)] bg-white text-[var(--ink-soft)] hover:bg-[var(--bg)]",
+  }[tone];
+  return (
+    <button onClick={onClick} className={`rounded-md border px-2 py-0.5 text-[10px] font-semibold ${cls}`}>
+      {children}
+    </button>
   );
 }
 
@@ -96,6 +212,8 @@ export default function HomeWorkspace({
   const router = useRouter();
   const [promoting, setPromoting] = useState(false);
   const [trackedNow, setTrackedNow] = useState<Set<string>>(new Set());
+  const [expandedKey, setExpandedKey] = useState<string | null>(null);
+  const [trackError, setTrackError] = useState<string | null>(null);
   const [selectedIata, setSelectedIata] = useState("");
   const [selectedBd, setSelectedBd] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("");
@@ -151,12 +269,6 @@ export default function HomeWorkspace({
     return { rev, yoy, pax, covered };
   }, [iatas.join(","), metrics]);
 
-  // Threads already promoted onto the board — rows show "on board" instead of +Track.
-  const trackedIds = useMemo(
-    () => new Set(opportunities.map((o) => o.sourceUpdateId).filter(Boolean) as string[]),
-    [opportunities],
-  );
-
   // Mega-only signals for the scope, bucketed by time.
   const groups = useMemo(() => {
     const g = buildScopedSignals(iatas, metrics, updates, intel, meetings);
@@ -176,6 +288,9 @@ export default function HomeWorkspace({
 
   async function onPromote(s: Signal) {
     setPromoting(true);
+    setTrackError(null);
+    // Instant confirmation; rolled back with a visible error if the POST fails.
+    setTrackedNow((prev) => new Set(prev).add(s.text));
     try {
       const res = await fetch("/api/opportunities", {
         method: "POST",
@@ -192,10 +307,37 @@ export default function HomeWorkspace({
           priority: s.priority === "high" || s.priority === "low" ? s.priority : "medium",
         }),
       });
-      if (res.ok) {
-        // Immediate confirmation even before the server refresh lands.
-        setTrackedNow((prev) => new Set(prev).add(s.text));
+      if (!res.ok) {
+        setTrackedNow((prev) => {
+          const next = new Set(prev);
+          next.delete(s.text);
+          return next;
+        });
+        const j = await res.json().catch(() => ({}));
+        setTrackError(`Track failed: ${j.error ?? res.status}`);
+        return;
       }
+      router.refresh();
+    } catch {
+      setTrackedNow((prev) => {
+        const next = new Set(prev);
+        next.delete(s.text);
+        return next;
+      });
+      setTrackError("Track failed — network error.");
+    } finally {
+      setPromoting(false);
+    }
+  }
+
+  async function onStatus(id: string, status: OpportunityStatus) {
+    setPromoting(true);
+    try {
+      await fetch("/api/opportunities", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "status", id, status }),
+      });
       router.refresh();
     } finally {
       setPromoting(false);
@@ -399,15 +541,35 @@ export default function HomeWorkspace({
               </div>
             ) : (
               <>
-                <ul className={`space-y-1.5 ${promoting ? "opacity-60 pointer-events-none" : ""}`}>
-                  {visible.slice(0, expanded ? 20 : 5).map((s, i) => (
-                    <SignalRow
-                      key={i}
-                      s={s}
-                      tracked={(!!s.updateId && trackedIds.has(s.updateId)) || trackedNow.has(s.text)}
-                      onPromote={onPromote}
-                    />
-                  ))}
+                {trackError && (
+                  <div className="rounded-md border border-red-200 bg-red-50 px-2 py-1.5 text-[11px] font-medium text-red-700">
+                    {trackError}
+                  </div>
+                )}
+                <ul className="space-y-1.5">
+                  {visible.slice(0, expanded ? 20 : 5).map((s) => {
+                    const key = s.updateId ?? s.text;
+                    const linkedOpp = s.updateId
+                      ? opportunities.find((o) => o.sourceUpdateId === s.updateId)
+                      : undefined;
+                    const sourceUpdate = s.updateId
+                      ? updates.find((u) => u.id === s.updateId)
+                      : undefined;
+                    return (
+                      <MegaRow
+                        key={key}
+                        s={s}
+                        linkedOpp={linkedOpp}
+                        justTracked={trackedNow.has(s.text)}
+                        sourceNextStep={sourceUpdate?.nextStep ?? undefined}
+                        expanded={expandedKey === key}
+                        busy={promoting}
+                        onToggle={() => setExpandedKey(expandedKey === key ? null : key)}
+                        onPromote={onPromote}
+                        onStatus={onStatus}
+                      />
+                    );
+                  })}
                 </ul>
                 {visible.length > 5 && (
                   <button

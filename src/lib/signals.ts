@@ -220,6 +220,7 @@ export function buildScopedSignals(
       detail: u.detail,
       dollar: u.dollarImpact?.amountUsd,
       priority: u.priority,
+      updateId: u.id,
     };
     if ((u.status || "").toLowerCase() === "closed") happened.push(base);
     else happening.push(base);
@@ -230,6 +231,7 @@ export function buildScopedSignals(
         source: "BD update",
         iata: u.accountIata,
         priority: u.priority,
+        updateId: u.id,
       });
     }
   }

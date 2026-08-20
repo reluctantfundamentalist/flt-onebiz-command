@@ -19,7 +19,7 @@ import StakeholderPanel from "@/components/leader/StakeholderPanel";
 import { DashboardShell } from "@/components/dashboard/DashboardShell";
 import { updatesToItems, intelToItems, meetingsToItems, bucketByTheme } from "@/lib/intel-buckets";
 import { fmtUsd } from "@/lib/opportunity-view";
-import { STATUS_META } from "@/lib/opportunity-view";
+import { STATUS_META, isPastDue } from "@/lib/opportunity-view";
 import type { MarketIntel } from "@/lib/signals";
 import { readFileSync } from "fs";
 import { join } from "path";
@@ -210,6 +210,14 @@ export default async function AccountDetailPage({
                           {o.kind === "threat" && (
                             <span className="rounded bg-red-50 px-1.5 py-0.5 text-[10px] font-bold text-red-700">
                               threat
+                            </span>
+                          )}
+                          {isPastDue(o) && (
+                            <span
+                              title={`The dated event (${o.dueDate}) has passed — close it or reschedule`}
+                              className="rounded bg-red-100 px-1.5 py-0.5 text-[10px] font-bold text-red-800"
+                            >
+                              ⚠ past due
                             </span>
                           )}
                           <span className="min-w-0 flex-1 truncate text-[12.5px] font-semibold text-[var(--ink)]">

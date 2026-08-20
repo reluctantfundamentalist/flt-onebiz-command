@@ -147,6 +147,7 @@ export interface OpportunityRecord {
   ownerBdId: string;
   source: string;              // "bd_report" | "market_intel" | "mail" | "metrics" | "manual"
   createdAt: string;
+  dueDate?: string;            // dated event this hangs off (campaign, go-live, review)
   // Referential links — the Conversation → Thread → Opportunity chain and
   // the tie to a concrete business object.
   sourceUpdateId?: string;     // the update/email thread this came from
