@@ -15,6 +15,12 @@ export interface Signal {
   dollar?: number;   // explicit dollar figure to surface
   detail?: string;   // hover / below description
   iata?: string;     // account tag for keyword shine
+  short?: string;    // concise keyword line for a leader glance
+}
+
+function concise(text: string, words = 5): string {
+  const w = text.split(/\s+/).filter(Boolean);
+  return w.length <= words ? text : w.slice(0, words).join(" ") + "…";
 }
 
 export interface SourceBucket {
@@ -105,6 +111,7 @@ export function buildSourceBoard(
   for (const m of intel) {
     (m.kind === "threat" ? market.threats : market.opportunities).push({
       kind: m.kind, text: m.headline, source: "market intel", iata: m.iata,
+      short: concise(m.headline),
     });
   }
 
@@ -116,12 +123,14 @@ export function buildSourceBoard(
         kind: "opportunity", iata, dollar: met.ytdFlownRevUsd,
         text: `${iata} revenue +${p.toFixed(1)}% vLY`, source: "metrics",
         detail: "Growing account — room to push upsell and share.",
+        short: `${iata} +${p.toFixed(1)}% vLY`,
       });
     } else if (p <= -15) {
       metrics.threats.push({
         kind: "threat", iata, dollar: met.ytdFlownRevUsd,
         text: `${iata} revenue ${p.toFixed(1)}% vLY`, source: "metrics",
         detail: "Declining against last year — protect the target.",
+        short: `${iata} ${p.toFixed(1)}% vLY`,
       });
     }
   }
@@ -131,6 +140,7 @@ export function buildSourceBoard(
     (kind === "threat" ? mail.threats : mail.opportunities).push({
       kind, text: u.headline, source: "mail", iata: u.accountIata,
       dollar: u.dollarImpact?.amountUsd, detail: u.detail,
+      short: concise(u.headline),
     });
   }
 
