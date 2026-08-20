@@ -337,5 +337,25 @@
     "source": "bd_report",
     "createdAt": "2026-06-18T09:00:00Z",
     "priority": "low"
+  },
+  {
+    "id": "opp_ek_premium_upsell",
+    "accountIata": "EK",
+    "kind": "opportunity",
+    "title": "Premium economy seat upsell",
+    "detail": "Capacity math: 100 premium seats filed, 4 sold via Trip \u2192 96 unsold. Value = 96 \u00d7 est. premium yield ($1,600) \u2248 $153K. Estimate until the seat-level capacity feed lands.",
+    "themes": [
+      "fares"
+    ],
+    "status": "open",
+    "statusChangedAt": "2026-08-20T09:00:00Z",
+    "confidence": "low",
+    "priority": "high",
+    "valueUsd": 153600,
+    "nextAction": "Confirm premium seat inventory with EK and price a 96-seat upsell bundle",
+    "ownerBdId": "praveen",
+    "source": "metrics",
+    "createdAt": "2026-08-20T09:00:00Z",
+    "contractIata": "EK"
   }
 ]

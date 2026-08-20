@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import AccountMapClient from "./AccountMapClient";
 import { buildScopedSignals, isMegaSignal, type MarketIntel, type Signal } from "@/lib/signals";
 import type { Account } from "@/lib/users";
-import { findAccount, findUser, layersFor, ACCOUNTS } from "@/lib/users";
+import { findAccount, findUser, layersFor, ACCOUNTS, USERS } from "@/lib/users";
 import type { AccountMetrics, UpdateRecord, MeetingRecord, OpportunityRecord } from "@/lib/store";
 
 function fmtUsd(n: number | undefined) {
@@ -95,6 +95,7 @@ export default function HomeWorkspace({
 }) {
   const router = useRouter();
   const [promoting, setPromoting] = useState(false);
+  const [trackedNow, setTrackedNow] = useState<Set<string>>(new Set());
   const [selectedIata, setSelectedIata] = useState("");
   const [selectedBd, setSelectedBd] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("");
@@ -176,7 +177,7 @@ export default function HomeWorkspace({
   async function onPromote(s: Signal) {
     setPromoting(true);
     try {
-      await fetch("/api/opportunities", {
+      const res = await fetch("/api/opportunities", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -191,6 +192,10 @@ export default function HomeWorkspace({
           priority: s.priority === "high" || s.priority === "low" ? s.priority : "medium",
         }),
       });
+      if (res.ok) {
+        // Immediate confirmation even before the server refresh lands.
+        setTrackedNow((prev) => new Set(prev).add(s.text));
+      }
       router.refresh();
     } finally {
       setPromoting(false);
@@ -212,6 +217,45 @@ export default function HomeWorkspace({
     <section className="grid gap-6 lg:grid-cols-2">
       {/* Map + selection */}
       <div className="space-y-3">
+        {/* Browse by BD */}
+        <div className="flex flex-wrap items-center gap-1.5">
+          <span className="mr-1 text-[10px] font-semibold uppercase tracking-wide text-[var(--ink-faint)]">
+            Browse by BD
+          </span>
+          <button
+            onClick={() => {
+              setSelectedBd("");
+              setSelectedIata("");
+              setSelectedRegion("");
+            }}
+            className={`rounded-md px-2 py-1 text-[11px] font-semibold ${
+              !selectedBd && !selectedIata
+                ? "bg-[var(--ink)] text-white"
+                : "border border-[var(--line)] bg-white text-[var(--ink-soft)] hover:border-[var(--brand)]"
+            }`}
+          >
+            All
+          </button>
+          {USERS.filter((u) => u.role === "bd").map((u) => (
+            <button
+              key={u.id}
+              onClick={() => {
+                setSelectedBd(u.id);
+                setSelectedIata("");
+                setSelectedRegion("");
+              }}
+              title={u.title}
+              className={`rounded-md px-2 py-1 text-[11px] font-semibold ${
+                selectedBd === u.id
+                  ? "bg-[var(--ink)] text-white"
+                  : "border border-[var(--line)] bg-white text-[var(--ink-soft)] hover:border-[var(--brand)]"
+              }`}
+            >
+              {u.name.split(" ")[0]}
+            </button>
+          ))}
+        </div>
+
         <div className="overflow-hidden rounded-xl border border-[var(--line)] bg-white" style={{ height: 440 }}>
           <AccountMapClient
             accounts={ACCOUNTS}
@@ -269,9 +313,12 @@ export default function HomeWorkspace({
               <div className="truncate text-[16px] font-semibold text-[var(--ink)]">{label}</div>
               <div className="text-[11px] text-[var(--ink-faint)]">
                 {scopeAccounts.length} carrier{scopeAccounts.length === 1 ? "" : "s"}
-                {uber.covered < scopeAccounts.length &&
-                  ` · metrics on ${uber.covered}`}
                 {bdUser && !selectedIata ? ` · BD: ${bdUser.name}` : ""}
+                {uber.covered < scopeAccounts.length && (
+                  <span title="Carriers with live CSV metrics; the rest get metrics at the next refresh">
+                    {" "}· live metrics: {iatas.filter((i) => metrics[i]).join(", ") || "none yet"}
+                  </span>
+                )}
               </div>
             </div>
             <div className="ml-auto flex shrink-0 gap-2">
@@ -357,7 +404,7 @@ export default function HomeWorkspace({
                     <SignalRow
                       key={i}
                       s={s}
-                      tracked={!!s.updateId && trackedIds.has(s.updateId)}
+                      tracked={(!!s.updateId && trackedIds.has(s.updateId)) || trackedNow.has(s.text)}
                       onPromote={onPromote}
                     />
                   ))}

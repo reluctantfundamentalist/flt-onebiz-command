@@ -14,6 +14,7 @@ interface Props {
   users?: User[];
   accountLabelById?: Record<string, string>;
   emptyLabel?: string;
+  accountHrefSuffix?: string;
 }
 
 const KIND_COLOR: Record<TimelineKind, string> = {
@@ -37,6 +38,7 @@ export default function GanttChart({
   users,
   accountLabelById,
   emptyLabel = "No open items.",
+  accountHrefSuffix = "",
 }: Props) {
   const { windowStart, windowEnd, today, groups } = useMemo(() => {
     const t = new Date();
@@ -127,6 +129,7 @@ export default function GanttChart({
               pct={pct}
               clip={clip}
               todayPct={todayPct}
+              accountHrefSuffix={accountHrefSuffix}
             />
           </div>
         ))}
@@ -153,11 +156,13 @@ function RowLane({
   pct,
   clip,
   todayPct,
+  accountHrefSuffix,
 }: {
   items: TimelineItem[];
   pct: (iso: string) => number;
   clip: (v: number) => number;
   todayPct: number;
+  accountHrefSuffix?: string;
 }) {
   // Stack items in rows within the same swim-lane so they don't overlap.
   const laneCount = items.length;
@@ -188,7 +193,7 @@ function RowLane({
         return (
           <Link
             key={it.id}
-            href={`/leader/account/${it.accountIata}`}
+            href={`/leader/account/${it.accountIata}${accountHrefSuffix}`}
             title={tip}
             className="absolute flex items-center rounded-md border-l-[3px] px-2 shadow-sm transition hover:brightness-95"
             style={{
