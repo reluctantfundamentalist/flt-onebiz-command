@@ -46,7 +46,7 @@ WhatsApp is the gap.
 
 ### 2.2 Parse & Structure
 
-Email threads cluster into topics. Each topic carries a one-line summary for a leadership reader, a dollar impact verified against the exact sentence where the figure appears, lifecycle status, priority, and owners on both sides. Noise dies here. It never becomes a topic and never receives a priority.
+Email threads cluster into topics. Each topic carries a one-line summary for a leadership reader, a dollar impact verified against the exact sentence where the figure appears, lifecycle status, priority, and owners on both sides. Noise is dropped at this stage and never becomes a topic, so it never receives a priority.
 
 ### 2.3 Classify
 
@@ -98,7 +98,7 @@ Status: not built. Nothing accumulates per airline yet.
 
 An ongoing business discussion that needs continuity but does not yet constitute an Opportunity. A Thread continues across meetings and conversations, accumulates information, links stakeholders, can develop into an Opportunity, and can generate action items.
 
-Status: half built. Clustered email topics function as threads within email: they carry thread counts, lifecycle status, and owners on both sides. A cross-source Thread does not exist. A discussion that moves from email into a meeting starts a new, unlinked item. This is the first build priority, because continuity, follow-up discipline, and retrieval all sit on top of it.
+Status: half built. Clustered email topics function as threads within email: they carry thread counts, lifecycle status, and owners on both sides. A cross-source Thread does not exist. A discussion that moves from email into a meeting starts a new, unlinked item. Build this first: the follow-up engine and the retrieval layer both depend on it.
 
 ### 3.5 Opportunity / Lead
 
@@ -198,7 +198,7 @@ From the original brief, what is not yet covered, and what each needs:
 
 In build order. Each step unblocks the next.
 
-1. The cross-source Thread object. The spine of continuity, follow-up, and retrieval.
+1. The cross-source Thread object. Build it first. Typed parse, follow-up rules, and retrieval all need it.
 2. Typed parse emitting object type and proposed links.
 3. Resource and KPI registries, then the Need profile.
 4. Evidence-derived stakeholder scoring and org-chart coverage portfolio-wide.
