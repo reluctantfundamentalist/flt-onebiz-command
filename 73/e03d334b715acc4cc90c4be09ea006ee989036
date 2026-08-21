@@ -1,0 +1,19 @@
+docs/Project_OneBiz_Command_v1_Learnings.md
+  s_9ad07db2fe84be::t_0054f28f72afdd 1-131
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.39-trip",
+  "base_commit_sha": "73e03d334b715acc4cc90c4be09ea006ee989036",
+  "prompts": {},
+  "sessions": {
+    "s_9ad07db2fe84be": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4469f407-a824-4b5f-aaf0-83dc390bf278",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
