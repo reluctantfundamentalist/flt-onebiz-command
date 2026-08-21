@@ -26,49 +26,49 @@ Five principles were added by building:
 
 ## 2. Core Flow
 
-The overall workflow is defined as:
+PJ's workflow remains the north star — Capture → AI Parse → Link → View → Follow-up. The operational flow actually constructed in OneBiz Command instantiates it as a signal pipeline:
 
-**Capture → AI Parse → Link → View → Follow-up**
+**Ingest → Parse & Structure → Classify → Filter → Scope & Surface → Track & Link → Act & Close**
 
-### 2.1 Capture
+### 2.1 Ingest
 
-Capture sources and their current state:
+Five sources flow in without BD effort:
 
-- Airline meetings — captured from calendar automatically;
-- Day-to-day conversations — manual input form, one field, low friction;
-- Email — captured automatically per BD mailbox and clustered;
-- WhatsApp — not yet covered;
-- BD Calendar — covered via Graph for the leader mailbox; per-BD calendars pending;
-- Other internal system inputs — future.
+- Email, per BD mailbox (read-only guardrail);
+- Calendar, matched to airlines by attendee domain and name;
+- Market intelligence, curated research;
+- Manual input, a single-field capture form;
+- Metrics, transactional CSV aggregated per carrier.
 
-Capture minimizes BD effort: email and calendar land without any manual organization.
+WhatsApp is the capture source still missing.
 
-### 2.2 AI Parse
+### 2.2 Parse & Structure
 
-AI parses raw captured content and identifies different types of information, rather than simply generating a meeting summary.
+Email threads are clustered into topics: a one-line leadership summary, quote-verified dollar impact, lifecycle status, priority, and airline/Trip owners. Noise is dropped at this stage entirely — it never becomes a topic and never receives a priority.
 
-The object types remain: Resource / Commercial Resource; Insight / Intelligence; Airline Need; Thread; Opportunity / Lead; Potential Action Item.
+### 2.3 Classify
 
-Current state: parse produces topics with one-line leadership summaries, quote-verified dollar impact, status, priority, and airline/Trip owners. Noise threads are dropped entirely at this stage. Typed classification of each item into the object list above is the next iteration.
+Every item is tagged against the theme taxonomy (eight majors, five minor directions), typed by kind (opportunity, threat, or neutral information), and weighted by priority P1–P3.
 
-### 2.3 Link
+### 2.4 Filter
 
-"Link" means more than saving information under an Airline Profile. The system should determine whether a piece of information can be directly linked to an existing business object in the production environment.
+The leadership surface carries **mega updates only**: dollar impact at or above $100K, priority high, a strategic keyword (framework, go-live, mega-sale, marketing fund), or curated market intelligence. Everything else remains in the working feed and stays off the leadership glance.
 
-Links that exist today:
+### 2.5 Scope & Surface
 
-- An email thread promotes into an Opportunity and keeps its thread reference;
-- An Opportunity links to its account's Contract;
-- Every item is tagged against the theme taxonomy (campaigns, rebates/commissions, fares, airline internal developments, NDC/systems, contracts/clauses, QBR, marketing funds, plus five minor directions);
-- Accounts carry ownership hierarchy — a global owner and local market owners;
-- Calendar events are matched to airlines by attendee domain and name;
-- Airline stakeholders are tied to Trip counterparts with interaction volume.
+Any slice of the portfolio drives the same engine — the full book, one BD, one BD plus region, or a single account — producing cumulative uber-metrics and the three time views: Coming, Happening, Happened. The airline profile buckets all evidence by theme with a priority × theme matrix on top.
 
-Links that do not exist yet: a specific incentive under discussion, a specific fare resource, an existing KPI/OKR. These require registries of those objects — see Section 7.
+### 2.6 Track & Link
 
-The core idea of "Link" is unchanged:
+Any mega update promotes into an opportunity and keeps its source thread. The opportunity links onward to the account's contract, its theme tags, its dollar value, and its due date. The Conversation → Thread → Opportunity chain is preserved end to end rather than restated as text.
 
-> **Connect information generated from a conversation back to real objects in the business world.**
+The link does not yet reach concrete commercial objects — a specific incentive under discussion, a fare resource, an existing KPI/OKR — because those registries do not yet exist (Sections 7 and 8).
+
+### 2.7 Act & Close
+
+Status controls sit wherever the item appears — Won, Stall, Lost, Reopen. Priority cycles on touch. A past-due flag forces the closure of dated events that have passed; a stale flag surfaces anything dwelling in one stage beyond fourteen days. Every action displays the dollar value it is tied to.
+
+The loop then closes: the action produces meetings and emails, which return to Ingest. Nothing is thought from zero twice.
 
 ---
 
