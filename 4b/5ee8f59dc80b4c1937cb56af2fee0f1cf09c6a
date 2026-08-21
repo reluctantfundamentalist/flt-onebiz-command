@@ -1,0 +1,19 @@
+docs/OneBiz_Command_BRD_v1.md
+  s_9ad07db2fe84be::t_a8f99b734d3713 1-240
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.39-trip",
+  "base_commit_sha": "4b5ee8f59dc80b4c1937cb56af2fee0f1cf09c6a",
+  "prompts": {},
+  "sessions": {
+    "s_9ad07db2fe84be": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4469f407-a824-4b5f-aaf0-83dc390bf278",
+        "model": "qwen3.8-max"
+      },
+      "human_author": "Anuj Bansal <anujbansal.rml@gmail.com>"
+    }
+  }
+}
